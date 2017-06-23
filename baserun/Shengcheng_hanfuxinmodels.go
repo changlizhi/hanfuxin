@@ -18,9 +18,9 @@ func Shengcheng_yingyong_model() {
 			pipei, _ := apputils.Pipei3lei(bk, lv.Biaoming)
 			if pipei {
 				buffer.WriteString(lv.Bianma)
-				buffer.WriteString(baseinits.Fuhaos[baseinits.Gen.Kongge].Zhi)
+				buffer.WriteString(baseinits.Fuhaos[baseinits.Gen.Konggefu].Zhi)
 				buffer.WriteString(lv.Leixing)
-				buffer.WriteString(baseinits.Fuhaos[baseinits.Gen.Huanhang].Zhi)
+				buffer.WriteString(baseinits.Fuhaos[baseinits.Gen.Huanhangfu].Zhi)
 			}
 		}
 		buffer.WriteString(baseinits.Fuhaos[baseinits.Gen.Dakuohaoyou].Zhi)

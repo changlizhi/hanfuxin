@@ -2,6 +2,7 @@ package main
 
 import (
 	"hanfuxin/appinits"
+	"hanfuxin/baseinits"
 	"hanfuxin/apputils"
 	"hanfuxin/baserun"
 	"log"
@@ -30,7 +31,9 @@ func testshengcheng2() {
 }
 func testappinits() {
 	log.Println(appinits.Yingyongzi.Fuhao)
+	log.Println(baseinits.Zhongwens)
+	log.Println(baseinits.Yingwens)
 }
 func main() {
-	testshengcheng2()
+	testappinits()
 }

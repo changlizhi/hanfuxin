@@ -15,15 +15,27 @@ var Fuhaos = make(map[string]basemodels.Tongyong)
 var Wenzis = make(map[string]basemodels.Tongyong)
 var Zifus = make(map[string]string)
 var Gen basemodels.Gen
-
+var Zhongwens = make(map[string]basemodels.Tongyong)
+var Yingwens = make(map[string]basemodels.Tongyong)
 func init() {
-	shiyong_json()
+	chushihua_json()
 }
-func shiyong_json() {
+
+func chushihua_json() {
 	changliang := apputils.Changliangjson()
 	yingyong := apputils.Yingyongjson()
 	Gen = changliang.Gen
 
+	for _, zhongwen := range changliang.Zhongwen {
+		Zifus[zhongwen.Guilei] = zhongwen.Guilei // 冗余，为了简化json结构
+		Zhongwens[zhongwen.Guilei+zhongwen.Bianma] = zhongwen
+		Zifus[zhongwen.Guilei+zhongwen.Bianma] = zhongwen.Bianma
+	}
+	for _, yingwen := range changliang.Yingwen {
+		Zifus[yingwen.Guilei] = yingwen.Guilei // 冗余，为了简化json结构
+		Yingwens[yingwen.Guilei+yingwen.Bianma] = yingwen
+		Zifus[yingwen.Guilei+yingwen.Bianma] = yingwen.Bianma
+	}
 	for _, fuhao := range changliang.Fuhao {
 		Zifus[fuhao.Guilei] = fuhao.Guilei // 冗余，为了简化json结构
 		Zifus[fuhao.Bianma] = fuhao.Bianma

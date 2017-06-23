@@ -7,19 +7,25 @@
     "Import":"import",
     "Go":"go",
     "Yingyongzi":"Yingyongzi",
-    "Kongge":"Kongge",
-    "Huanhang":"Huanhang",
+    "Konggefu":"Konggefu",
+    "Huanhangfu":"Huanhangfu",
     "Dakuohaozuo":"Dakuohaozuo",
     "Dakuohaoyou":"Dakuohaoyou",
     "Dianhao":"Dianhao",
     "Xiexian":"Xiexian",
-    "Appmodels":"Appmodels"
+    "Appmodels":"Appmodels",
+    "Yingyongzimodel":"Yingyongzimodel"
   },
   "Wenzi":[{
     "Guilei":"Wenzi",
     "Bianma":"Hanfuxin",
     "Mingcheng":"汉服心",
     "Zhi":"hanfuxin"
+  },{
+    "Guilei":"Wenzi",
+    "Bianma":"Default",
+    "Mingcheng":"默认",
+    "Zhi":"default"
   },{
     "Guilei":"Wenzi",
     "Bianma":"Github",
@@ -50,8 +56,13 @@
   "Wangluo":[{
     "Guilei":"Wangluo",
     "Bianma":"Xieyihttp",
-    "Mingcheng":"协议",
+    "Mingcheng":"http协议",
     "Zhi":"http"
+  },{
+    "Guilei":"Wangluo",
+    "Bianma":"Xieyitcp",
+    "Mingcheng":"tcp协议",
+    "Zhi":"tcp"
   }],
   "Fuhao":[{
     "Guilei":"Fuhao",
@@ -85,12 +96,12 @@
     "Zhi":"_"
   },{
     "Guilei":"Fuhao",
-    "Bianma":"Huanhanghao",
+    "Bianma":"Huanhangfu",
     "Mingcheng":"换行符",
     "Zhi":"\n"
   },{
     "Guilei":"Fuhao",
-    "Bianma":"Kongge",
+    "Bianma":"Konggefu",
     "Mingcheng":"空格符",
     "Zhi":" "
   },{
@@ -215,8 +226,35 @@
     "Zhi":";"
   },{
     "Guilei":"Fuhao",
+    "Bianma":"Quana",
+    "Mingcheng":"圈a",
+    "Zhi":"@"
+  },{
+    "Guilei":"Fuhao",
     "Bianma":"Douhao",
     "Mingcheng":"逗号",
     "Zhi":","
+  }],
+  "Zhongwen":[{
+    "Guilei":"Zhongwen",
+    "Bianma":"Error01",
+    "Mingcheng":"错误01",
+    "Zhi":"系统异常，请联系管理员！"
+  },{
+    "Guilei":"Zhongwen",
+    "Bianma":"Error02",
+    "Mingcheng":"错误02",
+    "Zhi":"json解析错误！"
+  }],
+  "Yingwen":[{
+    "Guilei":"Yingwen",
+    "Bianma":"Error01",
+    "Mingcheng":"错误01",
+    "Zhi":"The system occurs an error,please call administrator!"
+  },{
+    "Guilei":"Yingwen",
+    "Bianma":"Error02",
+    "Mingcheng":"错误02",
+    "Zhi":"json parse error！"
   }]
 }

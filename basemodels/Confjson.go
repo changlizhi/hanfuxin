@@ -6,6 +6,8 @@ type Changliang struct {
 	Wangluo []Tongyong
 	Gen     Gen
 	Wenzi   []Tongyong
+	Zhongwen []Tongyong
+	Yingwen []Tongyong
 }
 type Yingyong struct {
 	Biao   []Tongyong

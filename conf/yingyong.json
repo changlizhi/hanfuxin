@@ -120,6 +120,11 @@
     "Zhi":"Yonghu"
   },{
     "Guilei":"Shezhi",
+    "Bianma":"Yuyan",
+    "Mingcheng":"语言",
+    "Zhi":"Zhongwen"
+  },{
+    "Guilei":"Shezhi",
     "Bianma":"Yu",
     "Mingcheng":"域",
     "Zhi":"localhost"
@@ -138,6 +143,11 @@
     "Bianma":"Shujukuip",
     "Mingcheng":"数据库ip",
     "Zhi":"127.0.0.1"
+  },{
+    "Guilei":"Shezhi",
+    "Bianma":"Shujukuqudong",
+    "Mingcheng":"数据库驱动",
+    "Zhi":"mysql"
   },{
     "Guilei":"Shezhi",
     "Bianma":"Shujukuduankou",
@@ -170,7 +180,7 @@
     "Zhi":"10"
   },{
     "Guilei":"Shezhi",
-    "Bianma":"Ormerdebug",
+    "Bianma":"Ormdebug",
     "Mingcheng":"是否启用调试模式",
     "Zhi":"true"
   }],
@@ -249,6 +259,21 @@
     "Bianma":"Tests",
     "Mingcheng":"测试目录",
     "Zhi":"tests"
+  },{
+    "Guilei":"Mulu",
+    "Bianma":"Yingyongzimodel",
+    "Mingcheng":"应用字实体的目录",
+    "Zhi":"yingyongzimodel"
+  },{
+    "Guilei":"Mulu",
+    "Bianma":"Appglobal",
+    "Mingcheng":"应用全局变量目录",
+    "Zhi":"appglobal"
+  },{
+    "Guilei":"Mulu",
+    "Bianma":"Baseglobal",
+    "Mingcheng":"基础全局变量的目录",
+    "Zhi":"baseglobal"
   },{
     "Guilei":"Mulu",
     "Bianma":"Views",

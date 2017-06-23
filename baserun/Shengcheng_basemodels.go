@@ -7,40 +7,32 @@ import (
 	"io/ioutil"
 	"os"
 )
+
 func Buffertoumodel(buffer *bytes.Buffer, bianma string) {
-	gen := baseinits.Gen
-	fuhao := baseinits.Fuhaos
-	mulu := baseinits.Mulus
-
-	lujing := mulu[gen.Appmodels].Zhi
-	kongge := fuhao[gen.Kongge].Zhi
-	huanhang := fuhao[gen.Huanhang].Zhi
-
-	buffer.WriteString(gen.Package)
-	buffer.WriteString(kongge)
-	buffer.WriteString(lujing)
-	buffer.WriteString(huanhang)
-	buffer.WriteString(gen.Type)
-	buffer.WriteString(kongge)
+	buffer.WriteString(baseinits.Gen.Package)
+	buffer.WriteString(baseinits.Fuhaos[baseinits.Gen.Konggefu].Zhi)
+	buffer.WriteString(baseinits.Mulus[baseinits.Gen.Yingyongzimodel].Zhi)
+	buffer.WriteString(baseinits.Fuhaos[baseinits.Gen.Huanhangfu].Zhi)
+	buffer.WriteString(baseinits.Gen.Type)
+	buffer.WriteString(baseinits.Fuhaos[baseinits.Gen.Konggefu].Zhi)
 	buffer.WriteString(bianma)
-	buffer.WriteString(kongge)
-	buffer.WriteString(gen.Struct)
-	buffer.WriteString(kongge)
-	buffer.WriteString(fuhao[gen.Dakuohaozuo].Zhi)
-	buffer.WriteString(huanhang)
+	buffer.WriteString(baseinits.Fuhaos[baseinits.Gen.Konggefu].Zhi)
+	buffer.WriteString(baseinits.Gen.Struct)
+	buffer.WriteString(baseinits.Fuhaos[baseinits.Gen.Konggefu].Zhi)
+	buffer.WriteString(baseinits.Fuhaos[baseinits.Gen.Dakuohaozuo].Zhi)
+	buffer.WriteString(baseinits.Fuhaos[baseinits.Gen.Huanhangfu].Zhi)
 }
 
 func Shengcheng_yingyongzi_model() {
-	gen := baseinits.Gen
 	buffer := bytes.Buffer{}
-	Buffertou(&buffer, gen.Yingyongzi)
+	Buffertoumodel(&buffer, baseinits.Gen.Yingyongzi)
 	for k := range baseinits.Zifus {
 		buffer.WriteString(k)
-		buffer.WriteString(baseinits.Fuhaos[gen.Kongge].Zhi)
-		buffer.WriteString(gen.String)
-		buffer.WriteString(baseinits.Fuhaos[gen.Huanhang].Zhi)
+		buffer.WriteString(baseinits.Fuhaos[baseinits.Gen.Konggefu].Zhi)
+		buffer.WriteString(baseinits.Gen.String)
+		buffer.WriteString(baseinits.Fuhaos[baseinits.Gen.Huanhangfu].Zhi)
 	}
-	buffer.WriteString(baseinits.Fuhaos[gen.Dakuohaoyou].Zhi)
-	path := baseinits.Mulus[gen.Appmodels].Zhi + baseinits.Fuhaos[gen.Xiexian].Zhi + gen.Yingyongzi + baseinits.Fuhaos[gen.Dianhao].Zhi + gen.Go
+	buffer.WriteString(baseinits.Fuhaos[baseinits.Gen.Dakuohaoyou].Zhi)
+	path := baseinits.Mulus[baseinits.Gen.Yingyongzimodel].Zhi + baseinits.Fuhaos[baseinits.Gen.Xiexian].Zhi + baseinits.Gen.Yingyongzi + baseinits.Fuhaos[baseinits.Gen.Dianhao].Zhi + baseinits.Gen.Go
 	ioutil.WriteFile(path, buffer.Bytes(), os.ModePerm)
 }

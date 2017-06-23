@@ -1,3 +1,5 @@
 package baserun
-func Shengchenginit(){
-} 
+
+func Shengchenginit() {
+
+}
