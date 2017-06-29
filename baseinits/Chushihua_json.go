@@ -1,8 +1,8 @@
 package baseinits
 
 import (
-	"hanfuxin/apputils"
 	"hanfuxin/basemodels"
+	"hanfuxin/baseutils"
 )
 
 var Shezhis = make(map[string]basemodels.Tongyong)
@@ -17,13 +17,13 @@ var Zifus = make(map[string]string)
 var Gen basemodels.Gen
 var Zhongwens = make(map[string]basemodels.Tongyong)
 var Yingwens = make(map[string]basemodels.Tongyong)
+
 func init() {
 	chushihua_json()
 }
-
 func chushihua_json() {
-	changliang := apputils.Changliangjson()
-	yingyong := apputils.Yingyongjson()
+	changliang := baseutils.Changliangjson()
+	yingyong := baseutils.Yingyongjson()
 	Gen = changliang.Gen
 
 	for _, zhongwen := range changliang.Zhongwen {

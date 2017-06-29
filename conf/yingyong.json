@@ -3,37 +3,37 @@
     "Guilei":"Biao",
     "Bianma":"Juese",
     "Mingcheng":"角色表",
-    "Zhi":""
+    "Zhi":"Juese"
   },{
     "Guilei":"Biao",
     "Bianma":"Juesequanxian",
     "Mingcheng":"角色权限表",
-    "Zhi":""
+    "Zhi":"Juese"
   },{
     "Guilei":"Biao",
     "Bianma":"Quanxian",
     "Mingcheng":"权限表",
-    "Zhi":""
+    "Zhi":"Quanxian"
   },{
     "Guilei":"Biao",
     "Bianma":"Xinxi",
     "Mingcheng":"用户信息表",
-    "Zhi":""
+    "Zhi":"Xinxi"
   },{
     "Guilei":"Biao",
     "Bianma":"Xinxijuese",
     "Mingcheng":"信息角色表",
-    "Zhi":""
+    "Zhi":"Xinxijuese"
   },{
     "Guilei":"Biao",
     "Bianma":"Yanzheng",
     "Mingcheng":"用户验证表",
-    "Zhi":""
+    "Zhi":"Yanzheng"
   },{
     "Guilei":"Biao",
     "Bianma":"Yanzhengleixing",
     "Mingcheng":"验证类型表",
-    "Zhi":""
+    "Zhi":"Yanzhengleixing"
   }],
   "Lie":[{
     "Guilei":"Lie",
@@ -279,5 +279,10 @@
     "Bianma":"Views",
     "Mingcheng":"应用模板目录",
     "Zhi":"views"
+  },{
+    "Guilei":"Mulu",
+    "Bianma":"Allerrors",
+    "Mingcheng":"自定义错误目录",
+    "Zhi":"allerrors"
   }]
 }

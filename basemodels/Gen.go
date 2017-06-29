@@ -7,16 +7,36 @@ type Gen struct {
 	Type            string
 	Struct          string
 	String          string
+	Import          string
+	Go              string
+	Var             string
+	Const           string
+	Func            string
+	Return          string
+	Defer           string
+	Select          string
+	Interface       string
+	Break           string
+	Case            string
+	Continue        string
+	For             string
+	Fallthrouth     string
+	Else            string
+	If              string
+	Switch          string
+	Goto            string
+	Default         string
+	Chan            string
+	Map             string
+	Range           string
 	Konggefu        string
 	Huanhangfu      string
 	Dakuohaozuo     string
 	Dakuohaoyou     string
 	Models          string
-	Import          string
 	Yingyongzi      string
 	Xiexian         string
 	Dianhao         string
-	Go              string
 	Appmodels       string
 	Yingyongzimodel string
 }

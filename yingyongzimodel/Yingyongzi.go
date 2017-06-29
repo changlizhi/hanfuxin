@@ -1,110 +1,113 @@
 package yingyongzimodel
+
 type Yingyongzi struct {
-Dengyuhao string
-Yanzheng string
-Biaoji string
-Bolanghao string
-Shezhi string
-Appmodels string
-YingwenError01 string
-ZhongwenError01 string
-Bianma string
-Juesebianma string
-Shujukuqudong string
-Mulu string
-Conf string
-Zhongkuohaoyou string
-Yu string
-Xiexian string
-YingwenError02 string
-Xiaokuohaozuo string
-Wangluo string
-Zhi string
-Shujukuduankou string
-Jwtyan string
-ZhongwenError02 string
-Juese string
-Baseinits string
-Basemodels string
-Baifenhao string
-Xieyihttp string
-Ormdebug string
-Fuhao string
-Xiaokuohaoyou string
-Jinghao string
-Wuxiao string
-Xiahuaxian string
-Douhao string
-Xiaoyuhao string
-Shuangyinhao string
-Fenhao string
-Controllers string
-Xinghao string
-Dayuhao string
-Jwtmima string
-Daos string
-Zhongwen string
-Default string
-Routers string
-Tests string
-Huanhangfu string
-Quanxian string
-Shujukumima string
-Tiaoshu string
-Appinits string
-Hanfuxin string
-Duankou string
-Jichu string
-Github string
-Biao string
-Lujing string
-Static string
-Youxiao string
-Gantanhao string
-Chengfanghao string
-Jiahao string
-Yanzhengleixing string
-Huozhehao string
-Danyinhao string
-Shujukuyonghu string
-Maintest string
-Zhongkuohaozuo string
-Xinxi string
-Xinxibianma string
-Juesequanxian string
-Qiehao string
-Maohao string
-Wenzi string
-Leixing string
-Jianhao string
-Services string
-Youxiang string
-Dakuohaoyou string
-Quana string
-Lie string
-Mingcheng string
-Id string
-Quanxianbianma string
-Baserun string
-Baseglobal string
-Yizuobian string
-Shi string
-Fou string
-Baseutils string
-Wenhao string
-Xinxijuese string
-Shujukuip string
-Yingyongzimodel string
-Fanxiexian string
-Meiyuanfu string
-Yuyan string
-Shujuku string
-Yingwen string
-Appglobal string
-Dianhao string
-Dakuohaozuo string
-Xieyitcp string
-Apputils string
-Views string
-Konggefu string
+	Appinits        string
+	ZhongwenError01 string
+	Dakuohaozuo     string
+	Juesequanxian   string
+	Lujing          string
+	Yizuobian       string
+	Juese           string
+	Duankou         string
+	Tests           string
+	Baseglobal      string
+	Shuangyinhao    string
+	Tiaoshu         string
+	Baseutils       string
+	Dakuohaoyou     string
+	Github          string
+	Bianma          string
+	Konggefu        string
+	Jinghao         string
+	Youxiang        string
+	Dengyuhao       string
+	Shujuku         string
+	Baseinits       string
+	Zhongwen        string
+	Maohao          string
+	Id              string
+	Views           string
+	Xiaoyuhao       string
+	Xinghao         string
+	Jiahao          string
+	Quanxian        string
+	Leixing         string
+	Yanzhengleixing string
+	Juesebianma     string
+	Shujukumima     string
+	Wenhao          string
+	Default         string
+	Mulu            string
+	Basemodels      string
+	Controllers     string
+	YingwenError01  string
+	Xiaokuohaoyou   string
+	Fenhao          string
+	Shujukuduankou  string
+	Apputils        string
+	Conf            string
+	Bolanghao       string
+	Zhongkuohaoyou  string
+	Danyinhao       string
+	Routers         string
+	Xiexian         string
+	Shi             string
+	Yingwen         string
+	Meiyuanfu       string
+	Services        string
+	Allerrors       string
+	Shujukuqudong   string
+	Chengfanghao    string
+	Fanxiexian      string
+	Zhi             string
+	Shujukuyonghu   string
+	Baserun         string
+	Static          string
+	ZhongwenError02 string
+	YingwenError02  string
+	Huanhangfu      string
+	Wangluo         string
+	Yu              string
+	Daos            string
+	Dianhao         string
+	Zhongkuohaozuo  string
+	Baifenhao       string
+	Wenzi           string
+	Biao            string
+	Biaoji          string
+	Shezhi          string
+	Ormdebug        string
+	Appglobal       string
+	Douhao          string
+	Jichu           string
+	Wuxiao          string
+	Dayuhao         string
+	Jianhao         string
+	Fou             string
+	Hanfuxin        string
+	Xinxibianma     string
+	Yuyan           string
+	Jwtmima         string
+	Xiahuaxian      string
+	Youxiao         string
+	Xieyihttp       string
+	Xinxi           string
+	Yanzheng        string
+	Gantanhao       string
+	Quanxianbianma  string
+	Shujukuip       string
+	Xinxijuese      string
+	Yingyongzimodel string
+	Quana           string
+	Lie             string
+	Fuhao           string
+	Qiehao          string
+	Changdu         string
+	Mingcheng       string
+	Jwtyan          string
+	Xiaokuohaozuo   string
+	Huozhehao       string
+	Xieyitcp        string
+	Appmodels       string
+	Maintest        string
 }

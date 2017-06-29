@@ -2,23 +2,9 @@ package apputils
 
 import (
 	"errors"
-	"hanfuxin/basemodels"
-	"hanfuxin/baseutils"
 	"reflect"
 )
 
-func Changliangjson() *basemodels.Changliang {
-	path := "conf/changliang.json"
-	changliang := basemodels.Changliang{}
-	obj := baseutils.Jiexi(path, &changliang)
-	return obj.(*basemodels.Changliang)
-}
-func Yingyongjson() *basemodels.Yingyong {
-	path := "conf/Yingyong.json"
-	yingyong := basemodels.Yingyong{}
-	obj := baseutils.Jiexi(path, &yingyong)
-	return obj.(*basemodels.Yingyong)
-}
 func Pipei3lei(zi interface{}, fu interface{}) (bool, error) {
 	fustr := reflect.ValueOf(fu)
 	switch reflect.TypeOf(fu).Kind() {

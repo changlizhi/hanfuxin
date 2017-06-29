@@ -24,7 +24,11 @@ func Shengcheng_yingyong_model() {
 			}
 		}
 		buffer.WriteString(baseinits.Fuhaos[baseinits.Gen.Dakuohaoyou].Zhi)
-		path := baseinits.Mulus[baseinits.Gen.Appmodels].Zhi + baseinits.Fuhaos[baseinits.Gen.Xiexian].Zhi + bv.Bianma + baseinits.Fuhaos[baseinits.Gen.Dianhao].Zhi + baseinits.Gen.Go
+		path := baseinits.Mulus[baseinits.Gen.Appmodels].Zhi +
+			baseinits.Fuhaos[baseinits.Gen.Xiexian].Zhi +
+			bv.Bianma +
+			baseinits.Fuhaos[baseinits.Gen.Dianhao].Zhi +
+			baseinits.Gen.Go
 		ioutil.WriteFile(path, buffer.Bytes(), os.ModePerm)
 	}
 }

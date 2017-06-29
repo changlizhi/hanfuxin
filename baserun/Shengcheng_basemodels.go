@@ -33,6 +33,10 @@ func Shengcheng_yingyongzi_model() {
 		buffer.WriteString(baseinits.Fuhaos[baseinits.Gen.Huanhangfu].Zhi)
 	}
 	buffer.WriteString(baseinits.Fuhaos[baseinits.Gen.Dakuohaoyou].Zhi)
-	path := baseinits.Mulus[baseinits.Gen.Yingyongzimodel].Zhi + baseinits.Fuhaos[baseinits.Gen.Xiexian].Zhi + baseinits.Gen.Yingyongzi + baseinits.Fuhaos[baseinits.Gen.Dianhao].Zhi + baseinits.Gen.Go
+	path := baseinits.Mulus[baseinits.Gen.Yingyongzimodel].Zhi +
+		baseinits.Fuhaos[baseinits.Gen.Xiexian].Zhi +
+		baseinits.Gen.Yingyongzi +
+		baseinits.Fuhaos[baseinits.Gen.Dianhao].Zhi +
+		baseinits.Gen.Go
 	ioutil.WriteFile(path, buffer.Bytes(), os.ModePerm)
 }

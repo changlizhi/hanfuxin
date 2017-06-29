@@ -6,6 +6,26 @@
     "String":"string",
     "Import":"import",
     "Go":"go",
+    "Var":"var",
+    "Const":"const",
+    "Func":"func",
+    "Return":"return",
+    "Defer":"defer",
+    "Select":"select",
+    "Interface":"interface",
+    "Break":"break",
+    "Case":"case",
+    "Continue":"continue",
+    "For":"for",
+    "Fallthrouth":"fallthrouth",
+    "Else":"else",
+    "If":"if",
+    "Switch":"switch",
+    "Goto":"goto",
+    "Default":"default",
+    "Chan":"chan",
+    "Map":"map",
+    "Range":"range",
     "Yingyongzi":"Yingyongzi",
     "Konggefu":"Konggefu",
     "Huanhangfu":"Huanhangfu",
@@ -29,8 +49,13 @@
   },{
     "Guilei":"Wenzi",
     "Bianma":"Github",
-    "Mingcheng":"引用库",
-    "Zhi":""
+    "Mingcheng":"github引用库",
+    "Zhi":"github"
+  },{
+    "Guilei":"Wenzi",
+    "Bianma":"Changdu",
+    "Mingcheng":"长度",
+    "Zhi":"changdu"
   }],
   "Jichu":[{
     "Guilei":"Jichu",
