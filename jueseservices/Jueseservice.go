@@ -1,4 +1,4 @@
-package services
+package jueseservices
 
 import (
 	"bytes"
@@ -6,7 +6,7 @@ import (
 	"hanfuxin/appinits"
 	"hanfuxin/appmodels"
 	"hanfuxin/baseinits"
-	"hanfuxin/daos"
+	"hanfuxin/juesedaos"
 	"log"
 	"strconv"
 	"time"
@@ -55,5 +55,5 @@ func Tianjiajuese(juese *appmodels.Juese) {
 		log.Println(err)
 		return
 	}
-	daos.Tianjia_yige_juese(juese)
+	juesedaos.Tianjia_yige_juese(juese)
 }

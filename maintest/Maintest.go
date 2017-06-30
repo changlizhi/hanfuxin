@@ -8,9 +8,13 @@ import (
 	"hanfuxin/basemodels"
 	"hanfuxin/baserun"
 	"hanfuxin/baseutils"
-	"hanfuxin/daos"
-	"hanfuxin/services"
+	"hanfuxin/juesedaos"
+	"hanfuxin/jueseservices"
+	"io/ioutil"
 	"log"
+	"os"
+	"reflect"
+	"strings"
 )
 
 func teststringarr() {
@@ -39,24 +43,61 @@ func testappinits() {
 	log.Println(baseinits.Zhongwens)
 	log.Println(baseinits.Yingwens)
 }
-func testjuesedao() {
+func testjuesedaotianjia() {
 	juese := appmodels.Juese{Id: 1, Bianma: "ROLE_ADMIN", Mingcheng: "管理员", Biaoji: "Youxiao"}
-	daos.Tianjia_yige_juese(&juese)
+	juesedaos.Tianjia_yige_juese(&juese)
 }
+
+func testjuesedaochaxun() {
+	juese := juesedaos.Chaxun_yige(4)
+	log.Println(juese)
+}
+func testjuesedaoshanchu() {
+	juesedaos.Shanchu_yige(4)
+}
+
 func testjueses() {
 	juese1 := appmodels.Juese{Id: 2, Bianma: "ROLE_USER", Mingcheng: "用户", Biaoji: "Youxiao"}
 	juese2 := appmodels.Juese{Id: 3, Bianma: "ROLE_CANGUAN", Mingcheng: "参观", Biaoji: "Youxiao"}
 	jueses := []appmodels.Juese{juese1, juese2}
 	log.Println(jueses)
-	daos.Tianjia_duoge_juese(jueses)
+	juesedaos.Tianjia_duoge_juese(jueses)
 }
 func testjueseservice() {
 	juese1 := appmodels.Juese{Id: 4, Bianma: "ROLE_JINGLIeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee", Mingcheng: "经理", Biaoji: "Youxiao"}
 	juese2 := appmodels.Juese{Id: 4, Bianma: "ROLE_JINGLI", Mingcheng: "经理eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee", Biaoji: "Youxiao"}
-	services.Tianjiajuese(&juese1)
-	services.Tianjiajuese(&juese2)
+	jueseservices.Tianjiajuese(&juese1)
+	jueseservices.Tianjiajuese(&juese2)
+}
+func testjiami() {
+	data := "clz1aaaassssdddd"
+	key := "abcd1234"
+	jm, err := apputils.Encrypt([]byte(data), []byte(key))
+
+	if err != nil {
+		log.Println(err)
+		return
+	}
+	log.Println("jm", convert(jm))
+	log.Println("typeof------", reflect.TypeOf(jm))
+}
+func convert(b []byte) string {
+	s := make([]string, len(b))
+	for i, val := range b {
+		s[i] = string(val)
+	}
+	return strings.Join(s, ",")
+}
+func testbasemodel() {
+	log.Println(basemodels.Getapppath())
+}
+func testioutil() {
+	os.MkdirAll(basemodels.Getapppath()+"/views/app/", 0777)
+	ioutil.WriteFile(basemodels.Getapppath()+"/views/app/sss.go", []byte("ssss"), 0777)
+}
+func testbaserun() {
+	baserun.Shengchengdaos()
 }
 func main() {
-	log.Println(basemodels.Getapppath())
-	testshengcheng1()
+	testbaserun()
 }

@@ -31,7 +31,7 @@ func Getapppath() string {
 				file,
 				jsondizhis.Dianhao+
 					jsondizhis.Dianhao+
-					string(filepath.Separator))))
+					jsondizhis.Xiexian)))
 	return apppath
 }
 func Getwenjianmulu(mulu string, wenjian string, leixing string) string {
