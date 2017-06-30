@@ -45,15 +45,15 @@ func testappinits() {
 }
 func testjuesedaotianjia() {
 	juese := appmodels.Juese{Id: 1, Bianma: "ROLE_ADMIN", Mingcheng: "管理员", Biaoji: "Youxiao"}
-	juesedaos.Tianjia_yige_juese(&juese)
+	juesedaos.Tianjiayige(&juese)
 }
 
 func testjuesedaochaxun() {
-	juese := juesedaos.Chaxun_yige(4)
+	juese := juesedaos.Chaxunyige(4)
 	log.Println(juese)
 }
 func testjuesedaoshanchu() {
-	juesedaos.Shanchu_yige(4)
+	juesedaos.Shanchuyige(4)
 }
 
 func testjueses() {
@@ -61,7 +61,7 @@ func testjueses() {
 	juese2 := appmodels.Juese{Id: 3, Bianma: "ROLE_CANGUAN", Mingcheng: "参观", Biaoji: "Youxiao"}
 	jueses := []appmodels.Juese{juese1, juese2}
 	log.Println(jueses)
-	juesedaos.Tianjia_duoge_juese(jueses)
+	juesedaos.Tianjiaduoge(jueses)
 }
 func testjueseservice() {
 	juese1 := appmodels.Juese{Id: 4, Bianma: "ROLE_JINGLIeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee", Mingcheng: "经理", Biaoji: "Youxiao"}

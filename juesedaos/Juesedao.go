@@ -5,24 +5,24 @@ import (
 	"hanfuxin/appmodels"
 )
 
-func Chaxun_yige(id int) *appmodels.Juese {
+func Chaxunyige(id int) *appmodels.Juese {
 	juese := &appmodels.Juese{Id: id}
 	appinits.Hanfuxinormer.Read(juese)
 	return juese
 }
 
-func Tianjia_yige_juese(juese *appmodels.Juese) {
+func Tianjiayige(juese *appmodels.Juese) {
 	appinits.Hanfuxinormer.Insert(juese)
 }
 
-func Tianjia_duoge_juese(jueses []appmodels.Juese) {
-	appinits.Hanfuxinormer.InsertMulti(len(jueses), jueses)
+func Tianjiaduoge(jueseshuzu []appmodels.Juese) {
+	appinits.Hanfuxinormer.InsertMulti(len(jueseshuzu), jueseshuzu)
 }
 
-func Shanchu_yige(id int) {
-	appinits.Hanfuxinormer.Delete(Chaxun_yige(id))
+func Shanchuyige(id int) {
+	appinits.Hanfuxinormer.Delete(Chaxunyige(id))
 }
 
-func Xiugai_yige(juese *appmodels.Juese) {
+func Xiugaiyige(juese *appmodels.Juese) {
 	appinits.Hanfuxinormer.Update(juese)
 }

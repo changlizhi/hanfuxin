@@ -2,8 +2,13 @@
   "Gen":{
     "Package":"package",
     "Type":"type",
+    "Len":"len",
     "Struct":"struct",
     "String":"string",
+    "Int":"int",
+    "Bool":"bool",
+    "True":"true",
+    "Flase":"false",
     "Import":"import",
     "Go":"go",
     "Var":"var",
@@ -56,6 +61,66 @@
     "Bianma":"Changdu",
     "Mingcheng":"长度",
     "Zhi":"changdu"
+  },{
+    "Guilei":"Wenzi",
+    "Bianma":"Chaxunyige",
+    "Mingcheng":"查询一个",
+    "Zhi":"chaxunyige"
+  },{
+    "Guilei":"Wenzi",
+    "Bianma":"Tianjiayige",
+    "Mingcheng":"添加一个",
+    "Zhi":"tianjiayige"
+  },{
+    "Guilei":"Wenzi",
+    "Bianma":"Tianjiaduoge",
+    "Mingcheng":"添加多个",
+    "Zhi":"tianjiaduoge"
+  },{
+    "Guilei":"Wenzi",
+    "Bianma":"Shanchuyige",
+    "Mingcheng":"删除一个",
+    "Zhi":"shanchuyige"
+  },{
+    "Guilei":"Wenzi",
+    "Bianma":"Xiugaiyige",
+    "Mingcheng":"修改一个",
+    "Zhi":"xiugaiyige"
+  },{
+    "Guilei":"Wenzi",
+    "Bianma":"Hanfuxinormer",
+    "Mingcheng":"汉服心ormer",
+    "Zhi":"hanfuxinormer"
+  },{
+    "Guilei":"Wenzi",
+    "Bianma":"Read",
+    "Mingcheng":"ormer用的读取方法，Zhi本来也是大写开头，但为了更通用所以把值作为小写",
+    "Zhi":"read"
+  },{
+    "Guilei":"Wenzi",
+    "Bianma":"Insert",
+    "Mingcheng":"ormer用的插入一条数据的方法",
+    "Zhi":"insert"
+  },{
+    "Guilei":"Wenzi",
+    "Bianma":"InsertMulti",
+    "Mingcheng":"ormer用的插入多调数据的方法",
+    "Zhi":"insertMulti"
+  },{
+    "Guilei":"Wenzi",
+    "Bianma":"Delete",
+    "Mingcheng":"ormer用的删除方法",
+    "Zhi":"delete"
+  },{
+    "Guilei":"Wenzi",
+    "Bianma":"Update",
+    "Mingcheng":"ormer用的修改方法",
+    "Zhi":"update"
+  },{
+    "Guilei":"Wenzi",
+    "Bianma":"Shuzu",
+    "Mingcheng":"数组",
+    "Zhi":"shuzu"
   }],
   "Jichu":[{
     "Guilei":"Jichu",

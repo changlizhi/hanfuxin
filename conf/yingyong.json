@@ -39,6 +39,7 @@
     "Guilei":"Lie",
     "Bianma":"Id",
     "Mingcheng":"主键",
+    "Zhi":"id",
     "Changdu":"10",
     "Leixing":"int",
     "Biaoming":["Juese","Juesequanxian","Quanxian","Xinxi","Xinxijuese","Yanzheng","Yanzhengleixing"]
@@ -46,6 +47,7 @@
     "Guilei":"Lie",
     "Bianma":"Biaoji",
     "Mingcheng":"标记",
+    "Zhi":"biaoji",
     "Changdu":"500",
     "Leixing":"string",
     "Biaoming":["Juese","Juesequanxian","Quanxian","Xinxi","Xinxijuese","Yanzheng","Yanzhengleixing"]
@@ -53,6 +55,7 @@
     "Guilei":"Lie",
     "Bianma":"Bianma",
     "Mingcheng":"编码",
+    "Zhi":"bianma",
     "Changdu":"50",
     "Leixing":"string",
     "Biaoming":["Juese","Quanxian","Xinxi","Yanzheng","Yanzhengleixing"]
@@ -60,6 +63,7 @@
     "Guilei":"Lie",
     "Bianma":"Mingcheng",
     "Mingcheng":"名称",
+    "Zhi":"mingcheng",
     "Changdu":"50",
     "Leixing":"string",
     "Biaoming":["Juese","Quanxian","Xinxi","Yanzheng","Yanzhengleixing"]
@@ -67,6 +71,7 @@
     "Guilei":"Lie",
     "Bianma":"Juesebianma",
     "Mingcheng":"角色编码",
+    "Zhi":"juesebianma",
     "Changdu":"50",
     "Leixing":"string",
     "Biaoming":["Juesequanxian","Xinxijuese"]
@@ -74,6 +79,7 @@
     "Guilei":"Lie",
     "Bianma":"Quanxianbianma",
     "Mingcheng":"权限编码",
+    "Zhi":"quanxianbianma",
     "Changdu":"50",
     "Leixing":"string",
     "Biaoming":["Juesequanxian"]
@@ -81,6 +87,7 @@
     "Guilei":"Lie",
     "Bianma":"Lujing",
     "Mingcheng":"路径",
+    "Zhi":"lujing",
     "Changdu":"300",
     "Leixing":"string",
     "Biaoming":["Quanxian"]
@@ -88,6 +95,7 @@
     "Guilei":"Lie",
     "Bianma":"Youxiang",
     "Mingcheng":"邮箱",
+    "Zhi":"youxiang",
     "Changdu":"50",
     "Leixing":"string",
     "Biaoming":["Xinxi"]
@@ -95,6 +103,7 @@
     "Guilei":"Lie",
     "Bianma":"Leixing",
     "Mingcheng":"类型",
+    "Zhi":"leixing",
     "Changdu":"50",
     "Leixing":"string",
     "Biaoming":["Yanzheng"]
@@ -102,6 +111,7 @@
     "Guilei":"Lie",
     "Bianma":"Zhi",
     "Mingcheng":"值",
+    "Zhi":"zhi",
     "Changdu":"50",
     "Leixing":"string",
     "Biaoming":["Yanzheng"]
@@ -109,6 +119,7 @@
     "Guilei":"Lie",
     "Bianma":"Xinxibianma",
     "Mingcheng":"用户编码",
+    "Zhi":"xinxibianma",
     "Changdu":"50",
     "Leixing":"string",
     "Biaoming":["Xinxijuese"]

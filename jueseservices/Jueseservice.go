@@ -55,5 +55,5 @@ func Tianjiajuese(juese *appmodels.Juese) {
 		log.Println(err)
 		return
 	}
-	juesedaos.Tianjia_yige_juese(juese)
+	juesedaos.Tianjiayige(juese)
 }

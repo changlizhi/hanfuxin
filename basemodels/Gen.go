@@ -7,6 +7,11 @@ type Gen struct {
 	Type            string
 	Struct          string
 	String          string
+	Int             string
+	Bool            string
+	True            string
+	False           string
+	Len             string
 	Import          string
 	Go              string
 	Var             string
