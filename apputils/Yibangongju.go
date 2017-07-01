@@ -2,6 +2,8 @@ package apputils
 
 import (
 	"errors"
+	"io/ioutil"
+	"os"
 	"reflect"
 )
 
@@ -20,4 +22,8 @@ func Pipei3lei(zi interface{}, fu interface{}) (bool, error) {
 		}
 	}
 	return false, errors.New("not in array!")
+}
+func Tianjiawenjian(path string, wenjianming string, neirong []byte) {
+	os.MkdirAll(basemodels.Getapppath()+path, os.ModePerm)
+	ioutil.WriteFile(basemodels.Getapppath()+path+wenjianming, neirong, os.ModePerm)
 }

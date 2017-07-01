@@ -8,7 +8,7 @@ import (
 	"os"
 )
 
-func Shengcheng_yingyong_model() {
+func Shengcheng_hanfuxin_models() {
 	biaos := baseinits.Biaos
 	lies := baseinits.Lies
 	for bk, bv := range biaos {
