@@ -1,125 +1,164 @@
 package yingyongzimodel
-
 type Yingyongzi struct {
-	Shuzu           string
-	Appglobal       string
-	Shujukuip       string
-	Xiahuaxian      string
-	Baseutils       string
-	Maohao          string
-	InsertMulti     string
-	Juesequanxian   string
-	Xinxibianma     string
-	Yu              string
-	Dianhao         string
-	Dakuohaoyou     string
-	Tiaoshu         string
-	Allerrors       string
-	YingwenError01  string
-	Mingcheng       string
-	Maintest        string
-	Dakuohaozuo     string
-	Baifenhao       string
-	Services        string
-	Zhongkuohaozuo  string
-	Shi             string
-	Jinghao         string
-	Youxiao         string
-	Youxiang        string
-	Dayuhao         string
-	Wuxiao          string
-	Shujuku         string
-	Appinits        string
-	Baseglobal      string
-	Jwtyan          string
-	Yingyongzimodel string
-	Apputils        string
-	Fanxiexian      string
-	Jiahao          string
-	Leixing         string
-	Yuyan           string
-	Shujukumima     string
-	Xiaokuohaozuo   string
-	Insert          string
-	Biao            string
-	Xinxi           string
-	Zhi             string
-	Quanxianbianma  string
-	Appmodels       string
-	Views           string
-	Zhongwen        string
-	Qiehao          string
-	Xieyihttp       string
-	Github          string
-	Lie             string
-	Basemodels      string
-	Conf            string
-	Static          string
-	Chengfanghao    string
-	Wenzi           string
-	Tianjiaduoge    string
-	Xiugaiyige      string
-	Baseinits       string
-	Ormdebug        string
-	ZhongwenError02 string
-	Changdu         string
-	Shanchuyige     string
-	Id              string
-	Shezhi          string
-	Chaxunyige      string
-	Gantanhao       string
-	Huanhangfu      string
-	Yizuobian       string
-	Douhao          string
-	Hanfuxin        string
-	Konggefu        string
-	Xinxijuese      string
-	Duankou         string
-	Baserun         string
-	Controllers     string
-	Wenhao          string
-	Jichu           string
-	Juese           string
-	Biaoji          string
-	Routers         string
-	Xiaoyuhao       string
-	Fenhao          string
-	Read            string
-	Fou             string
-	Xieyitcp        string
-	Delete          string
-	Quanxian        string
-	Mulu            string
-	Update          string
-	Shujukuduankou  string
-	Shujukuyonghu   string
-	ZhongwenError01 string
-	Zhongkuohaoyou  string
-	Meiyuanfu       string
-	Xinghao         string
-	Hanfuxinormer   string
-	Dengyuhao       string
-	Danyinhao       string
-	YingwenError02  string
-	Jianhao         string
-	Yanzheng        string
-	Juesebianma     string
-	Jwtmima         string
-	Lujing          string
-	Tests           string
-	Fuhao           string
-	Shuangyinhao    string
-	Wangluo         string
-	Default         string
-	Yanzhengleixing string
-	Yingwen         string
-	Bolanghao       string
-	Bianma          string
-	Shujukuqudong   string
-	Quana           string
-	Daos            string
-	Xiexian         string
-	Huozhehao       string
-	Tianjiayige     string
-	Xiaokuohaoyou   string
+Xiaokuohaoyou string
+Shuzi2 string
+Shuzi3 string
+Github string
+E string
+Xinxi string
+Gantanhao string
+Huanhangfu string
+Insert string
+V string
+Shujukuduankou string
+Jianhao string
+Shuzi8 string
+Biaoji string
+Chengfanghao string
+Shuzu string
+Jiahao string
+C string
+Println string
+Xinxibianma string
+Zhongkuohaozuo string
+Jinghao string
+Douhao string
+Wuxiao string
+Shuzi7 string
+Shujuku string
+Daos string
+Xiaokuohaozuo string
+Xinghao string
+N string
+Q string
+Zhi string
+Fuhao string
+Maohao string
+D string
+Conf string
+Biao string
+Juese string
+Baserun string
+Shuangyinhao string
+Shuzi4 string
+K string
+Yanzheng string
+Shujukuip string
+Static string
+Tests string
+Fanxiexian string
+Shuzi0 string
+Test string
+H string
+M string
+Yu string
+Services string
+Views string
+Xieyitcp string
+Read string
+Baifenhao string
+Mulu string
+Appinits string
+Log string
+Shujukuyonghu string
+O string
+S string
+Shujukumima string
+Meiyuanfu string
+Shuzi5 string
+R string
+Juesebianma string
+ZhongwenError02 string
+A string
+I string
+Id string
+Shuzi9 string
+Delete string
+G string
+W string
+Yingwen string
+Shuzi1 string
+Huozhehao string
+Testing string
+U string
+Routers string
+Zhongwen string
+Xiahuaxian string
+Shezhi string
+Basemodels string
+Controllers string
+Quana string
+Changdu string
+Wangluo string
+Default string
+Ormdebug string
+ZhongwenError01 string
+Dianhao string
+Wenzi string
+Xieyihttp string
+Chaxunyige string
+Quanxian string
+Appmodels string
+Dakuohaozuo string
+Dakuohaoyou string
+Baseutils string
+Xiaoyuhao string
+F string
+Danyinhao string
+Tianjiaduoge string
+Leixing string
+Zhongkuohaoyou string
+Wenhao string
+Fou string
+Lujing string
+Yingyongzimodel string
+Fenhao string
+Shi string
+Juesequanxian string
+Yuyan string
+Apputils string
+Qiehao string
+Tianjiayige string
+Bolanghao string
+P string
+T string
+Xinxijuese string
+Baseinits string
+Maintest string
+Appglobal string
+Allerrors string
+Yizuobian string
+InsertMulti string
+Quanxianbianma string
+Youxiang string
+Hanfuxinormer string
+Mingcheng string
+Dayuhao string
+Youxiao string
+Update string
+Jwtmima string
+YingwenError01 string
+YingwenError02 string
+X string
+Y string
+Yanzhengleixing string
+Konggefu string
+B string
+Lie string
+Xiugaiyige string
+J string
+Duankou string
+Xiexian string
+Bianma string
+Shuzi6 string
+Hanfuxin string
+Shanchuyige string
+L string
+Z string
+Shujukuqudong string
+Dengyuhao string
+Jichu string
+Baseglobal string
+Jwtyan string
+Tiaoshu string
 }

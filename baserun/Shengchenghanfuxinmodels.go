@@ -4,16 +4,18 @@ import (
 	"bytes"
 	"hanfuxin/apputils"
 	"hanfuxin/baseinits"
+	"hanfuxin/appinits"
+	"hanfuxin/basemodels"
 	"io/ioutil"
 	"os"
 )
 
-func Shengcheng_hanfuxin_models() {
+func Shengchenghanfuxinmodels() {
 	biaos := baseinits.Biaos
 	lies := baseinits.Lies
 	for bk, bv := range biaos {
 		buffer := bytes.Buffer{}
-		Buffertoumodel(&buffer, bv.Bianma)
+		Buffertoumodel(&buffer, bv.Bianma,baseinits.Mulus[appinits.Yingyongzi.Appmodels].Zhi)
 		for _, lv := range lies {
 			pipei, _ := apputils.Pipei3lei(bk, lv.Biaoming)
 			if pipei {
@@ -24,7 +26,9 @@ func Shengcheng_hanfuxin_models() {
 			}
 		}
 		buffer.WriteString(baseinits.Fuhaos[baseinits.Gen.Dakuohaoyou].Zhi)
-		path := baseinits.Mulus[baseinits.Gen.Appmodels].Zhi +
+		path := basemodels.Getapppath() +
+			baseinits.Fuhaos[baseinits.Gen.Xiexian].Zhi +
+			baseinits.Mulus[baseinits.Gen.Appmodels].Zhi +
 			baseinits.Fuhaos[baseinits.Gen.Xiexian].Zhi +
 			bv.Bianma +
 			baseinits.Fuhaos[baseinits.Gen.Dianhao].Zhi +

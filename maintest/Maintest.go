@@ -1,30 +1,15 @@
 package main
 
 import (
-	"hanfuxin/appinits"
 	"hanfuxin/appmodels"
-	"hanfuxin/apputils"
-	"hanfuxin/baseinits"
-	"hanfuxin/basemodels"
-	"hanfuxin/baserun"
-	"hanfuxin/baseutils"
 	"hanfuxin/juesedaos"
 	"hanfuxin/jueseservices"
-	"io/ioutil"
 	"log"
-	"os"
-	"reflect"
-	"strings"
 )
 
-func testshengcheng1() {
-	baserun.Shengcheng_yingyongzi_model()
-}
-func testshengcheng2() {
-	baserun.Shengcheng_yingyong_model()
-}
 func testjuesedaotianjia() {
 	juese := appmodels.Juese{Id: 1, Bianma: "ROLE_ADMIN", Mingcheng: "管理员", Biaoji: "Youxiao"}
+
 	juesedaos.Tianjiayige(&juese)
 }
 
@@ -48,9 +33,6 @@ func testjueseservice() {
 	juese2 := appmodels.Juese{Id: 4, Bianma: "ROLE_JINGLI", Mingcheng: "经理eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee", Biaoji: "Youxiao"}
 	jueseservices.Tianjiajuese(&juese1)
 	jueseservices.Tianjiajuese(&juese2)
-}
-func testbaserun() {
-	baserun.Shengchengdaos()
 }
 func main() {
 	testjuesedaotianjia()

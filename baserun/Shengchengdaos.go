@@ -6,7 +6,6 @@ import (
 	"hanfuxin/baseinits"
 	"hanfuxin/basemodels"
 	"io/ioutil"
-	"log"
 	"os"
 	"strings"
 )
@@ -203,33 +202,30 @@ func xiugaiyige(bianma string, buffer *bytes.Buffer) {
 
 }
 func Shengchengdaos() {
-	biaos := baseinits.Biaos
-	for bk, _ := range biaos {
+	for _, biao := range baseinits.Biaos {
 		buffer := bytes.Buffer{}
 		buffer.WriteString(baseinits.Gen.Package)
 		buffer.WriteString(baseinits.Fuhaos[appinits.Yingyongzi.Konggefu].Zhi)
-		lujing := strings.ToLower(bk) + baseinits.Mulus[appinits.Yingyongzi.Daos].Zhi
+		lujing := strings.ToLower(biao.Bianma) + baseinits.Mulus[appinits.Yingyongzi.Daos].Zhi
 		buffer.WriteString(lujing)
 
-		imports(bk, &buffer)
-		chaxunyige(bk, &buffer)
-		tianjiayige(bk, &buffer)
-		tianjiaduoge(bk, &buffer)
-		shanchuyige(bk, &buffer)
-		xiugaiyige(bk, &buffer)
+		imports(biao.Bianma, &buffer)
+		chaxunyige(biao.Bianma, &buffer)
+		tianjiayige(biao.Bianma, &buffer)
+		tianjiaduoge(biao.Bianma, &buffer)
+		shanchuyige(biao.Bianma, &buffer)
+		xiugaiyige(biao.Bianma, &buffer)
 
 		dir := basemodels.Getapppath() +
 			baseinits.Fuhaos[appinits.Yingyongzi.Xiexian].Zhi +
 			lujing +
 			baseinits.Fuhaos[appinits.Yingyongzi.Xiexian].Zhi
 		path := dir +
-			bk +
+			biao.Bianma +
 			baseinits.Mulus[appinits.Yingyongzi.Daos].Zhi +
 			baseinits.Fuhaos[appinits.Yingyongzi.Dianhao].Zhi +
 			baseinits.Gen.Go
 		os.MkdirAll(dir, os.ModePerm)
 		ioutil.WriteFile(path, buffer.Bytes(), os.ModePerm)
-		log.Println(dir, buffer.String())
-		log.Println(path)
 	}
 }

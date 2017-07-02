@@ -4,14 +4,15 @@ package baserun
 import (
 	"bytes"
 	"hanfuxin/baseinits"
+	"hanfuxin/basemodels"
 	"io/ioutil"
 	"os"
 )
 
-func Buffertoumodel(buffer *bytes.Buffer, bianma string) {
+func Buffertoumodel(buffer *bytes.Buffer, bianma string,baoming string) {
 	buffer.WriteString(baseinits.Gen.Package)
 	buffer.WriteString(baseinits.Fuhaos[baseinits.Gen.Konggefu].Zhi)
-	buffer.WriteString(baseinits.Mulus[baseinits.Gen.Yingyongzimodel].Zhi)
+	buffer.WriteString( baoming)
 	buffer.WriteString(baseinits.Fuhaos[baseinits.Gen.Huanhangfu].Zhi)
 	buffer.WriteString(baseinits.Gen.Type)
 	buffer.WriteString(baseinits.Fuhaos[baseinits.Gen.Konggefu].Zhi)
@@ -23,9 +24,9 @@ func Buffertoumodel(buffer *bytes.Buffer, bianma string) {
 	buffer.WriteString(baseinits.Fuhaos[baseinits.Gen.Huanhangfu].Zhi)
 }
 
-func Shengcheng_yingyongzi_model() {
+func Shengchengyingyongzimodel() {
 	buffer := bytes.Buffer{}
-	Buffertoumodel(&buffer, baseinits.Gen.Yingyongzi)
+	Buffertoumodel(&buffer, baseinits.Gen.Yingyongzi,baseinits.Mulus[baseinits.Gen.Yingyongzimodel].Zhi)
 	for k := range baseinits.Zifus {
 		buffer.WriteString(k)
 		buffer.WriteString(baseinits.Fuhaos[baseinits.Gen.Konggefu].Zhi)
@@ -33,7 +34,9 @@ func Shengcheng_yingyongzi_model() {
 		buffer.WriteString(baseinits.Fuhaos[baseinits.Gen.Huanhangfu].Zhi)
 	}
 	buffer.WriteString(baseinits.Fuhaos[baseinits.Gen.Dakuohaoyou].Zhi)
-	path := baseinits.Mulus[baseinits.Gen.Yingyongzimodel].Zhi +
+	path := basemodels.Getapppath() +
+		baseinits.Fuhaos[baseinits.Gen.Xiexian].Zhi +
+		baseinits.Mulus[baseinits.Gen.Yingyongzimodel].Zhi +
 		baseinits.Fuhaos[baseinits.Gen.Xiexian].Zhi +
 		baseinits.Gen.Yingyongzi +
 		baseinits.Fuhaos[baseinits.Gen.Dianhao].Zhi +
