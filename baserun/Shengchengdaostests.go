@@ -160,6 +160,7 @@ func shengchengzhi(lieming string, leixing string) string {
 		ret := baseinits.Fuhaos[appinits.Yingyongzi.Shuangyinhao].Zhi +
 			lieming +
 			baseinits.Wenzis[appinits.Yingyongzi.Test].Bianma +
+			baseinits.Jichus[appinits.Yingyongzi.Shuzi1].Zhi +
 			baseinits.Fuhaos[appinits.Yingyongzi.Shuangyinhao].Zhi
 		return ret
 	}
