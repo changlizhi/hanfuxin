@@ -6,6 +6,8 @@
     "Struct":"struct",
     "String":"string",
     "Int":"int",
+    "Float64":"float64",
+    "Float32":"float32",
     "Bool":"bool",
     "True":"true",
     "Flase":"false",
@@ -271,6 +273,31 @@
     "Bianma":"Println",
     "Mingcheng":"log的print",
     "Zhi":"println"
+  },{
+    "Guilei":"Wenzi",
+    "Bianma":"Time",
+    "Mingcheng":"golang的time类型",
+    "Zhi":"time"
+  },{
+    "Guilei":"Wenzi",
+    "Bianma":"Now",
+    "Mingcheng":"golang的time类型的Now方法",
+    "Zhi":"now"
+  },{
+    "Guilei":"Wenzi",
+    "Bianma":"Null",
+    "Mingcheng":"空",
+    "Zhi":"null"
+  },{
+    "Guilei":"Wenzi",
+    "Bianma":"Float",
+    "Mingcheng":"小数类型",
+    "Zhi":"float"
+  },{
+    "Guilei":"Wenzi",
+    "Bianma":"Zd",
+    "Mingcheng":"自动生成目录的前缀",
+    "Zhi":"zd"
   }],
   "Jichu":[{
     "Guilei":"Jichu",
@@ -293,52 +320,52 @@
     "Mingcheng":"无效",
     "Zhi":"1"
   },{
-    "Guilei":"Wenzi",
+    "Guilei":"Jichu",
     "Bianma":"Shuzi1",
     "Mingcheng":"数字1",
     "Zhi":"1"
   },{
-    "Guilei":"Wenzi",
+    "Guilei":"Jichu",
     "Bianma":"Shuzi2",
     "Mingcheng":"数字2",
     "Zhi":"2"
   },{
-    "Guilei":"Wenzi",
+    "Guilei":"Jichu",
     "Bianma":"Shuzi3",
     "Mingcheng":"数字3",
     "Zhi":"3"
   },{
-    "Guilei":"Wenzi",
+    "Guilei":"Jichu",
     "Bianma":"Shuzi4",
     "Mingcheng":"数字4",
     "Zhi":"4"
   },{
-    "Guilei":"Wenzi",
+    "Guilei":"Jichu",
     "Bianma":"Shuzi5",
     "Mingcheng":"数字5",
     "Zhi":"5"
   },{
-    "Guilei":"Wenzi",
+    "Guilei":"Jichu",
     "Bianma":"Shuzi6",
     "Mingcheng":"数字6",
     "Zhi":"6"
   },{
-    "Guilei":"Wenzi",
+    "Guilei":"Jichu",
     "Bianma":"Shuzi7",
     "Mingcheng":"数字7",
     "Zhi":"7"
   },{
-    "Guilei":"Wenzi",
+    "Guilei":"Jichu",
     "Bianma":"Shuzi8",
     "Mingcheng":"数字8",
     "Zhi":"8"
   },{
-    "Guilei":"Wenzi",
+    "Guilei":"Jichu",
     "Bianma":"Shuzi9",
     "Mingcheng":"数字9",
     "Zhi":"9"
   },{
-    "Guilei":"Wenzi",
+    "Guilei":"Jichu",
     "Bianma":"Shuzi0",
     "Mingcheng":"数字0",
     "Zhi":"0"
@@ -535,6 +562,11 @@
     "Bianma":"Error02",
     "Mingcheng":"错误02",
     "Zhi":"json解析错误！"
+  },{
+    "Guilei":"Zhongwen",
+    "Bianma":"Error03",
+    "Mingcheng":"错误03",
+    "Zhi":"字段类型错误！"
   }],
   "Yingwen":[{
     "Guilei":"Yingwen",
@@ -546,5 +578,10 @@
     "Bianma":"Error02",
     "Mingcheng":"错误02",
     "Zhi":"json parse error！"
+  },{
+    "Guilei":"Yingwen",
+    "Bianma":"Error03",
+    "Mingcheng":"错误03",
+    "Zhi":"filed type error！"
   }]
 }

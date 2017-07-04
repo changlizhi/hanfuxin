@@ -1,4 +1,4 @@
-package xinxidaos
+package zdxinxidaos
 import (
 "hanfuxin/appinits"
 "hanfuxin/appmodels"

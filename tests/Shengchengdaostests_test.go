@@ -1,8 +1,10 @@
 package tests
-import(
+
+import (
 	"hanfuxin/baserun"
 	"testing"
 )
-func TestShengchengdaostests(t *testing.T){
+
+func TestShengchengdaostests(t *testing.T) {
 	baserun.Shengchengdaostests()
 }

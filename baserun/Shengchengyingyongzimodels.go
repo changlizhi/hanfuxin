@@ -9,10 +9,10 @@ import (
 	"os"
 )
 
-func Buffertoumodel(buffer *bytes.Buffer, bianma string,baoming string) {
+func Buffertoumodel(buffer *bytes.Buffer, bianma string, baoming string) {
 	buffer.WriteString(baseinits.Gen.Package)
 	buffer.WriteString(baseinits.Fuhaos[baseinits.Gen.Konggefu].Zhi)
-	buffer.WriteString( baoming)
+	buffer.WriteString(baoming)
 	buffer.WriteString(baseinits.Fuhaos[baseinits.Gen.Huanhangfu].Zhi)
 	buffer.WriteString(baseinits.Gen.Type)
 	buffer.WriteString(baseinits.Fuhaos[baseinits.Gen.Konggefu].Zhi)
@@ -26,7 +26,7 @@ func Buffertoumodel(buffer *bytes.Buffer, bianma string,baoming string) {
 
 func Shengchengyingyongzimodel() {
 	buffer := bytes.Buffer{}
-	Buffertoumodel(&buffer, baseinits.Gen.Yingyongzi,baseinits.Mulus[baseinits.Gen.Yingyongzimodel].Zhi)
+	Buffertoumodel(&buffer, baseinits.Gen.Yingyongzi, baseinits.Mulus[baseinits.Gen.Yingyongzimodel].Zhi)
 	for k := range baseinits.Zifus {
 		buffer.WriteString(k)
 		buffer.WriteString(baseinits.Fuhaos[baseinits.Gen.Konggefu].Zhi)

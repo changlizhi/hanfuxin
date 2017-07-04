@@ -2,12 +2,13 @@ package baserun
 
 import (
 	"bytes"
+	"hanfuxin/appinits"
 	"hanfuxin/apputils"
 	"hanfuxin/baseinits"
-	"hanfuxin/appinits"
 	"hanfuxin/basemodels"
-	"io/ioutil"
-	"os"
+  //	"io/ioutil"
+	//  "os"
+	"log"
 )
 
 func Shengchenghanfuxinmodels() {
@@ -15,7 +16,7 @@ func Shengchenghanfuxinmodels() {
 	lies := baseinits.Lies
 	for bk, bv := range biaos {
 		buffer := bytes.Buffer{}
-		Buffertoumodel(&buffer, bv.Bianma,baseinits.Mulus[appinits.Yingyongzi.Appmodels].Zhi)
+		Buffertoumodel(&buffer, bv.Bianma, baseinits.Mulus[appinits.Yingyongzi.Appmodels].Zhi)
 		for _, lv := range lies {
 			pipei, _ := apputils.Pipei3lei(bk, lv.Biaoming)
 			if pipei {
@@ -33,6 +34,7 @@ func Shengchenghanfuxinmodels() {
 			bv.Bianma +
 			baseinits.Fuhaos[baseinits.Gen.Dianhao].Zhi +
 			baseinits.Gen.Go
-		ioutil.WriteFile(path, buffer.Bytes(), os.ModePerm)
+		// ioutil.WriteFile(path, buffer.Bytes(), os.ModePerm)
+		log.Println("appmodels-path---------",path)
 	}
 }

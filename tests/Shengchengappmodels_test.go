@@ -1,9 +1,10 @@
 package tests
-import(
+
+import (
 	"hanfuxin/baserun"
 	"testing"
 )
-func TestShengchengmodel(t *testing.T){
+
+func TestShengchengmodel(t *testing.T) {
 	baserun.Shengchenghanfuxinmodels()
 }
-

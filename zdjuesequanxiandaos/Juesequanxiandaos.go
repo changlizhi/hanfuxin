@@ -1,4 +1,4 @@
-package juesequanxiandaos
+package zdjuesequanxiandaos
 import (
 "hanfuxin/appinits"
 "hanfuxin/appmodels"

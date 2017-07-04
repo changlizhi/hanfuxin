@@ -8,6 +8,8 @@ type Gen struct {
 	Struct          string
 	String          string
 	Int             string
+	Float32         string
+	Float64         string
 	Bool            string
 	True            string
 	False           string

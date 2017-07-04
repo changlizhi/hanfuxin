@@ -2,7 +2,7 @@ package main
 
 import (
 	"hanfuxin/appmodels"
-	"hanfuxin/juesedaos"
+	"hanfuxin/zdjuesedaos"
 	"hanfuxin/jueseservices"
 	"log"
 )
@@ -10,15 +10,15 @@ import (
 func testjuesedaotianjia() {
 	juese := appmodels.Juese{Id: 1, Bianma: "ROLE_ADMIN", Mingcheng: "管理员", Biaoji: "Youxiao"}
 
-	juesedaos.Tianjiayige(&juese)
+	zdjuesedaos.Tianjiayige(&juese)
 }
 
 func testjuesedaochaxun() {
-	juese := juesedaos.Chaxunyige(4)
+	juese := zdjuesedaos.Chaxunyige(4)
 	log.Println(juese)
 }
 func testjuesedaoshanchu() {
-	juesedaos.Shanchuyige(4)
+	zdjuesedaos.Shanchuyige(4)
 }
 
 func testjueses() {
@@ -26,7 +26,7 @@ func testjueses() {
 	juese2 := appmodels.Juese{Id: 3, Bianma: "ROLE_CANGUAN", Mingcheng: "参观", Biaoji: "Youxiao"}
 	jueses := []appmodels.Juese{juese1, juese2}
 	log.Println(jueses)
-	juesedaos.Tianjiaduoge(jueses)
+	zdjuesedaos.Tianjiaduoge(jueses)
 }
 func testjueseservice() {
 	juese1 := appmodels.Juese{Id: 4, Bianma: "ROLE_JINGLIeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee", Mingcheng: "经理", Biaoji: "Youxiao"}

@@ -8,6 +8,7 @@ import (
 	"io/ioutil"
 	"os"
 	"strings"
+	"log"
 )
 
 func imports(bianma string, buffer *bytes.Buffer) {
@@ -206,7 +207,7 @@ func Shengchengdaos() {
 		buffer := bytes.Buffer{}
 		buffer.WriteString(baseinits.Gen.Package)
 		buffer.WriteString(baseinits.Fuhaos[appinits.Yingyongzi.Konggefu].Zhi)
-		lujing := strings.ToLower(biao.Bianma) + baseinits.Mulus[appinits.Yingyongzi.Daos].Zhi
+		lujing := baseinits.Wenzis[appinits.Yingyongzi.Zd].Zhi + strings.ToLower(biao.Bianma) + baseinits.Mulus[appinits.Yingyongzi.Daos].Zhi
 		buffer.WriteString(lujing)
 
 		imports(biao.Bianma, &buffer)
@@ -225,6 +226,8 @@ func Shengchengdaos() {
 			baseinits.Mulus[appinits.Yingyongzi.Daos].Zhi +
 			baseinits.Fuhaos[appinits.Yingyongzi.Dianhao].Zhi +
 			baseinits.Gen.Go
+			log.Println(dir)
+			log.Println(path)
 		os.MkdirAll(dir, os.ModePerm)
 		ioutil.WriteFile(path, buffer.Bytes(), os.ModePerm)
 	}

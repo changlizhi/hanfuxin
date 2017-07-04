@@ -6,7 +6,7 @@ import (
 	"hanfuxin/appinits"
 	"hanfuxin/appmodels"
 	"hanfuxin/baseinits"
-	"hanfuxin/juesedaos"
+	"hanfuxin/zdjuesedaos"
 	"log"
 	"strconv"
 	"time"
@@ -55,5 +55,5 @@ func Tianjiajuese(juese *appmodels.Juese) {
 		log.Println(err)
 		return
 	}
-	juesedaos.Tianjiayige(juese)
+	zdjuesedaos.Tianjiayige(juese)
 }
