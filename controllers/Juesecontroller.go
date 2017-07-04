@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"github.com/astaxie/beego"
 	"hanfuxin/appmodels"
-	"hanfuxin/services"
+	"hanfuxin/jueseservices"
 	"log"
 )
 
@@ -19,7 +19,7 @@ func (c *Juesecontroller) Post() {
 	juese := appmodels.Juese{}
 	json.Unmarshal(c.Ctx.Input.RequestBody, &juese)
 	log.Println("juese----------", juese)
-	services.Tianjiajuese(&juese)
+	jueseservices.Tianjiajuese(&juese)
 	c.Data["json"] = juese
 	c.ServeJSON()
 	return
