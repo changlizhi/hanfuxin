@@ -6,7 +6,8 @@ import (
 	"hanfuxin/apputils"
 	"hanfuxin/baseinits"
 	"hanfuxin/basemodels"
-	"log"
+	"io/ioutil"
+	"os"
 	"strings"
 )
 
@@ -246,7 +247,18 @@ func testtianjiaduoge(bianma string, buffer *bytes.Buffer) {
 	//组装方法名
 	buffer.WriteString(baseinits.Gen.Func)
 	buffer.WriteString(baseinits.Fuhaos[appinits.Yingyongzi.Konggefu].Zhi)
+	buffer.WriteString(baseinits.Wenzis[appinits.Yingyongzi.Test].Bianma)
 	buffer.WriteString(baseinits.Wenzis[appinits.Yingyongzi.Tianjiaduoge].Bianma)
+	buffer.WriteString(baseinits.Fuhaos[appinits.Yingyongzi.Xiaokuohaozuo].Zhi)
+
+	buffer.WriteString(baseinits.Wenzis[appinits.Yingyongzi.T].Zhi)
+	buffer.WriteString(baseinits.Fuhaos[appinits.Yingyongzi.Konggefu].Zhi)
+	buffer.WriteString(baseinits.Fuhaos[appinits.Yingyongzi.Xinghao].Zhi)
+	buffer.WriteString(baseinits.Wenzis[appinits.Yingyongzi.Testing].Zhi)
+	buffer.WriteString(baseinits.Fuhaos[appinits.Yingyongzi.Dianhao].Zhi)
+	buffer.WriteString(baseinits.Wenzis[appinits.Yingyongzi.T].Bianma)
+
+	buffer.WriteString(baseinits.Fuhaos[appinits.Yingyongzi.Xiaokuohaoyou].Zhi)
 	buffer.WriteString(baseinits.Fuhaos[appinits.Yingyongzi.Dakuohaozuo].Zhi)
 	buffer.WriteString(baseinits.Fuhaos[appinits.Yingyongzi.Huanhangfu].Zhi)
 	// 组装第一个实体
@@ -255,7 +267,6 @@ func testtianjiaduoge(bianma string, buffer *bytes.Buffer) {
 	buffer.WriteString(shiti2)
 	buffer.WriteString(baseinits.Fuhaos[appinits.Yingyongzi.Maohao].Zhi)
 	buffer.WriteString(baseinits.Fuhaos[appinits.Yingyongzi.Dengyuhao].Zhi)
-	buffer.WriteString(baseinits.Fuhaos[appinits.Yingyongzi.Qiehao].Zhi)
 	buffer.WriteString(baseinits.Mulus[appinits.Yingyongzi.Appmodels].Zhi)
 	buffer.WriteString(baseinits.Fuhaos[appinits.Yingyongzi.Dianhao].Zhi)
 	buffer.WriteString(bianma)
@@ -274,7 +285,6 @@ func testtianjiaduoge(bianma string, buffer *bytes.Buffer) {
 	buffer.WriteString(shiti3)
 	buffer.WriteString(baseinits.Fuhaos[appinits.Yingyongzi.Maohao].Zhi)
 	buffer.WriteString(baseinits.Fuhaos[appinits.Yingyongzi.Dengyuhao].Zhi)
-	buffer.WriteString(baseinits.Fuhaos[appinits.Yingyongzi.Qiehao].Zhi)
 	buffer.WriteString(baseinits.Mulus[appinits.Yingyongzi.Appmodels].Zhi)
 	buffer.WriteString(baseinits.Fuhaos[appinits.Yingyongzi.Dianhao].Zhi)
 	buffer.WriteString(bianma)
@@ -339,6 +349,6 @@ func Shengchengdaostests() {
 			baseinits.Wenzis[appinits.Yingyongzi.Test].Zhi +
 			baseinits.Fuhaos[appinits.Yingyongzi.Dianhao].Zhi +
 			baseinits.Gen.Go
-		log.Println("path-----------", path)
+		ioutil.WriteFile(path, buffer.Bytes(), os.ModePerm)
 	}
 }
