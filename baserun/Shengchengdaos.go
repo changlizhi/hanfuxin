@@ -6,9 +6,9 @@ import (
 	"hanfuxin/baseinits"
 	"hanfuxin/basemodels"
 	"io/ioutil"
+	"log"
 	"os"
 	"strings"
-	"log"
 )
 
 func imports(bianma string, buffer *bytes.Buffer) {
@@ -226,8 +226,8 @@ func Shengchengdaos() {
 			baseinits.Mulus[appinits.Yingyongzi.Daos].Zhi +
 			baseinits.Fuhaos[appinits.Yingyongzi.Dianhao].Zhi +
 			baseinits.Gen.Go
-			log.Println(dir)
-			log.Println(path)
+		log.Println(dir)
+		log.Println(path)
 		os.MkdirAll(dir, os.ModePerm)
 		ioutil.WriteFile(path, buffer.Bytes(), os.ModePerm)
 	}

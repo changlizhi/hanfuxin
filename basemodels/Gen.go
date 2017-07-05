@@ -36,6 +36,7 @@ type Gen struct {
 	Chan            string
 	Map             string
 	Range           string
+	Make            string
 	Konggefu        string
 	Huanhangfu      string
 	Dakuohaozuo     string

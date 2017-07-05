@@ -6,7 +6,7 @@ import (
 	"hanfuxin/apputils"
 	"hanfuxin/baseinits"
 	"hanfuxin/basemodels"
-  //	"io/ioutil"
+	//	"io/ioutil"
 	//  "os"
 	"log"
 )
@@ -35,6 +35,6 @@ func Shengchenghanfuxinmodels() {
 			baseinits.Fuhaos[baseinits.Gen.Dianhao].Zhi +
 			baseinits.Gen.Go
 		// ioutil.WriteFile(path, buffer.Bytes(), os.ModePerm)
-		log.Println("appmodels-path---------",path)
+		log.Println("appmodels-path---------", path)
 	}
 }

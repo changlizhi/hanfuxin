@@ -33,6 +33,7 @@
     "Chan":"chan",
     "Map":"map",
     "Range":"range",
+    "Make":"make",
     "Yingyongzi":"Yingyongzi",
     "Konggefu":"Konggefu",
     "Huanhangfu":"Huanhangfu",
@@ -303,6 +304,11 @@
     "Bianma":"Genggai",
     "Mingcheng":"更改",
     "Zhi":"genggai"
+  },{
+    "Guilei":"Wenzi",
+    "Bianma":"Test",
+    "Mingcheng":"测试后缀",
+    "Zhi":"test"
   }],
   "Jichu":[{
     "Guilei":"Jichu",
