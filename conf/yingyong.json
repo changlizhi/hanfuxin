@@ -1,4 +1,5 @@
 {
+
   "Biao":[{
     "Guilei":"Biao",
     "Bianma":"Juese",
@@ -295,5 +296,10 @@
     "Bianma":"Allerrors",
     "Mingcheng":"自定义错误目录",
     "Zhi":"allerrors"
+  },{
+    "Guilei":"Mulu",
+    "Bianma":"Zifuutils",
+    "Mingcheng":"方法字面值的工具目录",
+    "Zhi":"zifuutils"
   }]
 }

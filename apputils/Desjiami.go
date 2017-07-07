@@ -69,6 +69,7 @@ func Decrypt(crypted, key []byte) ([]byte, error) {
 	return out, nil
 }
 
+// des三重加密
 //[golang ECB 3DES Encrypt]
 //func TripleEcbDesEncrypt(origData, key []byte) ([]byte, error) {
 //    tkey := make([]byte, 24, 24)

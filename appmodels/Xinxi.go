@@ -1,9 +1,9 @@
 package appmodels
 
 type Xinxi struct {
-	Id        int
-	Biaoji    string
-	Bianma    string
 	Youxiang  string
+	Id        int
+	Bianma    string
 	Mingcheng string
+	Biaoji    string
 }

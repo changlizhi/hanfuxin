@@ -11,23 +11,37 @@ import (
 	"strconv"
 )
 
+// 应用字全局变量，保存了从json里素有Bianma字段的字符化实体
 var Yingyongzi yingyongzimodel.Yingyongzi
+
+// 全局ormer，或许应该做成一个方法，否则后期要改成多线程的时候会引起问题
 var Hanfuxinormer orm.Ormer
 
+// 初始化方法，请勿改变先后顺序
 func init() {
 	chushihua_yingyongzi()
 	chushihua_ormer()
 }
+
+// 初始化应用字，应用字的重点在于实现了所有字符的实体化表达，避免了魔数的存在
+//这个实体会越来越大，但很方便拆分
 func chushihua_yingyongzi() {
+	// 从基础的初始化里读取json的Zifus,Zifus是所有Bianma的key和value一样的map，
+	// 这个map保证了通过yingyognzi的实体进行取值时属性和值是一样的
+	// 先把map转成json
 	jsonobj, err := json.Marshal(baseinits.Zifus)
 	if err != nil {
 		log.Println(err)
 		log.Println("解析Zifus[]到json格式出错")
 	}
+	// 再把json 转成实体
 	json.Unmarshal(jsonobj, &Yingyongzi)
 }
 func chushihua_ormer() {
+	// 设置orm是否为debug模式
 	orm.Debug, _ = strconv.ParseBool(baseinits.Shezhis[Yingyongzi.Ormdebug].Zhi)
+	// 注册所有的实体，这些实体全部都是在baserun里生成的，请使用自动生成再在这里添加，
+	// 后期这个初始化将拆分并自动生成
 	orm.RegisterModel(
 		new(appmodels.Juese),
 		new(appmodels.Juesequanxian),
@@ -37,35 +51,29 @@ func chushihua_ormer() {
 		new(appmodels.Yanzheng),
 		new(appmodels.Yanzhengleixing),
 	)
+	// orm注册数据库
 	orm.RegisterDataBase(
+		// 数据库名称，conf/changliang.json里Wenzi需要有一个default数据库
 		baseinits.Wenzis[Yingyongzi.Default].Zhi,
+		// 数据库驱动，在conf/yingyong.jsond的Shezhi里
 		baseinits.Shezhis[Yingyongzi.Shujukuqudong].Zhi,
+		// 数据库链接，yonghu:mima@tcp(ip:duankou)/shujukuming
+		// yonghu:mima
 		baseinits.Shezhis[Yingyongzi.Shujukuyonghu].Zhi+
 			baseinits.Fuhaos[Yingyongzi.Maohao].Zhi+
 			baseinits.Shezhis[Yingyongzi.Shujukumima].Zhi+
+			//@tcp
 			baseinits.Fuhaos[Yingyongzi.Quana].Zhi+
 			baseinits.Wangluos[Yingyongzi.Xieyitcp].Zhi+
+			//(ip:duankou)
 			baseinits.Fuhaos[Yingyongzi.Xiaokuohaozuo].Zhi+
 			baseinits.Shezhis[Yingyongzi.Shujukuip].Zhi+
 			baseinits.Fuhaos[Yingyongzi.Maohao].Zhi+
 			baseinits.Shezhis[Yingyongzi.Shujukuduankou].Zhi+
 			baseinits.Fuhaos[Yingyongzi.Xiaokuohaoyou].Zhi+
+			// /shujukuming
 			baseinits.Fuhaos[Yingyongzi.Xiexian].Zhi+
 			baseinits.Shezhis[Yingyongzi.Shujuku].Zhi)
-	log.Println(
-		baseinits.Shezhis[Yingyongzi.Shujukuyonghu].Zhi+
-			baseinits.Fuhaos[Yingyongzi.Maohao].Zhi+
-			baseinits.Shezhis[Yingyongzi.Shujukumima].Zhi+
-			baseinits.Fuhaos[Yingyongzi.Quana].Zhi+
-			baseinits.Wangluos[Yingyongzi.Xieyitcp].Zhi+
-			baseinits.Fuhaos[Yingyongzi.Xiaokuohaozuo].Zhi+
-			baseinits.Shezhis[Yingyongzi.Shujukuip].Zhi+
-			baseinits.Fuhaos[Yingyongzi.Maohao].Zhi+
-			baseinits.Shezhis[Yingyongzi.Shujukuduankou].Zhi+
-			baseinits.Fuhaos[Yingyongzi.Xiaokuohaoyou].Zhi+
-			baseinits.Fuhaos[Yingyongzi.Xiexian].Zhi+
-			baseinits.Shezhis[Yingyongzi.Shujuku].Zhi,
-		"---------------数据库链接-------"+baseinits.Wenzis[Yingyongzi.Default].Zhi)
 	Hanfuxinormer = orm.NewOrm()
 	Hanfuxinormer.Using(baseinits.Shezhis[Yingyongzi.Default].Zhi)
 }

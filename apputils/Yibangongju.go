@@ -8,6 +8,7 @@ import (
 	"reflect"
 )
 
+// 在三个类型中匹配字符串，匹配成功返回true，string,map,map-key
 func Pipei3lei(zi interface{}, fu interface{}) (bool, error) {
 	fustr := reflect.ValueOf(fu)
 	switch reflect.TypeOf(fu).Kind() {
@@ -24,6 +25,8 @@ func Pipei3lei(zi interface{}, fu interface{}) (bool, error) {
 	}
 	return false, errors.New("not in array!")
 }
+
+// 添加文件按0777 模式进行覆盖写入或添加，文件名（带格式）,内容
 func Tianjiawenjian(path string, wenjianming string, neirong []byte) {
 	os.MkdirAll(basemodels.Getapppath()+path, os.ModePerm)
 	ioutil.WriteFile(basemodels.Getapppath()+path+wenjianming, neirong, os.ModePerm)

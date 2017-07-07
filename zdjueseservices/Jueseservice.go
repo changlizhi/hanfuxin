@@ -1,4 +1,4 @@
-package jueseservices
+package zdjueseservices
 
 import (
 	"bytes"

@@ -1,9 +1,9 @@
 package appmodels
 
 type Quanxian struct {
-	Mingcheng string
 	Bianma    string
+	Mingcheng string
 	Lujing    string
-	Id        int
 	Biaoji    string
+	Id        int
 }

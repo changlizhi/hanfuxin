@@ -1,10 +1,10 @@
 package appmodels
 
 type Yanzheng struct {
+	Id        int
+	Zhi       string
 	Biaoji    string
 	Bianma    string
-	Id        int
-	Leixing   string
-	Zhi       string
 	Mingcheng string
+	Leixing   string
 }
