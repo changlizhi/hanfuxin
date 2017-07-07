@@ -1,9 +1,8 @@
 package appmodels
-
-type Xinxi struct {
-	Youxiang  string
-	Id        int
-	Bianma    string
-	Mingcheng string
-	Biaoji    string
+type Xinxi struct{
+Id int
+Bianma string
+Mingcheng string
+Youxiang string
+Biaoji string
 }

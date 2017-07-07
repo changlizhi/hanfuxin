@@ -2,8 +2,6 @@ package baserun
 
 import (
 	"bytes"
-	"go/token"
-	"hanfuxin/appinits"
 	"hanfuxin/baseinits"
 	"hanfuxin/basemodels"
 	"hanfuxin/zfz"
@@ -181,7 +179,7 @@ func tianjiaduoge(bianma string, buffer *bytes.Buffer) {
 	dkhz := zfzhi.Dakuohaozuozhi()
 	dkhy := zfzhi.Dakuohaoyouzhi()
 	zkhz := zfzhi.Zhongkuohaozuozhi()
-	zkhy := zfzhi.Zhongkuohzoyouzhi()
+	zkhy := zfzhi.Zhongkuohaoyouzhi()
 	xkhz := zfzhi.Xiaokuohaozuozhi()
 	xkhy := zfzhi.Xiaokuohaoyouzhi()
 	kgf := zfzhi.Konggefuzhi()

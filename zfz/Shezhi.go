@@ -1,8 +1,5 @@
 package zfz
 
-func (zf *Zf) Mingcheng(xiaoxie bool) string {
-	return Fangfaming(xiaoxie)
-}
 func (zf *Zf) Yuyan(xiaoxie bool) string {
 	return Fangfaming(xiaoxie)
 }

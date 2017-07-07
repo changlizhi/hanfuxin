@@ -1,8 +1,7 @@
 package appmodels
-
-type Xinxijuese struct {
-	Biaoji      string
-	Juesebianma string
-	Xinxibianma string
-	Id          int
+type Xinxijuese struct{
+Id int
+Juesebianma string
+Biaoji string
+Xinxibianma string
 }

@@ -7,7 +7,7 @@ import (
 	"hanfuxin/apputils"
 	"hanfuxin/basemodels"
 	"hanfuxin/zdjueseservices"
-	"hanfuxin/zfmulu"
+	"hanfuxin/zfz"
 	"log"
 	"reflect"
 	"runtime"
@@ -54,7 +54,8 @@ func testpipei3lei() {
 	log.Println(bu)
 }
 func testzfmulu() {
-	log.Println(zfmulu.Appinits(true))
+	zfss := zfz.Zf{}
+	log.Println(zfss.Appinits(true))
 }
 func testparserfile() {
 	fset := token.NewFileSet()

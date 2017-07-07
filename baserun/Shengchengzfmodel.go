@@ -3,7 +3,6 @@ package baserun
 // 在应用启动之前生成一些必要的model
 import (
 	"bytes"
-	"go/token"
 	"hanfuxin/baseinits"
 	"hanfuxin/basemodels"
 	"hanfuxin/zfz"
@@ -16,7 +15,7 @@ func Buffertoumodel(buffer *bytes.Buffer, bianma string, baoming string) {
 	zf := zfz.Zf{}
 	// package xxx \n
 	kgf := zfzhi.Konggefuzhi()
-	hhf = zfzhi.Huanhangfuzhi()
+	hhf := zfzhi.Huanhangfuzhi()
 	buffer.WriteString(zf.Package(true))
 	buffer.WriteString(kgf)
 	buffer.WriteString(baoming)

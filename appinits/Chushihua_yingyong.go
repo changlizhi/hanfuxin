@@ -7,6 +7,8 @@ import (
 	"hanfuxin/appmodels"
 	"hanfuxin/baseinits"
 	"hanfuxin/yingyongzimodel"
+	"hanfuxin/zfz"
+	"hanfuxin/zfzhi"
 	"log"
 	"strconv"
 )
@@ -38,7 +40,13 @@ func chushihua_yingyongzi() {
 	json.Unmarshal(jsonobj, &Yingyongzi)
 }
 func chushihua_ormer() {
+	zf := zfz.Zf{}
 	// 设置orm是否为debug模式
+	mh := zfzhi.Maohaozhi()
+	qa := zfzhi.Quanazhi()
+	xkhz := zfzhi.Xiaokuohaozuozhi()
+	xkhy := zfzhi.Xiaokuohaoyouzhi()
+	xx := zfzhi.Xiexianzhi()
 	orm.Debug, _ = strconv.ParseBool(baseinits.Shezhis[Yingyongzi.Ormdebug].Zhi)
 	// 注册所有的实体，这些实体全部都是在baserun里生成的，请使用自动生成再在这里添加，
 	// 后期这个初始化将拆分并自动生成
@@ -54,25 +62,25 @@ func chushihua_ormer() {
 	// orm注册数据库
 	orm.RegisterDataBase(
 		// 数据库名称，conf/changliang.json里Wenzi需要有一个default数据库
-		baseinits.Wenzis[Yingyongzi.Default].Zhi,
+		zf.Default(true),
 		// 数据库驱动，在conf/yingyong.jsond的Shezhi里
 		baseinits.Shezhis[Yingyongzi.Shujukuqudong].Zhi,
 		// 数据库链接，yonghu:mima@tcp(ip:duankou)/shujukuming
 		// yonghu:mima
 		baseinits.Shezhis[Yingyongzi.Shujukuyonghu].Zhi+
-			baseinits.Fuhaos[Yingyongzi.Maohao].Zhi+
+			mh+
 			baseinits.Shezhis[Yingyongzi.Shujukumima].Zhi+
 			//@tcp
-			baseinits.Fuhaos[Yingyongzi.Quana].Zhi+
-			baseinits.Wangluos[Yingyongzi.Xieyitcp].Zhi+
+			qa+
+			zf.Tcp(true)+
 			//(ip:duankou)
-			baseinits.Fuhaos[Yingyongzi.Xiaokuohaozuo].Zhi+
+			xkhz +
 			baseinits.Shezhis[Yingyongzi.Shujukuip].Zhi+
-			baseinits.Fuhaos[Yingyongzi.Maohao].Zhi+
+			mh+
 			baseinits.Shezhis[Yingyongzi.Shujukuduankou].Zhi+
-			baseinits.Fuhaos[Yingyongzi.Xiaokuohaoyou].Zhi+
+			xkhy+
 			// /shujukuming
-			baseinits.Fuhaos[Yingyongzi.Xiexian].Zhi+
+			xx+
 			baseinits.Shezhis[Yingyongzi.Shujuku].Zhi)
 	Hanfuxinormer = orm.NewOrm()
 	Hanfuxinormer.Using(baseinits.Shezhis[Yingyongzi.Default].Zhi)

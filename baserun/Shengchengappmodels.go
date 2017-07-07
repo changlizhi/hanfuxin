@@ -2,7 +2,6 @@ package baserun
 
 import (
 	"bytes"
-	"go/token"
 	"hanfuxin/apputils"
 	"hanfuxin/baseinits"
 	"hanfuxin/basemodels"

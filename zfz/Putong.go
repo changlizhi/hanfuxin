@@ -1,7 +1,7 @@
 package zfz
 
 import (
-	"go/token"
+	"hanfuxin/zfzhi"
 	"runtime"
 	"strings"
 )
@@ -12,16 +12,13 @@ type Zf struct {
 func Fangfaming(xiaoxie bool) string {
 	pc, _, _, _ := runtime.Caller(1)
 	ff := runtime.FuncForPC(pc)
-	f := strings.Split(ff.Name(), token.PERIOD.String())[1]
+	f := strings.Split(ff.Name(), zfzhi.Dianhaozhi())[2]
 	if xiaoxie {
 		return strings.ToLower(f)
 	}
 	return f
 }
 func (zf *Zf) Hanfuxin(xiaoxie bool) string {
-	return Fangfaming(xiaoxie)
-}
-func (zf *Zf) Default(xiaoxie bool) string {
 	return Fangfaming(xiaoxie)
 }
 func (zf *Zf) Moren(xiaoxie bool) string {

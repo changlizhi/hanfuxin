@@ -1,10 +1,6 @@
 package basemodels
 
 import (
-	"go/token"
-	"hanfuxin/zf"
-	"hanfuxin/zfmulu"
-	"hanfuxin/zfwenjian"
 	"hanfuxin/zfz"
 	"hanfuxin/zfzhi"
 	"path/filepath"

@@ -1,10 +1,9 @@
 package appmodels
-
-type Yanzheng struct {
-	Id        int
-	Zhi       string
-	Biaoji    string
-	Bianma    string
-	Mingcheng string
-	Leixing   string
+type Yanzheng struct{
+Leixing string
+Zhi string
+Biaoji string
+Mingcheng string
+Id int
+Bianma string
 }
