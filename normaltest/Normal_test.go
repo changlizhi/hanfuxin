@@ -1,4 +1,4 @@
-package main
+package normaltest
 
 import (
 	"go/parser"
@@ -15,22 +15,26 @@ import (
 	"regexp"
 	"runtime"
 	"strings"
+	"testing"
 )
 
-func testjueseservice() {
+func TestJueseservice(t *testing.T) {
 	juese1 := appmodels.Juese{Id: 4, Bianma: "ROLE_JINGLIeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee", Mingcheng: "经理", Biaoji: "Youxiao"}
 	juese2 := appmodels.Juese{Id: 4, Bianma: "ROLE_JINGLI", Mingcheng: "经理eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee", Biaoji: "Youxiao"}
 	zdjueseservices.Tianjiajuese(&juese1)
 	zdjueseservices.Tianjiajuese(&juese2)
 }
 
-func testfuncname() {
+func TestFuncname(t *testing.T) {
 	pc, file, _, _ := runtime.Caller(1)
 	log.Println("pc----", pc)
 	log.Println("file-------", file)
 	f := runtime.FuncForPC(pc)
-	log.Println("funcname------", strings.Split(f.Name(), token.PERIOD.String())[2])
+	log.Println("f-----------",f)
+	log.Println("f.Name()-----------",f.Name())
 	log.Println("PERIOD--------", token.PERIOD.String())
+
+	log.Println("funcname------", strings.Split(f.Name(), token.PERIOD.String())[1])
 	log.Println("QUO--------", token.QUO.String())
 	log.Println("BREAK--------", token.BREAK.String())
 	log.Println("illegal-----", token.ILLEGAL.String())
@@ -39,25 +43,25 @@ func testfuncname() {
 	log.Println("COLON-----", token.COLON.String())
 }
 
-func Testf() {
-	testfuncname()
+func TestF(t *testing.T) {
+	TestFuncname(t)
 }
-func Testf2() {
-	testfuncname()
+func TestF2(t *testing.T) {
+	TestFuncname(t)
 }
 
-func testpipei3lei() {
+func TestPipei3lei(t *testing.T) {
 	bu, err := apputils.Pipei3lei("abc", "abcd")
 	if err != nil {
 		log.Println(err)
 	}
 	log.Println(bu)
 }
-func testzfmulu() {
+func TestZfmulu(t *testing.T) {
 	zfss := zf.Zf{}
 	log.Println(zfss.Appinits(true))
 }
-func testparserfile() {
+func TestParserfile(t *testing.T) {
 	zfss := zf.Zf{}
 	zfzhi := zfzhi.Zfzhi{}
 	fset := token.NewFileSet()
@@ -75,7 +79,7 @@ func testparserfile() {
 		log.Println(k)
 	}
 }
-func testtypefile() {
+func TestTypefile(t *testing.T) {
 	zfss := zf.Zf{}
 	zfzhi := zfzhi.Zfzhi{}
 	fset := token.NewFileSet()
@@ -95,16 +99,16 @@ func testtypefile() {
 		log.Println(k)
 	}
 }
-func testreflect() {
+func TestReflect(t *testing.T) {
 	zf := zf.Zf{}
-	t := reflect.TypeOf(&zf)
-	log.Println(t.Method(1))
-	m, _ := t.MethodByName("Testf")
-	log.Println(m.Name)
 	v := reflect.ValueOf(&zf)
-	log.Println(v.MethodByName("Testf2").Call(nil))
+	vparam := reflect.ValueOf(&t)
+	log.Println("param-------",vparam)
+	param := make([]reflect.Value,1)
+	param[0] = vparam
+	log.Println(v.MethodByName("Testf2"))
 }
-func testreg() {
+func TestReg(t *testing.T) {
 	zfzhi := zfzhi.Zfzhi{}
 	zf := zf.Zf{}
 	xx := zfzhi.Xiexianzhi()
@@ -121,7 +125,7 @@ func testreg() {
 	log.Println(bfind)
 }
 
-func testreg2() {
+func TestReg2(t *testing.T) {
 	regstr := "^Id"
 	str := "Idsssss"
 	reg, err := regexp.CompilePOSIX(regstr)
@@ -130,7 +134,7 @@ func testreg2() {
 	}
 	log.Println(reg.MatchString(str))
 }
-func testreg3() {
+func TestReg3(t *testing.T) {
 	regstr := "^[A-Z]"
 
 	str := "sssIdsssss"
@@ -139,8 +143,4 @@ func testreg3() {
 		log.Println("regerr-------", err)
 	}
 	log.Println(reg.MatchString(str))
-}
-
-func main() {
-	testreg3()
 }

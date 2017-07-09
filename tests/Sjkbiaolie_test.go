@@ -1,9 +1,9 @@
 package tests
 
 import (
+	"hanfuxin/sjk"
 	"log"
 	"testing"
-	"hanfuxin/sjk"
 )
 
 func TestYanzhengZhi(t *testing.T) {

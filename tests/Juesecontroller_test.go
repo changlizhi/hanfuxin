@@ -5,7 +5,7 @@ import (
 	"github.com/astaxie/beego"
 	"hanfuxin/basemodels"
 	_ "hanfuxin/routers"
-//	"io/ioutil"
+	//	"io/ioutil"
 	"log"
 	"net/http"
 	"net/http/httptest"
@@ -30,6 +30,7 @@ func TestZengjiapost(t *testing.T) {
 	beego.BeeApp.Handlers.ServeHTTP(w, req)
 	log.Println(w.Body.String())
 }
+
 //func TestZengjiahttppost(t *testing.T) {
 //	reqstr := `{"Id":4,"Bianma":"ROLE","Mingcheng":"角色1","Biaoji":"Youxiao"}`
 //	reqbuf := bytes.NewBuffer([]byte(reqstr))

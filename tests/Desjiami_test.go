@@ -2,10 +2,10 @@ package tests
 
 import (
 	"hanfuxin/apputils"
-	"testing"
 	"log"
 	"reflect"
 	"strings"
+	"testing"
 )
 
 func TestJiami(t *testing.T) {

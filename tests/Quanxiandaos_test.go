@@ -1,52 +1,54 @@
 package tests
-import(
-"hanfuxin/appmodels"
-"testing"
-"log"
-"hanfuxin/zdquanxiandaos"
+
+import (
+	"hanfuxin/appmodels"
+	"hanfuxin/zdquanxiandaos"
+	"log"
+	"testing"
 )
-func TestChaxunyigeQuanxian(t *testing.T){
-quanxian:=zdquanxiandaos.Chaxunyige(1)
-log.Println(quanxian)
+
+func TestChaxunyigeQuanxian(t *testing.T) {
+	quanxian := zdquanxiandaos.Chaxunyige(1)
+	log.Println(quanxian)
 }
-func TestShanchuyigeQuanxian(t *testing.T){
-zdquanxiandaos.Shanchuyige(1)
+func TestShanchuyigeQuanxian(t *testing.T) {
+	zdquanxiandaos.Shanchuyige(1)
 }
-func TestTianjiayigeQuanxian(t *testing.T){
-quanxian:=&appmodels.Quanxian{
-Id:1,
-Biaoji:"BiaojiTianjiayigeTest1",
-Bianma:"BianmaTianjiayigeTest1",
-Lujing:"LujingTianjiayigeTest1",
-Mingcheng:"MingchengTianjiayigeTest1",
+func TestTianjiayigeQuanxian(t *testing.T) {
+	quanxian := &appmodels.Quanxian{
+		Id:        1,
+		Biaoji:    "BiaojiTianjiayigeTest1",
+		Bianma:    "BianmaTianjiayigeTest1",
+		Lujing:    "LujingTianjiayigeTest1",
+		Mingcheng: "MingchengTianjiayigeTest1",
+	}
+	zdquanxiandaos.Tianjiayige(quanxian)
 }
-zdquanxiandaos.Tianjiayige(quanxian)
+func TestXiugaiyigeQuanxian(t *testing.T) {
+	quanxian := &appmodels.Quanxian{
+		Bianma:    "BianmaXiugaiyigeTest1",
+		Lujing:    "LujingXiugaiyigeTest1",
+		Id:        1,
+		Mingcheng: "MingchengXiugaiyigeTest1",
+		Biaoji:    "BiaojiXiugaiyigeTest1",
+	}
+	zdquanxiandaos.Xiugaiyige(quanxian)
 }
-func TestXiugaiyigeQuanxian(t *testing.T){
-quanxian:=&appmodels.Quanxian{
-Bianma:"BianmaXiugaiyigeTest1",
-Lujing:"LujingXiugaiyigeTest1",
-Id:1,
-Mingcheng:"MingchengXiugaiyigeTest1",
-Biaoji:"BiaojiXiugaiyigeTest1",
-}
-zdquanxiandaos.Xiugaiyige(quanxian)
-}
-func TestTianjiaduogeQuanxian(t *testing.T){
-quanxian2:=appmodels.Quanxian{
-Lujing:"LujingTianjiaduogeTest2",
-Id:1,
-Mingcheng:"MingchengTianjiaduogeTest2",
-Biaoji:"BiaojiTianjiaduogeTest2",
-Bianma:"BianmaTianjiaduogeTest2",
-}
-quanxian3:=appmodels.Quanxian{
-Bianma:"BianmaTianjiaduogeTest3",
-Mingcheng:"MingchengTianjiaduogeTest3",
-Biaoji:"BiaojiTianjiaduogeTest3",
-Lujing:"LujingTianjiaduogeTest3",
-Id:1,
-}
-quanxians:=[]appmodels.Quanxian{quanxian2,quanxian3}
-zdquanxiandaos.Tianjiaduoge(quanxians)
+func TestTianjiaduogeQuanxian(t *testing.T) {
+	quanxian2 := appmodels.Quanxian{
+		Lujing:    "LujingTianjiaduogeTest2",
+		Id:        1,
+		Mingcheng: "MingchengTianjiaduogeTest2",
+		Biaoji:    "BiaojiTianjiaduogeTest2",
+		Bianma:    "BianmaTianjiaduogeTest2",
+	}
+	quanxian3 := appmodels.Quanxian{
+		Bianma:    "BianmaTianjiaduogeTest3",
+		Mingcheng: "MingchengTianjiaduogeTest3",
+		Biaoji:    "BiaojiTianjiaduogeTest3",
+		Lujing:    "LujingTianjiaduogeTest3",
+		Id:        1,
+	}
+	quanxians := []appmodels.Quanxian{quanxian2, quanxian3}
+	zdquanxiandaos.Tianjiaduoge(quanxians)
 }
