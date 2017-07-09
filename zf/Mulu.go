@@ -33,7 +33,7 @@ func (zf *Zf) Conf(xiaoxie bool) string {
 func (zf *Zf) Controllers(xiaoxie bool) string {
 	return Fangfaming(xiaoxie)
 }
-func (zf *Zf) Maintest(xiaoxie bool) string {
+func (zf *Zf) Normaltest(xiaoxie bool) string {
 	return Fangfaming(xiaoxie)
 }
 func (zf *Zf) Routers(xiaoxie bool) string {
