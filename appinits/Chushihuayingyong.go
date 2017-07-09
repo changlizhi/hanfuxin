@@ -7,7 +7,7 @@ import (
 	"hanfuxin/appmodels"
 	"hanfuxin/baseinits"
 	"hanfuxin/yingyongzimodel"
-	"hanfuxin/zfz"
+	"hanfuxin/zf"
 	"hanfuxin/zfzhi"
 	"log"
 	"strconv"
@@ -40,7 +40,8 @@ func chushihua_yingyongzi() {
 	json.Unmarshal(jsonobj, &Yingyongzi)
 }
 func chushihua_ormer() {
-	zf := zfz.Zf{}
+	zf := zf.Zf{}
+	zfzhi := zfzhi.Zfzhi{}
 	// 设置orm是否为debug模式
 	mh := zfzhi.Maohaozhi()
 	qa := zfzhi.Quanazhi()
@@ -74,7 +75,7 @@ func chushihua_ormer() {
 			qa+
 			zf.Tcp(true)+
 			//(ip:duankou)
-			xkhz +
+			xkhz+
 			baseinits.Shezhis[Yingyongzi.Shujukuip].Zhi+
 			mh+
 			baseinits.Shezhis[Yingyongzi.Shujukuduankou].Zhi+

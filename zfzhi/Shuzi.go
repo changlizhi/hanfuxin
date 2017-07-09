@@ -1,32 +1,38 @@
 package zfzhi
 
-func Shuzi0zhi() string {
-	return "0"
+func (zfzhi *Zfzhi) Shuzifu1zhi() int {
+	return -1
 }
-func Shuzi1zhi() string {
-	return "1"
+func (zfzhi *Zfzhi) Shuzi0zhi() int {
+	return 0
 }
-func Shuzi2zhi() string {
-	return "2"
+func (zfzhi *Zfzhi) Shuzi1zhi() int {
+	return 1
 }
-func Shuzi3zhi() string {
-	return "3"
+func (zfzhi *Zfzhi) Shuzi2zhi() int {
+	return 2
 }
-func Shuzi4zhi() string {
-	return "4"
+func (zfzhi *Zfzhi) Shuzi3zhi() int {
+	return 3
 }
-func Shuzi5zhi() string {
-	return "5"
+func (zfzhi *Zfzhi) Shuzi4zhi() int {
+	return 4
 }
-func Shuzi6zhi() string {
-	return "6"
+func (zfzhi *Zfzhi) Shuzi5zhi() int {
+	return 5
 }
-func Shuzi7zhi() string {
-	return "7"
+func (zfzhi *Zfzhi) Shuzi6zhi() int {
+	return 6
 }
-func Shuzi8zhi() string {
-	return "8"
+func (zfzhi *Zfzhi) Shuzi7zhi() int {
+	return 7
 }
-func Shuzi9zhi() string {
-	return "9"
+func (zfzhi *Zfzhi) Shuzi8zhi() int {
+	return 8
+}
+func (zfzhi *Zfzhi) Shuzi9zhi() int {
+	return 9
+}
+func (zfzhi *Zfzhi) Shuzi10zhi() int {
+	return 10
 }

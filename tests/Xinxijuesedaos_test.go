@@ -14,34 +14,34 @@ zdxinxijuesedaos.Shanchuyige(1)
 }
 func TestTianjiayigeXinxijuese(t *testing.T){
 xinxijuese:=&appmodels.Xinxijuese{
-Biaoji:"BiaojiTianjiayigeTest1",
 Juesebianma:"JuesebianmaTianjiayigeTest1",
 Id:1,
 Xinxibianma:"XinxibianmaTianjiayigeTest1",
+Biaoji:"BiaojiTianjiayigeTest1",
 }
 zdxinxijuesedaos.Tianjiayige(xinxijuese)
 }
 func TestXiugaiyigeXinxijuese(t *testing.T){
 xinxijuese:=&appmodels.Xinxijuese{
-Id:1,
 Xinxibianma:"XinxibianmaXiugaiyigeTest1",
 Biaoji:"BiaojiXiugaiyigeTest1",
 Juesebianma:"JuesebianmaXiugaiyigeTest1",
+Id:1,
 }
 zdxinxijuesedaos.Xiugaiyige(xinxijuese)
 }
-func TestTianjiaduoge(t *testing.T){
+func TestTianjiaduogeXinxijuese(t *testing.T){
 xinxijuese2:=appmodels.Xinxijuese{
-Juesebianma:"JuesebianmaTianjiaduogeTest2",
 Biaoji:"BiaojiTianjiaduogeTest2",
-Id:1,
+Juesebianma:"JuesebianmaTianjiaduogeTest2",
 Xinxibianma:"XinxibianmaTianjiaduogeTest2",
+Id:1,
 }
 xinxijuese3:=appmodels.Xinxijuese{
+Xinxibianma:"XinxibianmaTianjiaduogeTest3",
+Id:1,
 Biaoji:"BiaojiTianjiaduogeTest3",
 Juesebianma:"JuesebianmaTianjiaduogeTest3",
-Id:1,
-Xinxibianma:"XinxibianmaTianjiaduogeTest3",
 }
 xinxijueses:=[]appmodels.Xinxijuese{xinxijuese2,xinxijuese3}
 zdxinxijuesedaos.Tianjiaduoge(xinxijueses)

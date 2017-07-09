@@ -1,7 +1,7 @@
 package appmodels
 type Juesequanxian struct{
-Biaoji string
-Id int
 Juesebianma string
+Biaoji string
 Quanxianbianma string
+Id int
 }

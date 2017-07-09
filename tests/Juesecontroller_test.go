@@ -5,7 +5,7 @@ import (
 	"github.com/astaxie/beego"
 	"hanfuxin/basemodels"
 	_ "hanfuxin/routers"
-	"io/ioutil"
+//	"io/ioutil"
 	"log"
 	"net/http"
 	"net/http/httptest"
@@ -30,13 +30,13 @@ func TestZengjiapost(t *testing.T) {
 	beego.BeeApp.Handlers.ServeHTTP(w, req)
 	log.Println(w.Body.String())
 }
-func TestZengjiahttppost(t *testing.T) {
-	reqstr := `{"Id":4,"Bianma":"ROLE","Mingcheng":"角色1","Biaoji":"Youxiao"}`
-	reqbuf := bytes.NewBuffer([]byte(reqstr))
-	req, _ := http.NewRequest("POST", "http://localhost:8080/juese", reqbuf)
-	req.Header.Set("Content-type", "application/json")
-	c := &http.Client{}
-	res, _ := c.Do(req)
-	body, _ := ioutil.ReadAll(res.Body)
-	log.Println(string(body))
-}
+//func TestZengjiahttppost(t *testing.T) {
+//	reqstr := `{"Id":4,"Bianma":"ROLE","Mingcheng":"角色1","Biaoji":"Youxiao"}`
+//	reqbuf := bytes.NewBuffer([]byte(reqstr))
+//	req, _ := http.NewRequest("POST", "http://localhost:8080/juese", reqbuf)
+//	req.Header.Set("Content-type", "application/json")
+//	c := &http.Client{}
+//	res, _ := c.Do(req)
+//	body, _ := ioutil.ReadAll(res.Body)
+//	log.Println(string(body))
+//}

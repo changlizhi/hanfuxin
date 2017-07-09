@@ -1,22 +1,13 @@
-package zfz
+package zf
 
-import (
-	"hanfuxin/zfzhi"
-	"runtime"
-	"strings"
-)
-
-type Zf struct {
+func (zf *Zf) Changduzhi(xiaoxie bool) string {
+	return Fangfaming(xiaoxie)
 }
-
-func Fangfaming(xiaoxie bool) string {
-	pc, _, _, _ := runtime.Caller(1)
-	ff := runtime.FuncForPC(pc)
-	f := strings.Split(ff.Name(), zfzhi.Dianhaozhi())[2]
-	if xiaoxie {
-		return strings.ToLower(f)
-	}
-	return f
+func (zf *Zf) Leixingzhi(xiaoxie bool) string {
+	return Fangfaming(xiaoxie)
+}
+func (zf *Zf) Fangfaming(xiaoxie bool) string {
+	return Fangfaming(xiaoxie)
 }
 func (zf *Zf) Hanfuxin(xiaoxie bool) string {
 	return Fangfaming(xiaoxie)
@@ -60,6 +51,12 @@ func (zf *Zf) Youxiao(xiaoxie bool) string {
 func (zf *Zf) Wuxiao(xiaoxie bool) string {
 	return Fangfaming(xiaoxie)
 }
+func (zf *Zf) Zuichang(xiaoxie bool) string {
+	return Fangfaming(xiaoxie)
+}
+func (zf *Zf) Shiji(xiaoxie bool) string {
+	return Fangfaming(xiaoxie)
+}
 func (zf *Zf) Error01(xiaoxie bool) string {
 	return Fangfaming(xiaoxie)
 }
@@ -67,5 +64,11 @@ func (zf *Zf) Error02(xiaoxie bool) string {
 	return Fangfaming(xiaoxie)
 }
 func (zf *Zf) Error03(xiaoxie bool) string {
+	return Fangfaming(xiaoxie)
+}
+func (zf *Zf) Word(xiaoxie bool) string {
+	return Fangfaming(xiaoxie)
+}
+func (zf *Zf) Zf(xiaoxie bool) string {
 	return Fangfaming(xiaoxie)
 }

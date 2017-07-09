@@ -2,32 +2,21 @@ package baserun
 
 import (
 	"bytes"
-	"hanfuxin/apputils"
-	"hanfuxin/baseinits"
 	"hanfuxin/basemodels"
-	"hanfuxin/zfz"
+	"hanfuxin/zf"
 	"hanfuxin/zfzhi"
 	"io/ioutil"
+	"log"
 	"os"
+	"strconv"
 	"strings"
 )
-
-//判断是否有time格式的字段
-func havetime(bianma string) bool {
-	zf := zfz.Zf{}
-	for _, lie := range baseinits.Lies {
-		pipei, _ := apputils.Pipei3lei(bianma, lie.Biaoming)
-		if pipei && lie.Leixing == zf.Time(true) {
-			return true
-		}
-	}
-	return false
-}
 
 // tests的import
 func testsimports(bianma string, buffer *bytes.Buffer) {
 	// package tests \n
-	zf := zfz.Zf{}
+	zf := zf.Zf{}
+	zfzhi := zfzhi.Zfzhi{}
 	hhf := zfzhi.Huanhangfuzhi()
 	kgf := zfzhi.Konggefuzhi()
 	xkhz := zfzhi.Xiaokuohaozuozhi()
@@ -45,14 +34,16 @@ func testsimports(bianma string, buffer *bytes.Buffer) {
 	buffer.WriteString(xkhz)
 	buffer.WriteString(hhf)
 
-	if havetime(bianma) {
-		// "time" \n
-		buffer.WriteString(syh)
-		buffer.WriteString(zf.Time(true))
-		buffer.WriteString(syh)
-		buffer.WriteString(hhf)
+	for lk, _ := range Huoquyigebiaojiegou(bianma) {
+		if Huoquyigeleixing(lk) == zf.Time(true) {
+			// "time" \n
+			buffer.WriteString(syh)
+			buffer.WriteString(zf.Time(true))
+			buffer.WriteString(syh)
+			buffer.WriteString(hhf)
+			break
+		}
 	}
-
 	// "hanfuxin/appmodels" \n
 	buffer.WriteString(syh)
 	buffer.WriteString(zf.Hanfuxin(true))
@@ -88,7 +79,8 @@ func testsimports(bianma string, buffer *bytes.Buffer) {
 
 func testchaxunyige(bianma string, buffer *bytes.Buffer) {
 	// func TestChaxunyigeJuese
-	zf := zfz.Zf{}
+	zf := zf.Zf{}
+	zfzhi := zfzhi.Zfzhi{}
 	hhf := zfzhi.Huanhangfuzhi()
 	dh := zfzhi.Dianhaozhi()
 	kgf := zfzhi.Konggefuzhi()
@@ -99,7 +91,7 @@ func testchaxunyige(bianma string, buffer *bytes.Buffer) {
 	mh := zfzhi.Maohaozhi()
 	dyh := zfzhi.Dengyuhaozhi()
 	xh := zfzhi.Xinghaozhi()
-	sz1 := zfzhi.Shuzi1zhi()
+	sz1 := strconv.Itoa(zfzhi.Shuzi1zhi())
 
 	buffer.WriteString(zf.Func(true)) // func
 	buffer.WriteString(kgf)
@@ -147,17 +139,18 @@ func testchaxunyige(bianma string, buffer *bytes.Buffer) {
 	buffer.WriteString(hhf)
 }
 func testtianjiayige(bianma string, buffer *bytes.Buffer) {
-	zf := zfz.Zf{}
+	zf := zf.Zf{}
 	tianjiahuoxiugai(bianma, buffer, zf.Tianjiayige(false))
 }
 func testxiugaiyige(bianma string, buffer *bytes.Buffer) {
-	zf := zfz.Zf{}
+	zf := zf.Zf{}
 	tianjiahuoxiugai(bianma, buffer, zf.Xiugaiyige(false))
 }
 
 func tianjiahuoxiugai(bianma string, buffer *bytes.Buffer, fangfa string) {
 	//func TestxxxJuese
-	zf := zfz.Zf{}
+	zf := zf.Zf{}
+	zfzhi := zfzhi.Zfzhi{}
 	hhf := zfzhi.Huanhangfuzhi()
 	dh := zfzhi.Dianhaozhi()
 	kgf := zfzhi.Konggefuzhi()
@@ -169,7 +162,7 @@ func tianjiahuoxiugai(bianma string, buffer *bytes.Buffer, fangfa string) {
 	qh := zfzhi.Qiehaozhi()
 	dyh := zfzhi.Dengyuhaozhi()
 	xh := zfzhi.Xinghaozhi()
-	sz1 := zfzhi.Shuzi1zhi()
+	sz1 := strconv.Itoa(zfzhi.Shuzi1zhi())
 
 	buffer.WriteString(zf.Func(true))
 	buffer.WriteString(kgf)
@@ -222,38 +215,39 @@ func tianjiahuoxiugai(bianma string, buffer *bytes.Buffer, fangfa string) {
 	buffer.WriteString(hhf)
 }
 func pinjieziduan(bianma string, buffer *bytes.Buffer, fangfa string, houzhui string) {
+	zfzhi := zfzhi.Zfzhi{}
 	mh := zfzhi.Maohaozhi()
 	douhao := zfzhi.Douhaozhi()
 	hhf := zfzhi.Huanhangfuzhi()
-	for _, lie := range baseinits.Lies {
-		pipei, _ := apputils.Pipei3lei(bianma, lie.Biaoming)
-		if pipei {
-			buffer.WriteString(lie.Bianma)                                 //Juese
-			buffer.WriteString(mh)                                         // :
-			zhi := shengchengzhi(lie.Bianma, lie.Leixing, fangfa, houzhui) //zhi
-			buffer.WriteString(zhi)
-			buffer.WriteString(douhao) //,
-			buffer.WriteString(hhf)    //\n
-		}
+
+	for lk, _ := range Huoquyigebiaojiegou(bianma) {
+		buffer.WriteString(lk)                                          //Juese
+		buffer.WriteString(mh)                                          // :
+		zhi := shengchengzhi(lk, Huoquyigeleixing(lk), fangfa, houzhui) //zhi
+		buffer.WriteString(zhi)
+		buffer.WriteString(douhao) //,
+		buffer.WriteString(hhf)    //\n
 	}
+
 }
 func shengchengzhi(lieming string, leixing string, fangfa string, houzhui string) string {
-	zf := zfz.Zf{}
+	zf := zf.Zf{}
+	zfzhi := zfzhi.Zfzhi{}
 	syh := zfzhi.Shuangyinhaozhi()
 	dh := zfzhi.Dianhaozhi()
 	xkhz := zfzhi.Xiaokuohaozuozhi()
 	xkhy := zfzhi.Xiaokuohaoyouzhi()
 
-	sz1 := zfzhi.Shuzi1zhi()
-	sz0 := zfzhi.Shuzi0zhi()
+	sz1 := strconv.Itoa(zfzhi.Shuzi1zhi())
+	sz0 := strconv.Itoa(zfzhi.Shuzi0zhi())
 
-	if leixing == baseinits.Gen.String {
+	if leixing == zf.String(true) {
 		// "lieZengjiaTest1"
 		ret := syh + lieming + fangfa + zf.Test(false) + houzhui + syh
 		return ret
 	}
 	// 1
-	if leixing == baseinits.Gen.Int {
+	if leixing == zf.Int(true) {
 		ret := sz1 // 1
 		return ret
 	}
@@ -275,7 +269,8 @@ func shengchengzhi(lieming string, leixing string, fangfa string, houzhui string
 
 func testshanchuyige(bianma string, buffer *bytes.Buffer) {
 
-	zf := zfz.Zf{}
+	zf := zf.Zf{}
+	zfzhi := zfzhi.Zfzhi{}
 	hhf := zfzhi.Huanhangfuzhi()
 	dh := zfzhi.Dianhaozhi()
 	kgf := zfzhi.Konggefuzhi()
@@ -284,11 +279,11 @@ func testshanchuyige(bianma string, buffer *bytes.Buffer) {
 	xkhz := zfzhi.Xiaokuohaozuozhi()
 	xkhy := zfzhi.Xiaokuohaoyouzhi()
 	xh := zfzhi.Xinghaozhi()
-	sz1 := zfzhi.Shuzi1zhi()
+	sz1 := strconv.Itoa(zfzhi.Shuzi1zhi())
 
 	// func TestShanchuyige
-	buffer.WriteString(baseinits.Gen.Func) //func
-	buffer.WriteString(kgf)                // konggefu
+	buffer.WriteString(zf.Func(true)) //func
+	buffer.WriteString(kgf)           // konggefu
 	fangfaming := zf.Test(false) + zf.Shanchuyige(false) + bianma
 	buffer.WriteString(fangfaming) // TestShanchuyige
 
@@ -319,7 +314,8 @@ func testshanchuyige(bianma string, buffer *bytes.Buffer) {
 	buffer.WriteString(hhf)
 }
 func testtianjiaduoge(bianma string, buffer *bytes.Buffer) {
-	zf := zfz.Zf{}
+	zf := zf.Zf{}
+	zfzhi := zfzhi.Zfzhi{}
 	hhf := zfzhi.Huanhangfuzhi()
 	dh := zfzhi.Dianhaozhi()
 	kgf := zfzhi.Konggefuzhi()
@@ -333,15 +329,16 @@ func testtianjiaduoge(bianma string, buffer *bytes.Buffer) {
 	mh := zfzhi.Maohaozhi()
 	xh := zfzhi.Xinghaozhi()
 	//syh := zfzhi.Shuangyinhaozhi()
-	sz2 := zfzhi.Shuzi2zhi()
-	sz3 := zfzhi.Shuzi3zhi()
+	sz2 := strconv.Itoa(zfzhi.Shuzi2zhi())
+	sz3 := strconv.Itoa(zfzhi.Shuzi3zhi())
 	douhao := zfzhi.Douhaozhi()
 	//组装方法名
-	// func TestTianjiaduoge
-	buffer.WriteString(baseinits.Gen.Func)
+	// func TestTianjiaduogeJuese
+	buffer.WriteString(zf.Func(true))
 	buffer.WriteString(kgf)
 	buffer.WriteString(zf.Test(false))
 	buffer.WriteString(zf.Tianjiaduoge(false))
+	buffer.WriteString(bianma)
 
 	//(t *testing.T){\n
 	buffer.WriteString(xkhz)
@@ -428,20 +425,22 @@ func testtianjiaduoge(bianma string, buffer *bytes.Buffer) {
 	buffer.WriteString(hhf)
 }
 func Shengchengdaostests() {
-	zf := zfz.Zf{}
+	zf := zf.Zf{}
+	zfzhi := zfzhi.Zfzhi{}
 	dh := zfzhi.Dianhaozhi()
 	xx := zfzhi.Xiexianzhi()
 	xhx := zfzhi.Xiahuaxianzhi()
-	for _, biao := range baseinits.Biaos {
+	for biao, _ := range Huoqubiaos() {
 		buffer := bytes.Buffer{}
-		testsimports(biao.Bianma, &buffer)
-		testchaxunyige(biao.Bianma, &buffer)
-		testshanchuyige(biao.Bianma, &buffer)
-		testtianjiayige(biao.Bianma, &buffer)
-		testxiugaiyige(biao.Bianma, &buffer)
-		testtianjiaduoge(biao.Bianma, &buffer)
+		testsimports(biao, &buffer)
+		testchaxunyige(biao, &buffer)
+		testshanchuyige(biao, &buffer)
+		testtianjiayige(biao, &buffer)
+		testxiugaiyige(biao, &buffer)
+		testtianjiaduoge(biao, &buffer)
+		log.Println("buffer-------", buffer.String())
 
-		path := basemodels.Getapppath() + xx + zf.Tests(true) + xx + biao.Bianma + zf.Daos(true) + xhx + zf.Test(true) + dh + zf.Go(true)
+		path := basemodels.Getapppath() + xx + zf.Tests(true) + xx + biao + zf.Daos(true) + xhx + zf.Test(true) + dh + zf.Go(true)
 		ioutil.WriteFile(path, buffer.Bytes(), os.ModePerm)
 	}
 }

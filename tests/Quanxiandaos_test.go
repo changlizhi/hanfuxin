@@ -14,38 +14,38 @@ zdquanxiandaos.Shanchuyige(1)
 }
 func TestTianjiayigeQuanxian(t *testing.T){
 quanxian:=&appmodels.Quanxian{
-Biaoji:"BiaojiTianjiayigeTest1",
-Lujing:"LujingTianjiayigeTest1",
 Id:1,
+Biaoji:"BiaojiTianjiayigeTest1",
 Bianma:"BianmaTianjiayigeTest1",
+Lujing:"LujingTianjiayigeTest1",
 Mingcheng:"MingchengTianjiayigeTest1",
 }
 zdquanxiandaos.Tianjiayige(quanxian)
 }
 func TestXiugaiyigeQuanxian(t *testing.T){
 quanxian:=&appmodels.Quanxian{
-Biaoji:"BiaojiXiugaiyigeTest1",
+Bianma:"BianmaXiugaiyigeTest1",
 Lujing:"LujingXiugaiyigeTest1",
 Id:1,
-Bianma:"BianmaXiugaiyigeTest1",
 Mingcheng:"MingchengXiugaiyigeTest1",
+Biaoji:"BiaojiXiugaiyigeTest1",
 }
 zdquanxiandaos.Xiugaiyige(quanxian)
 }
-func TestTianjiaduoge(t *testing.T){
+func TestTianjiaduogeQuanxian(t *testing.T){
 quanxian2:=appmodels.Quanxian{
-Biaoji:"BiaojiTianjiaduogeTest2",
-Id:1,
-Bianma:"BianmaTianjiaduogeTest2",
-Mingcheng:"MingchengTianjiaduogeTest2",
 Lujing:"LujingTianjiaduogeTest2",
+Id:1,
+Mingcheng:"MingchengTianjiaduogeTest2",
+Biaoji:"BiaojiTianjiaduogeTest2",
+Bianma:"BianmaTianjiaduogeTest2",
 }
 quanxian3:=appmodels.Quanxian{
-Id:1,
 Bianma:"BianmaTianjiaduogeTest3",
 Mingcheng:"MingchengTianjiaduogeTest3",
-Lujing:"LujingTianjiaduogeTest3",
 Biaoji:"BiaojiTianjiaduogeTest3",
+Lujing:"LujingTianjiaduogeTest3",
+Id:1,
 }
 quanxians:=[]appmodels.Quanxian{quanxian2,quanxian3}
 zdquanxiandaos.Tianjiaduoge(quanxians)

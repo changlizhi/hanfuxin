@@ -3,10 +3,11 @@ package zdjueseservices
 import (
 	"bytes"
 	"hanfuxin/allerrors"
-	"hanfuxin/appinits"
 	"hanfuxin/appmodels"
-	"hanfuxin/baseinits"
+	"hanfuxin/baserun"
 	"hanfuxin/zdjuesedaos"
+	"hanfuxin/zf"
+	"hanfuxin/zfzhi"
 	"log"
 	"strconv"
 	"time"
@@ -14,37 +15,49 @@ import (
 
 func shengchengerrorchangdu(leixing string, lenchangliang int64, lenshiji int) string {
 	buffer := bytes.Buffer{}
-	buffer.WriteString(baseinits.Fuhaos[appinits.Yingyongzi.Dakuohaozuo].Zhi)
-	buffer.WriteString(appinits.Yingyongzi.Leixing)
-	buffer.WriteString(baseinits.Fuhaos[appinits.Yingyongzi.Maohao].Zhi)
+	zf := zf.Zf{}
+	zfzhi := zfzhi.Zfzhi{}
+	dkhz := zfzhi.Dakuohaozuozhi()
+	dkhy := zfzhi.Dakuohaoyouzhi()
+	douhao := zfzhi.Douhaozhi()
+	mh := zfzhi.Maohaozhi()
+
+	buffer.WriteString(dkhz)
+	buffer.WriteString(zf.Leixing(false))
+	buffer.WriteString(mh)
+
 	buffer.WriteString(leixing)
-	buffer.WriteString(baseinits.Fuhaos[appinits.Yingyongzi.Douhao].Zhi)
-	buffer.WriteString("zuichang")
-	buffer.WriteString(baseinits.Fuhaos[appinits.Yingyongzi.Maohao].Zhi)
+	buffer.WriteString(douhao)
+	buffer.WriteString(zf.Zuichang(false))
+	buffer.WriteString(mh)
 	buffer.WriteString(strconv.FormatInt(lenchangliang, 10))
-	buffer.WriteString(baseinits.Fuhaos[appinits.Yingyongzi.Douhao].Zhi)
-	buffer.WriteString("shiji")
-	buffer.WriteString(baseinits.Fuhaos[appinits.Yingyongzi.Maohao].Zhi)
+	buffer.WriteString(douhao)
+	buffer.WriteString(zf.Shiji(false))
+	buffer.WriteString(mh)
 	buffer.WriteString(strconv.Itoa(lenshiji))
-	buffer.WriteString(baseinits.Fuhaos[appinits.Yingyongzi.Dakuohaoyou].Zhi)
+	buffer.WriteString(dkhy)
 	return buffer.String()
 }
 
 func yanzhengziduanchangdu(juese *appmodels.Juese) error {
-	lenbianma, _ := strconv.ParseInt(baseinits.Lies[appinits.Yingyongzi.Bianma].Changdu, 10, 0)
-	lenmingcheng, _ := strconv.ParseInt(baseinits.Lies[appinits.Yingyongzi.Mingcheng].Changdu, 10, 0)
-	lenbiaoji, _ := strconv.ParseInt(baseinits.Lies[appinits.Yingyongzi.Biaoji].Changdu, 10, 0)
+	zf := zf.Zf{}
+	lenbianma := baserun.Huoquyigechangdu(zf.Bianma(false))
+	//strconv.ParseInt(baseinits.Lies[appinits.Yingyongzi.Bianma].Changdu, 10, 0)
+	lenmingcheng := baserun.Huoquyigechangdu(zf.Mingcheng(false))
+	// strconv.ParseInt(baseinits.Lies[appinits.Yingyongzi.Mingcheng].Changdu, 10, 0)
+	lenbiaoji := baserun.Huoquyigechangdu(zf.Biaoji(false))
+	//strconv.ParseInt(baseinits.Lies[appinits.Yingyongzi.Biaoji].Changdu, 10, 0)
 	lenbianmashiti := len(juese.Bianma)
 	lenmingchengshiti := len(juese.Mingcheng)
 	lenbiaojishiti := len(juese.Biaoji)
 	if lenbianmashiti > int(lenbianma) {
-		return allerrors.Ziduanerror{Shijian: time.Now(), Wenti: shengchengerrorchangdu(appinits.Yingyongzi.Bianma, lenbianma, lenbianmashiti)}
+		return allerrors.Ziduanerror{Shijian: time.Now(), Wenti: shengchengerrorchangdu(zf.Bianma(false), int64(lenbianma), lenbianmashiti)}
 	}
 	if lenmingchengshiti > int(lenmingcheng) {
-		return allerrors.Ziduanerror{Shijian: time.Now(), Wenti: shengchengerrorchangdu(appinits.Yingyongzi.Mingcheng, lenmingcheng, lenmingchengshiti)}
+		return allerrors.Ziduanerror{Shijian: time.Now(), Wenti: shengchengerrorchangdu(zf.Mingcheng(false), int64(lenmingcheng), lenmingchengshiti)}
 	}
 	if lenbiaojishiti > int(lenbiaoji) {
-		return allerrors.Ziduanerror{Shijian: time.Now(), Wenti: shengchengerrorchangdu(appinits.Yingyongzi.Biaoji, lenbiaoji, lenbiaojishiti)}
+		return allerrors.Ziduanerror{Shijian: time.Now(), Wenti: shengchengerrorchangdu(zf.Biaoji(false), int64(lenbiaoji), lenbiaojishiti)}
 	}
 	return nil
 }

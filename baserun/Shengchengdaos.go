@@ -2,9 +2,8 @@ package baserun
 
 import (
 	"bytes"
-	"hanfuxin/baseinits"
 	"hanfuxin/basemodels"
-	"hanfuxin/zfz"
+	"hanfuxin/zf"
 	"hanfuxin/zfzhi"
 	"io/ioutil"
 	"os"
@@ -12,7 +11,8 @@ import (
 )
 
 func imports(bianma string, buffer *bytes.Buffer) {
-	zf := zfz.Zf{}
+	zf := zf.Zf{}
+	zfzhi := zfzhi.Zfzhi{}
 	hhf := zfzhi.Huanhangfuzhi()
 	xx := zfzhi.Xiexianzhi()
 	hfx := zf.Hanfuxin(true)
@@ -46,7 +46,8 @@ func imports(bianma string, buffer *bytes.Buffer) {
 }
 func chaxunyige(bianma string, buffer *bytes.Buffer) {
 	// func Chaxunyige (id int)
-	zf := zfz.Zf{}
+	zf := zf.Zf{}
+	zfzhi := zfzhi.Zfzhi{}
 	idx := zf.Id(true)
 	idd := zf.Id(false)
 	appmodels := zf.Appmodels(true)
@@ -126,7 +127,8 @@ func chaxunyige(bianma string, buffer *bytes.Buffer) {
 }
 func tianjiayige(bianma string, buffer *bytes.Buffer) {
 	// func Tianjiayige
-	zf := zfz.Zf{}
+	zf := zf.Zf{}
+	zfzhi := zfzhi.Zfzhi{}
 	hhf := zfzhi.Huanhangfuzhi()
 	dh := zfzhi.Dianhaozhi()
 	kgf := zfzhi.Konggefuzhi()
@@ -172,7 +174,8 @@ func tianjiayige(bianma string, buffer *bytes.Buffer) {
 }
 func tianjiaduoge(bianma string, buffer *bytes.Buffer) {
 	//func Tianjiaduoge(
-	zf := zfz.Zf{}
+	zf := zf.Zf{}
+	zfzhi := zfzhi.Zfzhi{}
 	hhf := zfzhi.Huanhangfuzhi()
 	dh := zfzhi.Dianhaozhi()
 	douhao := zfzhi.Douhaozhi()
@@ -228,7 +231,8 @@ func tianjiaduoge(bianma string, buffer *bytes.Buffer) {
 }
 func shanchuyige(bianma string, buffer *bytes.Buffer) {
 	// func Shanchuyige
-	zf := zfz.Zf{}
+	zf := zf.Zf{}
+	zfzhi := zfzhi.Zfzhi{}
 	hhf := zfzhi.Huanhangfuzhi()
 	dh := zfzhi.Dianhaozhi()
 	kgf := zfzhi.Konggefuzhi()
@@ -273,7 +277,8 @@ func shanchuyige(bianma string, buffer *bytes.Buffer) {
 }
 func xiugaiyige(bianma string, buffer *bytes.Buffer) {
 	// func Xiugaiyige
-	zf := zfz.Zf{}
+	zf := zf.Zf{}
+	zfzhi := zfzhi.Zfzhi{}
 	hhf := zfzhi.Huanhangfuzhi()
 	dh := zfzhi.Dianhaozhi()
 	kgf := zfzhi.Konggefuzhi()
@@ -320,28 +325,28 @@ func xiugaiyige(bianma string, buffer *bytes.Buffer) {
 
 }
 func Shengchengdaos() {
-	zf := zfz.Zf{}
+	zf := zf.Zf{}
+	zfzhi := zfzhi.Zfzhi{}
 	dh := zfzhi.Dianhaozhi()
 	xx := zfzhi.Xiexianzhi()
 
 	daos := zf.Daos(true)
-
-	for _, biao := range baseinits.Biaos {
+	for biao, _ := range Huoqubiaos() {
 		buffer := bytes.Buffer{}
 		buffer.WriteString(zf.Package(true))    //package
 		buffer.WriteString(zfzhi.Konggefuzhi()) // kongge
-		lujing := zf.Zd(true) + strings.ToLower(biao.Bianma) + daos
+		lujing := zf.Zd(true) + strings.ToLower(biao) + daos
 		buffer.WriteString(lujing) // zdjuesedaos
 
-		imports(biao.Bianma, &buffer)      //import all
-		chaxunyige(biao.Bianma, &buffer)   // Chaxunyige
-		tianjiayige(biao.Bianma, &buffer)  // Tianjiayige
-		tianjiaduoge(biao.Bianma, &buffer) // Tianjiaduoge
-		shanchuyige(biao.Bianma, &buffer)  // Shanchuyige
-		xiugaiyige(biao.Bianma, &buffer)   // Xiugaiyige
+		imports(biao, &buffer)      //import all
+		chaxunyige(biao, &buffer)   // Chaxunyige
+		tianjiayige(biao, &buffer)  // Tianjiayige
+		tianjiaduoge(biao, &buffer) // Tianjiaduoge
+		shanchuyige(biao, &buffer)  // Shanchuyige
+		xiugaiyige(biao, &buffer)   // Xiugaiyige
 
 		dir := basemodels.Getapppath() + xx + lujing + xx
-		path := dir + biao.Bianma + daos + dh + zf.Go(true)
+		path := dir + biao + daos + dh + zf.Go(true)
 		os.MkdirAll(dir, os.ModePerm)
 		ioutil.WriteFile(path, buffer.Bytes(), os.ModePerm)
 	}

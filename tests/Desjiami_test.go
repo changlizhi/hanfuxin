@@ -3,6 +3,9 @@ package tests
 import (
 	"hanfuxin/apputils"
 	"testing"
+	"log"
+	"reflect"
+	"strings"
 )
 
 func TestJiami(t *testing.T) {

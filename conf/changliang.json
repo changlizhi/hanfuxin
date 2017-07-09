@@ -34,15 +34,13 @@
     "Map":"map",
     "Range":"range",
     "Make":"make",
-    "Yingyongzi":"Yingyongzi",
     "Konggefu":"Konggefu",
     "Huanhangfu":"Huanhangfu",
     "Dakuohaozuo":"Dakuohaozuo",
     "Dakuohaoyou":"Dakuohaoyou",
     "Dianhao":"Dianhao",
     "Xiexian":"Xiexian",
-    "Appmodels":"Appmodels",
-    "Yingyongzimodel":"Yingyongzimodel"
+    "Appmodels":"Appmodels"
   },
   "Wenzi":[{
     "Guilei":"Wenzi",
@@ -325,56 +323,6 @@
     "Bianma":"Wuxiao",
     "Mingcheng":"无效",
     "Zhi":"1"
-  },{
-    "Guilei":"Jichu",
-    "Bianma":"Shuzi1",
-    "Mingcheng":"数字1",
-    "Zhi":"1"
-  },{
-    "Guilei":"Jichu",
-    "Bianma":"Shuzi2",
-    "Mingcheng":"数字2",
-    "Zhi":"2"
-  },{
-    "Guilei":"Jichu",
-    "Bianma":"Shuzi3",
-    "Mingcheng":"数字3",
-    "Zhi":"3"
-  },{
-    "Guilei":"Jichu",
-    "Bianma":"Shuzi4",
-    "Mingcheng":"数字4",
-    "Zhi":"4"
-  },{
-    "Guilei":"Jichu",
-    "Bianma":"Shuzi5",
-    "Mingcheng":"数字5",
-    "Zhi":"5"
-  },{
-    "Guilei":"Jichu",
-    "Bianma":"Shuzi6",
-    "Mingcheng":"数字6",
-    "Zhi":"6"
-  },{
-    "Guilei":"Jichu",
-    "Bianma":"Shuzi7",
-    "Mingcheng":"数字7",
-    "Zhi":"7"
-  },{
-    "Guilei":"Jichu",
-    "Bianma":"Shuzi8",
-    "Mingcheng":"数字8",
-    "Zhi":"8"
-  },{
-    "Guilei":"Jichu",
-    "Bianma":"Shuzi9",
-    "Mingcheng":"数字9",
-    "Zhi":"9"
-  },{
-    "Guilei":"Jichu",
-    "Bianma":"Shuzi0",
-    "Mingcheng":"数字0",
-    "Zhi":"0"
   }],
   "Wangluo":[{
     "Guilei":"Wangluo",

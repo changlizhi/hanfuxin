@@ -1,104 +1,107 @@
 package zfzhi
 
-func Gantanhaozhi() string {
+func (zfzhi *Zfzhi) Kongzifuzhi() string {
+	return ""
+}
+func (zfzhi *Zfzhi) Gantanhaozhi() string {
 	return "!"
 }
-func Bolanghaozhi() string {
+func (zfzhi *Zfzhi) Bolanghaozhi() string {
 	return "~"
 }
-func Dianhaozhi() string {
+func (zfzhi *Zfzhi) Dianhaozhi() string {
 	return "."
 }
-func Xiexianzhi() string {
+func (zfzhi *Zfzhi) Xiexianzhi() string {
 	return "/"
 }
-func Fanxiexianzhi() string {
+func (zfzhi *Zfzhi) Fanxiexianzhi() string {
 	return "\\"
 }
-func Xiahuaxianzhi() string {
+func (zfzhi *Zfzhi) Xiahuaxianzhi() string {
 	return "_"
 }
-func Huanhangfuzhi() string {
+func (zfzhi *Zfzhi) Huanhangfuzhi() string {
 	return "\n"
 }
-func Konggefuzhi() string {
+func (zfzhi *Zfzhi) Konggefuzhi() string {
 	return " "
 }
-func Dakuohaozuozhi() string {
+func (zfzhi *Zfzhi) Dakuohaozuozhi() string {
 	return "{"
 }
-func Dakuohaoyouzhi() string {
+func (zfzhi *Zfzhi) Dakuohaoyouzhi() string {
 	return "}"
 }
-func Zhongkuohaozuozhi() string {
+func (zfzhi *Zfzhi) Zhongkuohaozuozhi() string {
 	return "["
 }
-func Zhongkuohaoyouzhi() string {
+func (zfzhi *Zfzhi) Zhongkuohaoyouzhi() string {
 	return "]"
 }
-func Xiaokuohaozuozhi() string {
+func (zfzhi *Zfzhi) Xiaokuohaozuozhi() string {
 	return "("
 }
-func Xiaokuohaoyouzhi() string {
+func (zfzhi *Zfzhi) Xiaokuohaoyouzhi() string {
 	return ")"
 }
-func Dayuhaozhi() string {
+func (zfzhi *Zfzhi) Dayuhaozhi() string {
 	return ">"
 }
-func Xiaoyuhaozhi() string {
+func (zfzhi *Zfzhi) Xiaoyuhaozhi() string {
 	return "<"
 }
-func Jinghaozhi() string {
+func (zfzhi *Zfzhi) Jinghaozhi() string {
 	return "#"
 }
-func Meiyuanfuzhi() string {
+func (zfzhi *Zfzhi) Meiyuanfuzhi() string {
 	return "$"
 }
-func Baifenhaozhi() string {
+func (zfzhi *Zfzhi) Baifenhaozhi() string {
 	return "%"
 }
-func Chengfanghaozhi() string {
+func (zfzhi *Zfzhi) Chengfanghaozhi() string {
 	return "^"
 }
-func Qiehaozhi() string {
+func (zfzhi *Zfzhi) Qiehaozhi() string {
 	return "&"
 }
-func Huozhehaozhi() string {
+func (zfzhi *Zfzhi) Huozhehaozhi() string {
 	return "|"
 }
-func Xinghaozhi() string {
+func (zfzhi *Zfzhi) Xinghaozhi() string {
 	return "*"
 }
-func Jianhaozhi() string {
+func (zfzhi *Zfzhi) Jianhaozhi() string {
 	return "-"
 }
-func Jiahaozhi() string {
+func (zfzhi *Zfzhi) Jiahaozhi() string {
 	return "+"
 }
-func Maohaozhi() string {
+func (zfzhi *Zfzhi) Maohaozhi() string {
 	return ":"
 }
-func Wenhaozhi() string {
+func (zfzhi *Zfzhi) Wenhaozhi() string {
 	return "?"
 }
-func Yizuobianzhi() string {
+func (zfzhi *Zfzhi) Yizuobianzhi() string {
 	return "`"
 }
-func Dengyuhaozhi() string {
+func (zfzhi *Zfzhi) Dengyuhaozhi() string {
 	return "="
 }
-func Danyinhaozhi() string {
+func (zfzhi *Zfzhi) Danyinhaozhi() string {
 	return "'"
 }
-func Shuangyinhaozhi() string {
+func (zfzhi *Zfzhi) Shuangyinhaozhi() string {
 	return "\""
 }
-func Fenhaozhi() string {
+func (zfzhi *Zfzhi) Fenhaozhi() string {
 	return ";"
 }
-func Quanazhi() string {
+func (zfzhi *Zfzhi) Quanazhi() string {
 	return "@"
 }
-func Douhaozhi() string {
+func (zfzhi *Zfzhi) Douhaozhi() string {
 	return ","
 }

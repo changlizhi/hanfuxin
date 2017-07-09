@@ -1,4 +1,4 @@
-package zfz
+package zf
 
 func (zf *Zf) Juese(xiaoxie bool) string {
 	return Fangfaming(xiaoxie)

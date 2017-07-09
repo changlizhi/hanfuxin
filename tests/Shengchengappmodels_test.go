@@ -5,6 +5,6 @@ import (
 	"testing"
 )
 
-func TestShengchengmodel(t *testing.T) {
+func TestShengchengappmodel(t *testing.T) {
 	baserun.Shengchenghanfuxinmodels()
 }
