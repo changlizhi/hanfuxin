@@ -1,8 +1,7 @@
 package appmodels
-
-type Juese struct {
-	Mingcheng string
-	Bianma    string
-	Id        int
-	Biaoji    string
+type Juese struct{
+Id int
+Biaoji string
+Mingcheng string
+Bianma string
 }

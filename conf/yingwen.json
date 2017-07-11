@@ -1,0 +1,29 @@
+{
+  "Cuowu":[{
+    "Guilei":"Cuowu",
+    "Bianma":"Error01",
+    "Mingcheng":"错误01",
+    "Zhi":"The system occurs an error,please call administrator!"
+  },{
+    "Guilei":"Cuowu",
+    "Bianma":"Error02",
+    "Mingcheng":"错误02",
+    "Zhi":"json parse error！"
+  },{
+    "Guilei":"Cuowu",
+    "Bianma":"Error03",
+    "Mingcheng":"错误03",
+    "Zhi":"filed type error！"
+  }],
+  "Tishi":[{
+    "Guilei":"Tishi",
+    "Bianma":"Youxiang",
+    "Mingcheng":"邮箱提示",
+    "Zhi":"email format err！"
+  },{
+    "Guilei":"Tishi",
+    "Bianma":"Mima",
+    "Mingcheng":"密码提示",
+    "Zhi":"password is so easy！"
+  }]
+}

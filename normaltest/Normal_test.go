@@ -3,10 +3,8 @@ package normaltest
 import (
 	"go/parser"
 	"go/token"
-	"hanfuxin/appmodels"
 	"hanfuxin/apputils"
 	"hanfuxin/basemodels"
-	"hanfuxin/zdjueseservices"
 	"hanfuxin/zf"
 	"hanfuxin/zfzhi"
 	"io/ioutil"

@@ -1,5 +1,10 @@
 package zf
-
+func (zf *Zf) Yanzhengziduanchangdu(xiaoxie bool) string {
+	return Fangfaming(xiaoxie)
+}
+func (zf *Zf) Shengchengerrorchangdu(xiaoxie bool) string {
+	return Fangfaming(xiaoxie)
+}
 func (zf *Zf) Chaxunyige(xiaoxie bool) string {
 	return Fangfaming(xiaoxie)
 }

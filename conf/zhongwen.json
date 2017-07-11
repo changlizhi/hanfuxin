@@ -1,0 +1,29 @@
+{
+  "Cuowu":[{
+    "Guilei":"Cuowu",
+    "Bianma":"Error01",
+    "Mingcheng":"错误01",
+    "Zhi":"系统异常，请联系管理员！"
+  },{
+    "Guilei":"Cuowu",
+    "Bianma":"Error02",
+    "Mingcheng":"错误02",
+    "Zhi":"json解析错误！"
+  },{
+    "Guilei":"Cuowu",
+    "Bianma":"Error03",
+    "Mingcheng":"错误03",
+    "Zhi":"字段类型错误！"
+  }],
+  "Tishi":[{
+    "Guilei":"Tishi",
+    "Bianma":"Youxiang",
+    "Mingcheng":"邮箱提示",
+    "Zhi":"邮箱格式错误！"
+  },{
+    "Guilei":"Tishi",
+    "Bianma":"Mima",
+    "Mingcheng":"密码提示",
+    "Zhi":"密码太简单！"
+  }]
+}

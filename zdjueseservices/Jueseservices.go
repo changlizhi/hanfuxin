@@ -1,6 +1,6 @@
 package zdjueseservices
-
 import (
+
 	"bytes"
 	"hanfuxin/allerrors"
 	"hanfuxin/appmodels"
@@ -43,7 +43,7 @@ func yanzhengziduanchangdu(juese *appmodels.Juese) error {
 func Chaxunjuese(id int) *appmodels.Juese {
 	return zdjuesedaos.Chaxunyige(id)
 }
-func Shanchujuese(id int){
+func Shanchujuese(id int) {
 	zdjuesedaos.Shanchuyige(id)
 }
 func Xiugaijuese(juese *appmodels.Juese) {

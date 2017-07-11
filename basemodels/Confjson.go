@@ -1,9 +1,11 @@
 package basemodels
 
-type Changliang struct {
-	Zhongwen []Tongyong
-	Yingwen  []Tongyong
+type Guojihua struct {
+	Cuowu []Tongyong
+	Tishi []Tongyong
 }
-type Yingyong struct {
-	Shezhi []Tongyong
+
+type Shezhi struct {
+	Chushihua []Tongyong
+	Shujuku   []Tongyong
 }

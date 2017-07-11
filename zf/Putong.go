@@ -1,5 +1,17 @@
 package zf
 
+func (zf *Zf) Qudong(xiaoxie bool) string {
+	return Fangfaming(xiaoxie)
+}
+func (zf *Zf) Ip(xiaoxie bool) string {
+	return Fangfaming(xiaoxie)
+}
+func (zf *Zf) Mima(xiaoxie bool) string {
+	return Fangfaming(xiaoxie)
+}
+func (zf *Zf) Yonghu(xiaoxie bool) string {
+	return Fangfaming(xiaoxie)
+}
 func (zf *Zf) False(xiaoxie bool) string {
 	return Fangfaming(xiaoxie)
 }

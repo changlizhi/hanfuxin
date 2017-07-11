@@ -21,12 +21,14 @@ func Getapppath() string {
 // 获取文件目录，直接返回文件目录结构，不论文件是否存在
 func Getwenjianmulu(mulu string, wenjian string, leixing string) string {
 	zfzhi := zfzhi.Zfzhi{}
+	xx := zfzhi.Xiexianzhi()
+	dh := zfzhi.Dianhaozhi()
 	path := Getapppath() + // apppath
-		zfzhi.Xiexianzhi() + // /
+		xx + // /
 		mulu +
-		zfzhi.Xiexianzhi() + // /
+		xx + // /
 		wenjian +
-		zfzhi.Dianhaozhi() +
+		dh +
 		leixing
 	return path
 }
@@ -37,11 +39,10 @@ func getjsonpath(bianma string) string {
 	path := Getwenjianmulu(zf.Conf(false), bianma, zf.Json(true))
 	return path
 }
-func Getchangliangpath() string {
-	zf := zf.Zf{}
-	return getjsonpath(zf.Changliang(true)) //changliang
+func Guojihuapath(yuyan string) string {
+	return getjsonpath(yuyan) //
 }
-func Getyingyongpath() string {
+func Shezhipath() string {
 	zf := zf.Zf{}
-	return getjsonpath(zf.Yingyong(true)) //yingyong
+	return getjsonpath(zf.Shezhi(true)) //yingyong
 }

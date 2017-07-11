@@ -21,3 +21,6 @@ func (zf *Zf) Strings(xiaoxie bool) string {
 func (zf *Zf) Parser(xiaoxie bool) string {
 	return Fangfaming(xiaoxie)
 }
+func (zf *Zf) Bytes(xiaoxie bool) string {
+	return Fangfaming(xiaoxie)
+}

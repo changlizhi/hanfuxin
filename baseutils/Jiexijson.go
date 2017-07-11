@@ -5,17 +5,18 @@ import (
 	"hanfuxin/basemodels"
 	"io/ioutil"
 	"log"
+	"strings"
 )
 
-func Changliangjson() *basemodels.Changliang {
-	changliang := basemodels.Changliang{}
-	obj := Jiexi(basemodels.Getchangliangpath(), &changliang)
-	return obj.(*basemodels.Changliang)
+func Shezhijson() *basemodels.Shezhi {
+	shezhi := basemodels.Shezhi{}
+	obj := Jiexi(basemodels.Shezhipath(), &shezhi)
+	return obj.(*basemodels.Shezhi)
 }
-func Yingyongjson() *basemodels.Yingyong {
-	yingyong := basemodels.Yingyong{}
-	obj := Jiexi(basemodels.Getyingyongpath(), &yingyong)
-	return obj.(*basemodels.Yingyong)
+func Guojihuajson(yuyan string) *basemodels.Guojihua {
+	guojihua := basemodels.Guojihua{}
+	obj := Jiexi(basemodels.Guojihuapath(strings.ToLower(yuyan)), &guojihua)
+	return obj.(*basemodels.Guojihua)
 }
 func Jiexi(path string, model interface{}) interface{} {
 	bytes, err := ioutil.ReadFile(path)
