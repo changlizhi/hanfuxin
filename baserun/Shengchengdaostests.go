@@ -24,57 +24,38 @@ func testsimports(bianma string, buffer *bytes.Buffer) {
 	syh := zfzhi.Shuangyinhaozhi()
 	xx := zfzhi.Xiexianzhi()
 
-	buffer.WriteString(zf.Package(true))
-	buffer.WriteString(kgf)
-	buffer.WriteString(zf.Tests(true))
-	buffer.WriteString(hhf)
+	pac := zf.Package(true) + kgf + zf.Tests(true) + hhf
+	buffer.WriteString(pac)
 
 	// import(\n
-	buffer.WriteString(zf.Import(true))
-	buffer.WriteString(xkhz)
-	buffer.WriteString(hhf)
+	impstr := zf.Import(true) + xkhz + hhf
+	buffer.WriteString(impstr)
 
 	for lk, _ := range Huoquyigebiaojiegou(bianma) {
 		if Huoquyigeleixing(lk) == zf.Time(true) {
 			// "time" \n
-			buffer.WriteString(syh)
-			buffer.WriteString(zf.Time(true))
-			buffer.WriteString(syh)
-			buffer.WriteString(hhf)
+			timebao := syh + zf.Time(true) + syh + hhf
+			buffer.WriteString(timebao)
 			break
 		}
 	}
 	// "hanfuxin/appmodels" \n
-	buffer.WriteString(syh)
-	buffer.WriteString(zf.Hanfuxin(true))
-	buffer.WriteString(xx)
-	buffer.WriteString(zf.Appmodels(true))
-	buffer.WriteString(syh)
-	buffer.WriteString(hhf)
+	apm := syh + zf.Hanfuxin(true) + xx + zf.Appmodels(true) + syh + hhf
+	buffer.WriteString(apm)
 
 	// "hanfuxin/testing" \n
-	buffer.WriteString(syh)
-	buffer.WriteString(zf.Testing(true))
-	buffer.WriteString(syh)
-	buffer.WriteString(hhf)
+	tbao := syh + zf.Testing(true) + syh + hhf
+	buffer.WriteString(tbao)
 
 	// "log" \n
-	buffer.WriteString(syh)
-	buffer.WriteString(zf.Log(true))
-	buffer.WriteString(syh)
-	buffer.WriteString(hhf)
+	logbao := syh + zf.Log(true) + syh + hhf
+	buffer.WriteString(logbao)
 
 	// "hanfuxin/zdjuesedaos"
-	buffer.WriteString(syh)
-	buffer.WriteString(zf.Hanfuxin(true))
-	buffer.WriteString(xx)
-	baoming := zf.Zd(true) + strings.ToLower(bianma) + zf.Daos(true) // daos
-	buffer.WriteString(baoming)                                      // zdjuesedaos
-	buffer.WriteString(syh)                                          // "
-	buffer.WriteString(hhf)                                          // \n
+	daobao := syh + zf.Hanfuxin(true) + xx + zf.Zd(true) + strings.ToLower(bianma) + zf.Daos(true) + syh + hhf
+	buffer.WriteString(daobao)
 
-	buffer.WriteString(xkhy) // )
-	buffer.WriteString(hhf)  // \n
+	buffer.WriteString(xkhy + hhf)
 }
 
 func testchaxunyige(bianma string, buffer *bytes.Buffer) {
@@ -93,50 +74,26 @@ func testchaxunyige(bianma string, buffer *bytes.Buffer) {
 	xh := zfzhi.Xinghaozhi()
 	sz1 := strconv.Itoa(zfzhi.Shuzi1zhi())
 
-	buffer.WriteString(zf.Func(true)) // func
-	buffer.WriteString(kgf)
-	fangfaming := zf.Test(false) + zf.Chaxunyige(false) + bianma
-	buffer.WriteString(fangfaming) //TestChaxunyigeJuese
+	// func TestChaxunyigeXXX
+	funstr := zf.Func(true) + kgf + zf.Test(false) + zf.Chaxunyige(false) + bianma
+	buffer.WriteString(funstr)
 
-	// (t *testing.T){\n
-	buffer.WriteString(xkhz)             // (
-	buffer.WriteString(zf.T(true))       //t
-	buffer.WriteString(kgf)              // konggefu
-	buffer.WriteString(xh)               // *
-	buffer.WriteString(zf.Testing(true)) // testing
-	buffer.WriteString(dh)               // .
-	buffer.WriteString(zf.T(false))      // T
-	buffer.WriteString(xkhy)             // (
-	buffer.WriteString(dkhz)             // {
-	buffer.WriteString(hhf)              // \n
+	//(t*testing.T){\n
+	csstr := xkhz + zf.T(true) + kgf + xh + zf.Testing(true) + dh + zf.T(false) + xkhy + dkhz + hhf
+	buffer.WriteString(csstr)
 
-	// juese := zdjuesedaos.Chaxunyige
-	buffer.WriteString(strings.ToLower(bianma)) //juese
-	buffer.WriteString(mh)                      //:
-	buffer.WriteString(dyh)                     //=
-	baoming := zf.Zd(true) + strings.ToLower(bianma) + zf.Daos(true)
-	buffer.WriteString(baoming)              //zidongjuesedaos
-	buffer.WriteString(dh)                   //.
-	buffer.WriteString(zf.Chaxunyige(false)) //Juese
+	//juese:=
+	//zdjuesedaos.Chaxunyige(1)
+	fhstr := strings.ToLower(bianma) + mh + dyh +
+		zf.Zd(true) + strings.ToLower(bianma) + zf.Daos(true) + dh + zf.Chaxunyige(false) + xkhz + sz1 + xkhy + hhf
+	buffer.WriteString(fhstr)
 
-	// (1)
-	buffer.WriteString(xkhz)
-	buffer.WriteString(sz1)
-	buffer.WriteString(xkhy)
-	buffer.WriteString(hhf)
-
-	//log.Println(juese)
-	buffer.WriteString(zf.Log(true))
-	buffer.WriteString(dh)
-	buffer.WriteString(zf.Println(false))
-	buffer.WriteString(xkhz)
-	buffer.WriteString(strings.ToLower(bianma))
-	buffer.WriteString(xkhy)
+	//log.Println(juese+
+	dayin := zf.Log(true) + dh + zf.Println(false) + xkhz + strings.ToLower(bianma) + xkhy + hhf
+	buffer.WriteString(dayin)
 
 	// \n } \n
-	buffer.WriteString(hhf)
-	buffer.WriteString(dkhy)
-	buffer.WriteString(hhf)
+	buffer.WriteString(dkhy + hhf)
 }
 func testtianjiayige(bianma string, buffer *bytes.Buffer) {
 	zf := zf.Zf{}
@@ -164,55 +121,27 @@ func tianjiahuoxiugai(bianma string, buffer *bytes.Buffer, fangfa string) {
 	xh := zfzhi.Xinghaozhi()
 	sz1 := strconv.Itoa(zfzhi.Shuzi1zhi())
 
-	buffer.WriteString(zf.Func(true))
-	buffer.WriteString(kgf)
-	fangfaming := zf.Test(false) + fangfa + bianma
-	buffer.WriteString(fangfaming)
+	funstr := zf.Func(true) + kgf + zf.Test(false) + fangfa + bianma
+	buffer.WriteString(funstr)
 
 	// (t *testing.T){\n
-	buffer.WriteString(xkhz)
-	buffer.WriteString(zf.T(true))
-	buffer.WriteString(kgf)
-	buffer.WriteString(xh)
-	buffer.WriteString(zf.Testing(true))
-	buffer.WriteString(dh)
-	buffer.WriteString(zf.T(false))
-	buffer.WriteString(xkhy)
-	buffer.WriteString(dkhz)
-	buffer.WriteString(hhf)
+	csstr := xkhz + zf.T(true) + kgf + xh + zf.Testing(true) + dh + zf.T(false) + xkhy + dkhz + hhf
+	buffer.WriteString(csstr)
 
 	// juese := &appmodels.Juese{\n
-	buffer.WriteString(strings.ToLower(bianma))
-	buffer.WriteString(mh)
-	buffer.WriteString(dyh)
-	buffer.WriteString(qh)
-	buffer.WriteString(zf.Appmodels(true))
-	buffer.WriteString(dh)
-	buffer.WriteString(bianma)
-	buffer.WriteString(dkhz)
-	buffer.WriteString(hhf)
+	dxstr := strings.ToLower(bianma) + mh + dyh + qh + zf.Appmodels(true) + dh + bianma + dkhz + hhf
+	buffer.WriteString(dxstr)
 
 	// 生成字段和值
 	pinjieziduan(bianma, buffer, fangfa, sz1)
-
-	buffer.WriteString(dkhy)
-	buffer.WriteString(hhf)
+	buffer.WriteString(dkhy + hhf)
 
 	// zdjuesedaos.TestxxxJuese(juese)
-	baoming := zf.Zd(true) + strings.ToLower(bianma) + zf.Daos(true)
-	buffer.WriteString(baoming) // zidongjuesedaos
-	buffer.WriteString(dh)      // .
-	buffer.WriteString(fangfa)  // TestxxxJuese
-
-	//(juese)
-	buffer.WriteString(xkhz)
-	buffer.WriteString(strings.ToLower(bianma))
-	buffer.WriteString(xkhy)
+	baoming := zf.Zd(true) + strings.ToLower(bianma) + zf.Daos(true) + dh + fangfa + xkhz + strings.ToLower(bianma) + xkhy + hhf
+	buffer.WriteString(baoming)
 
 	// \n } \n
-	buffer.WriteString(hhf)
-	buffer.WriteString(dkhy)
-	buffer.WriteString(hhf)
+	buffer.WriteString(dkhy + hhf)
 }
 func pinjieziduan(bianma string, buffer *bytes.Buffer, fangfa string, houzhui string) {
 	zfzhi := zfzhi.Zfzhi{}
@@ -221,12 +150,9 @@ func pinjieziduan(bianma string, buffer *bytes.Buffer, fangfa string, houzhui st
 	hhf := zfzhi.Huanhangfuzhi()
 
 	for lk, _ := range Huoquyigebiaojiegou(bianma) {
-		buffer.WriteString(lk)                                          //Juese
-		buffer.WriteString(mh)                                          // :
-		zhi := shengchengzhi(lk, Huoquyigeleixing(lk), fangfa, houzhui) //zhi
-		buffer.WriteString(zhi)
-		buffer.WriteString(douhao) //,
-		buffer.WriteString(hhf)    //\n
+		buffer.WriteString(lk + mh)
+		zhi := shengchengzhi(lk, Huoquyigeleixing(lk), fangfa, houzhui)
+		buffer.WriteString(zhi + douhao + hhf)
 	}
 
 }
@@ -268,7 +194,6 @@ func shengchengzhi(lieming string, leixing string, fangfa string, houzhui string
 }
 
 func testshanchuyige(bianma string, buffer *bytes.Buffer) {
-
 	zf := zf.Zf{}
 	zfzhi := zfzhi.Zfzhi{}
 	hhf := zfzhi.Huanhangfuzhi()
@@ -282,36 +207,18 @@ func testshanchuyige(bianma string, buffer *bytes.Buffer) {
 	sz1 := strconv.Itoa(zfzhi.Shuzi1zhi())
 
 	// func TestShanchuyige
-	buffer.WriteString(zf.Func(true)) //func
-	buffer.WriteString(kgf)           // konggefu
-	fangfaming := zf.Test(false) + zf.Shanchuyige(false) + bianma
-	buffer.WriteString(fangfaming) // TestShanchuyige
+	funstr := zf.Func(true) + kgf + zf.Test(false) + zf.Shanchuyige(false) + bianma
+	buffer.WriteString(funstr)
 
 	// (t *testing.T){\n
-	buffer.WriteString(xkhz)
-	buffer.WriteString(zf.T(true))
-	buffer.WriteString(kgf)
-	buffer.WriteString(xh)
-	buffer.WriteString(zf.Testing(true))
-	buffer.WriteString(dh)
-	buffer.WriteString(zf.T(false))
-	buffer.WriteString(xkhy)
-	buffer.WriteString(dkhz)
-	buffer.WriteString(hhf)
+	csstr := xkhz + zf.T(true) + kgf + xh + zf.Testing(true) + dh + zf.T(false) + xkhy + dkhz + hhf
+	buffer.WriteString(csstr)
 
 	// zdjuesedaos.Shanchuyige(1)
-	baoming := zf.Zd(true) + strings.ToLower(bianma) + zf.Daos(true)
-	buffer.WriteString(baoming)               //zdjuesedaos
-	buffer.WriteString(dh)                    //.
-	buffer.WriteString(zf.Shanchuyige(false)) //Shanchuyige
-	buffer.WriteString(xkhz)                  //(
-	buffer.WriteString(sz1)                   //1
-	buffer.WriteString(xkhy)                  //)
-
+	baoming := zf.Zd(true) + strings.ToLower(bianma) + zf.Daos(true) + dh + zf.Shanchuyige(false) + xkhz + sz1 + xkhy + hhf
+	buffer.WriteString(baoming)
 	// \n } \n
-	buffer.WriteString(hhf)
-	buffer.WriteString(dkhy)
-	buffer.WriteString(hhf)
+	buffer.WriteString(dkhy + hhf)
 }
 func testtianjiaduoge(bianma string, buffer *bytes.Buffer) {
 	zf := zf.Zf{}
@@ -334,95 +241,45 @@ func testtianjiaduoge(bianma string, buffer *bytes.Buffer) {
 	douhao := zfzhi.Douhaozhi()
 	//组装方法名
 	// func TestTianjiaduogeJuese
-	buffer.WriteString(zf.Func(true))
-	buffer.WriteString(kgf)
-	buffer.WriteString(zf.Test(false))
-	buffer.WriteString(zf.Tianjiaduoge(false))
-	buffer.WriteString(bianma)
+	funstr := zf.Func(true) + kgf + zf.Test(false) + zf.Tianjiaduoge(false) + bianma
+	buffer.WriteString(funstr)
 
 	//(t *testing.T){\n
-	buffer.WriteString(xkhz)
-	buffer.WriteString(zf.T(true))
-	buffer.WriteString(kgf)
-	buffer.WriteString(xh)
-	buffer.WriteString(zf.Testing(true))
-	buffer.WriteString(dh)
-	buffer.WriteString(zf.T(false))
-	buffer.WriteString(xkhy)
-	buffer.WriteString(dkhz)
-	buffer.WriteString(hhf)
+	csstr := xkhz + zf.T(true) + kgf + xh + zf.Testing(true) + dh + zf.T(false) + xkhy + dkhz + hhf
+	buffer.WriteString(csstr)
 
 	// 组装第一个实体
 	//juese2 := appmodels.Juese
-
-	shiti2 := strings.ToLower(bianma) + sz2
-	buffer.WriteString(shiti2)             //juese2
-	buffer.WriteString(mh)                 // :
-	buffer.WriteString(dyh)                // =
-	buffer.WriteString(zf.Appmodels(true)) //appmodels
-	buffer.WriteString(dh)                 // .
-	buffer.WriteString(bianma)             //Juese
+	shiti2 := strings.ToLower(bianma) + sz2 + mh + dyh + zf.Appmodels(true) + dh + bianma
+	buffer.WriteString(shiti2)
 
 	//{ \n zhi... \n }
-	buffer.WriteString(dkhz)
-	buffer.WriteString(hhf)
+	buffer.WriteString(dkhz + hhf)
 	pinjieziduan(bianma, buffer, zf.Tianjiaduoge(false), sz2)
-	buffer.WriteString(dkhy)
-	buffer.WriteString(hhf)
+	buffer.WriteString(dkhy + hhf)
 
 	// juese3 := appmodels.Juese{\n
-	shiti3 := strings.ToLower(bianma) + sz3
+	shiti3 := strings.ToLower(bianma) + sz3 + mh + dyh + zf.Appmodels(true) + dh + bianma + dkhz + hhf
 	buffer.WriteString(shiti3)
-	buffer.WriteString(mh)
-	buffer.WriteString(dyh)
-	buffer.WriteString(zf.Appmodels(true))
-	buffer.WriteString(dh)
-	buffer.WriteString(bianma)
-	buffer.WriteString(dkhz)
-	buffer.WriteString(hhf)
 
 	// \n zhi \n
 	pinjieziduan(bianma, buffer, zf.Tianjiaduoge(false), sz3)
-	buffer.WriteString(dkhy) //}
-	buffer.WriteString(hhf)
+	buffer.WriteString(dkhy + hhf)
 
-	// zdjuesedaos
-	baoming := zf.Zd(true) + strings.ToLower(bianma) + zf.Daos(true)
-	// jueses :=
-	duoge := strings.ToLower(bianma) + zf.S(true)
+	// jueses :=[]appmodes.Juese
+	duoge := strings.ToLower(bianma) + zf.S(true) + mh + dyh + zkhz + zkhy + zf.Appmodels(true) + dh + bianma
 	buffer.WriteString(duoge)
-	buffer.WriteString(mh)
-	buffer.WriteString(dyh)
-
-	//[]appmodes.Juese
-	buffer.WriteString(zkhz)
-	buffer.WriteString(zkhy)
-	buffer.WriteString(zf.Appmodels(true))
-	buffer.WriteString(dh)
-	buffer.WriteString(bianma)
 
 	//{juese1,juese2}
-	buffer.WriteString(dkhz)
-	buffer.WriteString(shiti2)
-	buffer.WriteString(douhao)
-	buffer.WriteString(shiti3)
-	buffer.WriteString(dkhy)
-	buffer.WriteString(hhf)
+	szs := dkhz + shiti2 + douhao + shiti3 + dkhy + hhf
+	buffer.WriteString(szs)
 
-	//zdjuesedaso.Tianjiaduoge
+	//zdjuesedaos.Tianjiaduoge(jueses)
+	baoming := zf.Zd(true) + strings.ToLower(bianma) + zf.Daos(true) + dh + zf.Tianjiaduoge(false) + xkhz + duoge + xkhy + hhf
 	buffer.WriteString(baoming)
-	buffer.WriteString(dh)
-	buffer.WriteString(zf.Tianjiaduoge(false))
 
-	//(jueses)
-	buffer.WriteString(xkhz)
-	buffer.WriteString(duoge)
-	buffer.WriteString(xkhy)
-
-	//\n } \n
-	buffer.WriteString(hhf)
-	buffer.WriteString(dkhy)
-	buffer.WriteString(hhf)
+	//} \n
+	buffer.WriteString(dkhy + hhf)
 }
 func Shengchengdaostests() {
 	zf := zf.Zf{}

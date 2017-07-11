@@ -1,7 +1,7 @@
 package zdxinxijuesedaos
 
 import (
-	"hanfuxin/appinits"
+	"/appinits"
 	"hanfuxin/appmodels"
 )
 

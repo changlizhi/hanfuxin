@@ -25,10 +25,8 @@ func Shengchenghanfuxinmodels() {
 		Buffertoumodel(&buffer, bk, bm)
 
 		for lk, _ := range Huoquyigebiaojiegou(bk) {
-			buffer.WriteString(lk)                   //字段字符
-			buffer.WriteString(kgf)                  //空格
-			buffer.WriteString(Huoquyigeleixing(lk)) // 类型(int,string,float32,time)
-			buffer.WriteString(hhf)                  //换行
+			field := lk + kgf + Huoquyigeleixing(lk) + hhf
+			buffer.WriteString(field)
 		}
 		//左大括号在头里有了
 		buffer.WriteString(dkhy) // }

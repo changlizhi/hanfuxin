@@ -1,18 +1,13 @@
 package zdjuesedaos
 
 import (
-	"hanfuxin/appinits"
+	"/appinits"
 	"hanfuxin/appmodels"
-	"log"
 )
 
 func Chaxunyige(id int) *appmodels.Juese {
 	juese := &appmodels.Juese{Id: id}
-	err := appinits.Hanfuxinormer.Read(juese)
-	if err != nil {
-		log.Println(err)
-		return nil
-	}
+	appinits.Hanfuxinormer.Read(juese)
 	return juese
 }
 func Tianjiayige(juese *appmodels.Juese) {

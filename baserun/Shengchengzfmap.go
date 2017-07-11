@@ -109,17 +109,11 @@ func Buffertoumodel(buffer *bytes.Buffer, bianma string, baoming string) {
 	// package xxx \n
 	kgf := zfzhi.Konggefuzhi()
 	hhf := zfzhi.Huanhangfuzhi()
-	buffer.WriteString(zf.Package(true))
-	buffer.WriteString(kgf)
-	buffer.WriteString(baoming)
-	buffer.WriteString(hhf)
+
+	pac := zf.Package(true) + kgf + baoming + hhf
+	buffer.WriteString(pac)
 
 	// type Juese struct{\n
-	buffer.WriteString(zf.Type(true))
-	buffer.WriteString(kgf)
-	buffer.WriteString(bianma)
-	buffer.WriteString(kgf)
-	buffer.WriteString(zf.Struct(true))
-	buffer.WriteString(zfzhi.Dakuohaozuozhi())
-	buffer.WriteString(hhf)
+	typestr := zf.Type(true) + kgf + bianma + kgf + zf.Struct(true) + zfzhi.Dakuohaozuozhi() + hhf
+	buffer.WriteString(typestr)
 }

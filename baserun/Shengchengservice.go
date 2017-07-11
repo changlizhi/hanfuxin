@@ -1,12 +1,14 @@
 package baserun
-import(
+
+import (
+	"bytes"
 	"hanfuxin/zf"
 	"hanfuxin/zfzhi"
-	"bytes"
 	"log"
 	"strings"
 )
-func serviceimports(bianma string,buffer *bytes.Buffer){
+
+func serviceimports(bianma string, buffer *bytes.Buffer) {
 	zf := zf.Zf{}
 	zfzhi := zfzhi.Zfzhi{}
 	syh := zfzhi.Shuangyinhaozhi()
@@ -15,80 +17,40 @@ func serviceimports(bianma string,buffer *bytes.Buffer){
 	xx := zfzhi.Xiexianzhi()
 	hhf := zfzhi.Huanhangfuzhi()
 
-	buffer.WriteString(zf.Import(true))
-	buffer.WriteString(xkhz)
-	buffer.WriteString(hhf)
+	importstr := zf.Import(true) + xkhz + hhf
+	buffer.WriteString(importstr)
 	//"hanfuxin/allerrors" \n
-	buffer.WriteString(syh)
-	buffer.WriteString(zf.Hanfuxin(true))
-	buffer.WriteString(xx)
-	buffer.WriteString(zf.Allerrors(true))
-	buffer.WriteString(syh)
-	buffer.WriteString(hhf)
-
+	errorbao := syh + zf.Hanfuxin(true) + xx + zf.Allerrors(true) + syh + hhf
+	buffer.WriteString(errorbao)
 	// "bytes"
-	buffer.WriteString(syh)
-	buffer.WriteString(zf.Bytes(true))
-	buffer.WriteString(syh)
-	buffer.WriteString(hhf)
+	bytesbao := syh + zf.Bytes(true) + syh + hhf
+	buffer.WriteString(bytesbao)
 	// "log"
-	buffer.WriteString(syh)
-	buffer.WriteString(zf.Log(true))
-	buffer.WriteString(syh)
-	buffer.WriteString(hhf)
+	logbao := syh + zf.Log(true) + syh + hhf
+	buffer.WriteString(logbao)
 	// "time"
-	buffer.WriteString(syh)
-	buffer.WriteString(zf.Time(true))
-	buffer.WriteString(syh)
-	buffer.WriteString(hhf)
+	timebao := syh + zf.Time(true) + syh + hhf
+	buffer.WriteString(timebao)
 	// "hanfuxin/appmodels"
-	buffer.WriteString(syh)
-	buffer.WriteString(zf.Hanfuxin(true))
-	buffer.WriteString(xx)
-	buffer.WriteString(zf.Appmodels(true))
-	buffer.WriteString(syh)
-	buffer.WriteString(hhf)
+	apmbao := syh + zf.Hanfuxin(true) + xx + zf.Appmodels(true) + syh + hhf
+	buffer.WriteString(apmbao)
 	// "hanfuxin/apputils"
-	buffer.WriteString(syh)
-	buffer.WriteString(zf.Hanfuxin(true))
-	buffer.WriteString(xx)
-	buffer.WriteString(zf.Apputils(true))
-	buffer.WriteString(syh)
-	buffer.WriteString(hhf)
+	apubao := syh + zf.Hanfuxin(true) + xx + zf.Apputils(true) + syh + hhf
+	buffer.WriteString(apubao)
 	// "hanfuxin/baserun"
-	buffer.WriteString(syh)
-	buffer.WriteString(zf.Hanfuxin(true))
-	buffer.WriteString(xx)
-	buffer.WriteString(zf.Baserun(true))
-	buffer.WriteString(syh)
-	buffer.WriteString(hhf)
+	brbao := syh + zf.Hanfuxin(true) + xx + zf.Baserun(true) + syh + hhf
+	buffer.WriteString(brbao)
 	// "hanfuxin/zf"
-	buffer.WriteString(syh)
-	buffer.WriteString(zf.Hanfuxin(true))
-	buffer.WriteString(xx)
-	buffer.WriteString(zf.Zf(true))
-	buffer.WriteString(syh)
-	buffer.WriteString(hhf)
+	zfbao := syh + zf.Hanfuxin(true) + xx + zf.Zf(true) + syh + hhf
+	buffer.WriteString(zfbao)
 	// "hanfuxin/zfzhi"
-	buffer.WriteString(syh)
-	buffer.WriteString(zf.Hanfuxin(true))
-	buffer.WriteString(xx)
-	buffer.WriteString(zf.Zfzhi(true))
-	buffer.WriteString(syh)
-	buffer.WriteString(hhf)
+	zfzhibao := syh + zf.Hanfuxin(true) + xx + zf.Zfzhi(true) + syh + hhf
+	buffer.WriteString(zfzhibao)
 	// "hanfuxin/zdxxxdaos"
-	buffer.WriteString(syh)
-	buffer.WriteString(zf.Hanfuxin(true))
-	buffer.WriteString(xx)
-	daobao := zf.Zd(true) + strings.ToLower(bianma) + zf.Daos(true)
+	daobao := syh + zf.Hanfuxin(true) + xx + zf.Zd(true) + strings.ToLower(bianma) + zf.Daos(true) + syh + hhf + xkhy + hhf
 	buffer.WriteString(daobao)
-	buffer.WriteString(syh)
-	buffer.WriteString(hhf)
-	
-	buffer.WriteString(xkhy)
-	buffer.WriteString(hhf)
 }
-func yanzhengchangdu(bianma string,buffer *bytes.Buffer){
+func yanzhengchangdu(bianma string, buffer *bytes.Buffer) {
 	zf := zf.Zf{}
 	zfzhi := zfzhi.Zfzhi{}
 	xkhz := zfzhi.Xiaokuohaozuozhi()
@@ -97,61 +59,52 @@ func yanzhengchangdu(bianma string,buffer *bytes.Buffer){
 	dkhy := zfzhi.Dakuohaoyouzhi()
 	xh := zfzhi.Xinghaozhi()
 	hhf := zfzhi.Huanhangfuzhi()
-	mh :=zfzhi.Maohaozhi()
+	mh := zfzhi.Maohaozhi()
 	dyh := zfzhi.Dengyuhaozhi()
 	dh := zfzhi.Dianhaozhi()
 
 	bmx := strings.ToLower(bianma)
 
 	kgf := zfzhi.Konggefuzhi()
-	buffer.WriteString(zf.Func(true))
-	buffer.WriteString(kgf)
-	buffer.WriteString(zf.Yanzhengziduanchangdu(true))
-	//(bmx *appmodels.bm) error { \n	
-	buffer.WriteString(xkhz)
-	buffer.WriteString(bmx)
-	buffer.WriteString(kgf)
-	buffer.WriteString(xh)
-	buffer.WriteString(zf.Appmodels(true))
-	buffer.WriteString(bianma)
-	buffer.WriteString(xkhy)
-	buffer.WriteString(zf.Error(true))
-	buffer.WriteString(dkhz)
-	buffer.WriteString(hhf)
-
+	funcone := zf.Func(true) + kgf + zf.Yanzhengziduanchangdu(true)
+	buffer.WriteString(funcone)
+	//(bmx *appmodels.bm) error { \n
+	canshu := xkhz + bmx + kgf + xh + zf.Appmodels(true) + bianma + xkhy + zf.Error(true) + dkhz + hhf
+	buffer.WriteString(canshu)
 	// zf := zf.Zf{}
-	buffer.WriteString(zf.Zf(true))
-	buffer.WriteString(mh)
-	buffer.WriteString(dyh)
-	buffer.WriteString(zf.Zf(true))
-	buffer.WriteString(dh)
-	buffer.WriteString(zf.Zf(false))
-	buffer.WriteString(dkhz)
+	zfobj := zf.Zf(true) + mh + dyh + zf.Zf(true) + dh + zf.Zf(false) + dkhz + dkhy + hhf
+	buffer.WriteString(zfobj)
+	cuowu := zf.Cuowu(true) + mh + dyh + zf.False(true) + hhf
+	buffer.WriteString(cuowu)
+
+	for lk, lv := range Huoquyigebiaojiegou(bianma) {
+		//lenbianma :=
+		//baserun.Huoquyigechangdu
+		//(zf.Bianma(false))
+		lenone := zf.Len(true) + lv + mh + dyh +
+			zf.Baserun(true) + dh + zf.Huoquyigechangdu(false) +
+			xkhz + zf.Zf(true) + dh + lk + xkhz + zf.False(true) + xkhy + xkhy + hhf
+		buffer.WriteString(lenone)
+	}
+
 	buffer.WriteString(dkhy)
 	buffer.WriteString(hhf)
 
-
-
-	buffer.WriteString(hhf)
-	buffer.WriteString(dkhy)
-	
 }
-func Shengchengservice(){
+func Shengchengservice() {
 	zf := zf.Zf{}
 	zfzhi := zfzhi.Zfzhi{}
 	kgf := zfzhi.Konggefuzhi()
 	hhf := zfzhi.Huanhangfuzhi()
-	for bk,bv := range Huoqubiaos(){
+	for bk, bv := range Huoqubiaos() {
 		buffer := bytes.Buffer{}
 		bm := zf.Zd(true) + bv + zf.Services(true)
 		//package xxxservices \n
-		buffer.WriteString(zf.Package(true))
-		buffer.WriteString(kgf)
-		buffer.WriteString(bm)
-		buffer.WriteString(hhf)
+		pac := zf.Package(true) + kgf + bm + hhf
+		buffer.WriteString(pac)
 
-		serviceimports(bk,&buffer)
-		yanzhengchangdu(bk,&buffer)
-		log.Println("buffer--------",buffer.String())
+		serviceimports(bk, &buffer)
+		yanzhengchangdu(bk, &buffer)
+		log.Println("buffer--------", buffer.String())
 	}
 }
