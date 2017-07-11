@@ -9,7 +9,6 @@ import (
 	"log"
 	"reflect"
 	"regexp"
-	"strconv"
 	"strings"
 )
 
@@ -49,19 +48,13 @@ func Huoqulieleixings() map[string]string {
 }
 func Huoquyigechangdu(lieming string) int {
 	zf := zf.Zf{}
-	zfzhi := zfzhi.Zfzhi{}
-	kzf := zfzhi.Kongzifuzhi()
 	sjk := sjk.Sjk{}
 	ffm := lieming + zf.Changduzhi(true)
 	v := reflect.ValueOf(&sjk)
-	retstr := v.MethodByName(ffm).Call(nil)[0].String()
-	if retstr == kzf {
-		log.Println("类型错误-----空")
-		return zfzhi.Shuzifu1zhi()
-	}
-	ret, _ := strconv.Atoi(retstr)
+	ret := v.MethodByName(ffm).Call(nil)[0].Interface().(int)
 	return ret
 }
+
 func Huoquyigeleixing(lieming string) string {
 	zf := zf.Zf{}
 	zfzhi := zfzhi.Zfzhi{}
@@ -69,7 +62,7 @@ func Huoquyigeleixing(lieming string) string {
 	sjk := sjk.Sjk{}
 	ffm := lieming + zf.Leixingzhi(true)
 	v := reflect.ValueOf(&sjk)
-	ret := v.MethodByName(ffm).Call(nil)[0].String()
+	ret := v.MethodByName(ffm).Call(nil)[0].Interface().(string)
 	if ret == kzf {
 		log.Println("类型错误-----空")
 		return kzf
@@ -104,40 +97,6 @@ func Huoquyigebiaojiegou(biaoming string) map[string]string {
 			mixinlie := regtou.ReplaceAllString(biaotou, kzf)
 			if regdaxie.MatchString(mixinlie) {
 				ret[mixinlie] = strings.ToLower(mixinlie)
-			}
-		}
-	}
-	return ret
-}
-
-func Huoqubiaolieguanlian(biaoming string, lieming string) map[string]string {
-	zf := zf.Zf{}
-	zfzhi := zfzhi.Zfzhi{}
-	biaolies := Huoqubiaolies()
-	zkhz := zfzhi.Zhongkuohaozuozhi()
-	zkhy := zfzhi.Zhongkuohaoyouzhi()
-	mh := zfzhi.Maohaozhi()
-	jh := zfzhi.Jiahaozhi()
-	cfh := zfzhi.Chengfanghaozhi()
-	kzf := zfzhi.Kongzifuzhi()
-
-	// [[:word:]]+
-	regwordstr := zkhz + zkhz + mh + zf.Word(true) + mh + zkhy + zkhy + jh
-	regbiaostr := cfh + biaoming + regwordstr
-	regliestr := cfh + lieming
-	regtoustr := cfh + biaoming
-	regbiao, _ := regexp.CompilePOSIX(regbiaostr)
-	reglie, _ := regexp.CompilePOSIX(regliestr)
-	regtou, _ := regexp.CompilePOSIX(regtoustr)
-
-	ret := make(map[string]string)
-	for biaolie, _ := range biaolies {
-		if regbiao.MatchString(biaolie) {
-			biaotou := regbiao.FindString(biaolie)
-			mixinlie := regtou.ReplaceAllString(biaotou, kzf)
-			if reglie.MatchString(mixinlie) {
-				lieneed := reglie.FindString(mixinlie)
-				ret[lieneed] = strings.ToLower(lieneed)
 			}
 		}
 	}

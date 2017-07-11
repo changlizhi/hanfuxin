@@ -18,20 +18,13 @@ import (
 	"testing"
 )
 
-func TestJueseservice(t *testing.T) {
-	juese1 := appmodels.Juese{Id: 4, Bianma: "ROLE_JINGLIeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee", Mingcheng: "经理", Biaoji: "Youxiao"}
-	juese2 := appmodels.Juese{Id: 4, Bianma: "ROLE_JINGLI", Mingcheng: "经理eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee", Biaoji: "Youxiao"}
-	zdjueseservices.Tianjiajuese(&juese1)
-	zdjueseservices.Tianjiajuese(&juese2)
-}
-
 func TestFuncname(t *testing.T) {
 	pc, file, _, _ := runtime.Caller(1)
 	log.Println("pc----", pc)
 	log.Println("file-------", file)
 	f := runtime.FuncForPC(pc)
-	log.Println("f-----------",f)
-	log.Println("f.Name()-----------",f.Name())
+	log.Println("f-----------", f)
+	log.Println("f.Name()-----------", f.Name())
 	log.Println("PERIOD--------", token.PERIOD.String())
 
 	log.Println("funcname------", strings.Split(f.Name(), token.PERIOD.String())[1])
@@ -103,8 +96,8 @@ func TestReflect(t *testing.T) {
 	zf := zf.Zf{}
 	v := reflect.ValueOf(&zf)
 	vparam := reflect.ValueOf(&t)
-	log.Println("param-------",vparam)
-	param := make([]reflect.Value,1)
+	log.Println("param-------", vparam)
+	param := make([]reflect.Value, 1)
 	param[0] = vparam
 	log.Println(v.MethodByName("Testf2"))
 }

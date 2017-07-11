@@ -8,7 +8,7 @@ import (
 )
 
 func TestChaxunyigeJuese(t *testing.T) {
-	juese := zdjuesedaos.Chaxunyige(1)
+	juese := zdjuesedaos.Chaxunyige(10)
 	log.Println(juese)
 }
 func TestShanchuyigeJuese(t *testing.T) {
