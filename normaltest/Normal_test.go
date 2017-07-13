@@ -135,3 +135,10 @@ func TestReg3(t *testing.T) {
 	}
 	log.Println(reg.MatchString(str))
 }
+
+type Age int
+
+func TestType(t *testing.T) {
+	a := new(Age)
+	log.Println("a------", a)
+}

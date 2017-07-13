@@ -271,11 +271,11 @@ func testtianjiaduoge(bianma string, buffer *bytes.Buffer) {
 	buffer.WriteString(duoge)
 
 	//{juese1,juese2}
-	szs := dkhz + shiti2 + douhao + shiti3 + dkhy + hhf
+	szs := dkhz + strings.ToLower(bianma) + sz2 + douhao + strings.ToLower(bianma) + sz3 + dkhy + hhf
 	buffer.WriteString(szs)
 
 	//zdjuesedaos.Tianjiaduoge(jueses)
-	baoming := zf.Zd(true) + strings.ToLower(bianma) + zf.Daos(true) + dh + zf.Tianjiaduoge(false) + xkhz + duoge + xkhy + hhf
+	baoming := zf.Zd(true) + strings.ToLower(bianma) + zf.Daos(true) + dh + zf.Tianjiaduoge(false) + xkhz + strings.ToLower(bianma) + zf.S(true) + xkhy + hhf
 	buffer.WriteString(baoming)
 
 	//} \n

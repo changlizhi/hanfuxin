@@ -25,7 +25,7 @@ func imports(bianma string, buffer *bytes.Buffer) {
 	buffer.WriteString(importstr)
 
 	// "hanfuxin/appinits" \n
-	api := syh + xx + zf.Appinits(true) + syh + hhf
+	api := syh + hfx + xx + zf.Appinits(true) + syh + hhf
 	buffer.WriteString(api)
 
 	// "hanfuxin/appmodels" \n
@@ -58,7 +58,7 @@ func chaxunyige(bianma string, buffer *bytes.Buffer) {
 	bmx := strings.ToLower(bianma)
 
 	//func Chaxunyige(id int)
-	funstr := zf.Func(true) + kongge + zf.Chaxunyige(false) + xkhz + idx + kongge + zf.Int(true) + xkhy + hhf
+	funstr := zf.Func(true) + kongge + zf.Chaxunyige(false) + xkhz + idx + kongge + zf.Int(true) + xkhy
 	buffer.WriteString(funstr)
 
 	// *appmodels.Juese{ \n

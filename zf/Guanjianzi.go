@@ -1,5 +1,8 @@
 package zf
 
+func (zf *Zf) Nil(xiaoxie bool) string {
+	return Fangfaming(xiaoxie)
+}
 func (zf *Zf) Break(xiaoxie bool) string {
 	return Fangfaming(xiaoxie)
 }

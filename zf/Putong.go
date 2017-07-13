@@ -1,5 +1,17 @@
 package zf
 
+func (zf *Zf) Ziduanerror(xiaoxie bool) string {
+	return Fangfaming(xiaoxie)
+}
+func (zf *Zf) Wenti(xiaoxie bool) string {
+	return Fangfaming(xiaoxie)
+}
+func (zf *Zf) Shijian(xiaoxie bool) string {
+	return Fangfaming(xiaoxie)
+}
+func (zf *Zf) Shiti(xiaoxie bool) string {
+	return Fangfaming(xiaoxie)
+}
 func (zf *Zf) Qudong(xiaoxie bool) string {
 	return Fangfaming(xiaoxie)
 }
@@ -75,18 +87,24 @@ func (zf *Zf) Zuichang(xiaoxie bool) string {
 func (zf *Zf) Shiji(xiaoxie bool) string {
 	return Fangfaming(xiaoxie)
 }
-func (zf *Zf) Error01(xiaoxie bool) string {
-	return Fangfaming(xiaoxie)
-}
-func (zf *Zf) Error02(xiaoxie bool) string {
-	return Fangfaming(xiaoxie)
-}
-func (zf *Zf) Error03(xiaoxie bool) string {
-	return Fangfaming(xiaoxie)
-}
 func (zf *Zf) Word(xiaoxie bool) string {
 	return Fangfaming(xiaoxie)
 }
 func (zf *Zf) Zf(xiaoxie bool) string {
+	return Fangfaming(xiaoxie)
+}
+func (zf *Zf) Err(xiaoxie bool) string {
+	return Fangfaming(xiaoxie)
+}
+func (zf *Zf) Xiugai(xiaoxie bool) string {
+	return Fangfaming(xiaoxie)
+}
+func (zf *Zf) Kzf(xiaoxie bool) string {
+	return Fangfaming(xiaoxie)
+}
+func (zf *Zf) Kongzifuzhi(xiaoxie bool) string {
+	return Fangfaming(xiaoxie)
+}
+func (zf *Zf) Cuowus(xiaoxie bool) string {
 	return Fangfaming(xiaoxie)
 }

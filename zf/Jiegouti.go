@@ -73,3 +73,6 @@ func (zf *Zf) FloatType(xiaoxie bool) string {
 func (zf *Zf) Type1(xiaoxie bool) string {
 	return Fangfaming(xiaoxie)
 }
+func (zf *Zf) Buffer(xiaoxie bool) string {
+	return Fangfaming(xiaoxie)
+}

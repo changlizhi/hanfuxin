@@ -8,7 +8,7 @@ import (
 )
 
 func TestChaxunyigeJuese(t *testing.T) {
-	juese := zdjuesedaos.Chaxunyige(10)
+	juese := zdjuesedaos.Chaxunyige(1)
 	log.Println(juese)
 }
 func TestShanchuyigeJuese(t *testing.T) {
@@ -17,18 +17,18 @@ func TestShanchuyigeJuese(t *testing.T) {
 func TestTianjiayigeJuese(t *testing.T) {
 	juese := &appmodels.Juese{
 		Id:        1,
+		Mingcheng: "MingchengTianjiayigeTest1",
 		Bianma:    "BianmaTianjiayigeTest1",
 		Biaoji:    "BiaojiTianjiayigeTest1",
-		Mingcheng: "MingchengTianjiayigeTest1",
 	}
 	zdjuesedaos.Tianjiayige(juese)
 }
 func TestXiugaiyigeJuese(t *testing.T) {
 	juese := &appmodels.Juese{
 		Biaoji:    "BiaojiXiugaiyigeTest1",
+		Bianma:    "BianmaXiugaiyigeTest1",
 		Id:        1,
 		Mingcheng: "MingchengXiugaiyigeTest1",
-		Bianma:    "BianmaXiugaiyigeTest1",
 	}
 	zdjuesedaos.Xiugaiyige(juese)
 }
@@ -41,9 +41,9 @@ func TestTianjiaduogeJuese(t *testing.T) {
 	}
 	juese3 := appmodels.Juese{
 		Mingcheng: "MingchengTianjiaduogeTest3",
-		Biaoji:    "BiaojiTianjiaduogeTest3",
-		Bianma:    "BianmaTianjiaduogeTest3",
 		Id:        1,
+		Bianma:    "BianmaTianjiaduogeTest3",
+		Biaoji:    "BiaojiTianjiaduogeTest3",
 	}
 	jueses := []appmodels.Juese{juese2, juese3}
 	zdjuesedaos.Tianjiaduoge(jueses)

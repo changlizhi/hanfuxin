@@ -16,9 +16,9 @@ func TestShanchuyigeXinxijuese(t *testing.T) {
 }
 func TestTianjiayigeXinxijuese(t *testing.T) {
 	xinxijuese := &appmodels.Xinxijuese{
+		Xinxibianma: "XinxibianmaTianjiayigeTest1",
 		Juesebianma: "JuesebianmaTianjiayigeTest1",
 		Id:          1,
-		Xinxibianma: "XinxibianmaTianjiayigeTest1",
 		Biaoji:      "BiaojiTianjiayigeTest1",
 	}
 	zdxinxijuesedaos.Tianjiayige(xinxijuese)
@@ -26,17 +26,17 @@ func TestTianjiayigeXinxijuese(t *testing.T) {
 func TestXiugaiyigeXinxijuese(t *testing.T) {
 	xinxijuese := &appmodels.Xinxijuese{
 		Xinxibianma: "XinxibianmaXiugaiyigeTest1",
-		Biaoji:      "BiaojiXiugaiyigeTest1",
 		Juesebianma: "JuesebianmaXiugaiyigeTest1",
 		Id:          1,
+		Biaoji:      "BiaojiXiugaiyigeTest1",
 	}
 	zdxinxijuesedaos.Xiugaiyige(xinxijuese)
 }
 func TestTianjiaduogeXinxijuese(t *testing.T) {
 	xinxijuese2 := appmodels.Xinxijuese{
-		Biaoji:      "BiaojiTianjiaduogeTest2",
 		Juesebianma: "JuesebianmaTianjiaduogeTest2",
 		Xinxibianma: "XinxibianmaTianjiaduogeTest2",
+		Biaoji:      "BiaojiTianjiaduogeTest2",
 		Id:          1,
 	}
 	xinxijuese3 := appmodels.Xinxijuese{

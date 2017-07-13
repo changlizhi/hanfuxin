@@ -24,3 +24,18 @@ func (zf *Zf) Xiugaiyige(xiaoxie bool) string {
 func (zf *Zf) Huoquyigechangdu(xiaoxie bool) string {
 	return Fangfaming(xiaoxie)
 }
+func (zf *Zf) WriteString(xiaoxie bool) string {
+	return Fangfaming(xiaoxie)
+}
+func (zf *Zf) Tianjia(xiaoxie bool) string {
+	return Fangfaming(xiaoxie)
+}
+func (zf *Zf) Find(xiaoxie bool) string {
+	return Fangfaming(xiaoxie)
+}
+func (zf *Zf) Chaxun(xiaoxie bool) string {
+	return Fangfaming(xiaoxie)
+}
+func (zf *Zf) Shanchu(xiaoxie bool) string {
+	return Fangfaming(xiaoxie)
+}

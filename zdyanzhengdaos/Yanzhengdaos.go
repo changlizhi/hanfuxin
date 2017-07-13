@@ -1,7 +1,7 @@
 package zdyanzhengdaos
 
 import (
-	"/appinits"
+	"hanfuxin/appinits"
 	"hanfuxin/appmodels"
 )
 
