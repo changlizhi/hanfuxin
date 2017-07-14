@@ -32,6 +32,14 @@ func imports(bianma string, buffer *bytes.Buffer) {
 	apm := syh + hfx + xx + zf.Appmodels(true) + syh + hhf
 	buffer.WriteString(apm)
 
+	// "hanfuxin/baseinits"
+	bai := syh + hfx + xx + zf.Baseinits(true) + syh + hhf
+	buffer.WriteString(bai)
+
+	//"hanfuxin/zf"
+	zfbao := syh + hfx + xx + zf.Zf(true) + syh
+	buffer.WriteString(zfbao)
+
 	// ) \n
 	buffer.WriteString(xkhy + hhf)
 }
@@ -54,6 +62,8 @@ func chaxunyige(bianma string, buffer *bytes.Buffer) {
 	dyh := zfzhi.Dengyuhaozhi()
 	qh := zfzhi.Qiehaozhi()
 	xh := zfzhi.Xinghaozhi()
+	gth := zfzhi.Gantanhaozhi()
+	kgf := zfzhi.Konggefuzhi()
 
 	bmx := strings.ToLower(bianma)
 
@@ -73,9 +83,21 @@ func chaxunyige(bianma string, buffer *bytes.Buffer) {
 	idstr := dkhz + idd + mh + idx + dkhy + hhf
 	buffer.WriteString(idstr)
 
-	// \n appinits.Hanfuxinormer.Read(juese+
-	read := zf.Appinits(true) + dh + zf.Hanfuxinormer(false) + dh + zf.Read(false) + xkhz + bmx + xkhy + hhf
+	// \n err := appinits.Hanfuxinormer.Read(juese)
+	read := zf.Err(true) + mh + dyh + zf.Appinits(true) + dh + zf.Hanfuxinormer(false) + dh + zf.Read(false) + xkhz + bmx + xkhy + hhf
 	buffer.WriteString(read)
+
+	// if err := nil
+	errstrss := zf.If(true) + kgf + zf.Err(true) + kgf + gth + dyh + zf.Nil(true)
+	buffer.WriteString(errstrss)
+
+	buffer.WriteString(dkhz + hhf)
+
+	//return nil
+	retstrsss := zf.Return(true) + kgf + zf.Nil(true)
+	buffer.WriteString(retstrsss)
+
+	buffer.WriteString(hhf + dkhy + hhf)
 
 	// \n return juese
 	retstr := zf.Return(true) + kongge + bmx + hhf
@@ -95,6 +117,13 @@ func tianjiayige(bianma string, buffer *bytes.Buffer) {
 	xkhy := zfzhi.Xiaokuohaoyouzhi()
 	dkhz := zfzhi.Dakuohaozuozhi()
 	dkhy := zfzhi.Dakuohaoyouzhi()
+	xhx := zfzhi.Xiahuaxianzhi()
+	douhao := zfzhi.Douhaozhi()
+	zkhz := zfzhi.Zhongkuohaozuozhi()
+	zkhy := zfzhi.Zhongkuohaoyouzhi()
+	mh := zfzhi.Maohaozhi()
+	dyh := zfzhi.Dengyuhaozhi()
+	gth := zfzhi.Gantanhaozhi()
 
 	bmx := strings.ToLower(bianma)
 
@@ -102,14 +131,30 @@ func tianjiayige(bianma string, buffer *bytes.Buffer) {
 	buffer.WriteString(funcstr)
 
 	//(juese*appmodels.Juese){\n
-	canshu := xkhz + bmx + kgf + zfzhi.Xinghaozhi() + zf.Appmodels(true) + dh + bianma + xkhy + dkhz + hhf
+	canshu := xkhz + bmx + kgf + zfzhi.Xinghaozhi() + zf.Appmodels(true) + dh + bianma + xkhy + zf.String(true) + dkhz + hhf
 	buffer.WriteString(canshu)
 
-	//appinits.Hanfuxinormer.Insert
-	//(juese+
-	insert := zf.Appinits(true) + dh + zf.Hanfuxinormer(false) + dh + zf.Insert(false) + xkhz + bmx + xkhy + hhf
+	// zf := zf.Zf{} \n
+	zfstr := zf.Zf(true) + mh + dyh + zf.Zf(true) + dh + zf.Zf(false) + dkhz + dkhy + hhf
+	buffer.WriteString(zfstr)
+
+	// _, err := appinits.Hanfuxinormer.Insert(juese)
+	insert := xhx + douhao + zf.Err(true) + mh + dyh + zf.Appinits(true) + dh + zf.Hanfuxinormer(false) + dh + zf.Insert(false) + xkhz + bmx + xkhy + hhf
 	buffer.WriteString(insert)
 
+	// if err != nil
+	iferr := zf.If(true) + kgf + zf.Err(true) + gth + dyh + zf.Nil(true)
+	buffer.WriteString(iferr)
+
+	buffer.WriteString(dkhz + hhf)
+
+	// return baseinits.Tishis[zf.Tishi04].Bianma
+	errret := zf.Return(true) + kgf + zf.Baseinits(true) + dh + zf.Tishis(false) + zkhz + zf.Zf(true) + dh + zf.Tishi04(false) + xkhz + zf.False(true) + xkhy + zkhy + dh + zf.Bianma(false) + hhf
+	buffer.WriteString(errret)
+	buffer.WriteString(dkhy + hhf)
+	// return baseinits.Tishis[zf.Tishi03].Bianma
+	retstr := zf.Return(true) + kgf + zf.Baseinits(true) + dh + zf.Tishis(false) + zkhz + zf.Zf(true) + dh + zf.Tishi03(false) + xkhz + zf.False(true) + xkhy + zkhy + dh + zf.Bianma(false) + hhf
+	buffer.WriteString(retstr)
 	//\n}\n
 	buffer.WriteString(dkhy + hhf)
 }
@@ -127,6 +172,11 @@ func tianjiaduoge(bianma string, buffer *bytes.Buffer) {
 	xkhz := zfzhi.Xiaokuohaozuozhi()
 	xkhy := zfzhi.Xiaokuohaoyouzhi()
 	kgf := zfzhi.Konggefuzhi()
+	xhx := zfzhi.Xiahuaxianzhi()
+	mh := zfzhi.Maohaozhi()
+	dyh := zfzhi.Dengyuhaozhi()
+	gth := zfzhi.Gantanhaozhi()
+
 	//func Tianjiaduoge(
 	funstr := zf.Func(true) + kgf + zf.Tianjiaduoge(false) + xkhz
 	buffer.WriteString(funstr)
@@ -135,17 +185,33 @@ func tianjiaduoge(bianma string, buffer *bytes.Buffer) {
 	canshu := strings.ToLower(bianma) + zf.Shuzu(true)
 	buffer.WriteString(canshu)
 
-	//[]appmodels.Juese+{\n
-	cslx := kgf + zkhz + zkhy + zf.Appmodels(true) + dh + bianma + xkhy + dkhz + hhf
+	//[]appmodels.Juese{\n
+	cslx := kgf + zkhz + zkhy + zf.Appmodels(true) + dh + bianma + xkhy + zf.String(true) + dkhz + hhf
 	buffer.WriteString(cslx)
+	// zf := zf.Zf{} \n
+	zfstr := zf.Zf(true) + mh + dyh + zf.Zf(true) + dh + zf.Zf(false) + dkhz + dkhy + hhf
+	buffer.WriteString(zfstr)
 
-	//appinits.Hanfuxinormer.InsertMulti
-	insert := zf.Appinits(true) + dh + zf.Hanfuxinormer(false) + dh + zf.InsertMulti(false)
+	//_err:=appinits.Hanfuxinormer.InsertMulti
+	insert := xhx + douhao + zf.Err(true) + mh + dyh + zf.Appinits(true) + dh + zf.Hanfuxinormer(false) + dh + zf.InsertMulti(false)
 	buffer.WriteString(insert)
 
 	//(len(jueseshuzu+,jueseshuzu+
 	lenstr := xkhz + zf.Len(true) + xkhz + canshu + xkhy + douhao + canshu + xkhy + hhf
 	buffer.WriteString(lenstr)
+	// if err != nil
+	iferr := zf.If(true) + kgf + zf.Err(true) + gth + dyh + zf.Nil(true)
+	buffer.WriteString(iferr)
+
+	buffer.WriteString(dkhz + hhf)
+
+	// return baseinits.Tishis[zf.Tishi04].Bianma
+	errret := zf.Return(true) + kgf + zf.Baseinits(true) + dh + zf.Tishis(false) + zkhz + zf.Zf(true) + dh + zf.Tishi04(false) + xkhz + zf.False(true) + xkhy + zkhy + dh + zf.Bianma(false) + hhf
+	buffer.WriteString(errret)
+	buffer.WriteString(dkhy + hhf)
+	// return baseinits.Tishis[zf.Tishi03].Bianma
+	retstr := zf.Return(true) + kgf + zf.Baseinits(true) + dh + zf.Tishis(false) + zkhz + zf.Zf(true) + dh + zf.Tishi03(false) + xkhz + zf.False(true) + xkhy + zkhy + dh + zf.Bianma(false) + hhf
+	buffer.WriteString(retstr)
 
 	//}\n
 	buffer.WriteString(dkhy + hhf)
@@ -161,19 +227,42 @@ func shanchuyige(bianma string, buffer *bytes.Buffer) {
 	dkhy := zfzhi.Dakuohaoyouzhi()
 	xkhz := zfzhi.Xiaokuohaozuozhi()
 	xkhy := zfzhi.Xiaokuohaoyouzhi()
+	xhx := zfzhi.Xiahuaxianzhi()
+	douhao := zfzhi.Douhaozhi()
+	zkhz := zfzhi.Zhongkuohaozuozhi()
+	zkhy := zfzhi.Zhongkuohaoyouzhi()
 	id := zf.Id(true)
+	mh := zfzhi.Maohaozhi()
+	dyh := zfzhi.Dengyuhaozhi()
+	gth := zfzhi.Gantanhaozhi()
 
 	//func Shanchuyige(id int+{ \n
-	funcstr := zf.Func(true) + kgf + zf.Shanchuyige(false) + xkhz + id + kgf + zf.Int(true) + xkhy + dkhz + hhf
+	funcstr := zf.Func(true) + kgf + zf.Shanchuyige(false) + xkhz + id + kgf + zf.Int(true) + xkhy + zf.String(true) + dkhz + hhf
 	buffer.WriteString(funcstr)
+	// zf := zf.Zf{} \n
+	zfstr := zf.Zf(true) + mh + dyh + zf.Zf(true) + dh + zf.Zf(false) + dkhz + dkhy + hhf
+	buffer.WriteString(zfstr)
 
-	//appinits.Hanfuxinormer.Delete
-	delete := zf.Appinits(true) + dh + zf.Hanfuxinormer(false) + dh + zf.Delete(false)
+	//_,errappinits.Hanfuxinormer.Delete
+	delete := xhx + douhao + zf.Err(true) + mh + dyh + zf.Appinits(true) + dh + zf.Hanfuxinormer(false) + dh + zf.Delete(false)
 	buffer.WriteString(delete)
 
 	//(Chaxunyige(id++
 	cxstr := xkhz + zf.Chaxunyige(false) + xkhz + id + xkhy + xkhy + hhf
 	buffer.WriteString(cxstr)
+	// if err != nil
+	iferr := zf.If(true) + kgf + zf.Err(true) + gth + dyh + zf.Nil(true)
+	buffer.WriteString(iferr)
+
+	buffer.WriteString(dkhz + hhf)
+
+	// return baseinits.Tishis[zf.Tishi04].Bianma
+	errret := zf.Return(true) + kgf + zf.Baseinits(true) + dh + zf.Tishis(false) + zkhz + zf.Zf(true) + dh + zf.Tishi08(false) + xkhz + zf.False(true) + xkhy + zkhy + dh + zf.Bianma(false) + hhf
+	buffer.WriteString(errret)
+	buffer.WriteString(dkhy + hhf)
+	// return baseinits.Tishis[zf.Tishi03].Bianma
+	retstr := zf.Return(true) + kgf + zf.Baseinits(true) + dh + zf.Tishis(false) + zkhz + zf.Zf(true) + dh + zf.Tishi07(false) + xkhz + zf.False(true) + xkhy + zkhy + dh + zf.Bianma(false) + hhf
+	buffer.WriteString(retstr)
 
 	//\n}\n
 	buffer.WriteString(dkhy + hhf)
@@ -190,6 +279,13 @@ func xiugaiyige(bianma string, buffer *bytes.Buffer) {
 	dkhz := zfzhi.Dakuohaozuozhi()
 	dkhy := zfzhi.Dakuohaoyouzhi()
 	xh := zfzhi.Xinghaozhi()
+	xhx := zfzhi.Xiahuaxianzhi()
+	douhao := zfzhi.Douhaozhi()
+	zkhz := zfzhi.Zhongkuohaozuozhi()
+	zkhy := zfzhi.Zhongkuohaoyouzhi()
+	mh := zfzhi.Maohaozhi()
+	dyh := zfzhi.Dengyuhaozhi()
+	gth := zfzhi.Gantanhaozhi()
 
 	bmx := strings.ToLower(bianma)
 
@@ -197,12 +293,29 @@ func xiugaiyige(bianma string, buffer *bytes.Buffer) {
 	buffer.WriteString(funstr)
 
 	//(juese*appmodels.Juese){\n
-	csstr := xkhz + bmx + kgf + xh + zf.Appmodels(true) + dh + bianma + xkhy + dkhz + hhf
+	csstr := xkhz + bmx + kgf + xh + zf.Appmodels(true) + dh + bianma + xkhy + zf.String(true) + dkhz + hhf
 	buffer.WriteString(csstr)
+	// zf := zf.Zf{} \n
+	zfstr := zf.Zf(true) + mh + dyh + zf.Zf(true) + dh + zf.Zf(false) + dkhz + dkhy + hhf
+	buffer.WriteString(zfstr)
 
-	//appinits.Hanfuxinormer.Update(juese)
-	update := zf.Appinits(true) + dh + zf.Hanfuxinormer(false) + dh + zf.Update(false) + xkhz + bmx + xkhy + hhf
+	//_,err := appinits.Hanfuxinormer.Update(juese)
+	update := xhx + douhao + zf.Err(true) + mh + dyh + zf.Appinits(true) + dh + zf.Hanfuxinormer(false) + dh + zf.Update(false) + xkhz + bmx + xkhy + hhf
 	buffer.WriteString(update)
+	// if err != nil
+	iferr := zf.If(true) + kgf + zf.Err(true) + gth + dyh + zf.Nil(true)
+
+	buffer.WriteString(iferr)
+
+	buffer.WriteString(dkhz + hhf)
+
+	// return baseinits.Tishis[zf.Tishi04].Bianma
+	errret := zf.Return(true) + kgf + zf.Baseinits(true) + dh + zf.Tishis(false) + zkhz + zf.Zf(true) + dh + zf.Tishi06(false) + xkhz + zf.False(true) + xkhy + zkhy + dh + zf.Bianma(false) + hhf
+	buffer.WriteString(errret)
+	buffer.WriteString(dkhy + hhf)
+	// return baseinits.Tishis[zf.Tishi03].Bianma
+	retstr := zf.Return(true) + kgf + zf.Baseinits(true) + dh + zf.Tishis(false) + zkhz + zf.Zf(true) + dh + zf.Tishi05(false) + xkhz + zf.False(true) + xkhy + zkhy + dh + zf.Bianma(false) + hhf
+	buffer.WriteString(retstr)
 
 	//\n}\n
 	buffer.WriteString(dkhy + hhf)

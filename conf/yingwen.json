@@ -8,27 +8,67 @@
     "Guilei":"Cuowu",
     "Bianma":"Error02",
     "Mingcheng":"错误02",
-    "Zhi":"json parse error！"
+    "Zhi":"json parse error!"
   },{
     "Guilei":"Cuowu",
     "Bianma":"Error03",
     "Mingcheng":"错误03",
-    "Zhi":"filed type error！"
+    "Zhi":"filed type error!"
   },{
     "Guilei":"Cuowu",
     "Bianma":"Error04",
     "Mingcheng":"错误04",
-    "Zhi":"is not exists！"
+    "Zhi":"is not exists!"
+  },{
+    "Guilei":"Cuowu",
+    "Bianma":"Error05",
+    "Mingcheng":"错误05",
+    "Zhi":"id is not int!"
   }],
   "Tishi":[{
     "Guilei":"Tishi",
-    "Bianma":"Youxiang",
+    "Bianma":"Tishi01",
     "Mingcheng":"邮箱提示",
-    "Zhi":"email format err！"
+    "Zhi":"email format err!"
   },{
     "Guilei":"Tishi",
-    "Bianma":"Mima",
+    "Bianma":"Tishi02",
     "Mingcheng":"密码提示",
-    "Zhi":"password is so easy！"
+    "Zhi":"password is so easy!"
+  },{
+    "Guilei":"Tishi",
+    "Bianma":"Tishi03",
+    "Mingcheng":"保存提示",
+    "Zhi":"Save suecceed!"
+  },{
+    "Guilei":"Tishi",
+    "Bianma":"Tishi04",
+    "Mingcheng":"保存提示",
+    "Zhi":"Save failed!"
+  },{
+    "Guilei":"Tishi",
+    "Bianma":"Tishi05",
+    "Mingcheng":"修改提示",
+    "Zhi":"Update succeed!"
+  },{
+    "Guilei":"Tishi",
+    "Bianma":"Tishi06",
+    "Mingcheng":"修改提示",
+    "Zhi":"Update failed!"
+  },{
+    "Guilei":"Tishi",
+    "Bianma":"Tishi07",
+    "Mingcheng":"删除提示",
+    "Zhi":"Delete succeed!"
+  },{
+    "Guilei":"Tishi",
+    "Bianma":"Tishi08",
+    "Mingcheng":"删除提示",
+    "Zhi":"Delete failed!"
+  },{
+    "Guilei":"Tishi",
+    "Bianma":"Tishi09",
+    "Mingcheng":"验证提示",
+    "Zhi":"Validate failed!"
   }]
 }

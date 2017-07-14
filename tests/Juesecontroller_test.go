@@ -1,38 +1,56 @@
 package tests
 
 import (
-	"testing"
 	"github.com/astaxie/beego/context"
-	_ "hanfuxin/routers"
-	"log"
 	"hanfuxin/controllers"
+	_ "hanfuxin/routers"
 	"hanfuxin/tests"
+	"hanfuxin/zf"
+	"hanfuxin/zfzhi"
+	"log"
+	"strconv"
+	"testing"
 )
-func TestPostjuese(t *testing.T) {
+
+func controller() *controllers.Juesecontroller {
 	c := controllers.Juesecontroller{}
 	c.Data = make(map[interface{}]interface{})
 	c.Ctx = context.NewContext()
 	c.Ctx.Input = context.NewInput()
-	reqstr := `{"Id":5,"Bianma":"ROLE","Mingcheng":"角色1","Biaoji":"Youxiao"}`
-	c.Ctx.Input.RequestBody = []byte(reqstr)
 	c.Ctx.Output = context.NewOutput()
 	c.Ctx.Output.Context = context.NewContext()
 	c.Ctx.Output.Context.ResponseWriter = &context.Response{new(tests.Mywriter), true, 200}
-	log.Println("creq-----------", string(c.Ctx.Input.RequestBody))
+	return &c
+}
+func TestPostjuese(t *testing.T) {
+	c := controller()
+	reqstr := `{"Id":1,"Bianma":"ROLE","Mingcheng":"角色1","Biaoji":"Youxiao"}`
+	c.Ctx.Input.RequestBody = []byte(reqstr)
 	c.Post()
 	log.Println("cress-----------", c.Data)
 }
-func TestGetjuese(t *testing.T){
-	c := controllers.Juesecontroller{}
-	c.Data = make(map[interface{}]interface{})
-	c.Ctx = context.NewContext()
-	c.Ctx.Input = context.NewInput()
-	reqstr := `{"Id":5,"Bianma":"ROLE","Mingcheng":"角色1","Biaoji":"Youxiao"}`
-	c.Ctx.Input.RequestBody = []byte(reqstr)
-	c.Ctx.Output = context.NewOutput()
-	c.Ctx.Output.Context = context.NewContext()
-	c.Ctx.Output.Context.ResponseWriter = &context.Response{new(tests.Mywriter), true, 200}
-	log.Println("creq-----------", string(c.Ctx.Input.RequestBody))
+func TestGetjuese(t *testing.T) {
+	zf := zf.Zf{}
+	zfzhi := zfzhi.Zfzhi{}
+	idstr := strconv.Itoa(zfzhi.Shuzi1zhi())
+	c := controller()
+	c.Ctx.Input.SetParam(zf.Id(false), idstr)
 	c.Get()
-	log.Println("cress-----------", c.TplName)
+	log.Println("cressget-----------", c.Data[zf.Json(true)])
+}
+func TestDeletejuese(t *testing.T) {
+	zf := zf.Zf{}
+	zfzhi := zfzhi.Zfzhi{}
+	idstr := strconv.Itoa(zfzhi.Shuzi2zhi())
+	c := controller()
+	c.Ctx.Input.SetParam(zf.Id(false), idstr)
+	c.Delete()
+	log.Println("cressget-----------", c.Data[zf.Json(true)])
+}
+func TestPatchjuese(t *testing.T) {
+	c := controller()
+	reqstr := `{"Id":1,"Bianma":"ROLE222","Mingcheng":"角色222","Biaoji":"Youxiao"}`
+	c.Ctx.Input.RequestBody = []byte(reqstr)
+	c.Patch()
+	log.Println("cress-----------", c.Data)
 }

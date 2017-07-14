@@ -108,3 +108,6 @@ func (zf *Zf) Kongzifuzhi(xiaoxie bool) string {
 func (zf *Zf) Cuowus(xiaoxie bool) string {
 	return Fangfaming(xiaoxie)
 }
+func (zf *Zf) Tishis(xiaoxie bool) string {
+	return Fangfaming(xiaoxie)
+}

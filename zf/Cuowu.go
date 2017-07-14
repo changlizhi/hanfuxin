@@ -12,3 +12,6 @@ func (zf *Zf) Error03(xiaoxie bool) string {
 func (zf *Zf) Error04(xiaoxie bool) string {
 	return Fangfaming(xiaoxie)
 }
+func (zf *Zf) Error05(xiaoxie bool) string {
+	return Fangfaming(xiaoxie)
+}

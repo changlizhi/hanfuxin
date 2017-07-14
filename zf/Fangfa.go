@@ -39,3 +39,9 @@ func (zf *Zf) Chaxun(xiaoxie bool) string {
 func (zf *Zf) Shanchu(xiaoxie bool) string {
 	return Fangfaming(xiaoxie)
 }
+func (zf *Zf) Xiahuaxianzhi(xiaoxie bool) string {
+	return Fangfaming(xiaoxie)
+}
+func (zf *Zf) Xhx(xiaoxie bool) string {
+	return Fangfaming(xiaoxie)
+}

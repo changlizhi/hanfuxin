@@ -10,7 +10,6 @@ import (
 	"hanfuxin/zdquanxiandaos"
 	"hanfuxin/zf"
 	"hanfuxin/zfzhi"
-	"log"
 	"time"
 )
 
@@ -26,18 +25,18 @@ func yanzhengziduanchangdu(quanxian *appmodels.Quanxian) error {
 		buffer.WriteString(apputils.Shengchengerrorchangdu(zf.Mingcheng(false), int64(lenbianma), lenbianmashiti))
 	}
 
-	lenbiaoji := baserun.Huoquyigechangdu(zf.Biaoji(false))
-	lenbiaojishiti := len(quanxian.Biaoji)
-	if lenbiaojishiti > int(lenbiaoji) {
-		cuowu = true
-		buffer.WriteString(apputils.Shengchengerrorchangdu(zf.Mingcheng(false), int64(lenbiaoji), lenbiaojishiti))
-	}
-
 	lenmingcheng := baserun.Huoquyigechangdu(zf.Mingcheng(false))
 	lenmingchengshiti := len(quanxian.Mingcheng)
 	if lenmingchengshiti > int(lenmingcheng) {
 		cuowu = true
 		buffer.WriteString(apputils.Shengchengerrorchangdu(zf.Mingcheng(false), int64(lenmingcheng), lenmingchengshiti))
+	}
+
+	lenbiaoji := baserun.Huoquyigechangdu(zf.Biaoji(false))
+	lenbiaojishiti := len(quanxian.Biaoji)
+	if lenbiaojishiti > int(lenbiaoji) {
+		cuowu = true
+		buffer.WriteString(apputils.Shengchengerrorchangdu(zf.Mingcheng(false), int64(lenbiaoji), lenbiaojishiti))
 	}
 
 	lenlujing := baserun.Huoquyigechangdu(zf.Lujing(false))
@@ -51,47 +50,51 @@ func yanzhengziduanchangdu(quanxian *appmodels.Quanxian) error {
 	}
 	return nil
 }
-func Tianjiaquanxian(quanxian *appmodels.Quanxian) {
+func Tianjiaquanxian(quanxian *appmodels.Quanxian) string {
 	err := yanzhengziduanchangdu(quanxian)
+	zfzhi := zfzhi.Zfzhi{}
+	zf := zf.Zf{}
+	xhx := zfzhi.Xiahuaxianzhi()
 	if err != nil {
-		log.Println(err)
-		return
+		return baseinits.Tishis[zf.Tishi09(false)].Bianma + xhx + err.Error()
+
 	}
-	zdquanxiandaos.Tianjiayige(quanxian)
+	return zdquanxiandaos.Tianjiayige(quanxian)
 
 }
-func Xiugaiquanxian(quanxian *appmodels.Quanxian) {
+func Xiugaiquanxian(quanxian *appmodels.Quanxian) string {
 	err := yanzhengziduanchangdu(quanxian)
 	zfzhi := zfzhi.Zfzhi{}
 	zf := zf.Zf{}
 	kzf := zfzhi.Kongzifuzhi()
+	xhx := zfzhi.Xiahuaxianzhi()
 	if err != nil {
-		log.Println(err)
-		return
+		return baseinits.Tishis[zf.Tishi09(false)].Bianma + xhx + err.Error()
+
 	}
 	quanxianfind := Chaxunquanxian(quanxian.Id)
 	if quanxianfind != nil {
 
-		if quanxian.Lujing != kzf {
-			quanxianfind.Lujing = quanxian.Lujing
-		}
-		if quanxian.Mingcheng != kzf {
-			quanxianfind.Mingcheng = quanxian.Mingcheng
-		}
 		if quanxian.Biaoji != kzf {
 			quanxianfind.Biaoji = quanxian.Biaoji
 		}
 		if quanxian.Bianma != kzf {
 			quanxianfind.Bianma = quanxian.Bianma
 		}
-		zdquanxiandaos.Xiugaiyige(quanxianfind)
-		return
+		if quanxian.Mingcheng != kzf {
+			quanxianfind.Mingcheng = quanxian.Mingcheng
+		}
+		if quanxian.Lujing != kzf {
+			quanxianfind.Lujing = quanxian.Lujing
+		}
+		return zdquanxiandaos.Xiugaiyige(quanxianfind)
+
 	}
-	log.Println(quanxian.Bianma, baseinits.Cuowus[zf.Error04(false)].Zhi)
+	return baseinits.Cuowus[zf.Error04(false)].Zhi
+}
+func Shanchuquanxian(id int) string {
+	return zdquanxiandaos.Shanchuyige(id)
 }
 func Chaxunquanxian(id int) *appmodels.Quanxian {
 	return zdquanxiandaos.Chaxunyige(id)
-}
-func Shanchuquanxian(id int) {
-	zdquanxiandaos.Shanchuyige(id)
 }

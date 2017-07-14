@@ -1,8 +1,10 @@
 package tests
-import(
+
+import (
 	"net/http"
 )
-type Mywriter struct{
+
+type Mywriter struct {
 }
 
 func (w *Mywriter) Header() http.Header {

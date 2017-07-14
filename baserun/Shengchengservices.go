@@ -6,7 +6,6 @@ import (
 	"hanfuxin/zf"
 	"hanfuxin/zfzhi"
 	"io/ioutil"
-	"log"
 	"os"
 	"strings"
 )
@@ -28,9 +27,6 @@ func serviceimports(bianma string, buffer *bytes.Buffer) {
 	// "bytes"
 	bytesbao := syh + zf.Bytes(true) + syh + hhf
 	buffer.WriteString(bytesbao)
-	// "log"
-	logbao := syh + zf.Log(true) + syh + hhf
-	buffer.WriteString(logbao)
 	// "time"
 	timebao := syh + zf.Time(true) + syh + hhf
 	buffer.WriteString(timebao)
@@ -161,13 +157,12 @@ func servicexiugai(bianma string, buffer *bytes.Buffer) {
 	mh := zfzhi.Maohaozhi()
 	dyh := zfzhi.Dengyuhaozhi()
 	gth := zfzhi.Gantanhaozhi()
-	douhao := zfzhi.Douhaozhi()
 	zkhz := zfzhi.Zhongkuohaozuozhi()
 	zkhy := zfzhi.Zhongkuohaoyouzhi()
 
 	bmx := strings.ToLower(bianma)
 
-	funcstr := zf.Func(true) + kgf + zf.Xiugai(false) + bmx + xkhz + bmx + kgf + xh + zf.Appmodels(true) + dh + bianma + xkhy
+	funcstr := zf.Func(true) + kgf + zf.Xiugai(false) + bmx + xkhz + bmx + kgf + xh + zf.Appmodels(true) + dh + bianma + xkhy + zf.String(true)
 	buffer.WriteString(funcstr)
 	buffer.WriteString(dkhz + hhf)
 
@@ -181,16 +176,24 @@ func servicexiugai(bianma string, buffer *bytes.Buffer) {
 	zfstr := zf.Zf(true) + mh + dyh + zf.Zf(true) + dh + zf.Zf(false) + dkhz + dkhy + hhf
 	buffer.WriteString(zfstr)
 
+	// kzf := zfzhi.Kongzifuzhi()
 	kzfstr := zf.Kzf(true) + mh + dyh + zf.Zfzhi(true) + dh + zf.Kongzifuzhi(false) + xkhz + xkhy + hhf
 	buffer.WriteString(kzfstr)
 
+	jiahao := zfzhi.Jiahaozhi()
+	// xhx := zfzhi.Xiahuaxianzhi()
+	xhxstr := zf.Xhx(true) + mh + dyh + zf.Zfzhi(true) + dh + zf.Xiahuaxianzhi(false) + xkhz + xkhy + hhf
+	buffer.WriteString(xhxstr)
+	// if err != nil
 	ifstr := zf.If(true) + kgf + zf.Err(true) + gth + dyh + zf.Nil(true)
 	buffer.WriteString(ifstr)
 	buffer.WriteString(dkhz + hhf)
 
-	logstr := zf.Log(true) + dh + zf.Println(false) + xkhz + zf.Err(true) + xkhy + hhf
-	buffer.WriteString(logstr)
-	buffer.WriteString(zf.Return(true))
+	// return baseinits.Tishis[zf.Tishi09(false)].Bianma + xhx + err.Error()
+	reterr := zf.Return(true) + kgf + zf.Baseinits(true) + dh + zf.Tishis(false) + zkhz + zf.Zf(true) + dh + zf.Tishi09(false) +
+		xkhz + zf.False(true) + xkhy + zkhy + dh + zf.Bianma(false) + jiahao + zf.Xhx(true) + jiahao +
+		zf.Err(true) + dh + zf.Error(false) + xkhz + xkhy + hhf
+	buffer.WriteString(reterr)
 	buffer.WriteString(hhf + dkhy)
 
 	findstr := hhf + bmx + zf.Find(true) + mh + dyh + zf.Chaxun(false) + bmx + xkhz + bmx + dh + zf.Id(false) + xkhy + hhf
@@ -210,19 +213,14 @@ func servicexiugai(bianma string, buffer *bytes.Buffer) {
 			buffer.WriteString(hhf + dkhy)
 		}
 	}
-	xiugaistr := hhf + zf.Zd(true) + bmx + zf.Daos(true) + dh + zf.Xiugaiyige(false) + xkhz + bmx + zf.Find(true) + xkhy + hhf
+	xiugaistr := hhf + zf.Return(true) + kgf + zf.Zd(true) + bmx + zf.Daos(true) + dh + zf.Xiugaiyige(false) + xkhz + bmx + zf.Find(true) + xkhy + hhf
 
 	buffer.WriteString(xiugaistr)
-	buffer.WriteString(zf.Return(true))
-	buffer.WriteString(hhf + dkhy)
-	logbcz := hhf + zf.Log(true) + dh + zf.Println(false) + xkhz
-	buffer.WriteString(logbcz)
-	logneirong := bmx + dh + zf.Bianma(false) + douhao + zf.Baseinits(true) + dh + zf.Cuowus(false) + zkhz + zf.Zf(true) + dh + zf.Error04(false) + xkhz + zf.False(true) + xkhy + zkhy + dh + zf.Zhi(false)
-	buffer.WriteString(logneirong)
-	buffer.WriteString(xkhy)
+	buffer.WriteString(hhf + dkhy + hhf)
+	finalstr := zf.Return(true) + kgf + zf.Baseinits(true) + dh + zf.Cuowus(false) + zkhz + zf.Zf(true) + dh + zf.Error04(false) + xkhz + zf.False(true) + xkhy + zkhy + dh + zf.Zhi(false)
+	buffer.WriteString(finalstr)
 
-	buffer.WriteString(hhf + dkhy)
-	buffer.WriteString(hhf)
+	buffer.WriteString(hhf + dkhy + hhf)
 
 }
 func servicetianjia(bianma string, buffer *bytes.Buffer) {
@@ -239,28 +237,44 @@ func servicetianjia(bianma string, buffer *bytes.Buffer) {
 	mh := zfzhi.Maohaozhi()
 	dyh := zfzhi.Dengyuhaozhi()
 	gth := zfzhi.Gantanhaozhi()
+	jiahao := zfzhi.Jiahaozhi()
+	zkhz := zfzhi.Zhongkuohaozuozhi()
+	zkhy := zfzhi.Zhongkuohaoyouzhi()
 
 	bmx := strings.ToLower(bianma)
-	funcstr := zf.Func(true) + kgf + zf.Tianjia(false) + bmx + xkhz + bmx + kgf + xh + zf.Appmodels(true) + dh + bianma + xkhy
+	// func Tianjiaxxx(xxx *appmodels.Xxx)
+	funcstr := zf.Func(true) + kgf + zf.Tianjia(false) + bmx + xkhz + bmx + kgf + xh + zf.Appmodels(true) + dh + bianma + xkhy + zf.String(true)
 	buffer.WriteString(funcstr)
 	buffer.WriteString(dkhz + hhf)
+	// err := yanzhengyigechangdu(xxx)
 	errstr := zf.Err(true) + mh + dyh + zf.Yanzhengziduanchangdu(true) + xkhz + bmx + xkhy + hhf
 	buffer.WriteString(errstr)
+
+	// zfzhi := zfzhi.Zfzhi{}
+	zfzhistr := zf.Zfzhi(true) + mh + dyh + zf.Zfzhi(true) + dh + zf.Zfzhi(false) + dkhz + dkhy + hhf
+	buffer.WriteString(zfzhistr)
+	//zf := zf.Zf{}
+	zfstr := zf.Zf(true) + mh + dyh + zf.Zf(true) + dh + zf.Zf(false) + dkhz + dkhy + hhf
+	buffer.WriteString(zfstr)
+	// xhx := zfzhi.Xiahuaxianzhi()
+	xhxstr := zf.Xhx(true) + mh + dyh + zf.Zfzhi(true) + dh + zf.Xiahuaxianzhi(false) + xkhz + xkhy + hhf
+	buffer.WriteString(xhxstr)
+
+	// if err != nil{\n
 	ifstr := zf.If(true) + kgf + zf.Err(true) + gth + dyh + zf.Nil(true) + dkhz + hhf
 	buffer.WriteString(ifstr)
-	logstr := zf.Log(true) + dh + zf.Println(false) + xkhz + zf.Err(true) + xkhy + hhf
-	buffer.WriteString(logstr)
-	buffer.WriteString(zf.Return(true))
-	buffer.WriteString(hhf + dkhy)
+	// return baseinits.Tishis[zf.Tishi09(false)].Bianma + xhx + err.Error()
+	reterr := zf.Return(true) + kgf + zf.Baseinits(true) + dh + zf.Tishis(false) + zkhz + zf.Zf(true) + dh + zf.Tishi09(false) + xkhz + zf.False(true) + xkhy + zkhy + dh + zf.Bianma(false) + jiahao + zf.Xhx(true) + jiahao + zf.Err(true) + dh + zf.Error(false) + xkhz + xkhy + hhf
+	buffer.WriteString(reterr)
+	buffer.WriteString(hhf + dkhy + hhf)
 
-	//zdjuesedaos.Tianjiayige(juese)
-	tjstr := hhf + zf.Zd(true) + bmx + zf.Daos(true) + dh + zf.Tianjiayige(false) + xkhz + bmx + xkhy + hhf
+	//return zdjuesedaos.Tianjiayige(juese)
+	tjstr := zf.Return(true) + kgf + zf.Zd(true) + bmx + zf.Daos(true) + dh + zf.Tianjiayige(false) + xkhz + bmx + xkhy + hhf
 	buffer.WriteString(tjstr)
 
-	buffer.WriteString(hhf + dkhy)
-	buffer.WriteString(hhf)
+	buffer.WriteString(hhf + dkhy + hhf)
 }
-func serviceshanchu(bianma string, buffer *bytes.Buffer) {
+func servicechaxun(bianma string, buffer *bytes.Buffer) {
 	zfzhi := zfzhi.Zfzhi{}
 	zf := zf.Zf{}
 	dh := zfzhi.Dianhaozhi()
@@ -282,7 +296,7 @@ func serviceshanchu(bianma string, buffer *bytes.Buffer) {
 	buffer.WriteString(hhf + dkhy)
 	buffer.WriteString(hhf)
 }
-func servicechaxun(bianma string, buffer *bytes.Buffer) {
+func serviceshanchu(bianma string, buffer *bytes.Buffer) {
 	zfzhi := zfzhi.Zfzhi{}
 	zf := zf.Zf{}
 	dh := zfzhi.Dianhaozhi()
@@ -295,10 +309,11 @@ func servicechaxun(bianma string, buffer *bytes.Buffer) {
 
 	bmx := strings.ToLower(bianma)
 
-	funstr := zf.Func(true) + kgf + zf.Shanchu(false) + bmx + xkhz + zf.Id(true) + kgf + zf.Int(true) + xkhy
+	// func Shanchuxxx(id int) string
+	funstr := zf.Func(true) + kgf + zf.Shanchu(false) + bmx + xkhz + zf.Id(true) + kgf + zf.Int(true) + xkhy + zf.String(true)
 	buffer.WriteString(funstr)
 	buffer.WriteString(dkhz + hhf)
-	retstr := zf.Zd(true) + bmx + zf.Daos(true) + dh + zf.Shanchuyige(false) + xkhz + zf.Id(true) + xkhy
+	retstr := zf.Return(true) + kgf + zf.Zd(true) + bmx + zf.Daos(true) + dh + zf.Shanchuyige(false) + xkhz + zf.Id(true) + xkhy
 	buffer.WriteString(retstr)
 	buffer.WriteString(hhf + dkhy)
 	buffer.WriteString(hhf)
@@ -324,9 +339,7 @@ func Shengchengservice() {
 		servicexiugai(bk, &buffer)
 		serviceshanchu(bk, &buffer)
 		servicechaxun(bk, &buffer)
-		log.Println("buffer--------", buffer.String())
 		dir := basemodels.Getapppath() + xx + bm
-		log.Println("dir-----------", dir)
 		os.MkdirAll(dir, os.ModePerm)
 		path := dir + xx + bk + zf.Services(true) + dh + zf.Go(true)
 		ioutil.WriteFile(path, buffer.Bytes(), os.ModePerm)
