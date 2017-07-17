@@ -102,12 +102,21 @@ func (zf *Zf) Xiugai(xiaoxie bool) string {
 func (zf *Zf) Kzf(xiaoxie bool) string {
 	return Fangfaming(xiaoxie)
 }
-func (zf *Zf) Kongzifuzhi(xiaoxie bool) string {
-	return Fangfaming(xiaoxie)
-}
 func (zf *Zf) Cuowus(xiaoxie bool) string {
 	return Fangfaming(xiaoxie)
 }
 func (zf *Zf) Tishis(xiaoxie bool) string {
+	return Fangfaming(xiaoxie)
+}
+func (zf *Zf) Dao(xiaoxie bool) string {
+	return Fangfaming(xiaoxie)
+}
+func (zf *Zf) Service(xiaoxie bool) string {
+	return Fangfaming(xiaoxie)
+}
+func (zf *Zf) Ret(xiaoxie bool) string {
+	return Fangfaming(xiaoxie)
+}
+func (zf *Zf) Tishi(xiaoxie bool) string {
 	return Fangfaming(xiaoxie)
 }

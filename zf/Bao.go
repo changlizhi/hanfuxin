@@ -24,3 +24,21 @@ func (zf *Zf) Parser(xiaoxie bool) string {
 func (zf *Zf) Bytes(xiaoxie bool) string {
 	return Fangfaming(xiaoxie)
 }
+func (zf *Zf) Encoding(xiaoxie bool) string {
+	return Fangfaming(xiaoxie)
+}
+func (zf *Zf) Com(xiaoxie bool) string {
+	return Fangfaming(xiaoxie)
+}
+func (zf *Zf) Astaxie(xiaoxie bool) string {
+	return Fangfaming(xiaoxie)
+}
+func (zf *Zf) Strconv(xiaoxie bool) string {
+	return Fangfaming(xiaoxie)
+}
+func (zf *Zf) Atoi(xiaoxie bool) string {
+	return Fangfaming(xiaoxie)
+}
+func (zf *Zf) Itoa(xiaoxie bool) string {
+	return Fangfaming(xiaoxie)
+}
