@@ -27,3 +27,27 @@ func (zf *Zf) ServeJSON(xiaoxie bool) string {
 func (zf *Zf) Split(xiaoxie bool) string {
 	return Fangfaming(xiaoxie)
 }
+func (zf *Zf) NewContext(xiaoxie bool) string {
+	return Fangfaming(xiaoxie)
+}
+func (zf *Zf) NewInput(xiaoxie bool) string {
+	return Fangfaming(xiaoxie)
+}
+func (zf *Zf) Output(xiaoxie bool) string {
+	return Fangfaming(xiaoxie)
+}
+func (zf *Zf) NewOutput(xiaoxie bool) string {
+	return Fangfaming(xiaoxie)
+}
+func (zf *Zf) Response(xiaoxie bool) string {
+	return Fangfaming(xiaoxie)
+}
+func (zf *Zf) ResponseWriter(xiaoxie bool) string {
+	return Fangfaming(xiaoxie)
+}
+func (zf *Zf) Mywriter(xiaoxie bool) string {
+	return Fangfaming(xiaoxie)
+}
+func (zf *Zf) SetParam(xiaoxie bool) string {
+	return Fangfaming(xiaoxie)
+}

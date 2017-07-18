@@ -76,3 +76,12 @@ func (zf *Zf) Type1(xiaoxie bool) string {
 func (zf *Zf) Buffer(xiaoxie bool) string {
 	return Fangfaming(xiaoxie)
 }
+func (zf *Zf) ROLE(xiaoxie bool) string {
+	return Fangfaming(xiaoxie)
+}
+func (zf *Zf) ADMIN(xiaoxie bool) string {
+	return Fangfaming(xiaoxie)
+}
+func (zf *Zf) Youxiao(xiaoxie bool) string {
+	return Fangfaming(xiaoxie)
+}

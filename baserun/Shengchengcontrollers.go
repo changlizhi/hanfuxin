@@ -2,9 +2,12 @@ package baserun
 
 import (
 	"bytes"
+	"hanfuxin/basemodels"
 	"hanfuxin/zf"
 	"hanfuxin/zfzhi"
+	"io/ioutil"
 	"log"
+	"os"
 	"strings"
 )
 
@@ -210,7 +213,6 @@ func patchpost(fangfaming string, bianma string, buffer *bytes.Buffer) {
 	//json.Unmarshal(c.Ctx.Input.RequestBody,&xxx)
 	jstr := zf.Json(true) + dh + zf.Unmarshal(false) + xkhz + zf.C(true) + dh + zf.Ctx(false) + dh + zf.Input(false) + dh + zf.RequestBody(false) + douhao + qiehao + bmx + xkhy + hhf
 	buffer.WriteString(jstr)
-	//serviceret := zdxxxservices.Tianjiaxxx(&xxx)
 
 	postpatch := ""
 	if fangfaming == zf.Post(false) {
@@ -220,7 +222,8 @@ func patchpost(fangfaming string, bianma string, buffer *bytes.Buffer) {
 		postpatch = zf.Xiugai(false)
 	}
 
-	sretstr := zf.Service(true) + zf.Ret(true) + mh + dyh + zf.Zd(true) + zf.Services(true) + dh + postpatch + bmx + xkhz + qiehao + bmx + xkhy + hhf
+	//serviceret := zdxxxservices.Tianjiaxxx(&xxx)
+	sretstr := zf.Service(true) + zf.Ret(true) + mh + dyh + zf.Zd(true) + bmx + zf.Services(true) + dh + postpatch + bmx + xkhz + qiehao + bmx + xkhy + hhf
 	buffer.WriteString(sretstr)
 	//tishi:=baseinits.Tishis[serviceret].Zhi
 	tsstr := zf.Tishi(true) + mh + dyh + zf.Baseinits(true) + dh + zf.Tishis(false) + zkhz + zf.Service(true) + zf.Ret(true) + zkhy + dh + zf.Zhi(false) + hhf
@@ -260,27 +263,161 @@ func patchpost(fangfaming string, bianma string, buffer *bytes.Buffer) {
 
 	buffer.WriteString(hhf + dkhy + hhf)
 }
-func controllerpost(bianma string,buffer *bytes.Buffer){
-	zf:=zf.Zf{}
-	patchpost(zf.Post(false),bianma,buffer)
+func controllerpost(bianma string, buffer *bytes.Buffer) {
+	zf := zf.Zf{}
+	patchpost(zf.Post(false), bianma, buffer)
 }
-func controllerpatch(bianma string,buffer *bytes.Buffer){
-	zf:=zf.Zf{}
-	patchpost(zf.Patch(false),bianma,buffer)
+func controllerpatch(bianma string, buffer *bytes.Buffer) {
+	zf := zf.Zf{}
+	patchpost(zf.Patch(false), bianma, buffer)
+}
+func controllerdelete(bianma string, buffer *bytes.Buffer) {
+	zf := zf.Zf{}
+	zfzhi := zfzhi.Zfzhi{}
+	kgf := zfzhi.Konggefuzhi()
+	xkhz := zfzhi.Xiaokuohaozuozhi()
+	xkhy := zfzhi.Xiaokuohaoyouzhi()
+	dkhz := zfzhi.Dakuohaozuozhi()
+	dkhy := zfzhi.Dakuohaoyouzhi()
+	xh := zfzhi.Xinghaozhi()
+	hhf := zfzhi.Huanhangfuzhi()
+	dh := zfzhi.Dianhaozhi()
+	mh := zfzhi.Maohaozhi()
+	dyh := zfzhi.Dengyuhaozhi()
+	douhao := zfzhi.Douhaozhi()
+	zkhz := zfzhi.Zhongkuohaozuozhi()
+	zkhy := zfzhi.Zhongkuohaoyouzhi()
+	jiahao := zfzhi.Jiahaozhi()
+	gth := zfzhi.Gantanhaozhi()
+
+	bmx := strings.ToLower(bianma)
+
+	// func (c *Xxxcontroller) Delete()
+	funstr := zf.Func(true) + kgf + xkhz + zf.C(true) + kgf + xh + bianma + zf.Controller(true) + xkhy + zf.Delete(false) + xkhz + xkhy
+	buffer.WriteString(funstr)
+	buffer.WriteString(dkhz + hhf)
+
+	//zf:=zf.Zf{}
+	zfstr := zf.Zf(true) + mh + dyh + zf.Zf(true) + dh + zf.Zf(false) + dkhz + dkhy + hhf
+	buffer.WriteString(zfstr)
+
+	//zfzhi:=zfzhi.Zfzhi{}
+	zfzstr := zf.Zfzhi(true) + mh + dyh + zf.Zfzhi(true) + dh + zf.Zfzhi(false) + dkhz + dkhy + hhf
+	buffer.WriteString(zfzstr)
+
+	//kzf := zfzhi.Kongzifuzhi()
+	kzfstr := zf.Kzf(true) + mh + dyh + zf.Zfzhi(true) + dh + zf.Kongzifuzhi(false) + xkhz + xkhy + hhf
+	buffer.WriteString(kzfstr)
+
+	//xhx := zfzhi.Xiahuaxianzhi()
+	xhxstr := zf.Xhx(true) + mh + dyh + zf.Zfzhi(true) + dh + zf.Xiahuaxianzhi(false) + xkhz + xkhy + hhf
+	buffer.WriteString(xhxstr)
+	//sz0:=zfzhi.Shuzi0zhi()
+	sz0str := zf.Sz0(true) + mh + dyh + zf.Zfzhi(true) + dh + zf.Shuzi0zhi(false) + xkhz + xkhy + hhf
+	buffer.WriteString(sz0str)
+	//sz1:=zfzhi.Shuzi1zhi()
+	sz1str := zf.Sz1(true) + mh + dyh + zf.Zfzhi(true) + dh + zf.Shuzi1zhi(false) + xkhz + xkhy + hhf
+	buffer.WriteString(sz1str)
+	//mh := zfzhi.Maohaozhi()
+	mhstr := zf.Mh(true) + mh + dyh + zf.Zfzhi(true) + dh + zf.Maohaozhi(false) + xkhz + xkhy + hhf
+	buffer.WriteString(mhstr)
+
+	// canshu:=c.GetString(zf.Id(false))
+	csstr := zf.Canshu(true) + mh + dyh + zf.C(true) + dh + zf.GetString(false) + xkhz + zf.Zf(true) + dh + zf.Id(false) + xkhz + zf.False(true) + xkhy + xkhy + hhf
+	buffer.WriteString(csstr)
+
+	//id,err := strconv.Atoi(canshu)
+	idintstr := zf.Id(true) + douhao + zf.Err(true) + mh + dyh + zf.Strconv(true) + dh + zf.Atoi(false) + xkhz + zf.Canshu(true) + xkhy + hhf
+	buffer.WriteString(idintstr)
+	// if err !=nil
+	ifstr := zf.If(true) + kgf + zf.Err(true) + gth + dyh + zf.Nil(true)
+	buffer.WriteString(ifstr)
+	buffer.WriteString(dkhz + hhf)
+
+	// log.Println(err)
+	logstr := zf.Log(true) + dh + zf.Println(false) + xkhz + zf.Err(true) + xkhy + hhf
+	buffer.WriteString(logstr)
+	// c.Data[zf.Json(true)] = map[string]string
+	dstr := zf.C(true) + dh + zf.Data(false) + zkhz + zf.Zf(true) + dh + zf.Json(false) + xkhz + zf.True(true) + xkhy + zkhy + dyh + zf.Map(true) + zkhz + zf.String(true) + zkhy + zf.String(true)
+	buffer.WriteString(dstr)
+	buffer.WriteString(dkhz + hhf)
+	//zf.Error05(false):baseinits.Cuowus[zf.Error05(false)].Zhi,
+	errretstr := zf.Zf(true) + dh + zf.Error05(false) + xkhz + zf.False(true) + xkhy + mh + zf.Baseinits(true) + dh + zf.Cuowus(false) + zkhz + zf.Zf(true) + dh + zf.Error05(false) + xkhz + zf.False(true) + xkhy + zkhy + dh + zf.Zhi(false) + douhao + hhf
+	buffer.WriteString(errretstr)
+	buffer.WriteString(hhf + dkhy + hhf)
+
+	//c.ServeJSON()
+	servstr := zf.C(true) + dh + zf.ServeJSON(false) + xkhz + xkhy + hhf
+	buffer.WriteString(servstr)
+	//return
+	buffer.WriteString(zf.Return(true))
+
+	buffer.WriteString(hhf + dkhy + hhf)
+
+	//serviceret := zdxxxservices.Shanchuxxx(id)
+	sretstr := zf.Service(true) + zf.Ret(true) + mh + dyh + zf.Zd(true) + bmx + zf.Services(true) + dh + zf.Shanchu(false) + bmx + xkhz + zf.Id(true) + xkhy + hhf
+	buffer.WriteString(sretstr)
+	//tishi:=baseinits.Tishis[serviceret].Zhi
+	tsstr := zf.Tishi(true) + mh + dyh + zf.Baseinits(true) + dh + zf.Tishis(false) + zkhz + zf.Service(true) + zf.Ret(true) + zkhy + dh + zf.Zhi(false) + hhf
+	buffer.WriteString(tsstr)
+	//if tishi==kzf
+	iftsstr := zf.If(true) + kgf + zf.Tishi(true) + dyh + dyh + zf.Kzf(true)
+	buffer.WriteString(iftsstr)
+
+	buffer.WriteString(dkhz + hhf)
+
+	//splitret:=strings.Split(serviceret,xhx)
+	spstr := zf.Split(true) + zf.Ret(true) + mh + dyh + zf.Strings(true) + dh + zf.Split(false) + xkhz + zf.Service(true) + zf.Ret(true) + douhao + zf.Xhx(true) + xkhy + hhf
+	buffer.WriteString(spstr)
+	//c.Data[zf.Json(true)]
+	dstrs := zf.C(true) + dh + zf.Data(false) + zkhz + zf.Zf(true) + dh + zf.Json(false) + xkhz + zf.True(true) + xkhy + zkhy
+	buffer.WriteString(dstrs)
+	//=baseinits.Tishis[splitret[sz0]].Zhi+mh+splitret[sz1]
+	davalstr := dyh + zf.Baseinits(true) + dh +
+		zf.Tishis(false) + zkhz + zf.Split(true) + zf.Ret(true) +
+		zkhz + zf.Sz0(true) + zkhy + zkhy + dh + zf.Zhi(false) +
+		jiahao + zf.Mh(true) + jiahao +
+		zf.Split(true) + zf.Ret(true) + zkhz + zf.Sz1(true) + zkhy + hhf
+	buffer.WriteString(davalstr)
+	//c.ServeJSON()
+	serstr := zf.C(true) + dh + zf.ServeJSON(false) + xkhz + xkhy + hhf
+	buffer.WriteString(serstr)
+	buffer.WriteString(zf.Return(true))
+	buffer.WriteString(hhf + dkhy + hhf)
+
+	//c.Data[zf.Json(true)]=tishi
+	tisret := zf.C(true) + dh + zf.Data(false) + zkhz + zf.Zf(true) + dh + zf.Json(false) + xkhz + zf.True(true) + xkhy + zkhy + dyh + zf.Tishi(true) + hhf
+	buffer.WriteString(tisret)
+
+	//c.ServeJSON()
+	buffer.WriteString(serstr)
+	buffer.WriteString(zf.Return(true))
+
+	buffer.WriteString(hhf + dkhy + hhf)
+
 }
 func Shengchengcontrollers() {
 	zf := zf.Zf{}
 	zfzhi := zfzhi.Zfzhi{}
-	buffer := bytes.Buffer{}
 	kgf := zfzhi.Konggefuzhi()
 	hhf := zfzhi.Huanhangfuzhi()
+	xx := zfzhi.Xiexianzhi()
+	dh := zfzhi.Dianhaozhi()
 	for bk, _ := range Huoqubiaos() {
+		buffer := bytes.Buffer{}
 		buffer.WriteString(zf.Package(true) + kgf + zf.Controllers(true) + hhf)
 		controllerimports(bk, &buffer)
 		controllertype(bk, &buffer)
 		controllerget(bk, &buffer)
 		controllerpost(bk, &buffer)
 		controllerpatch(bk, &buffer)
+		controllerdelete(bk, &buffer)
+		log.Println("buffer-----------------------\n", buffer.String())
+		dir := basemodels.Getapppath() + xx + zf.Controllers(true)
+		path := dir + xx + bk + zf.Controller(true) + dh + zf.Go(true)
+		log.Println("dir--------------", dir)
+		os.MkdirAll(dir, os.ModePerm)
+		ioutil.WriteFile(path, buffer.Bytes(), os.ModePerm)
+		log.Println("path--------------", path)
 	}
-	log.Println("buffer-----------------------\n", buffer.String())
 }

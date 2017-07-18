@@ -75,9 +75,6 @@ func (zf *Zf) Shi(xiaoxie bool) string {
 func (zf *Zf) Fou(xiaoxie bool) string {
 	return Fangfaming(xiaoxie)
 }
-func (zf *Zf) Youxiao(xiaoxie bool) string {
-	return Fangfaming(xiaoxie)
-}
 func (zf *Zf) Wuxiao(xiaoxie bool) string {
 	return Fangfaming(xiaoxie)
 }
@@ -118,5 +115,11 @@ func (zf *Zf) Ret(xiaoxie bool) string {
 	return Fangfaming(xiaoxie)
 }
 func (zf *Zf) Tishi(xiaoxie bool) string {
+	return Fangfaming(xiaoxie)
+}
+func (zf *Zf) Req(xiaoxie bool) string {
+	return Fangfaming(xiaoxie)
+}
+func (zf *Zf) Param(xiaoxie bool) string {
 	return Fangfaming(xiaoxie)
 }

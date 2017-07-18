@@ -5,7 +5,7 @@ import (
 	"github.com/astaxie/beego"
 	"hanfuxin/appmodels"
 	"hanfuxin/baseinits"
-	"hanfuxin/zdjueseservices"
+	"hanfuxin/zdyanzhengleixingservices"
 	"hanfuxin/zf"
 	"hanfuxin/zfzhi"
 	"log"
@@ -13,11 +13,11 @@ import (
 	"strings"
 )
 
-type Juesecontroller struct {
+type Yanzhengleixingcontroller struct {
 	beego.Controller
 }
 
-func (c *Juesecontroller) Get() {
+func (c *Yanzhengleixingcontroller) Get() {
 	zf := zf.Zf{}
 	canshu := c.GetString(zf.Id(false))
 	id, err := strconv.Atoi(canshu)
@@ -29,12 +29,12 @@ func (c *Juesecontroller) Get() {
 		c.ServeJSON()
 		return
 	}
-	juese := zdjueseservices.Chaxunjuese(id)
-	c.Data[zf.Json(true)] = juese
+	yanzhengleixing := zdyanzhengleixingservices.Chaxunyanzhengleixing(id)
+	c.Data[zf.Json(true)] = yanzhengleixing
 	c.ServeJSON()
 	return
 }
-func (c *Juesecontroller) Post() {
+func (c *Yanzhengleixingcontroller) Post() {
 	zf := zf.Zf{}
 	zfzhi := zfzhi.Zfzhi{}
 	kzf := zfzhi.Kongzifuzhi()
@@ -42,9 +42,9 @@ func (c *Juesecontroller) Post() {
 	sz0 := zfzhi.Shuzi0zhi()
 	sz1 := zfzhi.Shuzi1zhi()
 	mh := zfzhi.Maohaozhi()
-	juese := appmodels.Juese{}
-	json.Unmarshal(c.Ctx.Input.RequestBody, &juese)
-	serviceret := zdjueseservices.Tianjiajuese(&juese)
+	yanzhengleixing := appmodels.Yanzhengleixing{}
+	json.Unmarshal(c.Ctx.Input.RequestBody, &yanzhengleixing)
+	serviceret := zdyanzhengleixingservices.Tianjiayanzhengleixing(&yanzhengleixing)
 	tishi := baseinits.Tishis[serviceret].Zhi
 	if tishi == kzf {
 		splitret := strings.Split(serviceret, xhx)
@@ -56,7 +56,7 @@ func (c *Juesecontroller) Post() {
 	c.ServeJSON()
 	return
 }
-func (c *Juesecontroller) Patch() {
+func (c *Yanzhengleixingcontroller) Patch() {
 	zf := zf.Zf{}
 	zfzhi := zfzhi.Zfzhi{}
 	kzf := zfzhi.Kongzifuzhi()
@@ -64,9 +64,9 @@ func (c *Juesecontroller) Patch() {
 	sz0 := zfzhi.Shuzi0zhi()
 	sz1 := zfzhi.Shuzi1zhi()
 	mh := zfzhi.Maohaozhi()
-	juese := appmodels.Juese{}
-	json.Unmarshal(c.Ctx.Input.RequestBody, &juese)
-	serviceret := zdjueseservices.Xiugaijuese(&juese)
+	yanzhengleixing := appmodels.Yanzhengleixing{}
+	json.Unmarshal(c.Ctx.Input.RequestBody, &yanzhengleixing)
+	serviceret := zdyanzhengleixingservices.Xiugaiyanzhengleixing(&yanzhengleixing)
 	tishi := baseinits.Tishis[serviceret].Zhi
 	if tishi == kzf {
 		splitret := strings.Split(serviceret, xhx)
@@ -78,7 +78,7 @@ func (c *Juesecontroller) Patch() {
 	c.ServeJSON()
 	return
 }
-func (c *Juesecontroller) Delete() {
+func (c *Yanzhengleixingcontroller) Delete() {
 	zf := zf.Zf{}
 	zfzhi := zfzhi.Zfzhi{}
 	kzf := zfzhi.Kongzifuzhi()
@@ -96,7 +96,7 @@ func (c *Juesecontroller) Delete() {
 		c.ServeJSON()
 		return
 	}
-	serviceret := zdjueseservices.Shanchujuese(id)
+	serviceret := zdyanzhengleixingservices.Shanchuyanzhengleixing(id)
 	tishi := baseinits.Tishis[serviceret].Zhi
 	if tishi == kzf {
 		splitret := strings.Split(serviceret, xhx)

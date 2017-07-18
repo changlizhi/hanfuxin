@@ -10,8 +10,8 @@ import(
 "testing"
 
 )
-func juesecontroller()*controllers.Juesecontroller{
-c:=controllers.Juesecontroller{}
+func juesequanxiancontroller()*controllers.Juesequanxiancontroller{
+c:=controllers.Juesequanxiancontroller{}
 c.Data=make(map[interface{}]interface{})
 c.Ctx=context.NewContext()
 c.Ctx.Input=context.NewInput()
@@ -20,39 +20,39 @@ c.Ctx.Output.Context=context.NewContext()
 c.Ctx.Output.Context.ResponseWriter=&context.Response{new(tests.Mywriter),true,200}
 return &c
 }
-func TestPostjuese(t*testing.T){
+func TestPostjuesequanxian(t*testing.T){
 zfzhi:=zfzhi.Zfzhi{}
-c:=juesecontroller()
-reqjson:=zfzhi.Postjuesezhi()
+c:=juesequanxiancontroller()
+reqjson:=zfzhi.Postjuesequanxianzhi()
 c.Ctx.Input.RequestBody=[]byte(reqjson)
 c.Post()
 log.Println(c.Data)
 
 }
-func TestPatchjuese(t*testing.T){
+func TestPatchjuesequanxian(t*testing.T){
 zfzhi:=zfzhi.Zfzhi{}
-c:=juesecontroller()
-reqjson:=zfzhi.Patchjuesezhi()
+c:=juesequanxiancontroller()
+reqjson:=zfzhi.Patchjuesequanxianzhi()
 c.Ctx.Input.RequestBody=[]byte(reqjson)
 c.Patch()
 log.Println(c.Data)
 
 }
-func TestDeletejuese(t *testing.T){
+func TestDeletejuesequanxian(t *testing.T){
 zf:=zf.Zf{}
 zfzhi:=zfzhi.Zfzhi{}
 paramid:=strconv.Itoa(zfzhi.Shuzi1zhi())
-c:=juesecontroller()
+c:=juesequanxiancontroller()
 c.Ctx.Input.SetParam(zf.Id(false),paramid)
 c.Delete()
 log.Println(c.Data[zf.Json(true)])
 
 }
-func TestGetjuese(t *testing.T){
+func TestGetjuesequanxian(t *testing.T){
 zf:=zf.Zf{}
 zfzhi:=zfzhi.Zfzhi{}
 paramid:=strconv.Itoa(zfzhi.Shuzi1zhi())
-c:=juesecontroller()
+c:=juesequanxiancontroller()
 c.Ctx.Input.SetParam(zf.Id(false),paramid)
 c.Get()
 log.Println(c.Data[zf.Json(true)])

@@ -42,3 +42,6 @@ func (zf *Zf) Atoi(xiaoxie bool) string {
 func (zf *Zf) Itoa(xiaoxie bool) string {
 	return Fangfaming(xiaoxie)
 }
+func (zf *Zf) Context(xiaoxie bool) string {
+	return Fangfaming(xiaoxie)
+}
