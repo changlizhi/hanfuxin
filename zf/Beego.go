@@ -51,3 +51,21 @@ func (zf *Zf) Mywriter(xiaoxie bool) string {
 func (zf *Zf) SetParam(xiaoxie bool) string {
 	return Fangfaming(xiaoxie)
 }
+func (zf *Zf) Init(xiaoxie bool) string {
+	return Fangfaming(xiaoxie)
+}
+func (zf *Zf) Router(xiaoxie bool) string {
+	return Fangfaming(xiaoxie)
+}
+func (zf *Zf) GET(xiaoxie bool) string {
+	return Fangfaming(xiaoxie)
+}
+func (zf *Zf) POST(xiaoxie bool) string {
+	return Fangfaming(xiaoxie)
+}
+func (zf *Zf) PATCH(xiaoxie bool) string {
+	return Fangfaming(xiaoxie)
+}
+func (zf *Zf) DELETE(xiaoxie bool) string {
+	return Fangfaming(xiaoxie)
+}

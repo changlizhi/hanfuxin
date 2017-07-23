@@ -11,326 +11,242 @@ import (
 )
 
 func serviceimports(bianma string, buffer *bytes.Buffer) {
-	zf := zf.Zf{}
-	zfzhi := zfzhi.Zfzhi{}
-	syh := zfzhi.Shuangyinhaozhi()
-	xkhz := zfzhi.Xiaokuohaozuozhi()
-	xkhy := zfzhi.Xiaokuohaoyouzhi()
-	xx := zfzhi.Xiexianzhi()
-	hhf := zfzhi.Huanhangfuzhi()
-
-	importstr := zf.Import(true) + xkhz + hhf
+	importstr := zf.Zfs.Import(true) + zfzhi.Zhi.Xkhz() + zfzhi.Zhi.Hhf()
 	buffer.WriteString(importstr)
 	//"hanfuxin/allerrors" \n
-	errorbao := syh + zf.Hanfuxin(true) + xx + zf.Allerrors(true) + syh + hhf
+	errorbao := zfzhi.Zhi.Syh() + zf.Zfs.Hanfuxin(true) + zfzhi.Zhi.Xx() + zf.Zfs.Allerrors(true) + zfzhi.Zhi.Syh() + zfzhi.Zhi.Hhf()
 	buffer.WriteString(errorbao)
 	// "bytes"
-	bytesbao := syh + zf.Bytes(true) + syh + hhf
+	bytesbao := zfzhi.Zhi.Syh() + zf.Zfs.Bytes(true) + zfzhi.Zhi.Syh() + zfzhi.Zhi.Hhf()
 	buffer.WriteString(bytesbao)
 	// "time"
-	timebao := syh + zf.Time(true) + syh + hhf
+	timebao := zfzhi.Zhi.Syh() + zf.Zfs.Time(true) + zfzhi.Zhi.Syh() + zfzhi.Zhi.Hhf()
 	buffer.WriteString(timebao)
 	// "hanfuxin/appmodels"
-	apmbao := syh + zf.Hanfuxin(true) + xx + zf.Appmodels(true) + syh + hhf
+	apmbao := zfzhi.Zhi.Syh() + zf.Zfs.Hanfuxin(true) + zfzhi.Zhi.Xx() + zf.Zfs.Appmodels(true) + zfzhi.Zhi.Syh() + zfzhi.Zhi.Hhf()
 	buffer.WriteString(apmbao)
 	// "hanfuxin/apputils"
-	apubao := syh + zf.Hanfuxin(true) + xx + zf.Apputils(true) + syh + hhf
+	apubao := zfzhi.Zhi.Syh() + zf.Zfs.Hanfuxin(true) + zfzhi.Zhi.Xx() + zf.Zfs.Apputils(true) + zfzhi.Zhi.Syh() + zfzhi.Zhi.Hhf()
 	buffer.WriteString(apubao)
 	// "hanfuxin/baserun"
-	brbao := syh + zf.Hanfuxin(true) + xx + zf.Baserun(true) + syh + hhf
+	brbao := zfzhi.Zhi.Syh() + zf.Zfs.Hanfuxin(true) + zfzhi.Zhi.Xx() + zf.Zfs.Baserun(true) + zfzhi.Zhi.Syh() + zfzhi.Zhi.Hhf()
 	buffer.WriteString(brbao)
 	// "hanfuxin/zf"
-	zfbao := syh + zf.Hanfuxin(true) + xx + zf.Zf(true) + syh + hhf
+	zfbao := zfzhi.Zhi.Syh() + zf.Zfs.Hanfuxin(true) + zfzhi.Zhi.Xx() + zf.Zfs.Zf(true) + zfzhi.Zhi.Syh() + zfzhi.Zhi.Hhf()
 	buffer.WriteString(zfbao)
 	// "hanfuxin/zfzhi"
-	zfzhibao := syh + zf.Hanfuxin(true) + xx + zf.Zfzhi(true) + syh + hhf
+	zfzhibao := zfzhi.Zhi.Syh() + zf.Zfs.Hanfuxin(true) + zfzhi.Zhi.Xx() + zf.Zfs.Zfzhi(true) + zfzhi.Zhi.Syh() + zfzhi.Zhi.Hhf()
 	buffer.WriteString(zfzhibao)
-	// "hanfuxin/zdxxxdaos"
-	daobao := syh + zf.Hanfuxin(true) + xx + zf.Zd(true) + strings.ToLower(bianma) + zf.Daos(true) + syh + hhf
+	// "hanfuxin/zdzfzhi.Zhi.Xx()xdaos"
+	daobao := zfzhi.Zhi.Syh() + zf.Zfs.Hanfuxin(true) + zfzhi.Zhi.Xx() + zf.Zfs.Zd(true) + strings.ToLower(bianma) + zf.Zfs.Daos(true) + zfzhi.Zhi.Syh() + zfzhi.Zhi.Hhf()
 	buffer.WriteString(daobao)
 	//"hanfuxin/baseinits"
-	binitbao := syh + zf.Hanfuxin(true) + xx + zf.Baseinits(true) + syh
+	binitbao := zfzhi.Zhi.Syh() + zf.Zfs.Hanfuxin(true) + zfzhi.Zhi.Xx() + zf.Zfs.Baseinits(true) + zfzhi.Zhi.Syh()
 	buffer.WriteString(binitbao)
-	buffer.WriteString(xkhy + hhf)
+	buffer.WriteString(zfzhi.Zhi.Xkhy() + zfzhi.Zhi.Hhf())
 }
 func yanzhengchangdu(bianma string, buffer *bytes.Buffer) {
-	zf := zf.Zf{}
-	zfzhi := zfzhi.Zfzhi{}
-	xkhz := zfzhi.Xiaokuohaozuozhi()
-	xkhy := zfzhi.Xiaokuohaoyouzhi()
-	dkhz := zfzhi.Dakuohaozuozhi()
-	dkhy := zfzhi.Dakuohaoyouzhi()
-	xh := zfzhi.Xinghaozhi()
-	hhf := zfzhi.Huanhangfuzhi()
-	mh := zfzhi.Maohaozhi()
-	dyh := zfzhi.Dengyuhaozhi()
-	dh := zfzhi.Dianhaozhi()
-	dayuhao := zfzhi.Dayuhaozhi()
-	douhao := zfzhi.Douhaozhi()
-
 	bmx := strings.ToLower(bianma)
 
-	kgf := zfzhi.Konggefuzhi()
-	funcone := zf.Func(true) + kgf + zf.Yanzhengziduanchangdu(true)
+	funcone := zf.Zfs.Func(true) + zfzhi.Zhi.Kgf() + zf.Zfs.Yanzhengziduanchangdu(true)
 	buffer.WriteString(funcone)
 	//(bmx *appmodels.bm) error { \n
-	canshu := xkhz + bmx + kgf + xh + zf.Appmodels(true) + dh + bianma + xkhy + zf.Error(true) + dkhz + hhf
+	canshu := zfzhi.Zhi.Xkhz() + bmx + zfzhi.Zhi.Kgf() + zfzhi.Zhi.Xh() + zf.Zfs.Appmodels(true) + zfzhi.Zhi.Dh() + bianma + zfzhi.Zhi.Xkhy() + zf.Zfs.Error(true) + zfzhi.Zhi.Dkhz() + zfzhi.Zhi.Hhf()
 
 	buffer.WriteString(canshu)
-	// zf := zf.Zf{}
-	zfobj := zf.Zf(true) + mh + dyh + zf.Zf(true) + dh + zf.Zf(false) + dkhz + dkhy + hhf
+	// zf := zf.Zfs.Zf{}
+	zfobj := zf.Zfs.Zf(true) + zfzhi.Zhi.Mh() + zfzhi.Zhi.Dyh() + zf.Zfs.Zf(true) + zfzhi.Zhi.Dh() + zf.Zfs.Zf(false) + zfzhi.Zhi.Dkhz() + zfzhi.Zhi.Dkhy() + zfzhi.Zhi.Hhf()
 	buffer.WriteString(zfobj)
-	cuowu := zf.Cuowu(true) + mh + dyh + zf.False(true) + hhf
+	cuowu := zf.Zfs.Cuowu(true) + zfzhi.Zhi.Mh() + zfzhi.Zhi.Dyh() + zf.Zfs.False(true) + zfzhi.Zhi.Hhf()
 	buffer.WriteString(cuowu)
 
-	cuowutrue := zf.Cuowu(true) + dyh + zf.True(true) + hhf
+	cuowutrue := zf.Zfs.Cuowu(true) + zfzhi.Zhi.Dyh() + zf.Zfs.True(true) + zfzhi.Zhi.Hhf()
 	//buffer := bytes.Buffer{}\n
-	bf := zf.Buffer(true) + mh + dyh + zf.Bytes(true) + dh + zf.Buffer(false) + dkhz + dkhy + hhf
+	bf := zf.Zfs.Buffer(true) + zfzhi.Zhi.Mh() + zfzhi.Zhi.Dyh() + zf.Zfs.Bytes(true) + zfzhi.Zhi.Dh() + zf.Zfs.Buffer(false) + zfzhi.Zhi.Dkhz() + zfzhi.Zhi.Dkhy() + zfzhi.Zhi.Hhf()
 	buffer.WriteString(bf)
 	for lk, lv := range Huoquyigebiaojiegou(bianma) {
-		if Huoquyigeleixing(lk) == zf.String(true) {
-			buffer.WriteString(hhf)
-			lenlvstr := zf.Len(true) + lv
-			lenlvshitistr := lenlvstr + zf.Shiti(true)
+		if Huoquyigeleixing(lk) == zf.Zfs.String(true) {
+			buffer.WriteString(zfzhi.Zhi.Hhf())
+			lenlvstr := zf.Zfs.Len(true) + lv
+			lenlvshitistr := lenlvstr + zf.Zfs.Shiti(true)
 			//lenbianma :=
 			//baserun.Huoquyigechangdu
-			//(zf.Bianma(false))
+			//(zf.Zfs.Bianma(false))
 
-			lenlv := lenlvstr + mh + dyh +
-				zf.Baserun(true) + dh + zf.Huoquyigechangdu(false) +
-				xkhz + zf.Zf(true) + dh + lk + xkhz + zf.False(true) + xkhy + xkhy + hhf
+			lenlv := lenlvstr + zfzhi.Zhi.Mh() + zfzhi.Zhi.Dyh() +
+				zf.Zfs.Baserun(true) + zfzhi.Zhi.Dh() + zf.Zfs.Huoquyigechangdu(false) +
+				zfzhi.Zhi.Xkhz() + zf.Zfs.Zf(true) + zfzhi.Zhi.Dh() + lk + zfzhi.Zhi.Xkhz() + zf.Zfs.False(true) + zfzhi.Zhi.Xkhy() + zfzhi.Zhi.Xkhy() + zfzhi.Zhi.Hhf()
 			buffer.WriteString(lenlv)
 
 			//	lenbianmashiti := len(juese.Bianma)
-			lenshiti := lenlvshitistr + mh + dyh + zf.Len(true) + xkhz + bmx + dh + lk + xkhy + hhf
+			lenshiti := lenlvshitistr + zfzhi.Zhi.Mh() + zfzhi.Zhi.Dyh() + zf.Zfs.Len(true) + zfzhi.Zhi.Xkhz() + bmx + zfzhi.Zhi.Dh() + lk + zfzhi.Zhi.Xkhy() + zfzhi.Zhi.Hhf()
 			buffer.WriteString(lenshiti)
 
 			// if leibianmashiti > int(lenbianma) {\n
-			oneif := zf.If(true) + kgf + lenlvshitistr + dayuhao + zf.Int(true) + xkhz + lenlvstr + xkhy + dkhz + hhf
+			oneif := zf.Zfs.If(true) + zfzhi.Zhi.Kgf() + lenlvshitistr + zfzhi.Zhi.Dy() + zf.Zfs.Int(true) + zfzhi.Zhi.Xkhz() + lenlvstr + zfzhi.Zhi.Xkhy() + zfzhi.Zhi.Dkhz() + zfzhi.Zhi.Hhf()
 			buffer.WriteString(oneif)
 			buffer.WriteString(cuowutrue)
 			//buffer.WriteString(....)
-			writestr := zf.Buffer(true) + dh + zf.WriteString(false)
+			writestr := zf.Zfs.Buffer(true) + zfzhi.Zhi.Dh() + zf.Zfs.WriteString(false)
 			buffer.WriteString(writestr)
-			scstr := xkhz + zf.Apputils(true) + dh + zf.Shengchengerrorchangdu(false)
+			scstr := zfzhi.Zhi.Xkhz() + zf.Zfs.Apputils(true) + zfzhi.Zhi.Dh() + zf.Zfs.Shengchengerrorchangdu(false)
 			buffer.WriteString(scstr)
-			csstrs := xkhz + zf.Zf(true) + dh + zf.Mingcheng(false) + xkhz + zf.False(true) + xkhy
+			csstrs := zfzhi.Zhi.Xkhz() + zf.Zfs.Zf(true) + zfzhi.Zhi.Dh() + zf.Zfs.Mingcheng(false) + zfzhi.Zhi.Xkhz() + zf.Zfs.False(true) + zfzhi.Zhi.Xkhy()
 			buffer.WriteString(csstrs)
-			int64str := douhao + zf.Int64(true) + xkhz + lenlvstr + xkhy
+			int64str := zfzhi.Zhi.Dou() + zf.Zfs.Int64(true) + zfzhi.Zhi.Xkhz() + lenlvstr + zfzhi.Zhi.Xkhy()
 			buffer.WriteString(int64str)
-			shitis := douhao + lenlvshitistr + xkhy + xkhy + hhf
+			shitis := zfzhi.Zhi.Dou() + lenlvshitistr + zfzhi.Zhi.Xkhy() + zfzhi.Zhi.Xkhy() + zfzhi.Zhi.Hhf()
 			buffer.WriteString(shitis)
-			buffer.WriteString(dkhy + hhf)
+			buffer.WriteString(zfzhi.Zhi.Dkhy() + zfzhi.Zhi.Hhf())
 		}
 	}
 	// if cuowu {\n
-	cwstr := zf.If(true) + kgf + zf.Cuowu(true) + dkhz + hhf
+	cwstr := zf.Zfs.If(true) + zfzhi.Zhi.Kgf() + zf.Zfs.Cuowu(true) + zfzhi.Zhi.Dkhz() + zfzhi.Zhi.Hhf()
 	buffer.WriteString(cwstr)
 	// return allerrors.Ziduanerror
-	retstr := zf.Return(true) + kgf + zf.Allerrors(true) + dh + zf.Ziduanerror(false)
+	retstr := zf.Zfs.Return(true) + zfzhi.Zhi.Kgf() + zf.Zfs.Allerrors(true) + zfzhi.Zhi.Dh() + zf.Zfs.Ziduanerror(false)
 	buffer.WriteString(retstr)
 	//{Shijian:time.Now(),Wenti:buffer.String()}
-	wtsjstr := dkhz + zf.Shijian(false) + mh + zf.Time(true) + dh + zf.Now(false) + xkhz + xkhy
+	wtsjstr := zfzhi.Zhi.Dkhz() + zf.Zfs.Shijian(false) + zfzhi.Zhi.Mh() + zf.Zfs.Time(true) + zfzhi.Zhi.Dh() + zf.Zfs.Now(false) + zfzhi.Zhi.Xkhz() + zfzhi.Zhi.Xkhy()
 	buffer.WriteString(wtsjstr)
-	wtwtstr := douhao + zf.Wenti(false) + mh + zf.Buffer(true) + dh + zf.String(false) + xkhz + xkhy + dkhy + hhf
+	wtwtstr := zfzhi.Zhi.Dou() + zf.Zfs.Wenti(false) + zfzhi.Zhi.Mh() + zf.Zfs.Buffer(true) + zfzhi.Zhi.Dh() + zf.Zfs.String(false) + zfzhi.Zhi.Xkhz() + zfzhi.Zhi.Xkhy() + zfzhi.Zhi.Dkhy() + zfzhi.Zhi.Hhf()
 	buffer.WriteString(wtwtstr)
-	buffer.WriteString(dkhy)
-	buffer.WriteString(hhf)
+	buffer.WriteString(zfzhi.Zhi.Dkhy())
+	buffer.WriteString(zfzhi.Zhi.Hhf())
 
-	nilstr := zf.Return(true) + kgf + zf.Nil(true) + hhf
+	nilstr := zf.Zfs.Return(true) + zfzhi.Zhi.Kgf() + zf.Zfs.Nil(true) + zfzhi.Zhi.Hhf()
 	buffer.WriteString(nilstr)
 
-	buffer.WriteString(dkhy)
-	buffer.WriteString(hhf)
+	buffer.WriteString(zfzhi.Zhi.Dkhy())
+	buffer.WriteString(zfzhi.Zhi.Hhf())
 }
 func servicexiugai(bianma string, buffer *bytes.Buffer) {
-	zf := zf.Zf{}
-	zfzhi := zfzhi.Zfzhi{}
-	kgf := zfzhi.Konggefuzhi()
-	xkhz := zfzhi.Xiaokuohaozuozhi()
-	xkhy := zfzhi.Xiaokuohaoyouzhi()
-	xh := zfzhi.Xinghaozhi()
-	dh := zfzhi.Dianhaozhi()
-	dkhz := zfzhi.Dakuohaozuozhi()
-	dkhy := zfzhi.Dakuohaoyouzhi()
-	hhf := zfzhi.Huanhangfuzhi()
-	mh := zfzhi.Maohaozhi()
-	dyh := zfzhi.Dengyuhaozhi()
-	gth := zfzhi.Gantanhaozhi()
-	zkhz := zfzhi.Zhongkuohaozuozhi()
-	zkhy := zfzhi.Zhongkuohaoyouzhi()
-
 	bmx := strings.ToLower(bianma)
 
-	funcstr := zf.Func(true) + kgf + zf.Xiugai(false) + bmx + xkhz + bmx + kgf + xh + zf.Appmodels(true) + dh + bianma + xkhy + zf.String(true)
+	funcstr := zf.Zfs.Func(true) + zfzhi.Zhi.Kgf() + zf.Zfs.Xiugai(false) + bmx + zfzhi.Zhi.Xkhz() + bmx + zfzhi.Zhi.Kgf() + zfzhi.Zhi.Xh() + zf.Zfs.Appmodels(true) + zfzhi.Zhi.Dh() + bianma + zfzhi.Zhi.Xkhy() + zf.Zfs.String(true)
 	buffer.WriteString(funcstr)
-	buffer.WriteString(dkhz + hhf)
+	buffer.WriteString(zfzhi.Zhi.Dkhz() + zfzhi.Zhi.Hhf())
 
-	errstr := zf.Err(true) + mh + dyh + zf.Yanzhengziduanchangdu(true) + xkhz + bmx + xkhy + hhf
+	errstr := zf.Zfs.Err(true) + zfzhi.Zhi.Mh() + zfzhi.Zhi.Dyh() + zf.Zfs.Yanzhengziduanchangdu(true) + zfzhi.Zhi.Xkhz() + bmx + zfzhi.Zhi.Xkhy() + zfzhi.Zhi.Hhf()
 	buffer.WriteString(errstr)
 
 	// zfzhi := zfzhi.Zfzhi{}
-	zfzhistr := zf.Zfzhi(true) + mh + dyh + zf.Zfzhi(true) + dh + zf.Zfzhi(false) + dkhz + dkhy + hhf
+	zfzhistr := zf.Zfs.Zfzhi(true) + zfzhi.Zhi.Mh() + zfzhi.Zhi.Dyh() + zf.Zfs.Zfzhi(true) + zfzhi.Zhi.Dh() + zf.Zfs.Zfzhi(false) + zfzhi.Zhi.Dkhz() + zfzhi.Zhi.Dkhy() + zfzhi.Zhi.Hhf()
 	buffer.WriteString(zfzhistr)
-	//zf := zf.Zf{}
-	zfstr := zf.Zf(true) + mh + dyh + zf.Zf(true) + dh + zf.Zf(false) + dkhz + dkhy + hhf
+	//zf := zf.Zfs.Zf{}
+	zfstr := zf.Zfs.Zf(true) + zfzhi.Zhi.Mh() + zfzhi.Zhi.Dyh() + zf.Zfs.Zf(true) + zfzhi.Zhi.Dh() + zf.Zfs.Zf(false) + zfzhi.Zhi.Dkhz() + zfzhi.Zhi.Dkhy() + zfzhi.Zhi.Hhf()
 	buffer.WriteString(zfstr)
 
 	// kzf := zfzhi.Kongzifuzhi()
-	kzfstr := zf.Kzf(true) + mh + dyh + zf.Zfzhi(true) + dh + zf.Kongzifuzhi(false) + xkhz + xkhy + hhf
+	kzfstr := zf.Zfs.Kzf(true) + zfzhi.Zhi.Mh() + zfzhi.Zhi.Dyh() + zf.Zfs.Zfzhi(true) + zfzhi.Zhi.Dh() + zf.Zfs.Kongzifuzhi(false) + zfzhi.Zhi.Xkhz() + zfzhi.Zhi.Xkhy() + zfzhi.Zhi.Hhf()
 	buffer.WriteString(kzfstr)
 
-	jiahao := zfzhi.Jiahaozhi()
-	// xhx := zfzhi.Xiahuaxianzhi()
-	xhxstr := zf.Xhx(true) + mh + dyh + zf.Zfzhi(true) + dh + zf.Xiahuaxianzhi(false) + xkhz + xkhy + hhf
+	// zfzhi.Zhi.Xh()x := zfzhi.Xiahuaxianzhi()
+	xhxstr := zf.Zfs.Xhx(true) + zfzhi.Zhi.Mh() + zfzhi.Zhi.Dyh() + zf.Zfs.Zfzhi(true) + zfzhi.Zhi.Dh() + zf.Zfs.Xiahuaxianzhi(false) + zfzhi.Zhi.Xkhz() + zfzhi.Zhi.Xkhy() + zfzhi.Zhi.Hhf()
 	buffer.WriteString(xhxstr)
 	// if err != nil
-	ifstr := zf.If(true) + kgf + zf.Err(true) + gth + dyh + zf.Nil(true)
+	ifstr := zf.Zfs.If(true) + zfzhi.Zhi.Kgf() + zf.Zfs.Err(true) + zfzhi.Zhi.Gth() + zfzhi.Zhi.Dyh() + zf.Zfs.Nil(true)
 	buffer.WriteString(ifstr)
-	buffer.WriteString(dkhz + hhf)
+	buffer.WriteString(zfzhi.Zhi.Dkhz() + zfzhi.Zhi.Hhf())
 
-	// return baseinits.Tishis[zf.Tishi09(false)].Bianma + xhx + err.Error()
-	reterr := zf.Return(true) + kgf + zf.Baseinits(true) + dh + zf.Tishis(false) + zkhz + zf.Zf(true) + dh + zf.Tishi09(false) +
-		xkhz + zf.False(true) + xkhy + zkhy + dh + zf.Bianma(false) + jiahao + zf.Xhx(true) + jiahao +
-		zf.Err(true) + dh + zf.Error(false) + xkhz + xkhy + hhf
+	// return baseinits.Tishis[zf.Zfs.Tishi09(false)].Bianma + zfzhi.Zhi.Xh()x + err.Error()
+	reterr := zf.Zfs.Return(true) + zfzhi.Zhi.Kgf() + zf.Zfs.Baseinits(true) + zfzhi.Zhi.Dh() + zf.Zfs.Tishis(false) + zfzhi.Zhi.Zkhz() + zf.Zfs.Zf(true) + zfzhi.Zhi.Dh() + zf.Zfs.Tishi09(false) +
+		zfzhi.Zhi.Xkhz() + zf.Zfs.False(true) + zfzhi.Zhi.Xkhy() + zfzhi.Zhi.Zkhy() + zfzhi.Zhi.Dh() + zf.Zfs.Bianma(false) + zfzhi.Zhi.Jia() + zf.Zfs.Xhx(true) + zfzhi.Zhi.Jia() +
+		zf.Zfs.Err(true) + zfzhi.Zhi.Dh() + zf.Zfs.Error(false) + zfzhi.Zhi.Xkhz() + zfzhi.Zhi.Xkhy() + zfzhi.Zhi.Hhf()
 	buffer.WriteString(reterr)
-	buffer.WriteString(hhf + dkhy)
+	buffer.WriteString(zfzhi.Zhi.Hhf() + zfzhi.Zhi.Dkhy())
 
-	findstr := hhf + bmx + zf.Find(true) + mh + dyh + zf.Chaxun(false) + bmx + xkhz + bmx + dh + zf.Id(false) + xkhy + hhf
+	findstr := zfzhi.Zhi.Hhf() + bmx + zf.Zfs.Find(true) + zfzhi.Zhi.Mh() + zfzhi.Zhi.Dyh() + zf.Zfs.Chaxun(false) + bmx + zfzhi.Zhi.Xkhz() + bmx + zfzhi.Zhi.Dh() + zf.Zfs.Id(false) + zfzhi.Zhi.Xkhy() + zfzhi.Zhi.Hhf()
 	buffer.WriteString(findstr)
-	iffind := zf.If(true) + kgf + bmx + zf.Find(true) + gth + dyh + zf.Nil(true)
+	iffind := zf.Zfs.If(true) + zfzhi.Zhi.Kgf() + bmx + zf.Zfs.Find(true) + zfzhi.Zhi.Gth() + zfzhi.Zhi.Dyh() + zf.Zfs.Nil(true)
 	buffer.WriteString(iffind)
-	buffer.WriteString(dkhz + hhf)
+	buffer.WriteString(zfzhi.Zhi.Dkhz() + zfzhi.Zhi.Hhf())
 
 	for lk, _ := range Huoquyigebiaojiegou(bianma) {
-		if Huoquyigeleixing(lk) == zf.String(true) {
-			buffer.WriteString(hhf)
-			iflie := zf.If(true) + kgf + bmx + dh + lk + gth + dyh + zf.Kzf(true)
+		if Huoquyigeleixing(lk) == zf.Zfs.String(true) {
+			buffer.WriteString(zfzhi.Zhi.Hhf())
+			iflie := zf.Zfs.If(true) + zfzhi.Zhi.Kgf() + bmx + zfzhi.Zhi.Dh() + lk + zfzhi.Zhi.Gth() + zfzhi.Zhi.Dyh() + zf.Zfs.Kzf(true)
 			buffer.WriteString(iflie)
-			buffer.WriteString(dkhz + hhf)
-			findlie := bmx + zf.Find(true) + dh + lk + dyh + bmx + dh + lk
+			buffer.WriteString(zfzhi.Zhi.Dkhz() + zfzhi.Zhi.Hhf())
+			findlie := bmx + zf.Zfs.Find(true) + zfzhi.Zhi.Dh() + lk + zfzhi.Zhi.Dyh() + bmx + zfzhi.Zhi.Dh() + lk
 			buffer.WriteString(findlie)
-			buffer.WriteString(hhf + dkhy)
+			buffer.WriteString(zfzhi.Zhi.Hhf() + zfzhi.Zhi.Dkhy())
 		}
 	}
-	xiugaistr := hhf + zf.Return(true) + kgf + zf.Zd(true) + bmx + zf.Daos(true) + dh + zf.Xiugaiyige(false) + xkhz + bmx + zf.Find(true) + xkhy + hhf
+	xiugaistr := zfzhi.Zhi.Hhf() + zf.Zfs.Return(true) + zfzhi.Zhi.Kgf() + zf.Zfs.Zd(true) + bmx + zf.Zfs.Daos(true) + zfzhi.Zhi.Dh() + zf.Zfs.Xiugaiyige(false) + zfzhi.Zhi.Xkhz() + bmx + zf.Zfs.Find(true) + zfzhi.Zhi.Xkhy() + zfzhi.Zhi.Hhf()
 
 	buffer.WriteString(xiugaistr)
-	buffer.WriteString(hhf + dkhy + hhf)
-	finalstr := zf.Return(true) + kgf + zf.Baseinits(true) + dh + zf.Cuowus(false) + zkhz + zf.Zf(true) + dh + zf.Error04(false) + xkhz + zf.False(true) + xkhy + zkhy + dh + zf.Zhi(false)
+	buffer.WriteString(zfzhi.Zhi.Hhf() + zfzhi.Zhi.Dkhy() + zfzhi.Zhi.Hhf())
+	finalstr := zf.Zfs.Return(true) + zfzhi.Zhi.Kgf() + zf.Zfs.Baseinits(true) + zfzhi.Zhi.Dh() + zf.Zfs.Cuowus(false) + zfzhi.Zhi.Zkhz() + zf.Zfs.Zf(true) + zfzhi.Zhi.Dh() + zf.Zfs.Error04(false) + zfzhi.Zhi.Xkhz() + zf.Zfs.False(true) + zfzhi.Zhi.Xkhy() + zfzhi.Zhi.Zkhy() + zfzhi.Zhi.Dh() + zf.Zfs.Zhi(false)
 	buffer.WriteString(finalstr)
 
-	buffer.WriteString(hhf + dkhy + hhf)
+	buffer.WriteString(zfzhi.Zhi.Hhf() + zfzhi.Zhi.Dkhy() + zfzhi.Zhi.Hhf())
 
 }
 func servicetianjia(bianma string, buffer *bytes.Buffer) {
-	zf := zf.Zf{}
-	zfzhi := zfzhi.Zfzhi{}
-	kgf := zfzhi.Konggefuzhi()
-	xkhz := zfzhi.Xiaokuohaozuozhi()
-	xkhy := zfzhi.Xiaokuohaoyouzhi()
-	xh := zfzhi.Xinghaozhi()
-	dh := zfzhi.Dianhaozhi()
-	dkhz := zfzhi.Dakuohaozuozhi()
-	dkhy := zfzhi.Dakuohaoyouzhi()
-	hhf := zfzhi.Huanhangfuzhi()
-	mh := zfzhi.Maohaozhi()
-	dyh := zfzhi.Dengyuhaozhi()
-	gth := zfzhi.Gantanhaozhi()
-	jiahao := zfzhi.Jiahaozhi()
-	zkhz := zfzhi.Zhongkuohaozuozhi()
-	zkhy := zfzhi.Zhongkuohaoyouzhi()
-
 	bmx := strings.ToLower(bianma)
-	// func Tianjiaxxx(xxx *appmodels.Xxx)
-	funcstr := zf.Func(true) + kgf + zf.Tianjia(false) + bmx + xkhz + bmx + kgf + xh + zf.Appmodels(true) + dh + bianma + xkhy + zf.String(true)
+	// func Tianjiazfzhi.Zhi.Xx()x(zfzhi.Zhi.Xx()x *appmodels.Xzfzhi.Zhi.Xx())
+	funcstr := zf.Zfs.Func(true) + zfzhi.Zhi.Kgf() + zf.Zfs.Tianjia(false) + bmx + zfzhi.Zhi.Xkhz() + bmx + zfzhi.Zhi.Kgf() + zfzhi.Zhi.Xh() + zf.Zfs.Appmodels(true) + zfzhi.Zhi.Dh() + bianma + zfzhi.Zhi.Xkhy() + zf.Zfs.String(true)
 	buffer.WriteString(funcstr)
-	buffer.WriteString(dkhz + hhf)
-	// err := yanzhengyigechangdu(xxx)
-	errstr := zf.Err(true) + mh + dyh + zf.Yanzhengziduanchangdu(true) + xkhz + bmx + xkhy + hhf
+	buffer.WriteString(zfzhi.Zhi.Dkhz() + zfzhi.Zhi.Hhf())
+	// err := yanzhengyigechangdu(zfzhi.Zhi.Xx()x)
+	errstr := zf.Zfs.Err(true) + zfzhi.Zhi.Mh() + zfzhi.Zhi.Dyh() + zf.Zfs.Yanzhengziduanchangdu(true) + zfzhi.Zhi.Xkhz() + bmx + zfzhi.Zhi.Xkhy() + zfzhi.Zhi.Hhf()
 	buffer.WriteString(errstr)
 
 	// zfzhi := zfzhi.Zfzhi{}
-	zfzhistr := zf.Zfzhi(true) + mh + dyh + zf.Zfzhi(true) + dh + zf.Zfzhi(false) + dkhz + dkhy + hhf
+	zfzhistr := zf.Zfs.Zfzhi(true) + zfzhi.Zhi.Mh() + zfzhi.Zhi.Dyh() + zf.Zfs.Zfzhi(true) + zfzhi.Zhi.Dh() + zf.Zfs.Zfzhi(false) + zfzhi.Zhi.Dkhz() + zfzhi.Zhi.Dkhy() + zfzhi.Zhi.Hhf()
 	buffer.WriteString(zfzhistr)
-	//zf := zf.Zf{}
-	zfstr := zf.Zf(true) + mh + dyh + zf.Zf(true) + dh + zf.Zf(false) + dkhz + dkhy + hhf
+	//zf := zf.Zfs.Zf{}
+	zfstr := zf.Zfs.Zf(true) + zfzhi.Zhi.Mh() + zfzhi.Zhi.Dyh() + zf.Zfs.Zf(true) + zfzhi.Zhi.Dh() + zf.Zfs.Zf(false) + zfzhi.Zhi.Dkhz() + zfzhi.Zhi.Dkhy() + zfzhi.Zhi.Hhf()
 	buffer.WriteString(zfstr)
-	// xhx := zfzhi.Xiahuaxianzhi()
-	xhxstr := zf.Xhx(true) + mh + dyh + zf.Zfzhi(true) + dh + zf.Xiahuaxianzhi(false) + xkhz + xkhy + hhf
+	// zfzhi.Zhi.Xh()x := zfzhi.Xiahuaxianzhi()
+	xhxstr := zf.Zfs.Xhx(true) + zfzhi.Zhi.Mh() + zfzhi.Zhi.Dyh() + zf.Zfs.Zfzhi(true) + zfzhi.Zhi.Dh() + zf.Zfs.Xiahuaxianzhi(false) + zfzhi.Zhi.Xkhz() + zfzhi.Zhi.Xkhy() + zfzhi.Zhi.Hhf()
 	buffer.WriteString(xhxstr)
 
 	// if err != nil{\n
-	ifstr := zf.If(true) + kgf + zf.Err(true) + gth + dyh + zf.Nil(true) + dkhz + hhf
+	ifstr := zf.Zfs.If(true) + zfzhi.Zhi.Kgf() + zf.Zfs.Err(true) + zfzhi.Zhi.Gth() + zfzhi.Zhi.Dyh() + zf.Zfs.Nil(true) + zfzhi.Zhi.Dkhz() + zfzhi.Zhi.Hhf()
 	buffer.WriteString(ifstr)
-	// return baseinits.Tishis[zf.Tishi09(false)].Bianma + xhx + err.Error()
-	reterr := zf.Return(true) + kgf + zf.Baseinits(true) + dh + zf.Tishis(false) + zkhz + zf.Zf(true) + dh + zf.Tishi09(false) + xkhz + zf.False(true) + xkhy + zkhy + dh + zf.Bianma(false) + jiahao + zf.Xhx(true) + jiahao + zf.Err(true) + dh + zf.Error(false) + xkhz + xkhy + hhf
+	// return baseinits.Tishis[zf.Zfs.Tishi09(false)].Bianma + zfzhi.Zhi.Xh()x + err.Error()
+	reterr := zf.Zfs.Return(true) + zfzhi.Zhi.Kgf() + zf.Zfs.Baseinits(true) + zfzhi.Zhi.Dh() + zf.Zfs.Tishis(false) + zfzhi.Zhi.Zkhz() + zf.Zfs.Zf(true) + zfzhi.Zhi.Dh() + zf.Zfs.Tishi09(false) + zfzhi.Zhi.Xkhz() + zf.Zfs.False(true) + zfzhi.Zhi.Xkhy() + zfzhi.Zhi.Zkhy() + zfzhi.Zhi.Dh() + zf.Zfs.Bianma(false) + zfzhi.Zhi.Jia() + zf.Zfs.Xhx(true) + zfzhi.Zhi.Jia() + zf.Zfs.Err(true) + zfzhi.Zhi.Dh() + zf.Zfs.Error(false) + zfzhi.Zhi.Xkhz() + zfzhi.Zhi.Xkhy() + zfzhi.Zhi.Hhf()
 	buffer.WriteString(reterr)
-	buffer.WriteString(hhf + dkhy + hhf)
+	buffer.WriteString(zfzhi.Zhi.Hhf() + zfzhi.Zhi.Dkhy() + zfzhi.Zhi.Hhf())
 
 	//return zdjuesedaos.Tianjiayige(juese)
-	tjstr := zf.Return(true) + kgf + zf.Zd(true) + bmx + zf.Daos(true) + dh + zf.Tianjiayige(false) + xkhz + bmx + xkhy + hhf
+	tjstr := zf.Zfs.Return(true) + zfzhi.Zhi.Kgf() + zf.Zfs.Zd(true) + bmx + zf.Zfs.Daos(true) + zfzhi.Zhi.Dh() + zf.Zfs.Tianjiayige(false) + zfzhi.Zhi.Xkhz() + bmx + zfzhi.Zhi.Xkhy() + zfzhi.Zhi.Hhf()
 	buffer.WriteString(tjstr)
 
-	buffer.WriteString(hhf + dkhy + hhf)
+	buffer.WriteString(zfzhi.Zhi.Hhf() + zfzhi.Zhi.Dkhy() + zfzhi.Zhi.Hhf())
 }
 func servicechaxun(bianma string, buffer *bytes.Buffer) {
-	zfzhi := zfzhi.Zfzhi{}
-	zf := zf.Zf{}
-	dh := zfzhi.Dianhaozhi()
-	xh := zfzhi.Xinghaozhi()
-	xkhz := zfzhi.Xiaokuohaozuozhi()
-	xkhy := zfzhi.Xiaokuohaoyouzhi()
-	dkhz := zfzhi.Dakuohaozuozhi()
-	dkhy := zfzhi.Dakuohaoyouzhi()
-	kgf := zfzhi.Konggefuzhi()
-	hhf := zfzhi.Huanhangfuzhi()
-
 	bmx := strings.ToLower(bianma)
 
-	funstr := zf.Func(true) + kgf + zf.Chaxun(false) + bmx + xkhz + zf.Id(true) + kgf + zf.Int(true) + xkhy + xh + zf.Appmodels(true) + dh + bianma
+	funstr := zf.Zfs.Func(true) + zfzhi.Zhi.Kgf() + zf.Zfs.Chaxun(false) + bmx + zfzhi.Zhi.Xkhz() + zf.Zfs.Id(true) + zfzhi.Zhi.Kgf() + zf.Zfs.Int(true) + zfzhi.Zhi.Xkhy() + zfzhi.Zhi.Xh() + zf.Zfs.Appmodels(true) + zfzhi.Zhi.Dh() + bianma
 	buffer.WriteString(funstr)
-	buffer.WriteString(dkhz + hhf)
-	retstr := zf.Return(true) + kgf + zf.Zd(true) + bmx + zf.Daos(true) + dh + zf.Chaxunyige(false) + xkhz + zf.Id(true) + xkhy
+	buffer.WriteString(zfzhi.Zhi.Dkhz() + zfzhi.Zhi.Hhf())
+	retstr := zf.Zfs.Return(true) + zfzhi.Zhi.Kgf() + zf.Zfs.Zd(true) + bmx + zf.Zfs.Daos(true) + zfzhi.Zhi.Dh() + zf.Zfs.Chaxunyige(false) + zfzhi.Zhi.Xkhz() + zf.Zfs.Id(true) + zfzhi.Zhi.Xkhy()
 	buffer.WriteString(retstr)
-	buffer.WriteString(hhf + dkhy)
-	buffer.WriteString(hhf)
+	buffer.WriteString(zfzhi.Zhi.Hhf() + zfzhi.Zhi.Dkhy())
+	buffer.WriteString(zfzhi.Zhi.Hhf())
 }
 func serviceshanchu(bianma string, buffer *bytes.Buffer) {
-	zfzhi := zfzhi.Zfzhi{}
-	zf := zf.Zf{}
-	dh := zfzhi.Dianhaozhi()
-	xkhz := zfzhi.Xiaokuohaozuozhi()
-	xkhy := zfzhi.Xiaokuohaoyouzhi()
-	dkhz := zfzhi.Dakuohaozuozhi()
-	dkhy := zfzhi.Dakuohaoyouzhi()
-	kgf := zfzhi.Konggefuzhi()
-	hhf := zfzhi.Huanhangfuzhi()
-
 	bmx := strings.ToLower(bianma)
 
-	// func Shanchuxxx(id int) string
-	funstr := zf.Func(true) + kgf + zf.Shanchu(false) + bmx + xkhz + zf.Id(true) + kgf + zf.Int(true) + xkhy + zf.String(true)
+	// func Shanchuzfzhi.Zhi.Xx()x(id int) string
+	funstr := zf.Zfs.Func(true) + zfzhi.Zhi.Kgf() + zf.Zfs.Shanchu(false) + bmx + zfzhi.Zhi.Xkhz() + zf.Zfs.Id(true) + zfzhi.Zhi.Kgf() + zf.Zfs.Int(true) + zfzhi.Zhi.Xkhy() + zf.Zfs.String(true)
 	buffer.WriteString(funstr)
-	buffer.WriteString(dkhz + hhf)
-	retstr := zf.Return(true) + kgf + zf.Zd(true) + bmx + zf.Daos(true) + dh + zf.Shanchuyige(false) + xkhz + zf.Id(true) + xkhy
+	buffer.WriteString(zfzhi.Zhi.Dkhz() + zfzhi.Zhi.Hhf())
+	retstr := zf.Zfs.Return(true) + zfzhi.Zhi.Kgf() + zf.Zfs.Zd(true) + bmx + zf.Zfs.Daos(true) + zfzhi.Zhi.Dh() + zf.Zfs.Shanchuyige(false) + zfzhi.Zhi.Xkhz() + zf.Zfs.Id(true) + zfzhi.Zhi.Xkhy()
 	buffer.WriteString(retstr)
-	buffer.WriteString(hhf + dkhy)
-	buffer.WriteString(hhf)
+	buffer.WriteString(zfzhi.Zhi.Hhf() + zfzhi.Zhi.Dkhy())
+	buffer.WriteString(zfzhi.Zhi.Hhf())
 }
 
 func Shengchengservice() {
-	zf := zf.Zf{}
-	zfzhi := zfzhi.Zfzhi{}
-	kgf := zfzhi.Konggefuzhi()
-	hhf := zfzhi.Huanhangfuzhi()
-	xx := zfzhi.Xiexianzhi()
-	dh := zfzhi.Dianhaozhi()
 	for bk, bv := range Huoqubiaos() {
 		buffer := bytes.Buffer{}
-		bm := zf.Zd(true) + bv + zf.Services(true)
-		//package xxxservices \n
-		pac := zf.Package(true) + kgf + bm + hhf
+		bm := zf.Zfs.Zd(true) + bv + zf.Zfs.Services(true)
+		//package zfzhi.Zhi.Xx()xservices \n
+		pac := zf.Zfs.Package(true) + zfzhi.Zhi.Kgf() + bm + zfzhi.Zhi.Hhf()
 		buffer.WriteString(pac)
 
 		serviceimports(bk, &buffer)
@@ -339,9 +255,9 @@ func Shengchengservice() {
 		servicexiugai(bk, &buffer)
 		serviceshanchu(bk, &buffer)
 		servicechaxun(bk, &buffer)
-		dir := basemodels.Getapppath() + xx + bm
+		dir := basemodels.Getapppath() + zfzhi.Zhi.Xx() + bm
 		os.MkdirAll(dir, os.ModePerm)
-		path := dir + xx + bk + zf.Services(true) + dh + zf.Go(true)
+		path := dir + zfzhi.Zhi.Xx() + bk + zf.Zfs.Services(true) + zfzhi.Zhi.Dh() + zf.Zfs.Go(true)
 		ioutil.WriteFile(path, buffer.Bytes(), os.ModePerm)
 	}
 }

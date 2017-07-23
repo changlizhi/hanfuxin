@@ -18,3 +18,9 @@ func (zf *Zf) Patch(xiaoxie bool) string {
 func (zf *Zf) Canshu(xiaoxie bool) string {
 	return Fangfaming(xiaoxie)
 }
+func (zf *Zf) Content(xiaoxie bool) string {
+	return Fangfaming(xiaoxie)
+}
+func (zf *Zf) Application(xiaoxie bool) string {
+	return Fangfaming(xiaoxie)
+}

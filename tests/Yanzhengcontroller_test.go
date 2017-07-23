@@ -41,9 +41,10 @@ log.Println(c.Data)
 func TestDeleteyanzheng(t *testing.T){
 zf:=zf.Zf{}
 zfzhi:=zfzhi.Zfzhi{}
+mh:=zfzhi.Maohaozhi()
 paramid:=strconv.Itoa(zfzhi.Shuzi1zhi())
 c:=yanzhengcontroller()
-c.Ctx.Input.SetParam(zf.Id(false),paramid)
+c.Ctx.Input.SetParam(mh+zf.Id(false),paramid)
 c.Delete()
 log.Println(c.Data[zf.Json(true)])
 
@@ -51,9 +52,10 @@ log.Println(c.Data[zf.Json(true)])
 func TestGetyanzheng(t *testing.T){
 zf:=zf.Zf{}
 zfzhi:=zfzhi.Zfzhi{}
+mh:=zfzhi.Maohaozhi()
 paramid:=strconv.Itoa(zfzhi.Shuzi1zhi())
 c:=yanzhengcontroller()
-c.Ctx.Input.SetParam(zf.Id(false),paramid)
+c.Ctx.Input.SetParam(mh+zf.Id(false),paramid)
 c.Get()
 log.Println(c.Data[zf.Json(true)])
 

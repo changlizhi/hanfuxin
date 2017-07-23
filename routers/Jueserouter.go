@@ -7,4 +7,6 @@ import (
 
 func init() {
 	beego.Router("/juese", &controllers.Juesecontroller{})
+	beego.Router("/juese/:Id", &controllers.Juesecontroller{})
+
 }

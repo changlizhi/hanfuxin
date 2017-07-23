@@ -9,6 +9,8 @@ import (
 type Zf struct {
 }
 
+var Zfs = &Zf{}
+
 func Fangfaming(xiaoxie bool) string {
 	zfzhi := zfzhi.Zfzhi{}
 	pc, _, _, _ := runtime.Caller(1)

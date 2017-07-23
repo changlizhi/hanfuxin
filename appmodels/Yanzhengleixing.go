@@ -1,8 +1,8 @@
 package appmodels
 
 type Yanzhengleixing struct {
-	Id        int
 	Bianma    string
-	Mingcheng string
+	Id        int
 	Biaoji    string
+	Mingcheng string
 }

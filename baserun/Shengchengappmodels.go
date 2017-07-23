@@ -10,14 +10,7 @@ import (
 )
 
 func Shengchenghanfuxinmodels() {
-	zf := zf.Zf{}
-	zfzhi := zfzhi.Zfzhi{}
-	xx := zfzhi.Xiexianzhi() // 斜线 /
-	bm := zf.Appmodels(true) //包名 appmodels
-	dh := zfzhi.Dianhaozhi() //点号 .
-	kgf := zfzhi.Konggefuzhi()
-	hhf := zfzhi.Huanhangfuzhi()
-	dkhy := zfzhi.Dakuohaoyouzhi()
+	bm := zf.Zfs.Appmodels(true) //包名 appmodels
 
 	for bk, _ := range Huoqubiaos() {
 		buffer := bytes.Buffer{}
@@ -25,13 +18,13 @@ func Shengchenghanfuxinmodels() {
 		Buffertoumodel(&buffer, bk, bm)
 
 		for lk, _ := range Huoquyigebiaojiegou(bk) {
-			field := lk + kgf + Huoquyigeleixing(lk) + hhf
+			field := lk + zfzhi.Zhi.Kgf() + Huoquyigeleixing(lk) + zfzhi.Zhi.Hhf()
 			buffer.WriteString(field)
 		}
 		//左大括号在头里有了
-		buffer.WriteString(dkhy) // }
+		buffer.WriteString(zfzhi.Zhi.Dkhy()) // }
 		// hanfuxin/appmodels/Juese.go
-		path := basemodels.Getapppath() + xx + bm + xx + bk + dh + zf.Go(true)
+		path := basemodels.Getapppath() + zfzhi.Zhi.Xx() + bm + zfzhi.Zhi.Xx() + bk + zfzhi.Zhi.Dh() + zf.Zfs.Go(true)
 		ioutil.WriteFile(path, buffer.Bytes(), os.ModePerm)
 	}
 }
