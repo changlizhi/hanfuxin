@@ -12,10 +12,9 @@ type Zf struct {
 var Zfs = &Zf{}
 
 func Fangfaming(xiaoxie bool) string {
-	zfzhi := zfzhi.Zfzhi{}
-	pc, _, _, _ := runtime.Caller(1)
+	pc, _, _, _ := runtime.Caller(zfzhi.Zhi.Shuzi1zhi())
 	ff := runtime.FuncForPC(pc)
-	f := strings.Split(ff.Name(), zfzhi.Dianhaozhi())[2]
+	f := strings.Split(ff.Name(), zfzhi.Zhi.Dh())[zfzhi.Zhi.Shuzi2zhi()]
 	if xiaoxie {
 		return strings.ToLower(f)
 	}

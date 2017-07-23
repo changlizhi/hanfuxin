@@ -1,14 +1,9 @@
 package tests
-
-import (
+import(
 	"hanfuxin/appinits"
-	"log"
-	"reflect"
 	"testing"
+	"log"
 )
-
-func TestLogormer(t *testing.T) {
-	log.Println("Hanfuxinormer-------", appinits.Hanfuxinormer.Driver())
-
-	log.Println("ormertype----------", reflect.TypeOf(appinits.Hanfuxinormer))
+func TestHanfuxinormer(t *testing.T){
+	log.Println(appinits.Hanfuxinormer)
 }

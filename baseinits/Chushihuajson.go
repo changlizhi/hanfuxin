@@ -15,7 +15,6 @@ func init() {
 	chushihua_json()
 }
 func chushihua_json() {
-	zf := zf.Zf{}
 	shezhi := baseutils.Shezhijson()
 	for _, c := range shezhi.Chushihua {
 		Chushihuas[c.Bianma] = c
@@ -24,7 +23,7 @@ func chushihua_json() {
 		Shujukus[s.Bianma] = s
 	}
 
-	guojihua := baseutils.Guojihuajson(Chushihuas[zf.Yuyan(false)].Zhi)
+	guojihua := baseutils.Guojihuajson(Chushihuas[zf.Zfs.Yuyan(false)].Zhi)
 	Shezhiguojihua(guojihua)
 }
 func Shezhiguojihua(guojihua *basemodels.Guojihua) {

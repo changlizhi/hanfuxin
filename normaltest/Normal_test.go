@@ -16,7 +16,7 @@ import (
 	"testing"
 )
 
-func TestFuncname(t *testing.T) {
+func TestFuncname(t *testing.T){
 	pc, file, _, _ := runtime.Caller(1)
 	log.Println("pc----", pc)
 	log.Println("file-------", file)
@@ -49,16 +49,11 @@ func TestPipei3lei(t *testing.T) {
 	log.Println(bu)
 }
 func TestZfmulu(t *testing.T) {
-	zfss := zf.Zf{}
-	log.Println(zfss.Appinits(true))
+	log.Println(zf.Zfs.Appinits(true))
 }
 func TestParserfile(t *testing.T) {
-	zfss := zf.Zf{}
-	zfzhi := zfzhi.Zfzhi{}
 	fset := token.NewFileSet()
-	dh := zfzhi.Dianhaozhi()
-	xx := zfzhi.Xiexianzhi()
-	biaopath := basemodels.Getapppath() + xx + zfss.Zfzhi(true) + xx + zfss.Fuhao(false) + dh + zfss.Go(true)
+	biaopath := basemodels.Getapppath() + zfzhi.Zhi.Xx() + zf.Zfs.Zfzhi(true) + zfzhi.Zhi.Xx() + zf.Zfs.Fuhao(false) + zfzhi.Zhi.Dh() + zf.Zfs.Go(true)
 	log.Println(biaopath)
 	f, err := parser.ParseFile(fset, biaopath, nil, parser.AllErrors)
 
@@ -71,14 +66,10 @@ func TestParserfile(t *testing.T) {
 	}
 }
 func TestTypefile(t *testing.T) {
-	zfss := zf.Zf{}
-	zfzhi := zfzhi.Zfzhi{}
 	fset := token.NewFileSet()
-	dh := zfzhi.Dianhaozhi()
-	xx := zfzhi.Xiexianzhi()
-	biaopath := basemodels.Getapppath() + xx + zfss.Zfz(true) + xx + zfss.Biao(false) + dh + zfss.Go(true)
+	biaopath := basemodels.Getapppath() + zfzhi.Zhi.Xx() + zf.Zfs.Zfz(true) + zfzhi.Zhi.Xx() + zf.Zfs.Biao(false) + zfzhi.Zhi.Dh() + zf.Zfs.Go(true)
 	log.Println(biaopath)
-	log.Println(zfss.Fangfaming(true))
+	log.Println(zf.Zfs.Fangfaming(true))
 	b, _ := ioutil.ReadFile(biaopath)
 	f, err := parser.ParseFile(fset, "", b, parser.AllErrors)
 	if err != nil {
@@ -100,12 +91,7 @@ func TestReflect(t *testing.T) {
 	log.Println(v.MethodByName("Testf2"))
 }
 func TestReg(t *testing.T) {
-	zfzhi := zfzhi.Zfzhi{}
-	zf := zf.Zf{}
-	xx := zfzhi.Xiexianzhi()
-	dh := zfzhi.Dianhaozhi()
-
-	path := basemodels.Getapppath() + xx + zf.Zfz(true) + xx + zf.Biao(false) + dh + zf.Go(true)
+	path := basemodels.Getapppath() + zfzhi.Zhi.Xx() + zf.Zfs.Zfz(true) + zfzhi.Zhi.Xx() + zf.Zfs.Biao(false) + zfzhi.Zhi.Dh() + zf.Zfs.Go(true)
 	b, _ := ioutil.ReadFile(path)
 	reg, err := regexp.CompilePOSIX(`^func \(zf \*Zf\) [[:word:]]+`)
 	if err != nil {

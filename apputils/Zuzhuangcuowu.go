@@ -9,29 +9,22 @@ import (
 
 func Shengchengerrorchangdu(leixing string, lenchangliang int64, lenshiji int) string {
 	buffer := bytes.Buffer{}
-	zf := zf.Zf{}
-	zfzhi := zfzhi.Zfzhi{}
-	dkhz := zfzhi.Dakuohaozuozhi()
-	dkhy := zfzhi.Dakuohaoyouzhi()
-	douhao := zfzhi.Douhaozhi()
-	mh := zfzhi.Maohaozhi()
-	hhf := zfzhi.Huanhangfuzhi()
 
-	buffer.WriteString(dkhz)
-	buffer.WriteString(zf.Leixing(false))
-	buffer.WriteString(mh)
+	buffer.WriteString(zfzhi.Zhi.Dkhz())
+	buffer.WriteString(zf.Zfs.Leixing(false))
+	buffer.WriteString(zfzhi.Zhi.Mh())
 
 	buffer.WriteString(leixing)
-	buffer.WriteString(douhao)
-	buffer.WriteString(zf.Zuichang(false))
-	buffer.WriteString(mh)
+	buffer.WriteString(zfzhi.Zhi.Dou())
+	buffer.WriteString(zf.Zfs.Zuichang(false))
+	buffer.WriteString(zfzhi.Zhi.Mh())
 	buffer.WriteString(strconv.FormatInt(lenchangliang, 10))
-	buffer.WriteString(douhao)
-	buffer.WriteString(zf.Shiji(false))
-	buffer.WriteString(mh)
+	buffer.WriteString(zfzhi.Zhi.Dou())
+	buffer.WriteString(zf.Zfs.Shiji(false))
+	buffer.WriteString(zfzhi.Zhi.Mh())
 	buffer.WriteString(strconv.Itoa(lenshiji))
-	buffer.WriteString(dkhy)
-	buffer.WriteString(douhao)
-	buffer.WriteString(hhf)
+	buffer.WriteString(zfzhi.Zhi.Dkhy())
+	buffer.WriteString(zfzhi.Zhi.Dou())
+	buffer.WriteString(zfzhi.Zhi.Hhf())
 	return buffer.String()
 }

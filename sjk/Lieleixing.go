@@ -6,90 +6,68 @@ import (
 )
 
 func (sjk *Sjk) Idleixingzhi() string {
-	zf := zf.Zf{}
-	zfzhi := zfzhi.Zfzhi{}
-	if z := sjk.Id(false); z != zfzhi.Kongzifuzhi() {
-		return zf.Int(true)
+	if z := sjk.Id(false); z != zfzhi.Zhi.Kzf() {
+		return zf.Zfs.Int(true)
 	}
-	return zfzhi.Kongzifuzhi()
+	return zfzhi.Zhi.Kzf()
 }
 func (sjk *Sjk) Biaojileixingzhi() string {
-	zf := zf.Zf{}
-	zfzhi := zfzhi.Zfzhi{}
-	if z := sjk.Biaoji(false); z != zfzhi.Kongzifuzhi() {
-		return zf.String(true)
+	if z := sjk.Biaoji(false); z != zfzhi.Zhi.Kzf() {
+		return zf.Zfs.String(true)
 	}
-	return zfzhi.Kongzifuzhi()
+	return zfzhi.Zhi.Kzf()
 }
 func (sjk *Sjk) Bianmaleixingzhi() string {
-	zf := zf.Zf{}
-	zfzhi := zfzhi.Zfzhi{}
-	if z := sjk.Bianma(false); z != zfzhi.Kongzifuzhi() {
-		return zf.String(true)
+	if z := sjk.Bianma(false); z != zfzhi.Zhi.Kzf() {
+		return zf.Zfs.String(true)
 	}
-	return zfzhi.Kongzifuzhi()
+	return zfzhi.Zhi.Kzf()
 }
 func (sjk *Sjk) Mingchengleixingzhi() string {
-	zf := zf.Zf{}
-	zfzhi := zfzhi.Zfzhi{}
-	if z := sjk.Mingcheng(false); z != zfzhi.Kongzifuzhi() {
-		return zf.String(true)
+	if z := sjk.Mingcheng(false); z != zfzhi.Zhi.Kzf() {
+		return zf.Zfs.String(true)
 	}
-	return zfzhi.Kongzifuzhi()
+	return zfzhi.Zhi.Kzf()
 }
 func (sjk *Sjk) Juesebianmaleixingzhi() string {
-	zf := zf.Zf{}
-	zfzhi := zfzhi.Zfzhi{}
-	if z := sjk.Juesebianma(false); z != zfzhi.Kongzifuzhi() {
-		return zf.String(true)
+	if z := sjk.Juesebianma(false); z != zfzhi.Zhi.Kzf() {
+		return zf.Zfs.String(true)
 	}
-	return zfzhi.Kongzifuzhi()
+	return zfzhi.Zhi.Kzf()
 }
 func (sjk *Sjk) Quanxianbianmaleixingzhi() string {
-	zf := zf.Zf{}
-	zfzhi := zfzhi.Zfzhi{}
-	if z := sjk.Quanxianbianma(false); z != zfzhi.Kongzifuzhi() {
-		return zf.String(true)
+	if z := sjk.Quanxianbianma(false); z != zfzhi.Zhi.Kzf() {
+		return zf.Zfs.String(true)
 	}
-	return zfzhi.Kongzifuzhi()
+	return zfzhi.Zhi.Kzf()
 }
 func (sjk *Sjk) Lujingleixingzhi() string {
-	zf := zf.Zf{}
-	zfzhi := zfzhi.Zfzhi{}
-	if z := sjk.Lujing(false); z != zfzhi.Kongzifuzhi() {
-		return zf.String(true)
+	if z := sjk.Lujing(false); z != zfzhi.Zhi.Kzf() {
+		return zf.Zfs.String(true)
 	}
-	return zfzhi.Kongzifuzhi()
+	return zfzhi.Zhi.Kzf()
 }
 func (sjk *Sjk) Youxiangleixingzhi() string {
-	zf := zf.Zf{}
-	zfzhi := zfzhi.Zfzhi{}
-	if z := sjk.Youxiang(false); z != zfzhi.Kongzifuzhi() {
-		return zf.String(true)
+	if z := sjk.Youxiang(false); z != zfzhi.Zhi.Kzf() {
+		return zf.Zfs.String(true)
 	}
-	return zfzhi.Kongzifuzhi()
+	return zfzhi.Zhi.Kzf()
 }
 func (sjk *Sjk) Leixingleixingzhi() string {
-	zf := zf.Zf{}
-	zfzhi := zfzhi.Zfzhi{}
-	if z := sjk.Leixing(false); z != zfzhi.Kongzifuzhi() {
-		return zf.String(true)
+	if z := sjk.Leixing(false); z != zfzhi.Zhi.Kzf() {
+		return zf.Zfs.String(true)
 	}
-	return zfzhi.Kongzifuzhi()
+	return zfzhi.Zhi.Kzf()
 }
 func (sjk *Sjk) Zhileixingzhi() string {
-	zf := zf.Zf{}
-	zfzhi := zfzhi.Zfzhi{}
-	if z := sjk.Zhi(false); z != zfzhi.Kongzifuzhi() {
-		return zf.String(true)
+	if z := sjk.Zhi(false); z != zfzhi.Zhi.Kzf() {
+		return zf.Zfs.String(true)
 	}
-	return zfzhi.Kongzifuzhi()
+	return zfzhi.Zhi.Kzf()
 }
 func (sjk *Sjk) Xinxibianmaleixingzhi() string {
-	zf := zf.Zf{}
-	zfzhi := zfzhi.Zfzhi{}
-	if z := sjk.Xinxibianma(false); z != zfzhi.Kongzifuzhi() {
-		return zf.String(true)
+	if z := sjk.Xinxibianma(false); z != zfzhi.Zhi.Kzf() {
+		return zf.Zfs.String(true)
 	}
-	return zfzhi.Kongzifuzhi()
+	return zfzhi.Zhi.Kzf()
 }
