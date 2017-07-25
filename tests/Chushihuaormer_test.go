@@ -1,9 +1,11 @@
 package tests
-import(
+
+import (
 	"hanfuxin/appinits"
-	"testing"
 	"log"
+	"testing"
 )
-func TestHanfuxinormer(t *testing.T){
+
+func TestHanfuxinormer(t *testing.T) {
 	log.Println(appinits.Hanfuxinormer)
 }

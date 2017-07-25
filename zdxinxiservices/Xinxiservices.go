@@ -14,36 +14,35 @@ import (
 )
 
 func yanzhengziduanchangdu(xinxi *appmodels.Xinxi) error {
-	zf := zf.Zf{}
 	cuowu := false
 	buffer := bytes.Buffer{}
 
-	lenmingcheng := baserun.Huoquyigechangdu(zf.Mingcheng(false))
-	lenmingchengshiti := len(xinxi.Mingcheng)
-	if lenmingchengshiti > int(lenmingcheng) {
-		cuowu = true
-		buffer.WriteString(apputils.Shengchengerrorchangdu(zf.Mingcheng(false), int64(lenmingcheng), lenmingchengshiti))
-	}
-
-	lenbiaoji := baserun.Huoquyigechangdu(zf.Biaoji(false))
-	lenbiaojishiti := len(xinxi.Biaoji)
-	if lenbiaojishiti > int(lenbiaoji) {
-		cuowu = true
-		buffer.WriteString(apputils.Shengchengerrorchangdu(zf.Mingcheng(false), int64(lenbiaoji), lenbiaojishiti))
-	}
-
-	lenbianma := baserun.Huoquyigechangdu(zf.Bianma(false))
-	lenbianmashiti := len(xinxi.Bianma)
-	if lenbianmashiti > int(lenbianma) {
-		cuowu = true
-		buffer.WriteString(apputils.Shengchengerrorchangdu(zf.Mingcheng(false), int64(lenbianma), lenbianmashiti))
-	}
-
-	lenyouxiang := baserun.Huoquyigechangdu(zf.Youxiang(false))
+	lenyouxiang := baserun.Huoquyigechangdu(zf.Zfs.Youxiang(false))
 	lenyouxiangshiti := len(xinxi.Youxiang)
 	if lenyouxiangshiti > int(lenyouxiang) {
 		cuowu = true
-		buffer.WriteString(apputils.Shengchengerrorchangdu(zf.Mingcheng(false), int64(lenyouxiang), lenyouxiangshiti))
+		buffer.WriteString(apputils.Shengchengerrorchangdu(zf.Zfs.Mingcheng(false), int64(lenyouxiang), lenyouxiangshiti))
+	}
+
+	lenbianma := baserun.Huoquyigechangdu(zf.Zfs.Bianma(false))
+	lenbianmashiti := len(xinxi.Bianma)
+	if lenbianmashiti > int(lenbianma) {
+		cuowu = true
+		buffer.WriteString(apputils.Shengchengerrorchangdu(zf.Zfs.Mingcheng(false), int64(lenbianma), lenbianmashiti))
+	}
+
+	lenbiaoji := baserun.Huoquyigechangdu(zf.Zfs.Biaoji(false))
+	lenbiaojishiti := len(xinxi.Biaoji)
+	if lenbiaojishiti > int(lenbiaoji) {
+		cuowu = true
+		buffer.WriteString(apputils.Shengchengerrorchangdu(zf.Zfs.Mingcheng(false), int64(lenbiaoji), lenbiaojishiti))
+	}
+
+	lenmingcheng := baserun.Huoquyigechangdu(zf.Zfs.Mingcheng(false))
+	lenmingchengshiti := len(xinxi.Mingcheng)
+	if lenmingchengshiti > int(lenmingcheng) {
+		cuowu = true
+		buffer.WriteString(apputils.Shengchengerrorchangdu(zf.Zfs.Mingcheng(false), int64(lenmingcheng), lenmingchengshiti))
 	}
 	if cuowu {
 		return allerrors.Ziduanerror{Shijian: time.Now(), Wenti: buffer.String()}
@@ -52,11 +51,8 @@ func yanzhengziduanchangdu(xinxi *appmodels.Xinxi) error {
 }
 func Tianjiaxinxi(xinxi *appmodels.Xinxi) string {
 	err := yanzhengziduanchangdu(xinxi)
-	zfzhi := zfzhi.Zfzhi{}
-	zf := zf.Zf{}
-	xhx := zfzhi.Xiahuaxianzhi()
 	if err != nil {
-		return baseinits.Tishis[zf.Tishi09(false)].Bianma + xhx + err.Error()
+		return baseinits.Tishis[zf.Zfs.Tishi09(false)].Bianma + zfzhi.Zhi.Xhx() + err.Error()
 
 	}
 	return zdxinxidaos.Tianjiayige(xinxi)
@@ -64,33 +60,29 @@ func Tianjiaxinxi(xinxi *appmodels.Xinxi) string {
 }
 func Xiugaixinxi(xinxi *appmodels.Xinxi) string {
 	err := yanzhengziduanchangdu(xinxi)
-	zfzhi := zfzhi.Zfzhi{}
-	zf := zf.Zf{}
-	kzf := zfzhi.Kongzifuzhi()
-	xhx := zfzhi.Xiahuaxianzhi()
 	if err != nil {
-		return baseinits.Tishis[zf.Tishi09(false)].Bianma + xhx + err.Error()
+		return baseinits.Tishis[zf.Zfs.Tishi09(false)].Bianma + zfzhi.Zhi.Xhx() + err.Error()
 
 	}
 	xinxifind := Chaxunxinxi(xinxi.Id)
 	if xinxifind != nil {
 
-		if xinxi.Mingcheng != kzf {
-			xinxifind.Mingcheng = xinxi.Mingcheng
-		}
-		if xinxi.Biaoji != kzf {
-			xinxifind.Biaoji = xinxi.Biaoji
-		}
-		if xinxi.Youxiang != kzf {
+		if xinxi.Youxiang != zfzhi.Zhi.Kzf() {
 			xinxifind.Youxiang = xinxi.Youxiang
 		}
-		if xinxi.Bianma != kzf {
+		if xinxi.Biaoji != zfzhi.Zhi.Kzf() {
+			xinxifind.Biaoji = xinxi.Biaoji
+		}
+		if xinxi.Bianma != zfzhi.Zhi.Kzf() {
 			xinxifind.Bianma = xinxi.Bianma
+		}
+		if xinxi.Mingcheng != zfzhi.Zhi.Kzf() {
+			xinxifind.Mingcheng = xinxi.Mingcheng
 		}
 		return zdxinxidaos.Xiugaiyige(xinxifind)
 
 	}
-	return baseinits.Cuowus[zf.Error04(false)].Zhi
+	return baseinits.Cuowus[zf.Zfs.Error04(false)].Zhi
 }
 func Shanchuxinxi(id int) string {
 	return zdxinxidaos.Shanchuyige(id)

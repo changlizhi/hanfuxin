@@ -16,7 +16,7 @@ import (
 	"testing"
 )
 
-func TestFuncname(t *testing.T){
+func TestFuncname(t *testing.T) {
 	pc, file, _, _ := runtime.Caller(1)
 	log.Println("pc----", pc)
 	log.Println("file-------", file)

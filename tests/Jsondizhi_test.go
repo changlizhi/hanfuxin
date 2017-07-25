@@ -7,6 +7,6 @@ import (
 )
 
 func TestMulus(t *testing.T) {
-	log.Println("apppath-------",basemodels.Getapppath())
-	log.Println("wenjianmulu------",basemodels.Getwenjianmulu("views", "test", "txt"))
+	log.Println("apppath-------", basemodels.Getapppath())
+	log.Println("wenjianmulu------", basemodels.Getwenjianmulu("views", "test", "txt"))
 }

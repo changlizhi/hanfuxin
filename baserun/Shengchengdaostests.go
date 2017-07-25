@@ -6,7 +6,6 @@ import (
 	"hanfuxin/zf"
 	"hanfuxin/zfzhi"
 	"io/ioutil"
-	"log"
 	"os"
 	"strconv"
 	"strings"
@@ -210,12 +209,11 @@ func Shengchengdaostests() {
 	for biao, _ := range Huoqubiaos() {
 		buffer := bytes.Buffer{}
 		testsimports(biao, &buffer)
-		testchaxunyige(biao, &buffer)
-		testshanchuyige(biao, &buffer)
+		testtianjiaduoge(biao, &buffer)
 		testtianjiayige(biao, &buffer)
 		testxiugaiyige(biao, &buffer)
-		testtianjiaduoge(biao, &buffer)
-		log.Println("buffer-------", buffer.String())
+		testchaxunyige(biao, &buffer)
+		testshanchuyige(biao, &buffer)
 
 		path := basemodels.Getapppath() + zfzhi.Zhi.Xx() + zf.Zfs.Tests(true) + zfzhi.Zhi.Xx() + biao + zf.Zfs.Daos(true) + zfzhi.Zhi.Xhx() + zf.Zfs.Test(true) + zfzhi.Zhi.Dh() + zf.Zfs.Go(true)
 		ioutil.WriteFile(path, buffer.Bytes(), os.ModePerm)

@@ -3,6 +3,9 @@ package zf
 func (zf *Zf) Ziduanerror(xiaoxie bool) string {
 	return Fangfaming(xiaoxie)
 }
+func (zf *Zf) Zfs(xiaoxie bool) string {
+	return Fangfaming(xiaoxie)
+}
 func (zf *Zf) Wenti(xiaoxie bool) string {
 	return Fangfaming(xiaoxie)
 }

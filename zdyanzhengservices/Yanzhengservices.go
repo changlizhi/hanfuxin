@@ -14,43 +14,42 @@ import (
 )
 
 func yanzhengziduanchangdu(yanzheng *appmodels.Yanzheng) error {
-	zf := zf.Zf{}
 	cuowu := false
 	buffer := bytes.Buffer{}
 
-	lenbiaoji := baserun.Huoquyigechangdu(zf.Biaoji(false))
+	lenbiaoji := baserun.Huoquyigechangdu(zf.Zfs.Biaoji(false))
 	lenbiaojishiti := len(yanzheng.Biaoji)
 	if lenbiaojishiti > int(lenbiaoji) {
 		cuowu = true
-		buffer.WriteString(apputils.Shengchengerrorchangdu(zf.Mingcheng(false), int64(lenbiaoji), lenbiaojishiti))
+		buffer.WriteString(apputils.Shengchengerrorchangdu(zf.Zfs.Mingcheng(false), int64(lenbiaoji), lenbiaojishiti))
 	}
 
-	lenmingcheng := baserun.Huoquyigechangdu(zf.Mingcheng(false))
-	lenmingchengshiti := len(yanzheng.Mingcheng)
-	if lenmingchengshiti > int(lenmingcheng) {
-		cuowu = true
-		buffer.WriteString(apputils.Shengchengerrorchangdu(zf.Mingcheng(false), int64(lenmingcheng), lenmingchengshiti))
-	}
-
-	lenbianma := baserun.Huoquyigechangdu(zf.Bianma(false))
-	lenbianmashiti := len(yanzheng.Bianma)
-	if lenbianmashiti > int(lenbianma) {
-		cuowu = true
-		buffer.WriteString(apputils.Shengchengerrorchangdu(zf.Mingcheng(false), int64(lenbianma), lenbianmashiti))
-	}
-
-	lenleixing := baserun.Huoquyigechangdu(zf.Leixing(false))
+	lenleixing := baserun.Huoquyigechangdu(zf.Zfs.Leixing(false))
 	lenleixingshiti := len(yanzheng.Leixing)
 	if lenleixingshiti > int(lenleixing) {
 		cuowu = true
-		buffer.WriteString(apputils.Shengchengerrorchangdu(zf.Mingcheng(false), int64(lenleixing), lenleixingshiti))
+		buffer.WriteString(apputils.Shengchengerrorchangdu(zf.Zfs.Mingcheng(false), int64(lenleixing), lenleixingshiti))
 	}
 
-	lenzhi := baserun.Huoquyigechangdu(zf.Zhi(false))
+	lenzhi := baserun.Huoquyigechangdu(zf.Zfs.Zhi(false))
 	lenzhishiti := len(yanzheng.Zhi)
 	if lenzhishiti > int(lenzhi) {
 		cuowu = true
-		buffer.WriteString(apputils.Shengchengerrorchangdu(zf.Mingcheng(false), int64(lenzhi), lenzhishiti))
+		buffer.WriteString(apputils.Shengchengerrorchangdu(zf.Zfs.Mingcheng(false), int64(lenzhi), lenzhishiti))
+	}
+
+	lenmingcheng := baserun.Huoquyigechangdu(zf.Zfs.Mingcheng(false))
+	lenmingchengshiti := len(yanzheng.Mingcheng)
+	if lenmingchengshiti > int(lenmingcheng) {
+		cuowu = true
+		buffer.WriteString(apputils.Shengchengerrorchangdu(zf.Zfs.Mingcheng(false), int64(lenmingcheng), lenmingchengshiti))
+	}
+
+	lenbianma := baserun.Huoquyigechangdu(zf.Zfs.Bianma(false))
+	lenbianmashiti := len(yanzheng.Bianma)
+	if lenbianmashiti > int(lenbianma) {
+		cuowu = true
+		buffer.WriteString(apputils.Shengchengerrorchangdu(zf.Zfs.Mingcheng(false), int64(lenbianma), lenbianmashiti))
 	}
 	if cuowu {
 		return allerrors.Ziduanerror{Shijian: time.Now(), Wenti: buffer.String()}
@@ -59,11 +58,8 @@ func yanzhengziduanchangdu(yanzheng *appmodels.Yanzheng) error {
 }
 func Tianjiayanzheng(yanzheng *appmodels.Yanzheng) string {
 	err := yanzhengziduanchangdu(yanzheng)
-	zfzhi := zfzhi.Zfzhi{}
-	zf := zf.Zf{}
-	xhx := zfzhi.Xiahuaxianzhi()
 	if err != nil {
-		return baseinits.Tishis[zf.Tishi09(false)].Bianma + xhx + err.Error()
+		return baseinits.Tishis[zf.Zfs.Tishi09(false)].Bianma + zfzhi.Zhi.Xhx() + err.Error()
 
 	}
 	return zdyanzhengdaos.Tianjiayige(yanzheng)
@@ -71,36 +67,32 @@ func Tianjiayanzheng(yanzheng *appmodels.Yanzheng) string {
 }
 func Xiugaiyanzheng(yanzheng *appmodels.Yanzheng) string {
 	err := yanzhengziduanchangdu(yanzheng)
-	zfzhi := zfzhi.Zfzhi{}
-	zf := zf.Zf{}
-	kzf := zfzhi.Kongzifuzhi()
-	xhx := zfzhi.Xiahuaxianzhi()
 	if err != nil {
-		return baseinits.Tishis[zf.Tishi09(false)].Bianma + xhx + err.Error()
+		return baseinits.Tishis[zf.Zfs.Tishi09(false)].Bianma + zfzhi.Zhi.Xhx() + err.Error()
 
 	}
 	yanzhengfind := Chaxunyanzheng(yanzheng.Id)
 	if yanzhengfind != nil {
 
-		if yanzheng.Biaoji != kzf {
-			yanzhengfind.Biaoji = yanzheng.Biaoji
+		if yanzheng.Bianma != zfzhi.Zhi.Kzf() {
+			yanzhengfind.Bianma = yanzheng.Bianma
 		}
-		if yanzheng.Mingcheng != kzf {
-			yanzhengfind.Mingcheng = yanzheng.Mingcheng
-		}
-		if yanzheng.Zhi != kzf {
+		if yanzheng.Zhi != zfzhi.Zhi.Kzf() {
 			yanzhengfind.Zhi = yanzheng.Zhi
 		}
-		if yanzheng.Leixing != kzf {
+		if yanzheng.Mingcheng != zfzhi.Zhi.Kzf() {
+			yanzhengfind.Mingcheng = yanzheng.Mingcheng
+		}
+		if yanzheng.Leixing != zfzhi.Zhi.Kzf() {
 			yanzhengfind.Leixing = yanzheng.Leixing
 		}
-		if yanzheng.Bianma != kzf {
-			yanzhengfind.Bianma = yanzheng.Bianma
+		if yanzheng.Biaoji != zfzhi.Zhi.Kzf() {
+			yanzhengfind.Biaoji = yanzheng.Biaoji
 		}
 		return zdyanzhengdaos.Xiugaiyige(yanzhengfind)
 
 	}
-	return baseinits.Cuowus[zf.Error04(false)].Zhi
+	return baseinits.Cuowus[zf.Zfs.Error04(false)].Zhi
 }
 func Shanchuyanzheng(id int) string {
 	return zdyanzhengdaos.Shanchuyige(id)
