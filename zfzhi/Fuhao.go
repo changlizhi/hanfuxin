@@ -162,6 +162,9 @@ func (zfzhi *Zfzhi) Maohaozhi() string {
 func (zfzhi *Zfzhi) Mh() string {
 	return ":"
 }
+func (zfzhi *Zfzhi) Wenhao() string {
+	return "?"
+}
 func (zfzhi *Zfzhi) Wh() string {
 	return "?"
 }

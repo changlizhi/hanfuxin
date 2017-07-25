@@ -78,9 +78,6 @@ func (zf *Zf) Jiahao(xiaoxie bool) string {
 func (zf *Zf) Maohao(xiaoxie bool) string {
 	return Fangfaming(xiaoxie)
 }
-func (zf *Zf) Wenhao(xiaoxie bool) string {
-	return Fangfaming(xiaoxie)
-}
 func (zf *Zf) Yizuobian(xiaoxie bool) string {
 	return Fangfaming(xiaoxie)
 }
@@ -97,8 +94,5 @@ func (zf *Zf) Fenhao(xiaoxie bool) string {
 	return Fangfaming(xiaoxie)
 }
 func (zf *Zf) Quana(xiaoxie bool) string {
-	return Fangfaming(xiaoxie)
-}
-func (zf *Zf) Douhao(xiaoxie bool) string {
 	return Fangfaming(xiaoxie)
 }

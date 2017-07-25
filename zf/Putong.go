@@ -99,9 +99,6 @@ func (zf *Zf) Err(xiaoxie bool) string {
 func (zf *Zf) Xiugai(xiaoxie bool) string {
 	return Fangfaming(xiaoxie)
 }
-func (zf *Zf) Kzf(xiaoxie bool) string {
-	return Fangfaming(xiaoxie)
-}
 func (zf *Zf) Cuowus(xiaoxie bool) string {
 	return Fangfaming(xiaoxie)
 }
@@ -124,5 +121,20 @@ func (zf *Zf) Req(xiaoxie bool) string {
 	return Fangfaming(xiaoxie)
 }
 func (zf *Zf) Param(xiaoxie bool) string {
+	return Fangfaming(xiaoxie)
+}
+func (zf *Zf) Unmarshal(xiaoxie bool) string {
+	return Fangfaming(xiaoxie)
+}
+func (zf *Zf) Ctx(xiaoxie bool) string {
+	return Fangfaming(xiaoxie)
+}
+func (zf *Zf) Input(xiaoxie bool) string {
+	return Fangfaming(xiaoxie)
+}
+func (zf *Zf) RequestBody(xiaoxie bool) string {
+	return Fangfaming(xiaoxie)
+}
+func (zf *Zf) Marshal(xiaoxie bool) string {
 	return Fangfaming(xiaoxie)
 }

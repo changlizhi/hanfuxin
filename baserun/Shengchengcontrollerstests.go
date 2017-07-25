@@ -22,12 +22,14 @@ func controllertestimports(bianma string, buffer *bytes.Buffer) {
 	constr := zfzhi.Zhi.Syh() + zf.Zfs.Hanfuxin(true) + zfzhi.Zhi.Xx() + zf.Zfs.Controllers(true) + zfzhi.Zhi.Syh() + zfzhi.Zhi.Hhf()
 	buffer.WriteString(constr)
 
-	//"hanfuxin/tests"
-	teststr := zfzhi.Zhi.Syh() + zf.Zfs.Hanfuxin(true) + zfzhi.Zhi.Xx() + zf.Zfs.Tests(true) + zfzhi.Zhi.Syh() + zfzhi.Zhi.Hhf()
+	//"hanfuxin/fortests"
+	teststr := zfzhi.Zhi.Syh() + zf.Zfs.Hanfuxin(true) + zfzhi.Zhi.Xx() + zf.Zfs.Fortests(true) + zfzhi.Zhi.Syh() + zfzhi.Zhi.Hhf()
 	buffer.WriteString(teststr)
+
 	//"hanfuxin/zf"
 	zfstr := zfzhi.Zhi.Syh() + zf.Zfs.Hanfuxin(true) + zfzhi.Zhi.Xx() + zf.Zfs.Zf(true) + zfzhi.Zhi.Syh() + zfzhi.Zhi.Hhf()
 	buffer.WriteString(zfstr)
+
 	// "hanfuxin/zfzhi"
 	zfzhistr := zfzhi.Zhi.Syh() + zf.Zfs.Hanfuxin(true) + zfzhi.Zhi.Xx() + zf.Zfs.Zfzhi(true) + zfzhi.Zhi.Syh() + zfzhi.Zhi.Hhf()
 	buffer.WriteString(zfzhistr)
@@ -75,8 +77,8 @@ func bkcontroller(bianma string, buffer *bytes.Buffer) {
 	//c.Ctx.Output.Context.ResponseWriter = &context.Response
 	conresp := zf.Zfs.C(true) + zfzhi.Zhi.Dh() + zf.Zfs.Ctx(false) + zfzhi.Zhi.Dh() + zf.Zfs.Output(false) + zfzhi.Zhi.Dh() + zf.Zfs.Context(false) + zfzhi.Zhi.Dh() + zf.Zfs.ResponseWriter(false) + zfzhi.Zhi.Dyh() + zfzhi.Zhi.Qh() + zf.Zfs.Context(true) + zfzhi.Zhi.Dh() + zf.Zfs.Response(false)
 	buffer.WriteString(conresp)
-	//{new(texts.Mywriter),true,200}
-	respobj := zfzhi.Zhi.Dkhz() + zf.Zfs.New(true) + zfzhi.Zhi.Xkhz() + zf.Zfs.Tests(true) + zfzhi.Zhi.Dh() + zf.Zfs.Mywriter(false) + zfzhi.Zhi.Xkhy() + zfzhi.Zhi.Dou() + zf.Zfs.True(true) + zfzhi.Zhi.Dou() + sz200str + zfzhi.Zhi.Dkhy() + zfzhi.Zhi.Hhf()
+	//{new(fortexts.Mywriter),true,200}
+	respobj := zfzhi.Zhi.Dkhz() + zf.Zfs.New(true) + zfzhi.Zhi.Xkhz() + zf.Zfs.Fortests(true) + zfzhi.Zhi.Dh() + zf.Zfs.Mywriter(false) + zfzhi.Zhi.Xkhy() + zfzhi.Zhi.Dou() + zf.Zfs.True(true) + zfzhi.Zhi.Dou() + sz200str + zfzhi.Zhi.Dkhy() + zfzhi.Zhi.Hhf()
 	buffer.WriteString(respobj)
 	//return &c
 	retcon := zf.Zfs.Return(true) + zfzhi.Zhi.Kgf() + zfzhi.Zhi.Qh() + zf.Zfs.C(true)
@@ -84,29 +86,33 @@ func bkcontroller(bianma string, buffer *bytes.Buffer) {
 
 	buffer.WriteString(zfzhi.Zhi.Hhf() + zfzhi.Zhi.Dkhy() + zfzhi.Zhi.Hhf())
 }
+
 func testpostpatch(fangfa string, bianma string, buffer *bytes.Buffer) {
 	bmx := strings.ToLower(bianma)
 	//func TestFangfajuese(t *testing.T)
-	funstr := zf.Zfs.Func(true) + zfzhi.Zhi.Kgf() + zf.Zfs.Test(false) + fangfa + bmx + zfzhi.Zhi.Xkhz() + zf.Zfs.T(true) + zfzhi.Zhi.Xh() + zf.Zfs.Testing(true) + zfzhi.Zhi.Dh() + zf.Zfs.T(false) + zfzhi.Zhi.Xkhy()
+	funstr := zf.Zfs.Func(true) + zfzhi.Zhi.Kgf() + zf.Zfs.Test(false) +
+		fangfa + bmx + zfzhi.Zhi.Xkhz() + zf.Zfs.T(true) +
+		zfzhi.Zhi.Xh() + zf.Zfs.Testing(true) + zfzhi.Zhi.Dh() +
+		zf.Zfs.T(false) + zfzhi.Zhi.Xkhy()
 	buffer.WriteString(funstr)
 	buffer.WriteString(zfzhi.Zhi.Dkhz() + zfzhi.Zhi.Hhf())
-	// zfzhi := zfzhi.Zfzhi{}
-	zfzhistr := zf.Zfs.Zfzhi(true) + zfzhi.Zhi.Mh() + zfzhi.Zhi.Dyh() + zf.Zfs.Zfzhi(true) + zfzhi.Zhi.Dh() + zf.Zfs.Zfzhi(false) + zfzhi.Zhi.Dkhz() + zfzhi.Zhi.Dkhy() + zfzhi.Zhi.Hhf()
-	buffer.WriteString(zfzhistr)
 
 	//c:= zfzhi.Zhi.Xx()xcontroller()
 	contr := zf.Zfs.C(true) + zfzhi.Zhi.Mh() + zfzhi.Zhi.Dyh() + bmx + zf.Zfs.Controller(true) + zfzhi.Zhi.Xkhz() + zfzhi.Zhi.Xkhy() + zfzhi.Zhi.Hhf()
 	buffer.WriteString(contr)
 
 	// reqjson := zfzhi.Fangfajuesezhi()
-	jsonstr := zf.Zfs.Req(true) + zf.Zfs.Json(true) + zfzhi.Zhi.Mh() + zfzhi.Zhi.Dyh() + zf.Zfs.Zfzhi(true) + zfzhi.Zhi.Dh() + fangfa + bmx + zf.Zfs.Zhi(true) + zfzhi.Zhi.Xkhz() + zfzhi.Zhi.Xkhy() + zfzhi.Zhi.Hhf()
+	jsonstr := zf.Zfs.Req(true) + zf.Zfs.Json(true) + zfzhi.Zhi.Mh() + zfzhi.Zhi.Dyh() + zf.Zfs.Zfzhi(true) + zfzhi.Zhi.Dh() + zf.Zfs.Zhi(false) + zfzhi.Zhi.Dh() + fangfa + bmx + zf.Zfs.Zhi(true) + zfzhi.Zhi.Xkhz() + zfzhi.Zhi.Xkhy() + zfzhi.Zhi.Hhf()
 	buffer.WriteString(jsonstr)
+
 	// c.Ctx.Input.RequestBody = []byte(reqjson)
 	cinstr := zf.Zfs.C(true) + zfzhi.Zhi.Dh() + zf.Zfs.Ctx(false) + zfzhi.Zhi.Dh() + zf.Zfs.Input(false) + zfzhi.Zhi.Dh() + zf.Zfs.RequestBody(false) + zfzhi.Zhi.Dyh() + zfzhi.Zhi.Zkhz() + zfzhi.Zhi.Zkhy() + zf.Zfs.Byte(true) + zfzhi.Zhi.Xkhz() + zf.Zfs.Req(true) + zf.Zfs.Json(true) + zfzhi.Zhi.Xkhy() + zfzhi.Zhi.Hhf()
 	buffer.WriteString(cinstr)
+
 	//c.Fangfa()
 	pstr := zf.Zfs.C(true) + zfzhi.Zhi.Dh() + fangfa + zfzhi.Zhi.Xkhz() + zfzhi.Zhi.Xkhy() + zfzhi.Zhi.Hhf()
 	buffer.WriteString(pstr)
+
 	//log.Println(c.Data)
 	logstr := zf.Zfs.Log(true) + zfzhi.Zhi.Dh() + zf.Zfs.Println(false) + zfzhi.Zhi.Xkhz() + zf.Zfs.C(true) + zfzhi.Zhi.Dh() + zf.Zfs.Data(false) + zfzhi.Zhi.Xkhy() + zfzhi.Zhi.Hhf()
 	buffer.WriteString(logstr)
@@ -121,25 +127,18 @@ func testpatchcontroller(bianma string, buffer *bytes.Buffer) {
 }
 func deletegetcontroller(fangfa string, bianma string, buffer *bytes.Buffer) {
 	bmx := strings.ToLower(bianma)
+
 	// func TestDeletezfzhi.Zhi.Xx()x(t * testing.T)
 	funstr := zf.Zfs.Func(true) + zfzhi.Zhi.Kgf() + zf.Zfs.Test(false) + fangfa + bmx + zfzhi.Zhi.Xkhz() + zf.Zfs.T(true) + zfzhi.Zhi.Kgf() + zfzhi.Zhi.Xh() + zf.Zfs.Testing(true) + zfzhi.Zhi.Dh() + zf.Zfs.T(false) + zfzhi.Zhi.Xkhy()
 	buffer.WriteString(funstr)
 	buffer.WriteString(zfzhi.Zhi.Dkhz() + zfzhi.Zhi.Hhf())
 
-	// zf:= zf.Zfs.Zf{}
-	zfstr := zf.Zfs.Zf(true) + zfzhi.Zhi.Mh() + zfzhi.Zhi.Dyh() + zf.Zfs.Zf(true) + zfzhi.Zhi.Dh() + zf.Zfs.Zf(false) + zfzhi.Zhi.Dkhz() + zfzhi.Zhi.Dkhy() + zfzhi.Zhi.Hhf()
-	buffer.WriteString(zfstr)
-
-	// zfzhi := zfzhi.Zfzhi{}
-	zfzhistr := zf.Zfs.Zfzhi(true) + zfzhi.Zhi.Mh() + zfzhi.Zhi.Dyh() + zf.Zfs.Zfzhi(true) + zfzhi.Zhi.Dh() + zf.Zfs.Zfzhi(false) + zfzhi.Zhi.Dkhz() + zfzhi.Zhi.Dkhy() + zfzhi.Zhi.Hhf()
-	buffer.WriteString(zfzhistr)
-
-	// zfzhi.Zhi.Mh() := zfzhi.Maohaozhi()
-	mhstr := zf.Zfs.Mh(true) + zfzhi.Zhi.Mh() + zfzhi.Zhi.Dyh() + zf.Zfs.Zfzhi(true) + zfzhi.Zhi.Dh() + zf.Zfs.Maohaozhi(false) + zfzhi.Zhi.Xkhz() + zfzhi.Zhi.Xkhy() + zfzhi.Zhi.Hhf()
-	buffer.WriteString(mhstr)
-
 	//paramid := strconv.Itoa(zfzhi.Shuzi1zhi())
-	parstr := zf.Zfs.Param(true) + zf.Zfs.Id(true) + zfzhi.Zhi.Mh() + zfzhi.Zhi.Dyh() + zf.Zfs.Strconv(true) + zfzhi.Zhi.Dh() + zf.Zfs.Itoa(false) + zfzhi.Zhi.Xkhz() + zf.Zfs.Zfzhi(true) + zfzhi.Zhi.Dh() + zf.Zfs.Shuzi1zhi(false) + zfzhi.Zhi.Xkhz() + zfzhi.Zhi.Xkhy() + zfzhi.Zhi.Xkhy() + zfzhi.Zhi.Hhf()
+	parstr := zf.Zfs.Param(true) + zf.Zfs.Id(true) + zfzhi.Zhi.Mh() +
+		zfzhi.Zhi.Dyh() + zf.Zfs.Strconv(true) + zfzhi.Zhi.Dh() +
+		zf.Zfs.Itoa(false) + zfzhi.Zhi.Xkhz() +
+		zf.Zfs.Zfzhi(true) + zfzhi.Zhi.Dh() + zf.Zfs.Zhi(false) + zfzhi.Zhi.Dh() + zf.Zfs.Shuzi1zhi(false) + zfzhi.Zhi.Xkhz() + zfzhi.Zhi.Xkhy() +
+		zfzhi.Zhi.Xkhy() + zfzhi.Zhi.Hhf()
 	buffer.WriteString(parstr)
 
 	//c := zfzhi.Zhi.Xx()xcontroller()
@@ -151,7 +150,9 @@ func deletegetcontroller(fangfa string, bianma string, buffer *bytes.Buffer) {
 	buffer.WriteString(cinstr)
 
 	//(zfzhi.Zhi.Mh() + zf.Zfs.Id(false),paramid)
-	cinparam := zfzhi.Zhi.Xkhz() + zf.Zfs.Mh(true) + zfzhi.Zhi.Jia() + zf.Zfs.Zf(true) + zfzhi.Zhi.Dh() + zf.Zfs.Id(false) + zfzhi.Zhi.Xkhz() + zf.Zfs.False(true) + zfzhi.Zhi.Xkhy() + zfzhi.Zhi.Dou() + zf.Zfs.Param(true) + zf.Zfs.Id(true) + zfzhi.Zhi.Xkhy() + zfzhi.Zhi.Hhf()
+	cinparam := zfzhi.Zhi.Xkhz() +
+		zf.Zfs.Zfzhi(true) + zfzhi.Zhi.Dh() + zf.Zfs.Zhi(false) + zfzhi.Zhi.Dh() + zf.Zfs.Mh(false) + zfzhi.Zhi.Xkhz() + zfzhi.Zhi.Xkhy() +
+		zfzhi.Zhi.Jia() + zf.Zfs.Zf(true) + zfzhi.Zhi.Dh() + zf.Zfs.Zfs(false) + zfzhi.Zhi.Dh() + zf.Zfs.Id(false) + zfzhi.Zhi.Xkhz() + zf.Zfs.False(true) + zfzhi.Zhi.Xkhy() + zfzhi.Zhi.Dou() + zf.Zfs.Param(true) + zf.Zfs.Id(true) + zfzhi.Zhi.Xkhy() + zfzhi.Zhi.Hhf()
 	buffer.WriteString(cinparam)
 
 	// c.Get()
@@ -159,7 +160,12 @@ func deletegetcontroller(fangfa string, bianma string, buffer *bytes.Buffer) {
 	buffer.WriteString(callstr)
 
 	//log.Println(c.Data[zf.Zfs.Json(true)])
-	logstr := zf.Zfs.Log(true) + zfzhi.Zhi.Dh() + zf.Zfs.Println(false) + zfzhi.Zhi.Xkhz() + zf.Zfs.C(true) + zfzhi.Zhi.Dh() + zf.Zfs.Data(false) + zfzhi.Zhi.Zkhz() + zf.Zfs.Zf(true) + zfzhi.Zhi.Dh() + zf.Zfs.Json(false) + zfzhi.Zhi.Xkhz() + zf.Zfs.True(true) + zfzhi.Zhi.Xkhy() + zfzhi.Zhi.Zkhy() + zfzhi.Zhi.Xkhy() + zfzhi.Zhi.Hhf()
+	logstr := zf.Zfs.Log(true) + zfzhi.Zhi.Dh() + zf.Zfs.Println(false) +
+		zfzhi.Zhi.Xkhz() + zf.Zfs.C(true) + zfzhi.Zhi.Dh() +
+		zf.Zfs.Data(false) + zfzhi.Zhi.Zkhz() + zf.Zfs.Zf(true) +
+		zfzhi.Zhi.Dh() + zf.Zfs.Zfs(false) + zfzhi.Zhi.Dh() + zf.Zfs.Json(false) + zfzhi.Zhi.Xkhz() +
+		zf.Zfs.True(true) + zfzhi.Zhi.Xkhy() + zfzhi.Zhi.Zkhy() +
+		zfzhi.Zhi.Xkhy() + zfzhi.Zhi.Hhf()
 	buffer.WriteString(logstr)
 
 	buffer.WriteString(zfzhi.Zhi.Hhf() + zfzhi.Zhi.Dkhy() + zfzhi.Zhi.Hhf())

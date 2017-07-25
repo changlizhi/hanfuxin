@@ -63,3 +63,6 @@ func (zf *Zf) Zfzhi(xiaoxie bool) string {
 func (zf *Zf) Zfmodel(xiaoxie bool) string {
 	return Fangfaming(xiaoxie)
 }
+func (zf *Zf) Fortests(xiaoxie bool) string {
+	return Fangfaming(xiaoxie)
+}
