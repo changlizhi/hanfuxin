@@ -2,9 +2,10 @@ package baserun
 
 import (
 	"bytes"
-	"hanfuxin/basemodels"
+	"hanfuxin/appinits"
 	"hanfuxin/zf"
 	"hanfuxin/zfzhi"
+	"hanfuxin/zh"
 	"io/ioutil"
 	"os"
 	"strings"
@@ -15,8 +16,7 @@ func routersimports(bianma string, buffer *bytes.Buffer) {
 	buffer.WriteString(zfzhi.Zhi.Xkhz() + zfzhi.Zhi.Hhf())
 
 	//"github.com/astaxie/beego"
-	beestr := zfzhi.Zhi.Syh() + zf.Zfs.Github(true) + zfzhi.Zhi.Dh() + zf.Zfs.Com(true) + zfzhi.Zhi.Xx() + zf.Zfs.Astaxie(true) + zfzhi.Zhi.Xx() + zf.Zfs.Beego(true) + zfzhi.Zhi.Syh() + zfzhi.Zhi.Hhf()
-	buffer.WriteString(beestr)
+	buffer.WriteString(zh.Zhs.Beego())
 
 	//"hanfuxin/controllers"
 	constr := zfzhi.Zhi.Syh() + zf.Zfs.Hanfuxin(true) + zfzhi.Zhi.Xx() + zf.Zfs.Controllers(true) + zfzhi.Zhi.Syh() + zfzhi.Zhi.Hhf()
@@ -50,7 +50,7 @@ func Shengchengrouters() {
 
 		routersimports(bk, &buffer)
 		routersinit(bk, &buffer)
-		dir := basemodels.Getapppath() + zfzhi.Zhi.Xx() + zf.Zfs.Routers(true)
+		dir := appinits.Getapppath() + zfzhi.Zhi.Xx() + zf.Zfs.Routers(true)
 		path := dir + zfzhi.Zhi.Xx() + bk + zf.Zfs.Router(true) + zfzhi.Zhi.Dh() + zf.Zfs.Go(true)
 		os.MkdirAll(dir, os.ModePerm)
 		ioutil.WriteFile(path, buffer.Bytes(), os.ModePerm)

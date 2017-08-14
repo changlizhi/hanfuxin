@@ -3,15 +3,18 @@ package tests
 import (
 	"github.com/astaxie/beego"
 	. "github.com/smartystreets/goconvey/convey"
-	"hanfuxin/basemodels"
+	"hanfuxin/appinits"
 	_ "hanfuxin/routers"
 	"net/http"
 	"net/http/httptest"
 	"testing"
+	"log"
+	"bytes"
+	"io/ioutil"
 )
 
 func init() {
-	beego.TestBeegoInit(basemodels.Getapppath())
+	beego.TestBeegoInit(appinits.Getapppath())
 }
 
 // TestBeego is a sample to run an endpoint test
@@ -32,3 +35,14 @@ func TestBeego(t *testing.T) {
 		})
 	})
 }
+func TestZengjiahttppost(t *testing.T) {
+     reqstr := `{"Id":9,"Bianma":"ROLE","Mingcheng":"我的角色","Biaoji":"Youxiao"}`
+     reqbuf := bytes.NewBuffer([]byte(reqstr))
+     req, _ := http.NewRequest("POST", "http://localhost:8080/juese", reqbuf)
+     req.Header.Set("Content-type", "application/json")
+     c := &http.Client{}
+     res, _ := c.Do(req)
+     body, _ := ioutil.ReadAll(res.Body)
+     log.Println(string(body))
+}
+

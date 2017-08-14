@@ -1,12 +1,12 @@
 package tests
 
 import (
-	"hanfuxin/basemodels"
+	"hanfuxin/appinits"
 	"log"
 	"testing"
 )
 
 func TestMulus(t *testing.T) {
-	log.Println("apppath-------", basemodels.Getapppath())
-	log.Println("wenjianmulu------", basemodels.Getwenjianmulu("views", "test", "txt"))
+	log.Println("apppath-------", appinits.Getapppath())
+	log.Println("wenjianmulu------", appinits.Getwenjianmulu("views", "test", "txt"))
 }

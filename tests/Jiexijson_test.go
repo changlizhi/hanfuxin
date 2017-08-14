@@ -1,7 +1,7 @@
 package tests
 
 import (
-	"hanfuxin/basemodels"
+	"hanfuxin/appinits"
 	"hanfuxin/baseutils"
 	"log"
 	"testing"
@@ -16,8 +16,8 @@ func TestYingyongjson(t *testing.T) {
 	log.Println("yingyong---", yingyong)
 }
 func TestJiexi(t *testing.T) {
-	path := basemodels.Getyingyongpath()
-	yingyong := basemodels.Yingyong{}
+	path := appinits.Getyingyongpath()
+	yingyong := appinits.Yingyong{}
 	baseutils.Jiexi(path, &yingyong)
 	log.Println(yingyong)
 }

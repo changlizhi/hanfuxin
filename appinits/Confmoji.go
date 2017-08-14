@@ -1,4 +1,4 @@
-package basemodels
+package appinits
 
 type Tongyong struct {
 	Guilei    string

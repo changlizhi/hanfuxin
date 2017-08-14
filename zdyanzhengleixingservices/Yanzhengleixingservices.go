@@ -5,7 +5,7 @@ import (
 	"hanfuxin/allerrors"
 	"hanfuxin/appmodels"
 	"hanfuxin/apputils"
-	"hanfuxin/baseinits"
+	"hanfuxin/appinits"
 	"hanfuxin/baserun"
 	"hanfuxin/zdyanzhengleixingdaos"
 	"hanfuxin/zf"
@@ -45,7 +45,7 @@ func yanzhengziduanchangdu(yanzhengleixing *appmodels.Yanzhengleixing) error {
 func Tianjiayanzhengleixing(yanzhengleixing *appmodels.Yanzhengleixing) string {
 	err := yanzhengziduanchangdu(yanzhengleixing)
 	if err != nil {
-		return baseinits.Tishis[zf.Zfs.Tishi09(false)].Bianma + zfzhi.Zhi.Xhx() + err.Error()
+		return appinits.Tishis[zf.Zfs.Tishi09(false)].Bianma + zfzhi.Zhi.Xhx() + err.Error()
 
 	}
 	return zdyanzhengleixingdaos.Tianjiayige(yanzhengleixing)
@@ -54,7 +54,7 @@ func Tianjiayanzhengleixing(yanzhengleixing *appmodels.Yanzhengleixing) string {
 func Xiugaiyanzhengleixing(yanzhengleixing *appmodels.Yanzhengleixing) string {
 	err := yanzhengziduanchangdu(yanzhengleixing)
 	if err != nil {
-		return baseinits.Tishis[zf.Zfs.Tishi09(false)].Bianma + zfzhi.Zhi.Xhx() + err.Error()
+		return appinits.Tishis[zf.Zfs.Tishi09(false)].Bianma + zfzhi.Zhi.Xhx() + err.Error()
 
 	}
 	yanzhengleixingfind := Chaxunyanzhengleixing(yanzhengleixing.Id)
@@ -72,7 +72,7 @@ func Xiugaiyanzhengleixing(yanzhengleixing *appmodels.Yanzhengleixing) string {
 		return zdyanzhengleixingdaos.Xiugaiyige(yanzhengleixingfind)
 
 	}
-	return baseinits.Cuowus[zf.Zfs.Error04(false)].Zhi
+	return appinits.Cuowus[zf.Zfs.Error04(false)].Zhi
 }
 func Shanchuyanzhengleixing(id int) string {
 	return zdyanzhengleixingdaos.Shanchuyige(id)

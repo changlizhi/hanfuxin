@@ -4,7 +4,7 @@ import (
 	"go/parser"
 	"go/token"
 	"hanfuxin/apputils"
-	"hanfuxin/basemodels"
+	"hanfuxin/appinits"
 	"hanfuxin/zf"
 	"hanfuxin/zfzhi"
 	"io/ioutil"
@@ -53,7 +53,7 @@ func TestZfmulu(t *testing.T) {
 }
 func TestParserfile(t *testing.T) {
 	fset := token.NewFileSet()
-	biaopath := basemodels.Getapppath() + zfzhi.Zhi.Xx() + zf.Zfs.Zfzhi(true) + zfzhi.Zhi.Xx() + zf.Zfs.Fuhao(false) + zfzhi.Zhi.Dh() + zf.Zfs.Go(true)
+	biaopath := appinits.Getapppath() + zfzhi.Zhi.Xx() + zf.Zfs.Zfzhi(true) + zfzhi.Zhi.Xx() + zf.Zfs.Fuhao(false) + zfzhi.Zhi.Dh() + zf.Zfs.Go(true)
 	log.Println(biaopath)
 	f, err := parser.ParseFile(fset, biaopath, nil, parser.AllErrors)
 
@@ -67,7 +67,7 @@ func TestParserfile(t *testing.T) {
 }
 func TestTypefile(t *testing.T) {
 	fset := token.NewFileSet()
-	biaopath := basemodels.Getapppath() + zfzhi.Zhi.Xx() + zf.Zfs.Zfz(true) + zfzhi.Zhi.Xx() + zf.Zfs.Biao(false) + zfzhi.Zhi.Dh() + zf.Zfs.Go(true)
+	biaopath := appinits.Getapppath() + zfzhi.Zhi.Xx() + zf.Zfs.Zfz(true) + zfzhi.Zhi.Xx() + zf.Zfs.Biao(false) + zfzhi.Zhi.Dh() + zf.Zfs.Go(true)
 	log.Println(biaopath)
 	log.Println(zf.Zfs.Fangfaming(true))
 	b, _ := ioutil.ReadFile(biaopath)
@@ -91,7 +91,7 @@ func TestReflect(t *testing.T) {
 	log.Println(v.MethodByName("Testf2"))
 }
 func TestReg(t *testing.T) {
-	path := basemodels.Getapppath() + zfzhi.Zhi.Xx() + zf.Zfs.Zfz(true) + zfzhi.Zhi.Xx() + zf.Zfs.Biao(false) + zfzhi.Zhi.Dh() + zf.Zfs.Go(true)
+	path := appinits.Getapppath() + zfzhi.Zhi.Xx() + zf.Zfs.Zfz(true) + zfzhi.Zhi.Xx() + zf.Zfs.Biao(false) + zfzhi.Zhi.Dh() + zf.Zfs.Go(true)
 	b, _ := ioutil.ReadFile(path)
 	reg, err := regexp.CompilePOSIX(`^func \(zf \*Zf\) [[:word:]]+`)
 	if err != nil {

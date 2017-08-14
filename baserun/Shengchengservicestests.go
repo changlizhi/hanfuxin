@@ -2,7 +2,7 @@ package baserun
 
 import (
 	"bytes"
-	"hanfuxin/basemodels"
+	"hanfuxin/appinits"
 	"hanfuxin/zf"
 	"hanfuxin/zfzhi"
 	"io/ioutil"
@@ -136,7 +136,7 @@ func Shengchengservicetest() {
 		testservicexiugai(bk, &buffer)
 		testservicechaxun(bk, &buffer)
 		testserviceshanchu(bk, &buffer)
-		dir := basemodels.Getapppath() + zfzhi.Zhi.Xx() + zf.Zfs.Tests(true)
+		dir := appinits.Getapppath() + zfzhi.Zhi.Xx() + zf.Zfs.Tests(true)
 		path := dir + zfzhi.Zhi.Xx() + bk + zf.Zfs.Services(true) + zfzhi.Zhi.Xhx() + zf.Zfs.Test(true) + zfzhi.Zhi.Dh() + zf.Zfs.Go(true)
 		os.MkdirAll(dir, os.ModePerm)
 		ioutil.WriteFile(path, buffer.Bytes(), os.ModePerm)

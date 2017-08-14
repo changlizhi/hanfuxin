@@ -1,4 +1,4 @@
-package basemodels
+package appinits
 
 type Guojihua struct {
 	Cuowu []Tongyong

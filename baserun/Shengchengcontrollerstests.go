@@ -2,7 +2,7 @@ package baserun
 
 import (
 	"bytes"
-	"hanfuxin/basemodels"
+	"hanfuxin/appinits"
 	"hanfuxin/zf"
 	"hanfuxin/zfzhi"
 	"io/ioutil"
@@ -189,7 +189,7 @@ func Shengchengcontrollertest() {
 		testgetcontroller(bk, &buffer)
 
 		//hanfuxn/tesets
-		dir := basemodels.Getapppath() + zfzhi.Zhi.Xx() + zf.Zfs.Tests(true)
+		dir := appinits.Getapppath() + zfzhi.Zhi.Xx() + zf.Zfs.Tests(true)
 		//hanfuxin/tests/Xxx_test.go
 		path := dir + zfzhi.Zhi.Xx() + bk + zf.Zfs.Controller(true) + zfzhi.Zhi.Xhx() + zf.Zfs.Test(true) + zfzhi.Zhi.Dh() + zf.Zfs.Go(true)
 		os.MkdirAll(dir, os.ModePerm)

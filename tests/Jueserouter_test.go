@@ -3,7 +3,7 @@ package tests
 import (
 	"bytes"
 	"github.com/astaxie/beego"
-	"hanfuxin/basemodels"
+	"hanfuxin/appinits"
 	_ "hanfuxin/routers"
 	"hanfuxin/zf"
 	"hanfuxin/zfzhi"
@@ -15,7 +15,7 @@ import (
 )
 
 func init() {
-	beego.TestBeegoInit(basemodels.Getapppath())
+	beego.TestBeegoInit(appinits.Getapppath())
 }
 func postpatch(bianma string) {
 	reqstr := zfzhi.Zhi.Kzf()

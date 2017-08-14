@@ -1,20 +1,20 @@
 package tests
 
 import (
-	"hanfuxin/baseinits"
+	"hanfuxin/appinits"
 	"log"
 	"testing"
 )
 
 func TestCuowus(t *testing.T) {
-	log.Println("baseinits.Cuowus-------------", baseinits.Cuowus)
+	log.Println("appinits.Cuowus-------------", appinits.Cuowus)
 }
 func TestTishis(t *testing.T) {
-	log.Println("baseinits.Tishis-------------", baseinits.Tishis)
+	log.Println("appinits.Tishis-------------", appinits.Tishis)
 }
 func TestShujukus(t *testing.T) {
-	log.Println("baseinits.Shujukus-------------", baseinits.Shujukus)
+	log.Println("appinits.Shujukus-------------", appinits.Shujukus)
 }
 func TestChushihuas(t *testing.T) {
-	log.Println("baseinits.Chushihuas-------------", baseinits.Chushihuas)
+	log.Println("appinits.Chushihuas-------------", appinits.Chushihuas)
 }

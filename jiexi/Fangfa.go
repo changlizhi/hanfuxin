@@ -1,7 +1,7 @@
 package jiexi
 
 import (
-	"hanfuxin/basemodels"
+	"hanfuxin/appinits"
 	"hanfuxin/zf"
 	"hanfuxin/zfzhi"
 	"io/ioutil"
@@ -12,7 +12,7 @@ import (
 func Pipeifangfa(canshu string, canshuleixing string, muluming string, wenjianming string) []string {
 	fu1 := zfzhi.Zhi.Shuzifu1zhi()
 
-	path := basemodels.Getapppath() + zfzhi.Zhi.Xx() + muluming + zfzhi.Zhi.Xx() + wenjianming + zfzhi.Zhi.Dh() + zf.Zfs.Go(true)
+	path := appinits.Getapppath() + zfzhi.Zhi.Xx() + muluming + zfzhi.Zhi.Xx() + wenjianming + zfzhi.Zhi.Dh() + zf.Zfs.Go(true)
 	b, _ := ioutil.ReadFile(path)
 	//从匹配的方法名中去除前面对于的正则表达式
 	// func \(zf \*Zf\)

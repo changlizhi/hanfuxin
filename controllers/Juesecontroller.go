@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"github.com/astaxie/beego"
 	"hanfuxin/appmodels"
-	"hanfuxin/baseinits"
+	"hanfuxin/appinits"
 	"hanfuxin/zdjueseservices"
 	"hanfuxin/zf"
 	"hanfuxin/zfzhi"
@@ -23,7 +23,7 @@ func (c *Juesecontroller) Get() {
 	if err != nil {
 		log.Println(err)
 		c.Data[zf.Zfs.Json(true)] = map[string]string{
-			zf.Zfs.Error05(false): baseinits.Cuowus[zf.Zfs.Error05(false)].Zhi,
+			zf.Zfs.Error05(false): appinits.Cuowus[zf.Zfs.Error05(false)].Zhi,
 		}
 		c.ServeJSON()
 		return
@@ -37,10 +37,10 @@ func (c *Juesecontroller) Post() {
 	juese := appmodels.Juese{}
 	json.Unmarshal(c.Ctx.Input.RequestBody, &juese)
 	serviceret := zdjueseservices.Tianjiajuese(&juese)
-	tishi := baseinits.Tishis[serviceret].Zhi
+	tishi := appinits.Tishis[serviceret].Zhi
 	if tishi == zfzhi.Zhi.Kzf() {
 		splitret := strings.Split(serviceret, zfzhi.Zhi.Xhx())
-		c.Data[zf.Zfs.Json(true)] = baseinits.Tishis[splitret[zfzhi.Zhi.Shuzi0zhi()]].Zhi + zfzhi.Zhi.Mh() + splitret[zfzhi.Zhi.Shuzi1zhi()]
+		c.Data[zf.Zfs.Json(true)] = appinits.Tishis[splitret[zfzhi.Zhi.Shuzi0zhi()]].Zhi + zfzhi.Zhi.Mh() + splitret[zfzhi.Zhi.Shuzi1zhi()]
 		c.ServeJSON()
 		return
 	}
@@ -52,10 +52,10 @@ func (c *Juesecontroller) Patch() {
 	juese := appmodels.Juese{}
 	json.Unmarshal(c.Ctx.Input.RequestBody, &juese)
 	serviceret := zdjueseservices.Xiugaijuese(&juese)
-	tishi := baseinits.Tishis[serviceret].Zhi
+	tishi := appinits.Tishis[serviceret].Zhi
 	if tishi == zfzhi.Zhi.Kzf() {
 		splitret := strings.Split(serviceret, zfzhi.Zhi.Xhx())
-		c.Data[zf.Zfs.Json(true)] = baseinits.Tishis[splitret[zfzhi.Zhi.Shuzi0zhi()]].Zhi + zfzhi.Zhi.Mh() + splitret[zfzhi.Zhi.Shuzi1zhi()]
+		c.Data[zf.Zfs.Json(true)] = appinits.Tishis[splitret[zfzhi.Zhi.Shuzi0zhi()]].Zhi + zfzhi.Zhi.Mh() + splitret[zfzhi.Zhi.Shuzi1zhi()]
 		c.ServeJSON()
 		return
 	}
@@ -69,16 +69,16 @@ func (c *Juesecontroller) Delete() {
 	if err != nil {
 		log.Println(err)
 		c.Data[zf.Zfs.Json(true)] = map[string]string{
-			zf.Zfs.Error05(false): baseinits.Cuowus[zf.Zfs.Error05(false)].Zhi,
+			zf.Zfs.Error05(false): appinits.Cuowus[zf.Zfs.Error05(false)].Zhi,
 		}
 		c.ServeJSON()
 		return
 	}
 	serviceret := zdjueseservices.Shanchujuese(id)
-	tishi := baseinits.Tishis[serviceret].Zhi
+	tishi := appinits.Tishis[serviceret].Zhi
 	if tishi == zfzhi.Zhi.Kzf() {
 		splitret := strings.Split(serviceret, zfzhi.Zhi.Xhx())
-		c.Data[zf.Zfs.Json(true)] = baseinits.Tishis[splitret[zfzhi.Zhi.Shuzi0zhi()]].Zhi + zfzhi.Zhi.Mh() + splitret[zfzhi.Zhi.Shuzi1zhi()]
+		c.Data[zf.Zfs.Json(true)] = appinits.Tishis[splitret[zfzhi.Zhi.Shuzi0zhi()]].Zhi + zfzhi.Zhi.Mh() + splitret[zfzhi.Zhi.Shuzi1zhi()]
 		c.ServeJSON()
 		return
 	}

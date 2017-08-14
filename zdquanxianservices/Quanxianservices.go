@@ -5,7 +5,7 @@ import (
 	"hanfuxin/allerrors"
 	"hanfuxin/appmodels"
 	"hanfuxin/apputils"
-	"hanfuxin/baseinits"
+	"hanfuxin/appinits"
 	"hanfuxin/baserun"
 	"hanfuxin/zdquanxiandaos"
 	"hanfuxin/zf"
@@ -52,7 +52,7 @@ func yanzhengziduanchangdu(quanxian *appmodels.Quanxian) error {
 func Tianjiaquanxian(quanxian *appmodels.Quanxian) string {
 	err := yanzhengziduanchangdu(quanxian)
 	if err != nil {
-		return baseinits.Tishis[zf.Zfs.Tishi09(false)].Bianma + zfzhi.Zhi.Xhx() + err.Error()
+		return appinits.Tishis[zf.Zfs.Tishi09(false)].Bianma + zfzhi.Zhi.Xhx() + err.Error()
 
 	}
 	return zdquanxiandaos.Tianjiayige(quanxian)
@@ -61,7 +61,7 @@ func Tianjiaquanxian(quanxian *appmodels.Quanxian) string {
 func Xiugaiquanxian(quanxian *appmodels.Quanxian) string {
 	err := yanzhengziduanchangdu(quanxian)
 	if err != nil {
-		return baseinits.Tishis[zf.Zfs.Tishi09(false)].Bianma + zfzhi.Zhi.Xhx() + err.Error()
+		return appinits.Tishis[zf.Zfs.Tishi09(false)].Bianma + zfzhi.Zhi.Xhx() + err.Error()
 
 	}
 	quanxianfind := Chaxunquanxian(quanxian.Id)
@@ -82,7 +82,7 @@ func Xiugaiquanxian(quanxian *appmodels.Quanxian) string {
 		return zdquanxiandaos.Xiugaiyige(quanxianfind)
 
 	}
-	return baseinits.Cuowus[zf.Zfs.Error04(false)].Zhi
+	return appinits.Cuowus[zf.Zfs.Error04(false)].Zhi
 }
 func Shanchuquanxian(id int) string {
 	return zdquanxiandaos.Shanchuyige(id)

@@ -2,7 +2,7 @@ package baserun
 
 import (
 	"bytes"
-	"hanfuxin/basemodels"
+	"hanfuxin/appinits"
 	"hanfuxin/zf"
 	"hanfuxin/zfzhi"
 	"io/ioutil"
@@ -40,7 +40,7 @@ func serviceimports(bianma string, buffer *bytes.Buffer) {
 	// "hanfuxin/Xxxdaos"
 	daobao := zfzhi.Zhi.Syh() + zf.Zfs.Hanfuxin(true) + zfzhi.Zhi.Xx() + zf.Zfs.Zd(true) + strings.ToLower(bianma) + zf.Zfs.Daos(true) + zfzhi.Zhi.Syh() + zfzhi.Zhi.Hhf()
 	buffer.WriteString(daobao)
-	//"hanfuxin/baseinits"
+	//"hanfuxin/appinits"
 	binitbao := zfzhi.Zhi.Syh() + zf.Zfs.Hanfuxin(true) + zfzhi.Zhi.Xx() + zf.Zfs.Baseinits(true) + zfzhi.Zhi.Syh()
 	buffer.WriteString(binitbao)
 	buffer.WriteString(zfzhi.Zhi.Xkhy() + zfzhi.Zhi.Hhf())
@@ -143,7 +143,7 @@ func servicexiugai(bianma string, buffer *bytes.Buffer) {
 	buffer.WriteString(ifstr)
 	buffer.WriteString(zfzhi.Zhi.Dkhz() + zfzhi.Zhi.Hhf())
 
-	// return baseinits.Tishis[zf.Zfs.Tishi09(false)].Bianma + zfzhi.Zhi.Xh()x + err.Error()
+	// return appinits.Tishis[zf.Zfs.Tishi09(false)].Bianma + zfzhi.Zhi.Xh()x + err.Error()
 	reterr := zf.Zfs.Return(true) + zfzhi.Zhi.Kgf() + zf.Zfs.Baseinits(true) +
 		zfzhi.Zhi.Dh() + zf.Zfs.Tishis(false) + zfzhi.Zhi.Zkhz() +
 		zf.Zfs.Zf(true) + zfzhi.Zhi.Dh() + zf.Zfs.Zfs(false) + zfzhi.Zhi.Dh() + zf.Zfs.Tishi09(false) +
@@ -218,7 +218,7 @@ func servicetianjia(bianma string, buffer *bytes.Buffer) {
 		zf.Zfs.Nil(true) + zfzhi.Zhi.Dkhz() + zfzhi.Zhi.Hhf()
 	buffer.WriteString(ifstr)
 
-	// return baseinits.Tishis[zf.Zfs.Tishi09(false)].Bianma + zfzhi.Zhi.Xh()x + err.Error()
+	// return appinits.Tishis[zf.Zfs.Tishi09(false)].Bianma + zfzhi.Zhi.Xh()x + err.Error()
 	reterr := zf.Zfs.Return(true) + zfzhi.Zhi.Kgf() + zf.Zfs.Baseinits(true) +
 		zfzhi.Zhi.Dh() + zf.Zfs.Tishis(false) + zfzhi.Zhi.Zkhz() +
 		zf.Zfs.Zf(true) + zfzhi.Zhi.Dh() + zf.Zfs.Zfs(false) + zfzhi.Zhi.Dh() + zf.Zfs.Tishi09(false) +
@@ -286,7 +286,7 @@ func Shengchengservice() {
 		servicexiugai(bk, &buffer)
 		serviceshanchu(bk, &buffer)
 		servicechaxun(bk, &buffer)
-		dir := basemodels.Getapppath() + zfzhi.Zhi.Xx() + bm
+		dir := appinits.Getapppath() + zfzhi.Zhi.Xx() + bm
 		os.MkdirAll(dir, os.ModePerm)
 		path := dir + zfzhi.Zhi.Xx() + bk + zf.Zfs.Services(true) + zfzhi.Zhi.Dh() + zf.Zfs.Go(true)
 		ioutil.WriteFile(path, buffer.Bytes(), os.ModePerm)

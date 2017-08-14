@@ -2,7 +2,7 @@ package baserun
 
 import (
 	"bytes"
-	"hanfuxin/basemodels"
+	"hanfuxin/appinits"
 	"hanfuxin/zf"
 	"hanfuxin/zfzhi"
 	"io/ioutil"
@@ -24,7 +24,7 @@ func Shengchenghanfuxinmodels() {
 		//左大括号在头里有了
 		buffer.WriteString(zfzhi.Zhi.Dkhy()) // }
 		// hanfuxin/appmodels/Juese.go
-		path := basemodels.Getapppath() + zfzhi.Zhi.Xx() + bm + zfzhi.Zhi.Xx() + bk + zfzhi.Zhi.Dh() + zf.Zfs.Go(true)
+		path := appinits.Getapppath() + zfzhi.Zhi.Xx() + bm + zfzhi.Zhi.Xx() + bk + zfzhi.Zhi.Dh() + zf.Zfs.Go(true)
 		ioutil.WriteFile(path, buffer.Bytes(), os.ModePerm)
 	}
 }

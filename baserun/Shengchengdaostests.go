@@ -2,7 +2,7 @@ package baserun
 
 import (
 	"bytes"
-	"hanfuxin/basemodels"
+	"hanfuxin/appinits"
 	"hanfuxin/zf"
 	"hanfuxin/zfzhi"
 	"io/ioutil"
@@ -215,7 +215,7 @@ func Shengchengdaostests() {
 		testchaxunyige(biao, &buffer)
 		testshanchuyige(biao, &buffer)
 
-		path := basemodels.Getapppath() + zfzhi.Zhi.Xx() + zf.Zfs.Tests(true) + zfzhi.Zhi.Xx() + biao + zf.Zfs.Daos(true) + zfzhi.Zhi.Xhx() + zf.Zfs.Test(true) + zfzhi.Zhi.Dh() + zf.Zfs.Go(true)
+		path := appinits.Getapppath() + zfzhi.Zhi.Xx() + zf.Zfs.Tests(true) + zfzhi.Zhi.Xx() + biao + zf.Zfs.Daos(true) + zfzhi.Zhi.Xhx() + zf.Zfs.Test(true) + zfzhi.Zhi.Dh() + zf.Zfs.Go(true)
 		ioutil.WriteFile(path, buffer.Bytes(), os.ModePerm)
 	}
 }
