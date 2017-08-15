@@ -1,7 +1,7 @@
 package appinits
 
 import (
-	"jichu/gongju"
+	"gongju"
 	"clzbase/zf"
 )
 

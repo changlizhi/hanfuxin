@@ -2,7 +2,7 @@ package appinits
 
 import (
 	"changliang/zf"
-	"jichu/gongju"
+	"gongju"
 )
 
 func Shezhijson() *Shezhi {
