@@ -3,9 +3,9 @@ package baserun
 import (
 	"bytes"
 	"hanfuxin/appinits"
-	"hanfuxin/zf"
-	"hanfuxin/zfzhi"
-	"hanfuxin/zh"
+	"changliang/zf"
+	"changliang/zfzhi"
+	"changliang/zh"
 	"io/ioutil"
 	"os"
 	"strings"
@@ -16,7 +16,7 @@ func routersimports(bianma string, buffer *bytes.Buffer) {
 	buffer.WriteString(zfzhi.Zhi.Xkhz() + zfzhi.Zhi.Hhf())
 
 	//"github.com/astaxie/beego"
-	buffer.WriteString(zh.Zhs.Beego())
+	buffer.WriteString(zh.Zhs.Beegobao())
 
 	//"hanfuxin/controllers"
 	constr := zfzhi.Zhi.Syh() + zf.Zfs.Hanfuxin(true) + zfzhi.Zhi.Xx() + zf.Zfs.Controllers(true) + zfzhi.Zhi.Syh() + zfzhi.Zhi.Hhf()

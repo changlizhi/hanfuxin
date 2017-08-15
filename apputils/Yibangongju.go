@@ -2,9 +2,6 @@ package apputils
 
 import (
 	"errors"
-	"hanfuxin/appinits"
-	"io/ioutil"
-	"os"
 	"reflect"
 )
 
@@ -24,10 +21,4 @@ func Pipei3lei(zi interface{}, fu interface{}) (bool, error) {
 		}
 	}
 	return false, errors.New("not in array!")
-}
-
-// 添加文件按0777 模式进行覆盖写入或添加，文件名（带格式）,内容
-func Tianjiawenjian(path string, wenjianming string, neirong []byte) {
-	os.MkdirAll(appinits.Getapppath()+path, os.ModePerm)
-	ioutil.WriteFile(appinits.Getapppath()+path+wenjianming, neirong, os.ModePerm)
 }

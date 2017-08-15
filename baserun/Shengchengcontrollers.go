@@ -3,9 +3,9 @@ package baserun
 import (
 	"bytes"
 	"hanfuxin/appinits"
-	"hanfuxin/zf"
-	"hanfuxin/zfzhi"
-	"hanfuxin/zh"
+	"changliang/zf"
+	"changliang/zfzhi"
+	"changliang/zh"
 	"io/ioutil"
 	"os"
 	"strings"
@@ -39,11 +39,11 @@ func controllerimports(bianma string, buffer *bytes.Buffer) {
 	serstr := zfzhi.Zhi.Syh() + zf.Zfs.Hanfuxin(true) + zfzhi.Zhi.Xx() + zf.Zfs.Zd(true) + bmx + zf.Zfs.Services(true) + zfzhi.Zhi.Syh() + zfzhi.Zhi.Hhf()
 	buffer.WriteString(serstr)
 
-	//"hanfuxin/zf"
+	//"changliang/zf"
 	zfstr := zfzhi.Zhi.Syh() + zf.Zfs.Hanfuxin(true) + zfzhi.Zhi.Xx() + zf.Zfs.Zf(true) + zfzhi.Zhi.Syh() + zfzhi.Zhi.Hhf()
 	buffer.WriteString(zfstr)
 
-	//"hanfuxin/zfzhi"
+	//"changliang/zfzhi"
 	zfzhistr := zfzhi.Zhi.Syh() + zf.Zfs.Hanfuxin(true) + zfzhi.Zhi.Xx() + zf.Zfs.Zfzhi(true) + zfzhi.Zhi.Syh() + zfzhi.Zhi.Hhf()
 	buffer.WriteString(zfzhistr)
 

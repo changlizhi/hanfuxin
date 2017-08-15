@@ -3,8 +3,8 @@ package baserun
 import (
 	"bytes"
 	"hanfuxin/appinits"
-	"hanfuxin/zf"
-	"hanfuxin/zfzhi"
+	"changliang/zf"
+	"changliang/zfzhi"
 	"io/ioutil"
 	"os"
 	"strings"
@@ -27,7 +27,7 @@ func imports(bianma string, buffer *bytes.Buffer) {
 	bai := zfzhi.Zhi.Syh() + zf.Zfs.Hanfuxin(true) + zfzhi.Zhi.Xx() + zf.Zfs.Baseinits(true) + zfzhi.Zhi.Syh() + zfzhi.Zhi.Hhf()
 	buffer.WriteString(bai)
 
-	//"hanfuxin/zf"
+	//"changliang/zf"
 	zfbao := zfzhi.Zhi.Syh() + zf.Zfs.Hanfuxin(true) + zfzhi.Zhi.Xx() + zf.Zfs.Zf(true) + zfzhi.Zhi.Syh()
 	buffer.WriteString(zfbao)
 
@@ -251,7 +251,7 @@ func Shengchengdaos() {
 	for biao, _ := range Huoqubiaos() {
 		buffer := bytes.Buffer{}
 		buffer.WriteString(zf.Zfs.Package(true))    //package
-		buffer.WriteString(zfzhi.Zhi.Konggefuzhi()) // zfzhi.Zhi.Kgf()
+		buffer.WriteString(zfzhi.Zhi.Konggefu()) // zfzhi.Zhi.Kgf()
 		lujing := zf.Zfs.Zd(true) + strings.ToLower(biao) + zf.Zfs.Daos(true)
 		buffer.WriteString(lujing) // zdjuesedaos
 

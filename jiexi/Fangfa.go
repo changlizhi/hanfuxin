@@ -2,15 +2,15 @@ package jiexi
 
 import (
 	"hanfuxin/appinits"
-	"hanfuxin/zf"
-	"hanfuxin/zfzhi"
+	"changliang/zf"
+	"changliang/zfzhi"
 	"io/ioutil"
 	"regexp"
 	"strings"
 )
 
 func Pipeifangfa(canshu string, canshuleixing string, muluming string, wenjianming string) []string {
-	fu1 := zfzhi.Zhi.Shuzifu1zhi()
+	fu1 := zfzhi.Zhi.Shuzifu1()
 
 	path := appinits.Getapppath() + zfzhi.Zhi.Xx() + muluming + zfzhi.Zhi.Xx() + wenjianming + zfzhi.Zhi.Dh() + zf.Zfs.Go(true)
 	b, _ := ioutil.ReadFile(path)

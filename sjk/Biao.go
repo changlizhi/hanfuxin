@@ -1,7 +1,7 @@
 package sjk
 
 import (
-	"hanfuxin/zf"
+	"changliang/zf"
 )
 
 func (sjk *Sjk) Juese(xiaoxie bool) string {

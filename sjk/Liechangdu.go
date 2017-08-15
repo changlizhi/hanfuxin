@@ -1,39 +1,39 @@
 package sjk
 
 import (
-	"hanfuxin/zfzhi"
+	"changliang/zfzhi"
 )
 
-func (sjk *Sjk) Idchangduzhi() int {
-	return zfzhi.Zhi.Shuzi10zhi()
+func (sjk *Sjk) Idchangdu() int {
+	return zfzhi.Zhi.Shuzi10()
 }
-func (sjk *Sjk) Biaojichangduzhi() int {
-	return zfzhi.Zhi.Shuzi5zhi() * zfzhi.Zhi.Shuzi10zhi() * zfzhi.Zhi.Shuzi10zhi()
+func (sjk *Sjk) Biaojichangdu() int {
+	return zfzhi.Zhi.Shuzi5() * zfzhi.Zhi.Shuzi10() * zfzhi.Zhi.Shuzi10()
 }
-func (sjk *Sjk) Bianmachangduzhi() int {
-	return zfzhi.Zhi.Shuzi5zhi() * zfzhi.Zhi.Shuzi10zhi()
+func (sjk *Sjk) Bianmachangdu() int {
+	return zfzhi.Zhi.Shuzi5() * zfzhi.Zhi.Shuzi10()
 }
-func (sjk *Sjk) Mingchengchangduzhi() int {
-	return zfzhi.Zhi.Shuzi5zhi() * zfzhi.Zhi.Shuzi10zhi()
+func (sjk *Sjk) Mingchengchangdu() int {
+	return zfzhi.Zhi.Shuzi5() * zfzhi.Zhi.Shuzi10()
 }
-func (sjk *Sjk) Juesebianmachangduzhi() int {
-	return zfzhi.Zhi.Shuzi5zhi() * zfzhi.Zhi.Shuzi10zhi()
+func (sjk *Sjk) Juesebianmachangdu() int {
+	return zfzhi.Zhi.Shuzi5() * zfzhi.Zhi.Shuzi10()
 }
-func (sjk *Sjk) Quanxianbianmachangduzhi() int {
-	return zfzhi.Zhi.Shuzi5zhi() * zfzhi.Zhi.Shuzi10zhi()
+func (sjk *Sjk) Quanxianbianmachangdu() int {
+	return zfzhi.Zhi.Shuzi5() * zfzhi.Zhi.Shuzi10()
 }
-func (sjk *Sjk) Lujingchangduzhi() int {
-	return zfzhi.Zhi.Shuzi3zhi() * zfzhi.Zhi.Shuzi10zhi() * zfzhi.Zhi.Shuzi10zhi()
+func (sjk *Sjk) Lujingchangdu() int {
+	return zfzhi.Zhi.Shuzi3() * zfzhi.Zhi.Shuzi10() * zfzhi.Zhi.Shuzi10()
 }
-func (sjk *Sjk) Youxiangchangduzhi() int {
-	return zfzhi.Zhi.Shuzi5zhi() * zfzhi.Zhi.Shuzi10zhi()
+func (sjk *Sjk) Youxiangchangdu() int {
+	return zfzhi.Zhi.Shuzi5() * zfzhi.Zhi.Shuzi10()
 }
-func (sjk *Sjk) Leixingchangduzhi() int {
-	return zfzhi.Zhi.Shuzi5zhi() * zfzhi.Zhi.Shuzi10zhi()
+func (sjk *Sjk) Leixingchangdu() int {
+	return zfzhi.Zhi.Shuzi5() * zfzhi.Zhi.Shuzi10()
 }
-func (sjk *Sjk) Zhichangduzhi() int {
-	return zfzhi.Zhi.Shuzi5zhi() * zfzhi.Zhi.Shuzi10zhi()
+func (sjk *Sjk) Zhichangdu() int {
+	return zfzhi.Zhi.Shuzi5() * zfzhi.Zhi.Shuzi10()
 }
-func (sjk *Sjk) Xinxibianmachangduzhi() int {
-	return zfzhi.Zhi.Shuzi5zhi() * zfzhi.Zhi.Shuzi10zhi()
+func (sjk *Sjk) Xinxibianmachangdu() int {
+	return zfzhi.Zhi.Shuzi5() * zfzhi.Zhi.Shuzi10()
 }

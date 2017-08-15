@@ -3,7 +3,7 @@ package zdxinxidaos
 import (
 	"hanfuxin/appinits"
 	"hanfuxin/appmodels"
-	"hanfuxin/zf"
+	"changliang/zf"
 )
 
 func Chaxunyige(id int) *appmodels.Xinxi {

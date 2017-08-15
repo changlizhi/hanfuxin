@@ -3,8 +3,8 @@ package baserun
 import (
 	"bytes"
 	"hanfuxin/appinits"
-	"hanfuxin/zf"
-	"hanfuxin/zfzhi"
+	"changliang/zf"
+	"changliang/zfzhi"
 	"io/ioutil"
 	"os"
 	"strconv"
@@ -43,8 +43,8 @@ func servicetestimport(bianma string, buffer *bytes.Buffer) {
 	buffer.WriteString(zfzhi.Zhi.Hhf() + zfzhi.Zhi.Xkhy())
 }
 func tianjiaxiugai(fangfa string, bianma string, buffer *bytes.Buffer) {
-	sz1str := strconv.Itoa(zfzhi.Zhi.Shuzi1zhi())
-	sz0str := strconv.Itoa(zfzhi.Zhi.Shuzi0zhi())
+	sz1str := strconv.Itoa(zfzhi.Zhi.Shuzi1())
+	sz0str := strconv.Itoa(zfzhi.Zhi.Shuzi0())
 
 	bmx := strings.ToLower(bianma)
 	//func TestJueseserviceTianjia(t *testing.T)
@@ -95,7 +95,7 @@ func testservicexiugai(bianma string, buffer *bytes.Buffer) {
 	tianjiaxiugai(zf.Zfs.Xiugai(false), bianma, buffer)
 }
 func testservicechaxun(bianma string, buffer *bytes.Buffer) {
-	sz1str := strconv.Itoa(zfzhi.Zhi.Shuzi1zhi())
+	sz1str := strconv.Itoa(zfzhi.Zhi.Shuzi1())
 	bmx := strings.ToLower(bianma)
 	// func TestXzfzhi.Zhi.Xx()servicesChaxun
 	funstr := zf.Zfs.Func(true) + zfzhi.Zhi.Kgf() + zf.Zfs.Test(false) + bianma + zf.Zfs.Services(true) + zf.Zfs.Chaxun(false)
@@ -112,7 +112,7 @@ func testservicechaxun(bianma string, buffer *bytes.Buffer) {
 	buffer.WriteString(zfzhi.Zhi.Hhf() + zfzhi.Zhi.Dkhy() + zfzhi.Zhi.Hhf())
 }
 func testserviceshanchu(bianma string, buffer *bytes.Buffer) {
-	sz1str := strconv.Itoa(zfzhi.Zhi.Shuzi1zhi())
+	sz1str := strconv.Itoa(zfzhi.Zhi.Shuzi1())
 	bmx := strings.ToLower(bianma)
 	// func TestXzfzhi.Zhi.Xx()serviceShanchu
 	funstr := zf.Zfs.Func(true) + zfzhi.Zhi.Kgf() + zf.Zfs.Test(false) + bianma + zf.Zfs.Services(true) + zf.Zfs.Shanchu(false)

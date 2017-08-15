@@ -3,8 +3,8 @@ package baserun
 import (
 	"bytes"
 	"hanfuxin/appinits"
-	"hanfuxin/zf"
-	"hanfuxin/zfzhi"
+	"changliang/zf"
+	"changliang/zfzhi"
 	"io/ioutil"
 	"os"
 	"strconv"
@@ -26,11 +26,11 @@ func controllertestimports(bianma string, buffer *bytes.Buffer) {
 	teststr := zfzhi.Zhi.Syh() + zf.Zfs.Hanfuxin(true) + zfzhi.Zhi.Xx() + zf.Zfs.Fortests(true) + zfzhi.Zhi.Syh() + zfzhi.Zhi.Hhf()
 	buffer.WriteString(teststr)
 
-	//"hanfuxin/zf"
+	//"changliang/zf"
 	zfstr := zfzhi.Zhi.Syh() + zf.Zfs.Hanfuxin(true) + zfzhi.Zhi.Xx() + zf.Zfs.Zf(true) + zfzhi.Zhi.Syh() + zfzhi.Zhi.Hhf()
 	buffer.WriteString(zfstr)
 
-	// "hanfuxin/zfzhi"
+	// "changliang/zfzhi"
 	zfzhistr := zfzhi.Zhi.Syh() + zf.Zfs.Hanfuxin(true) + zfzhi.Zhi.Xx() + zf.Zfs.Zfzhi(true) + zfzhi.Zhi.Syh() + zfzhi.Zhi.Hhf()
 	buffer.WriteString(zfzhistr)
 
@@ -47,7 +47,7 @@ func controllertestimports(bianma string, buffer *bytes.Buffer) {
 	buffer.WriteString(zfzhi.Zhi.Hhf() + zfzhi.Zhi.Xkhy() + zfzhi.Zhi.Hhf())
 }
 func bkcontroller(bianma string, buffer *bytes.Buffer) {
-	sz200 := zfzhi.Zhi.Shuzi2zhi() * zfzhi.Zhi.Shuzi10zhi() * zfzhi.Zhi.Shuzi10zhi()
+	sz200 := zfzhi.Zhi.Shuzi2() * zfzhi.Zhi.Shuzi10() * zfzhi.Zhi.Shuzi10()
 	sz200str := strconv.Itoa(sz200)
 
 	bmx := strings.ToLower(bianma)
@@ -101,7 +101,7 @@ func testpostpatch(fangfa string, bianma string, buffer *bytes.Buffer) {
 	contr := zf.Zfs.C(true) + zfzhi.Zhi.Mh() + zfzhi.Zhi.Dyh() + bmx + zf.Zfs.Controller(true) + zfzhi.Zhi.Xkhz() + zfzhi.Zhi.Xkhy() + zfzhi.Zhi.Hhf()
 	buffer.WriteString(contr)
 
-	// reqjson := zfzhi.Fangfajuesezhi()
+	// reqjson := zfzhi.Fangfajuese()
 	jsonstr := zf.Zfs.Req(true) + zf.Zfs.Json(true) + zfzhi.Zhi.Mh() + zfzhi.Zhi.Dyh() + zf.Zfs.Zfzhi(true) + zfzhi.Zhi.Dh() + zf.Zfs.Zhi(false) + zfzhi.Zhi.Dh() + fangfa + bmx + zf.Zfs.Zhi(true) + zfzhi.Zhi.Xkhz() + zfzhi.Zhi.Xkhy() + zfzhi.Zhi.Hhf()
 	buffer.WriteString(jsonstr)
 
@@ -133,7 +133,7 @@ func deletegetcontroller(fangfa string, bianma string, buffer *bytes.Buffer) {
 	buffer.WriteString(funstr)
 	buffer.WriteString(zfzhi.Zhi.Dkhz() + zfzhi.Zhi.Hhf())
 
-	//paramid := strconv.Itoa(zfzhi.Shuzi1zhi())
+	//paramid := strconv.Itoa(zfzhi.Shuzi1())
 	parstr := zf.Zfs.Param(true) + zf.Zfs.Id(true) + zfzhi.Zhi.Mh() +
 		zfzhi.Zhi.Dyh() + zf.Zfs.Strconv(true) + zfzhi.Zhi.Dh() +
 		zf.Zfs.Itoa(false) + zfzhi.Zhi.Xkhz() +

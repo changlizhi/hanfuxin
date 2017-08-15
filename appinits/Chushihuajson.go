@@ -1,7 +1,7 @@
 package appinits
 
 import (
-	"hanfuxin/zf"
+	"changliang/zf"
 )
 
 var Cuowus = make(map[string]Tongyong)

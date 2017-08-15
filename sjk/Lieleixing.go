@@ -1,8 +1,8 @@
 package sjk
 
 import (
-	"hanfuxin/zf"
-	"hanfuxin/zfzhi"
+	"changliang/zf"
+	"changliang/zfzhi"
 )
 
 func (sjk *Sjk) Idleixingzhi() string {

@@ -3,8 +3,8 @@ package baserun
 import (
 	"bytes"
 	"hanfuxin/appinits"
-	"hanfuxin/zf"
-	"hanfuxin/zfzhi"
+	"changliang/zf"
+	"changliang/zfzhi"
 	"io/ioutil"
 	"os"
 	"strconv"
@@ -48,7 +48,7 @@ func testsimports(bianma string, buffer *bytes.Buffer) {
 }
 
 func testchaxunyige(bianma string, buffer *bytes.Buffer) {
-	sz1 := strconv.Itoa(zfzhi.Zhi.Shuzi1zhi())
+	sz1 := strconv.Itoa(zfzhi.Zhi.Shuzi1())
 
 	// func TestChaxunyigeXXX
 	funstr := zf.Zfs.Func(true) + zfzhi.Zhi.Kgf() + zf.Zfs.Test(false) + zf.Zfs.Chaxunyige(false) + bianma
@@ -79,7 +79,7 @@ func testxiugaiyige(bianma string, buffer *bytes.Buffer) {
 }
 
 func tianjiahuoxiugai(bianma string, buffer *bytes.Buffer, fangfa string) {
-	sz1 := strconv.Itoa(zfzhi.Zhi.Shuzi1zhi())
+	sz1 := strconv.Itoa(zfzhi.Zhi.Shuzi1())
 
 	funstr := zf.Zfs.Func(true) + zfzhi.Zhi.Kgf() + zf.Zfs.Test(false) + fangfa + bianma
 	buffer.WriteString(funstr)
@@ -113,8 +113,8 @@ func pinjieziduan(bianma string, buffer *bytes.Buffer, fangfa string, houzhui st
 
 }
 func shengchengzhi(lieming string, leixing string, fangfa string, houzhui string) string {
-	sz1 := strconv.Itoa(zfzhi.Zhi.Shuzi1zhi())
-	sz0 := strconv.Itoa(zfzhi.Zhi.Shuzi0zhi())
+	sz1 := strconv.Itoa(zfzhi.Zhi.Shuzi1())
+	sz0 := strconv.Itoa(zfzhi.Zhi.Shuzi0())
 
 	if leixing == zf.Zfs.String(true) {
 		// "lieZengjiaTest1"
@@ -143,7 +143,7 @@ func shengchengzhi(lieming string, leixing string, fangfa string, houzhui string
 }
 
 func testshanchuyige(bianma string, buffer *bytes.Buffer) {
-	sz1 := strconv.Itoa(zfzhi.Zhi.Shuzi1zhi())
+	sz1 := strconv.Itoa(zfzhi.Zhi.Shuzi1())
 
 	// func TestShanchuyige
 	funstr := zf.Zfs.Func(true) + zfzhi.Zhi.Kgf() + zf.Zfs.Test(false) + zf.Zfs.Shanchuyige(false) + bianma
@@ -160,9 +160,9 @@ func testshanchuyige(bianma string, buffer *bytes.Buffer) {
 	buffer.WriteString(zfzhi.Zhi.Dkhy() + zfzhi.Zhi.Hhf())
 }
 func testtianjiaduoge(bianma string, buffer *bytes.Buffer) {
-	//zfzhi.Zhi.Syh() := zfzhi.Shuangyinhaozhi()
-	sz2 := strconv.Itoa(zfzhi.Zhi.Shuzi2zhi())
-	sz3 := strconv.Itoa(zfzhi.Zhi.Shuzi3zhi())
+	//zfzhi.Zhi.Syh() := zfzhi.Shuangyinhao()
+	sz2 := strconv.Itoa(zfzhi.Zhi.Shuzi2())
+	sz3 := strconv.Itoa(zfzhi.Zhi.Shuzi3())
 	//组装方法名
 	// func TestTianjiaduogeJuese
 	funstr := zf.Zfs.Func(true) + zfzhi.Zhi.Kgf() + zf.Zfs.Test(false) + zf.Zfs.Tianjiaduoge(false) + bianma
