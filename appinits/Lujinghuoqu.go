@@ -2,7 +2,7 @@ package appinits
 
 import (
 	"gongju"
-	"clzbase/zf"
+	"changliang/zf"
 )
 
 func Getapppath() string {
