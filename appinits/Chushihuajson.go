@@ -1,9 +1,5 @@
 package appinits
 
-import (
-	"changliang/zf"
-)
-
 var Cuowus = make(map[string]Tongyong)
 var Tishis = make(map[string]Tongyong)
 var Shujukus = make(map[string]Tongyong)
@@ -21,7 +17,7 @@ func chushihua_json() {
 		Shujukus[s.Bianma] = s
 	}
 
-	guojihua := Guojihuajson(Chushihuas[zf.Zfs.Yuyan(false)].Zhi)
+	guojihua := Guojihuajson()
 	Shezhiguojihua(guojihua)
 }
 func Shezhiguojihua(guojihua *Guojihua) {
