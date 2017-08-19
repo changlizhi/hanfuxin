@@ -7,13 +7,19 @@ import (
 
 func Shezhijson() *Shezhi {
 	shezhi := Shezhi{}
-	obj := gongju.Jiexi(Shezhipath(), &shezhi)
-	return obj.(*Shezhi)
+	ret := gongju.Jiexi(
+		Shezhipath(),
+		&shezhi,
+	)
+	return ret.(*Shezhi)
 }
 func Guojihuajson() *Guojihua {
 	guojihua := Guojihua{}
-	obj := gongju.Jiexi(Guojihuapath(), &guojihua)
-	return obj.(*Guojihua)
+	ret := gongju.Jiexi(
+		Guojihuapath(),
+		&guojihua,
+	)
+	return ret.(*Guojihua)
 }
 
 func Guojihuapath() string {
