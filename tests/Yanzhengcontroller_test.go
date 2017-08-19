@@ -23,7 +23,7 @@ func yanzhengcontroller() *controllers.Yanzhengcontroller {
 }
 func TestPostyanzheng(t *testing.T) {
 	c := yanzhengcontroller()
-	reqjson := zfzhi.Zhi.Postyanzhengzhi()
+	reqjson := zfzhi.Zhi.Postyanzheng()
 	c.Ctx.Input.RequestBody = []byte(reqjson)
 	c.Post()
 	log.Println(c.Data)
@@ -31,14 +31,14 @@ func TestPostyanzheng(t *testing.T) {
 }
 func TestPatchyanzheng(t *testing.T) {
 	c := yanzhengcontroller()
-	reqjson := zfzhi.Zhi.Patchyanzhengzhi()
+	reqjson := zfzhi.Zhi.Patchyanzheng()
 	c.Ctx.Input.RequestBody = []byte(reqjson)
 	c.Patch()
 	log.Println(c.Data)
 
 }
 func TestDeleteyanzheng(t *testing.T) {
-	paramid := strconv.Itoa(zfzhi.Zhi.Shuzi1zhi())
+	paramid := strconv.Itoa(zfzhi.Zhi.Shuzi1())
 	c := yanzhengcontroller()
 	c.Ctx.Input.SetParam(zfzhi.Zhi.Mh()+zf.Zfs.Id(false), paramid)
 	c.Delete()
@@ -46,7 +46,7 @@ func TestDeleteyanzheng(t *testing.T) {
 
 }
 func TestGetyanzheng(t *testing.T) {
-	paramid := strconv.Itoa(zfzhi.Zhi.Shuzi1zhi())
+	paramid := strconv.Itoa(zfzhi.Zhi.Shuzi1())
 	c := yanzhengcontroller()
 	c.Ctx.Input.SetParam(zfzhi.Zhi.Mh()+zf.Zfs.Id(false), paramid)
 	c.Get()

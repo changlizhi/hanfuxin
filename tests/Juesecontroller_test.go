@@ -23,7 +23,7 @@ func juesecontroller() *controllers.Juesecontroller {
 }
 func TestPostjuese(t *testing.T) {
 	c := juesecontroller()
-	reqjson := zfzhi.Zhi.Postjuesezhi()
+	reqjson := zfzhi.Zhi.Postjuese()
 	c.Ctx.Input.RequestBody = []byte(reqjson)
 	c.Post()
 	log.Println(c.Data)
@@ -31,14 +31,14 @@ func TestPostjuese(t *testing.T) {
 }
 func TestPatchjuese(t *testing.T) {
 	c := juesecontroller()
-	reqjson := zfzhi.Zhi.Patchjuesezhi()
+	reqjson := zfzhi.Zhi.Patchjuese()
 	c.Ctx.Input.RequestBody = []byte(reqjson)
 	c.Patch()
 	log.Println(c.Data)
 
 }
 func TestDeletejuese(t *testing.T) {
-	paramid := strconv.Itoa(zfzhi.Zhi.Shuzi1zhi())
+	paramid := strconv.Itoa(zfzhi.Zhi.Shuzi1())
 	c := juesecontroller()
 	c.Ctx.Input.SetParam(zfzhi.Zhi.Mh()+zf.Zfs.Id(false), paramid)
 	c.Delete()
@@ -46,7 +46,7 @@ func TestDeletejuese(t *testing.T) {
 
 }
 func TestGetjuese(t *testing.T) {
-	paramid := strconv.Itoa(zfzhi.Zhi.Shuzi1zhi())
+	paramid := strconv.Itoa(zfzhi.Zhi.Shuzi1())
 	c := juesecontroller()
 	c.Ctx.Input.SetParam(zfzhi.Zhi.Mh()+zf.Zfs.Id(false), paramid)
 	c.Get()

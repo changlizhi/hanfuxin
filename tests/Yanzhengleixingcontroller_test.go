@@ -23,7 +23,7 @@ func yanzhengleixingcontroller() *controllers.Yanzhengleixingcontroller {
 }
 func TestPostyanzhengleixing(t *testing.T) {
 	c := yanzhengleixingcontroller()
-	reqjson := zfzhi.Zhi.Postyanzhengleixingzhi()
+	reqjson := zfzhi.Zhi.Postyanzhengleixing()
 	c.Ctx.Input.RequestBody = []byte(reqjson)
 	c.Post()
 	log.Println(c.Data)
@@ -31,14 +31,14 @@ func TestPostyanzhengleixing(t *testing.T) {
 }
 func TestPatchyanzhengleixing(t *testing.T) {
 	c := yanzhengleixingcontroller()
-	reqjson := zfzhi.Zhi.Patchyanzhengleixingzhi()
+	reqjson := zfzhi.Zhi.Patchyanzhengleixing()
 	c.Ctx.Input.RequestBody = []byte(reqjson)
 	c.Patch()
 	log.Println(c.Data)
 
 }
 func TestDeleteyanzhengleixing(t *testing.T) {
-	paramid := strconv.Itoa(zfzhi.Zhi.Shuzi1zhi())
+	paramid := strconv.Itoa(zfzhi.Zhi.Shuzi1())
 	c := yanzhengleixingcontroller()
 	c.Ctx.Input.SetParam(zfzhi.Zhi.Mh()+zf.Zfs.Id(false), paramid)
 	c.Delete()
@@ -46,7 +46,7 @@ func TestDeleteyanzhengleixing(t *testing.T) {
 
 }
 func TestGetyanzhengleixing(t *testing.T) {
-	paramid := strconv.Itoa(zfzhi.Zhi.Shuzi1zhi())
+	paramid := strconv.Itoa(zfzhi.Zhi.Shuzi1())
 	c := yanzhengleixingcontroller()
 	c.Ctx.Input.SetParam(zfzhi.Zhi.Mh()+zf.Zfs.Id(false), paramid)
 	c.Get()

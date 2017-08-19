@@ -2,9 +2,9 @@ package appinits
 
 import (
 	"gongju"
-	"changliang/zf"
+	"changliang/zfzhi"
 )
 
 func Getapppath() string {
-	return gongju.Getpath(zf.Zfs.Hanfuxin(true))
+	return gongju.Getpath(zfzhi.Zhi.Kzf())
 }

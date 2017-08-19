@@ -14,10 +14,12 @@ var Hanfuxinormer orm.Ormer
 
 // 初始化方法，请勿改变先后顺序
 func init() {
-	chushihua_ormer()
+	ormermoxing()
+	ormershujuku()
+	ormer()
 }
 
-func chushihua_ormer() {
+func ormermoxing() {
 	// 设置orm是否为debug模式
 	orm.Debug, _ = strconv.ParseBool(Chushihuas[zf.Zfs.Ormdebug(false)].Zhi)
 	// 注册所有的实体，这些实体全部都是在baserun里生成的，请使用自动生成再在这里添加，
@@ -31,6 +33,8 @@ func chushihua_ormer() {
 		new(appmodels.Yanzheng),
 		new(appmodels.Yanzhengleixing),
 	)
+}
+func ormershujuku() {
 	// orm注册数据库
 	// root:root@tcp(ip:duankou)/mingcheng
 	url := Shujukus[zf.Zfs.Yonghu(false)].Zhi +
@@ -46,7 +50,8 @@ func chushihua_ormer() {
 		zfzhi.Zhi.Xx() +
 		Shujukus[zf.Zfs.Mingcheng(false)].Zhi
 	orm.RegisterDataBase(zf.Zfs.Default(true), Shujukus[zf.Zfs.Qudong(false)].Zhi, url)
-
+}
+func ormer() {
 	Hanfuxinormer = orm.NewOrm()
 	Hanfuxinormer.Using(zf.Zfs.Default(true))
 }

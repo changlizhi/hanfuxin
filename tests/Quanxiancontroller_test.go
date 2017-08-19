@@ -23,7 +23,7 @@ func quanxiancontroller() *controllers.Quanxiancontroller {
 }
 func TestPostquanxian(t *testing.T) {
 	c := quanxiancontroller()
-	reqjson := zfzhi.Zhi.Postquanxianzhi()
+	reqjson := zfzhi.Zhi.Postquanxian()
 	c.Ctx.Input.RequestBody = []byte(reqjson)
 	c.Post()
 	log.Println(c.Data)
@@ -31,14 +31,14 @@ func TestPostquanxian(t *testing.T) {
 }
 func TestPatchquanxian(t *testing.T) {
 	c := quanxiancontroller()
-	reqjson := zfzhi.Zhi.Patchquanxianzhi()
+	reqjson := zfzhi.Zhi.Patchquanxian()
 	c.Ctx.Input.RequestBody = []byte(reqjson)
 	c.Patch()
 	log.Println(c.Data)
 
 }
 func TestDeletequanxian(t *testing.T) {
-	paramid := strconv.Itoa(zfzhi.Zhi.Shuzi1zhi())
+	paramid := strconv.Itoa(zfzhi.Zhi.Shuzi1())
 	c := quanxiancontroller()
 	c.Ctx.Input.SetParam(zfzhi.Zhi.Mh()+zf.Zfs.Id(false), paramid)
 	c.Delete()
@@ -46,7 +46,7 @@ func TestDeletequanxian(t *testing.T) {
 
 }
 func TestGetquanxian(t *testing.T) {
-	paramid := strconv.Itoa(zfzhi.Zhi.Shuzi1zhi())
+	paramid := strconv.Itoa(zfzhi.Zhi.Shuzi1())
 	c := quanxiancontroller()
 	c.Ctx.Input.SetParam(zfzhi.Zhi.Mh()+zf.Zfs.Id(false), paramid)
 	c.Get()

@@ -23,7 +23,7 @@ func xinxijuesecontroller() *controllers.Xinxijuesecontroller {
 }
 func TestPostxinxijuese(t *testing.T) {
 	c := xinxijuesecontroller()
-	reqjson := zfzhi.Zhi.Postxinxijuesezhi()
+	reqjson := zfzhi.Zhi.Postxinxijuese()
 	c.Ctx.Input.RequestBody = []byte(reqjson)
 	c.Post()
 	log.Println(c.Data)
@@ -31,14 +31,14 @@ func TestPostxinxijuese(t *testing.T) {
 }
 func TestPatchxinxijuese(t *testing.T) {
 	c := xinxijuesecontroller()
-	reqjson := zfzhi.Zhi.Patchxinxijuesezhi()
+	reqjson := zfzhi.Zhi.Patchxinxijuese()
 	c.Ctx.Input.RequestBody = []byte(reqjson)
 	c.Patch()
 	log.Println(c.Data)
 
 }
 func TestDeletexinxijuese(t *testing.T) {
-	paramid := strconv.Itoa(zfzhi.Zhi.Shuzi1zhi())
+	paramid := strconv.Itoa(zfzhi.Zhi.Shuzi1())
 	c := xinxijuesecontroller()
 	c.Ctx.Input.SetParam(zfzhi.Zhi.Mh()+zf.Zfs.Id(false), paramid)
 	c.Delete()
@@ -46,7 +46,7 @@ func TestDeletexinxijuese(t *testing.T) {
 
 }
 func TestGetxinxijuese(t *testing.T) {
-	paramid := strconv.Itoa(zfzhi.Zhi.Shuzi1zhi())
+	paramid := strconv.Itoa(zfzhi.Zhi.Shuzi1())
 	c := xinxijuesecontroller()
 	c.Ctx.Input.SetParam(zfzhi.Zhi.Mh()+zf.Zfs.Id(false), paramid)
 	c.Get()

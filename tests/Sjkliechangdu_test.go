@@ -8,5 +8,5 @@ import (
 
 func TestMingchengchangduzhi(t *testing.T) {
 	sjk := sjk.Sjk{}
-	log.Println(sjk.Mingchengchangduzhi())
+	log.Println(sjk.Mingchengchangdu())
 }

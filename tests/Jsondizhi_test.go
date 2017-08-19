@@ -4,9 +4,10 @@ import (
 	"hanfuxin/appinits"
 	"log"
 	"testing"
+	"gongju"
 )
 
 func TestMulus(t *testing.T) {
 	log.Println("apppath-------", appinits.Getapppath())
-	log.Println("wenjianmulu------", appinits.Getwenjianmulu("views", "test", "txt"))
+	log.Println("wenjianmulu------", gongju.Getwenjianmulu("hanfuxin","views", "test", "txt"))
 }

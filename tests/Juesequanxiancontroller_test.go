@@ -23,7 +23,7 @@ func juesequanxiancontroller() *controllers.Juesequanxiancontroller {
 }
 func TestPostjuesequanxian(t *testing.T) {
 	c := juesequanxiancontroller()
-	reqjson := zfzhi.Zhi.Postjuesequanxianzhi()
+	reqjson := zfzhi.Zhi.Postjuesequanxian()
 	c.Ctx.Input.RequestBody = []byte(reqjson)
 	c.Post()
 	log.Println(c.Data)
@@ -31,14 +31,14 @@ func TestPostjuesequanxian(t *testing.T) {
 }
 func TestPatchjuesequanxian(t *testing.T) {
 	c := juesequanxiancontroller()
-	reqjson := zfzhi.Zhi.Patchjuesequanxianzhi()
+	reqjson := zfzhi.Zhi.Patchjuesequanxian()
 	c.Ctx.Input.RequestBody = []byte(reqjson)
 	c.Patch()
 	log.Println(c.Data)
 
 }
 func TestDeletejuesequanxian(t *testing.T) {
-	paramid := strconv.Itoa(zfzhi.Zhi.Shuzi1zhi())
+	paramid := strconv.Itoa(zfzhi.Zhi.Shuzi1())
 	c := juesequanxiancontroller()
 	c.Ctx.Input.SetParam(zfzhi.Zhi.Mh()+zf.Zfs.Id(false), paramid)
 	c.Delete()
@@ -46,7 +46,7 @@ func TestDeletejuesequanxian(t *testing.T) {
 
 }
 func TestGetjuesequanxian(t *testing.T) {
-	paramid := strconv.Itoa(zfzhi.Zhi.Shuzi1zhi())
+	paramid := strconv.Itoa(zfzhi.Zhi.Shuzi1())
 	c := juesequanxiancontroller()
 	c.Ctx.Input.SetParam(zfzhi.Zhi.Mh()+zf.Zfs.Id(false), paramid)
 	c.Get()
