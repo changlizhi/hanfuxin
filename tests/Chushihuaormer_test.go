@@ -6,6 +6,6 @@ import (
 	"testing"
 )
 
-func TestHanfuxinormer(t *testing.T) {
-	log.Println(appinits.Hanfuxinormer)
+func TestDefaultormer(t *testing.T) {
+	log.Println(appinits.Defaultormer())
 }

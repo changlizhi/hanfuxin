@@ -10,13 +10,11 @@ import (
 )
 
 // 全局ormer，或许应该做成一个方法，否则后期要改成多线程的时候会引起问题
-var Hanfuxinormer orm.Ormer
 
 // 初始化方法，请勿改变先后顺序
 func init() {
 	ormermoxing()
 	ormershujuku()
-	ormer()
 }
 
 func ormermoxing() {
@@ -51,7 +49,11 @@ func ormershujuku() {
 		Shujukus[zf.Zfs.Mingcheng(false)].Zhi
 	orm.RegisterDataBase(zf.Zfs.Default(true), Shujukus[zf.Zfs.Qudong(false)].Zhi, url)
 }
-func ormer() {
-	Hanfuxinormer = orm.NewOrm()
-	Hanfuxinormer.Using(zf.Zfs.Default(true))
+func Defaultormer() orm.Ormer {
+	return Ormerdb(zf.Zfs.Default(true))
+}
+func Ormerdb(bieming string) orm.Ormer {
+	ret := orm.NewOrm()
+	ret.Using(bieming)
+	return ret
 }

@@ -9,7 +9,7 @@ import (
 
 func Chaxunyige(id int) *appmodels.Juese {
 	juese := &appmodels.Juese{Id: id}
-	err := appinits.Hanfuxinormer.Read(juese)
+	err := appinits.Defaultormer().Read(juese)
 	if err != nil {
 		log.Println(err)
 		return nil
@@ -17,7 +17,7 @@ func Chaxunyige(id int) *appmodels.Juese {
 	return juese
 }
 func Tianjiayige(juese *appmodels.Juese) string {
-	_, err := appinits.Hanfuxinormer.Insert(juese)
+	_, err := appinits.Defaultormer().Insert(juese)
 	if err != nil {
 		log.Println(err)
 		return appinits.Tishis[zf.Zfs.Tishi04(false)].Bianma
@@ -25,7 +25,7 @@ func Tianjiayige(juese *appmodels.Juese) string {
 	return appinits.Tishis[zf.Zfs.Tishi03(false)].Bianma
 }
 func Tianjiaduoge(jueseshuzu []appmodels.Juese) string {
-	_, err := appinits.Hanfuxinormer.InsertMulti(len(jueseshuzu), jueseshuzu)
+	_, err := appinits.Defaultormer().InsertMulti(len(jueseshuzu), jueseshuzu)
 	if err != nil {
 		log.Println(err)
 		return appinits.Tishis[zf.Zfs.Tishi04(false)].Bianma
@@ -33,7 +33,7 @@ func Tianjiaduoge(jueseshuzu []appmodels.Juese) string {
 	return appinits.Tishis[zf.Zfs.Tishi03(false)].Bianma
 }
 func Shanchuyige(id int) string {
-	_, err := appinits.Hanfuxinormer.Delete(Chaxunyige(id))
+	_, err := appinits.Defaultormer().Delete(Chaxunyige(id))
 	if err != nil {
 		log.Println(err)
 		return appinits.Tishis[zf.Zfs.Tishi08(false)].Bianma
@@ -41,7 +41,7 @@ func Shanchuyige(id int) string {
 	return appinits.Tishis[zf.Zfs.Tishi07(false)].Bianma
 }
 func Xiugaiyige(juese *appmodels.Juese) string {
-	_, err := appinits.Hanfuxinormer.Update(juese)
+	_, err := appinits.Defaultormer().Update(juese)
 	if err != nil {
 		log.Println(err)
 		return appinits.Tishis[zf.Zfs.Tishi06(false)].Bianma
