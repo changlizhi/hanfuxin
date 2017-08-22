@@ -30,8 +30,7 @@ func ormermoxing() {
 		new(appmodels.Xinxi),
 		new(appmodels.Xinxijuese),
 		new(appmodels.Yanzheng),
-		new(appmodels.Yanzhengleixing,
-		),
+		new(appmodels.Yanzhengleixing),
 	)
 }
 func ormershujuku() {
