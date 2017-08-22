@@ -9,17 +9,22 @@ import (
 	"strconv"
 )
 
-// 全局ormer，或许应该做成一个方法，否则后期要改成多线程的时候会引起问题
-
 // 初始化方法，请勿改变先后顺序
 func init() {
+	ormerdebug()
 	ormermoxing()
 	ormershujuku()
 }
 
-func ormermoxing() {
+func ormerdebug() {
 	// 设置orm是否为debug模式
-	orm.Debug, _ = strconv.ParseBool(Chushihuas[zf.Zfs.Ormdebug(false)].Zhi)
+	Setormerdebug(Chushihuas[zf.Zfs.Ormdebug(false)].Zhi)
+}
+func Setormerdebug(boolstr string) {
+	orm.Debug, _ = strconv.ParseBool(boolstr)
+}
+
+func ormermoxing() {
 	// 注册所有的实体，这些实体全部都是在baserun里生成的，请使用自动生成再在这里添加，
 	// 后期这个初始化将拆分并自动生成
 	orm.RegisterModel(
@@ -29,7 +34,8 @@ func ormermoxing() {
 		new(appmodels.Xinxi),
 		new(appmodels.Xinxijuese),
 		new(appmodels.Yanzheng),
-		new(appmodels.Yanzhengleixing),
+		new(appmodels.Yanzhengleixing,
+		),
 	)
 }
 func ormershujuku() {
@@ -50,9 +56,9 @@ func ormershujuku() {
 	orm.RegisterDataBase(zf.Zfs.Default(true), Shujukus[zf.Zfs.Qudong(false)].Zhi, url)
 }
 func Defaultormer() orm.Ormer {
-	return Ormerdb(zf.Zfs.Default(true))
+	return Ormerbyname(zf.Zfs.Default(true))
 }
-func Ormerdb(bieming string) orm.Ormer {
+func Ormerbyname(bieming string) orm.Ormer {
 	ret := orm.NewOrm()
 	ret.Using(bieming)
 	return ret
