@@ -30,9 +30,9 @@
         color: #2c3e50;
         width: 100%;
         height: 100%;
-        background-size: cover;
         background: url(../../static/beijing.jpg) no-repeat;
-        background-color: antiquewhite;
+        background-size: 100% 100%;
+        /*background-color: antiquewhite;*/
     }
 
     .beian {
