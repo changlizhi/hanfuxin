@@ -4,10 +4,17 @@
              src='../assets/logo2.png' />
         <h1>{{ msg }}</h1>
         <h2>网站正在建设中，请大家耐心等待！</h2>
-        <a class='beian'
-           href='http://www.miitbeian.gov.cn/'>
-            蜀ICP备17036196号
-        </a>
+        <div class='beian'>
+            <a target='_blank'
+               href='http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=51010702000866'
+               style='display:inline-block;text-decoration:none;height:20px;line-height:20px;'>
+                <img src='../../static/beian.png'
+                     style='float:left;' />
+                <p style='float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;'>
+                    川公网安备 51010702000866号
+                </p>
+            </a>
+        </div>
     </div>
 </template>
 
@@ -39,5 +46,8 @@
         position: fixed;
         bottom: 0;
         text-align: center;
+        width: 300px;
+        margin: 0 auto;
+        padding: 20px 0;
     }
 </style>
